@@ -34,6 +34,6 @@ async def start(message:types.Message, command: CommandObject, state: FSMContext
         pass
     else:
         if (len(bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id}"))==0):
-            message.answer("Здравствуйте! Данный бот предназначен для формирования заявки на исправление проблемы | починку | замену оборудования в данном учебном учреждении", reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="")]]))
+            message.answer("Здравствуйте! Данный бот предназначен для формирования заявки на исправление проблемы | починку | замену оборудования в данном учебном учреждении", reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация")]]))
         else:
             pass
