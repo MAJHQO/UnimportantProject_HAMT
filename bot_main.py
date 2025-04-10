@@ -35,7 +35,7 @@ async def main():
 if __name__ == "__main__":
     
     logging.basicConfig(filename='BotLogs.log', level=logging.INFO, 
-                    format='[%(asctime)s] - [%(name)s] - [%(levelname)s] - [%(message)s]')
+                    format='[%(asctime)s] - [%(name)s] - [%(levelname)s]: %(message)s')
 
 
     asyncio.run(main())

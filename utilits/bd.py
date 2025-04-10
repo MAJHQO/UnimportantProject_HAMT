@@ -48,7 +48,7 @@ def reqExecute(request:str):
 # reqExecute("Drop table Cabinets")
 # reqExecute("Drop table Equipment_Status")
 #reqExecute("Drop table Equipment_Category")
-#reqExecute("Drop table Users")
+# reqExecute("Drop table Users")
 
 # reqExecute("""Create table Repair_Request(
 #            Request_Number INT PRIMARY KEY,
@@ -87,8 +87,8 @@ def reqExecute(request:str):
 
 # reqExecute("""Create table Users(
 #            TG_ID INTEGER,
-#            Usename VARCHAR,
-#            BanCheck BOOLEAN)""")
+#            Username VARCHAR,
+#            FSL VARCHAR)""")
 
 #reqExecute("Insert into Equipment(Name, Components, Equipment_Category, Serial_Number, Equipment_Status, Cabinet_Number) values ('ПК-305', 'Intel i3-12800, 16GB 3200GHZ, 1TB SSD', 'Компьютер' ,2315123, 'Исправен', 305)")
 

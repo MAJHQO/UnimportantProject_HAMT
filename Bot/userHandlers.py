@@ -11,13 +11,16 @@ from aiogram import F
 
 from inspect import currentframe, getframeinfo
 
-from .. import bot_main as main
-from ..utilits import bd
+import bot_main as main
+from utilits import bd
+from Bot.filters import teacherFilter,teacherFilter_Call
+
+import Bot.FSM as FSM ,Bot.keyboards as keyboards,Bot.bot_config as bConfig
 
 router = Router()
 
-# router.message.filter(BannedUser())
-# router.callback_query.filter(BannedUser_Call())
+router.message.filter(teacherFilter())
+router.callback_query.filter(teacherFilter_Call())
 
 keyboard=ReplyKeyboardBuilder()
 
@@ -28,12 +31,174 @@ async def start(message:types.Message, command: CommandObject, state: FSMContext
 
     main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
-    await state.set_state(None)
+    try:
 
-    if (command.args!=None):
-        pass
-    else:
-        if (len(bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id}"))==0):
-            message.answer("Здравствуйте! Данный бот предназначен для формирования заявки на исправление проблемы | починку | замену оборудования в данном учебном учреждении", reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация")]]))
-        else:
+        await state.set_state(None)
+
+        if (command.args!=None):
             pass
+        else:
+            if (len(bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'"))==0):
+                await message.answer(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
+            else:
+                await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+                
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+                
+
+@router.callback_query(F.data=="User_Registration")
+async def User_Registration(callback:types.CallbackQuery, state: FSMContext):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+
+        await callback.message.edit_text("Введите Ваше ФИО")
+
+        await state.set_state(FSM.User_Registration.FSL_name)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+
+@router.callback_query(F.data.startswith("Back_Scenario"))
+async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext):
+
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+
+        if(callback.data.split("_")[2]=="0"):
+
+            if (len(bd.reqExecute(f"Select * from Users where TG_ID={callback.from_user.id} AND FSL!='-'"))==0):
+                await callback.message.answer(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
+            else:
+                await callback.message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+
+        elif(callback.data.split("_")[2]=="1"):
+
+            await callback.message.edit_text("Введите Ваше ФИО")
+
+            await state.set_state(FSM.User_Registration.FSL_name)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+
+@router.callback_query(F.data.startswith("New_Request"))
+async def new_request(callback:types.CallbackQuery, state: FSMContext):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+
+       await callback.message.edit_text("Введите номер кабинета, к которому будет прикреплена данная заявка")
+
+       state.set_state(FSM.New_Request.Cabinet_Number)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+
+
+
+@router.message(FSM.User_Registration.FSL_name)
+async def User_Registration_name(message:types.Message, state: FSMContext):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+       
+        if (len(message.text.split(" "))==3):
+
+            await state.update_data(FSL_name=message.text)
+            data=await state.get_data()
+        
+            bd.reqExecute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+
+            await message.answer("Регистрация выполнена успешно")
+            await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+
+        else:
+           
+            await message.answer("Данное сообщение не явлется ФИО, т.к не содержит нужного количества частей.")
+            keyboards.backButton.inline_keyboard[0][0].callback_data.replace("0","1")
+
+            frameinfo = getframeinfo(currentframe())
+
+            main.logger.exception(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: Недостаточное количество слов для ФИО')
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+
+@router.message(FSM.New_Request.Cabinet_Number)
+async def New_Request_CN(message:types.Message, state: FSMContext):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+        if (message.text.isdigit()==True):
+            await state.update_data(Cabinet_Number=int(message.text))
+            await message.answer("Введите описание заявки")
+            await state.set_state(FSM.New_Request.Request_Description)
+        else:
+            await message.answer("Данное сообщение не является подходящим по формату\n\nНомер кабинета должен быть целым числом")
+            await message.answer("Введите номер кабинета, к которому будет прикреплена данная заявка", reply_markup=keyboards.backButton)
+
+            state.set_state(FSM.New_Request.Cabinet_Number)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+        await message.answer("При выполнении программы возникла ошибка\n\nВведите Ваше ФИО", reply_markup=keyboards.backButton)
+
+@router.message(FSM.New_Request.Request_Description)
+async def New_Request_CN(message:types.Message, state: FSMContext):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+       
+        await state.update_data(Request_Description=message.text)
+        await message.answer("Введите описание заявки")
+        await state.set_state(FSM.New_Request.Request_Description)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+        await message.answer("При выполнении программы возникла ошибка\n\nВведите Ваше ФИО", reply_markup=keyboards.backButton)
