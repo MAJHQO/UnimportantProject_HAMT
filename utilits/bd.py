@@ -9,7 +9,7 @@ def connectionToDatabase():
 
     try:
 
-        connnection=sq.connect(host="localhost",database="AdminInfo", user="postgres", password="5525", port=5890)
+        connnection=sq.connect(host="192.168.110.103",database="AdminInfo", user="postgres", password="5525", port=5890)
             
         logger_bd.info("Connected to database was successfull")
 
