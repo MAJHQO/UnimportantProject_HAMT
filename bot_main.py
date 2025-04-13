@@ -7,7 +7,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.client.default import DefaultBotProperties
 from aiogram.types import BotCommand
 
-from Bot import bot_config,adminHandlers,userHandlers
+from Bot import bot_config,userHandlers
 
 
 bot = Bot(token=bot_config.token, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN))
@@ -20,10 +20,8 @@ async def main():
 
     await bot.set_my_commands([BotCommand(command="/start", description="Перезапуск бота | Возвращение в главное меню")])
 
-    dp.include_router(adminHandlers.router)
     dp.include_router(userHandlers.router)
 
-    logger.addHandler(adminHandlers.router)
     logger.addHandler(userHandlers.router)
     logger.setLevel(logging.INFO)
 

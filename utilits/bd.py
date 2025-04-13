@@ -18,6 +18,7 @@ def connectionToDatabase():
     except Exception as ex:
         
         logger_bd.error(f"Connection to database was failed. Reason: {ex}")
+        raise Exception("Connection to database was failed")
 
 connect=connectionToDatabase()
 
@@ -31,7 +32,7 @@ def reqExecute(request:str):
 
         connect.commit()
 
-        if (request.find("Select")!=-1):
+        if (request.startswith("Select")):
 
             result=cursor.fetchall()
 
@@ -40,10 +41,11 @@ def reqExecute(request:str):
     except Exception as ex:
 
         logger_bd.error(f"Request execute was failed. Reason: {ex}")
+        raise Exception("Request execute was failed")
 
 
 # reqExecute("Drop table Repair_Request")
-#reqExecute("Drop table Equipment")
+# reqExecute("Drop table Equipment")
 # reqExecute("Drop table Administrators")
 # reqExecute("Drop table Cabinets")
 # reqExecute("Drop table Equipment_Status")
@@ -51,21 +53,25 @@ def reqExecute(request:str):
 # reqExecute("Drop table Users")
 
 # reqExecute("""Create table Repair_Request(
-#            Request_Number INT PRIMARY KEY,
-#            TG_ID INTEGER,
-#            TG_Username VARCHAR,
-#            Cabinet_Number INTEGER,
-#            Request_Description VARCHAR,
-#            Request_Status VARCHAR)""")
+#             Request_Number INT PRIMARY KEY,
+#             TG_ID INTEGER,
+#             TG_Username VARCHAR,
+#             Cabinet_Number VARCHAR,
+#             Request_Description VARCHAR,
+#             Request_Status VARCHAR,
+#             FOREIGN KEY (Cabinet_Number)  REFERENCES Cabinets (Number))""")
 
 # reqExecute("""Create table Equipment(
-#            Name VARCHAR PRIMARY KEY,
-#            Components VARCHAR,
-#            Equipment_Category VARCHAR,
-#            Serial_Number INTEGER,
-#            Invetory_Number VARCHAR,
-#            Equipment_Status VARCHAR,
-#            Cabinet_Number VARCHAR)""")
+#             Name VARCHAR PRIMARY KEY,
+#             Components VARCHAR,
+#             Equipment_Category VARCHAR,
+#             Serial_Number INTEGER,
+#             Invetory_Number VARCHAR,
+#             Equipment_Status VARCHAR,
+#             Cabinet_Number VARCHAR,
+#             FOREIGN KEY (Equipment_Category)  REFERENCES Equipment_Category (Category_Name),
+#             FOREIGN KEY (Equipment_Status)  REFERENCES Equipment_Status (Status_Name),
+#             FOREIGN KEY (Cabinet_Number)  REFERENCES Cabinets (Number))""")
 
 # reqExecute("""Create table Administators(
 #             FSL VARCHAR,

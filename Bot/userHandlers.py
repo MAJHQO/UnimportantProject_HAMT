@@ -82,15 +82,19 @@ async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext)
         if(callback.data.split("_")[2]=="0"):
 
             if (len(bd.reqExecute(f"Select * from Users where TG_ID={callback.from_user.id} AND FSL!='-'"))==0):
-                await callback.message.answer(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
+                await callback.message.edit_text(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
             else:
-                await callback.message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+                await callback.message.edit_text("Главное меню", reply_markup=keyboards.mainKeyboard)
 
         elif(callback.data.split("_")[2]=="1"):
 
             await callback.message.edit_text("Введите Ваше ФИО")
 
             await state.set_state(FSM.User_Registration.FSL_name)
+
+        elif (callback.data.split("_")[2]=="2"):
+
+            await callback.message.edit_text(f"Аккаунт: {bd.reqExecute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
 
     except Exception as ex:
 
@@ -108,9 +112,56 @@ async def new_request(callback:types.CallbackQuery, state: FSMContext):
 
     try:
 
-       await callback.message.edit_text("Введите номер кабинета, к которому будет прикреплена данная заявка")
+       await callback.message.edit_text("Введите номер кабинета, к которому будет прикреплена данная заявка",reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Назад",callback_data="Back_Scenario_0")]]))
 
-       state.set_state(FSM.New_Request.Cabinet_Number)
+       await state.set_state(FSM.New_Request.Cabinet_Number)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+
+@router.callback_query(F.data=="User_Account")
+async def account(callback:types.CallbackQuery):
+
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+        await callback.message.edit_text(f"Аккаунт: {bd.reqExecute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+
+@router.callback_query(F.data=="View_Own_Request")
+async def view_request(callback:types.CallbackQuery):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+
+        result=bd.reqExecute(f"Select Cabinet_Number, Request_Description,Request_Status from Repair_Request where TG_ID={callback.from_user.id}")
+        toUserMessage=""
+        inKeyboard=keyboards.backButton
+        inKeyboard.inline_keyboard[0][0].callback_data='Back_Scenario_2'
+
+        for i in result:
+            toUserMessage+=f"Кабинет: {i[0]} - Статус: {i[2]}\nОписание: {i[1]}\n\n"
+
+        if (len(toUserMessage)>4096):
+            await callback.message.edit_text(toUserMessage[:len(toUserMessage)])
+            await callback.message.answer(toUserMessage[len(toUserMessage)+1:], reply_markup=inKeyboard)
+        else:
+            await callback.message.edit_text(toUserMessage,reply_markup=inKeyboard)
 
     except Exception as ex:
 
@@ -141,9 +192,13 @@ async def User_Registration_name(message:types.Message, state: FSMContext):
             await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
 
         else:
+
+            inKeyboard=keyboards.backButton
+            inKeyboard.inline_keyboard[0][0].callback_data='Back_Scenario_1'
            
-            await message.answer("Данное сообщение не явлется ФИО, т.к не содержит нужного количества частей.")
-            keyboards.backButton.inline_keyboard[0][0].callback_data.replace("0","1")
+            await message.answer("Данное сообщение не явлется соответствующим ФИО, т.к не содержит нужного количества частей.\n\nВведите Ваше ФИО",reply_markup=inKeyboard)
+
+            await state.set_state(FSM.User_Registration.FSL_name)
 
             frameinfo = getframeinfo(currentframe())
 
@@ -164,15 +219,15 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
     main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
     try:
-        if (message.text.isdigit()==True):
+        if (message.text.isdigit()==True and len(bd.reqExecute(f"Select * from Cabinets where Number='{message.text}'"))>0):
             await state.update_data(Cabinet_Number=int(message.text))
             await message.answer("Введите описание заявки")
             await state.set_state(FSM.New_Request.Request_Description)
         else:
-            await message.answer("Данное сообщение не является подходящим по формату\n\nНомер кабинета должен быть целым числом")
+            await message.answer("Данное сообщение не является подходящим по формату или же данного кабинета не существует\n\nНомер кабинета должен быть целым числом")
             await message.answer("Введите номер кабинета, к которому будет прикреплена данная заявка", reply_markup=keyboards.backButton)
 
-            state.set_state(FSM.New_Request.Cabinet_Number)
+            await state.set_state(FSM.New_Request.Cabinet_Number)
 
     except Exception as ex:
 
@@ -181,6 +236,8 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
         main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
 
         await message.answer("При выполнении программы возникла ошибка\n\nВведите Ваше ФИО", reply_markup=keyboards.backButton)
+
+        await state.set_state(FSM.New_Request.Cabinet_Number)
 
 @router.message(FSM.New_Request.Request_Description)
 async def New_Request_CN(message:types.Message, state: FSMContext):
@@ -192,8 +249,11 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
     try:
        
         await state.update_data(Request_Description=message.text)
-        await message.answer("Введите описание заявки")
-        await state.set_state(FSM.New_Request.Request_Description)
+        data=await state.get_data()
+        bd.reqExecute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values((Select COUNT(*) as count from Repair_Request)+1, {message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
+        await message.answer("Заявка успешно сформирована", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="Новая заявка", callback_data="New_Request")],
+            [InlineKeyboardButton(text="Назад", callback_data="Back_Scenario_0")]]))
 
     except Exception as ex:
 
@@ -201,4 +261,5 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
 
         main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
 
-        await message.answer("При выполнении программы возникла ошибка\n\nВведите Ваше ФИО", reply_markup=keyboards.backButton)
+        await message.answer("При выполнении программы возникла ошибка\n\nВведите описание заявки", reply_markup=keyboards.backButton)
+        await state.set_state(FSM.New_Request.Request_Description)

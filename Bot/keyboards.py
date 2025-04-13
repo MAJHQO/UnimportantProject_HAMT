@@ -6,6 +6,7 @@ mainKeyboard=InlineKeyboardMarkup(inline_keyboard=[
 
 accountKeyboard=InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="Изменить ФИО", callback_data="Change_User_FSL")],
-    [InlineKeyboardButton(text="Просмотреть текущие заявки", callback_data="View_Own_Request")]])
+    [InlineKeyboardButton(text="Просмотреть текущие заявки", callback_data="View_Own_Request")],
+    [InlineKeyboardButton(text="Назад",callback_data="Back_Scenario_0")]])
 
 backButton=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Назад",callback_data="Back_Scenario_0")]])

@@ -2,7 +2,7 @@ from aiogram import Bot
 from aiogram.types import  Message, ChatMemberAdministrator, ChatMemberMember, ChatMemberOwner,CallbackQuery
 from aiogram.filters import BaseFilter, CommandObject
 
-from UnimportantProject_HAMT.utilits import bd
+from utilits import bd
 
 import Bot.bot_config as bot_config
 
