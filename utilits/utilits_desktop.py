@@ -1,7 +1,11 @@
-import flet as ft,time,os,sys
+import flet as ft,time,datetime
 from utilits import bd
 
-sys.path.append(os.getcwd())
+ui_colors=['#E1DCE0',"#589A74"]
+login_coLabelText=[
+    'Привет! С возращением, что-то мы тебя потеряли.\nМного работы?',
+    'Привет. С возращением!',
+    'Вот ты и тут - поздравляем!']
 
 def dynamicPassCheck(self, dynamicCheck=True):
 
@@ -165,6 +169,27 @@ def successField(self):
             control.border_color=ft.colors.BLACK
 
     self.page.update()
+
+def contentColor_focus(self):
+    self.control.border_color=ui_colors[1]
+    self.page.update()
+
+def contentColor_blur(self):
+    self.control.border_color=ui_colors[0]
+    self.page.update()
+
+def pageClose(self):
+    if (self.data=='close'):
+        lines=[]
+        with open("Admin Configure", 'r') as file:
+            lines=file.readlines()
+
+        lines[1]=f"Enter Today:{datetime.datetime.now().strftime("%D")}"
+
+        with open("Admin Configure", 'w+') as file:
+            file.writelines(lines)
+
+        self.page.window.destroy()
 
 class Table:
     def __init__(self, column_list:list[ft.Text],table_width:int):

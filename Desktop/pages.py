@@ -1,10 +1,12 @@
-import flet as ft, time, hashlib as hLib, logging
+import flet as ft, time, hashlib as hLib, logging,datetime
 from utilits import bd,utilits_desktop as deskU
-from cryptography.fernet import Fernet
+#from cryptography.fernet import Fernet
+from random import randint
 
 
 logger_pages=logging.getLogger("pages")
 logger_pages.setLevel(logging.INFO)
+
 
 
 def addData_page(self_main):
@@ -432,14 +434,56 @@ def start_page(page:ft.Page, fromRegistr:bool=False):
         page.vertical_alignment=ft.MainAxisAlignment.CENTER
         page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
         page.window.resizable=False
+        page.window.prevent_close=True
+        page.window.on_event=deskU.pageClose
 
-    loginField=ft.TextField(hint_text="Логин или Telegram", width=180)
-    passwordField=ft.TextField(hint_text="Пароль", width=180, password=True)
+        page.fonts={
+        'Main Label': 'Fonts\\TechMonoRegular.otf',
+        'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf',
+        'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf',
+        'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf'}
 
-    enterButton=ft.ElevatedButton("Войти",on_click=nextPage, width=100)
+    startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
+    startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
+    with open("Admin Configure", 'r') as File:
+        line=File.readlines()
+        if (line[1]=="Enter Today:1"):
+            startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
+        elif (line[1]!=f"Enter Today:{datetime.datetime.now().strftime("%D")}"):
+            startDescriptionLabel.value=deskU.login_coLabelText[2]
+        else:
+            startDescriptionLabel.value=deskU.login_coLabelText[1]
+
+    
+    loginField=ft.TextField(
+        hint_text="Логин или Telegram", 
+        width=200,
+        max_lines=1,
+        text_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur)
+    passwordField=ft.TextField(
+        hint_text="Пароль",
+        width=200, 
+        password=True,
+        max_lines=1,
+        text_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur)
+
+    enterButton=ft.ElevatedButton(
+        "Войти",
+        on_click=nextPage, 
+        width=100,
+        bgcolor=deskU.ui_colors[1],
+        color=ft.colors.WHITE)
     resetPasswordButton=ft.ElevatedButton("Забыли пароль?", width=150, on_click=resetPassword, bgcolor=ft.colors.WHITE)
 
-    page.add(loginField,passwordField,enterButton,resetPasswordButton)
+    page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,resetPasswordButton)
 
     logger_pages.info("'Start' page was openned")
     page.update()
@@ -458,14 +502,20 @@ def startAdmin_page(page:ft.Page):
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and deskU.dynamicPassCheck(self,False)==True and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
             if (len(result)==0):
-                bd.reqExecute(f"Insert into Administators(FSL,Login, Password, TG_Username) values ('{fslField.value}', '{loginField.value}', '{passwordField.value}', '{usernameField.value}')")
+                result=bd.reqExecute(f"Insert into Administators(FSL,Login, Password, TG_Username) values ('{fslField.value}', '{loginField.value}', '{passwordField.value}', '{usernameField.value}')")
 
-                with open("Admin Configure", 'wb') as bFile:
+                if (result!=False):
+                    with open("Admin Configure", 'w') as bFile:
 
-                    bFile.write(loginField.value.encode())
-                
-                backPageButton.visible=True
-                deskU.successField(self)
+                        bFile.write("Registration:"+loginField.value+"\n")
+                        bFile.write(f"Enter Today: 1")
+                    
+                    backPageButton.visible=True
+                    deskU.successField(self)
+
+                else:
+
+                    deskU.errorField(self)
 
             else:
                 usernameField.border_color=ft.colors.RED_300
@@ -494,18 +544,66 @@ def startAdmin_page(page:ft.Page):
     page.window.height=700
 
     page.title="НАМТ.Администраторы"
+    page.on_close=deskU.pageClose
     page.theme_mode=ft.ThemeMode.LIGHT
     page.vertical_alignment=ft.MainAxisAlignment.CENTER
     page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
     page.window.resizable=False
+    page.window.prevent_close=True
+    page.window.on_event=deskU.pageClose
+    page.fonts={
+        'Main Label': 'Fonts\\TechMonoRegular.otf',
+        'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf',
+        'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf',
+        'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf'}
 
-    fslField=ft.TextField(hint_text="ФИО администратора",width=200)
-    loginField=ft.TextField(hint_text="Логин", width=200)
-    usernameField=ft.TextField(hint_text="Имя пользователя", width=200, label="Telegram")
-    passwordField=ft.TextField(hint_text="Пароль", width=200, password=True, on_change=deskU.dynamicPassCheck)
+    startLabel=ft.Text("Создание аккаунта", size=30,font_family="Main Label")
+    startDescriptionLabel=ft.Text("Заполните необходимые поля,\nчтобы получить полноценный доступ \nк приложению", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
 
-    regirtrAdminButton=ft.ElevatedButton("Зарегистрироваться", width=165, on_click=adminRegInBD)
-    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=backPage, visible=True)
+    fslField=ft.TextField(
+        hint_text="ФИО администратора",
+        width=210,
+        hint_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14,
+        max_lines=1, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur)
+    
+    loginField=ft.TextField(
+        hint_text="Логин", 
+        width=210,
+        hint_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14, 
+        max_lines=1, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur)
+    
+    usernameField=ft.TextField(
+        hint_text="Имя пользователя", 
+        width=210, label="Telegram",
+        hint_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14, 
+        max_lines=1, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur)
+    
+    passwordField=ft.TextField(
+        hint_text="Пароль", 
+        width=210, 
+        password=True, 
+        on_change=deskU.dynamicPassCheck,
+        hint_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14, 
+        max_lines=1, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur)
+
+    regirtrAdminButton=ft.ElevatedButton("Зарегистрироваться", width=165, on_click=adminRegInBD, bgcolor=deskU.ui_colors[1],color=ft.colors.WHITE)
+    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=backPage, visible=True, icon_color=deskU.ui_colors[1], splash_radius=10)
 
     #Для записи токена инициализации шифрования в байтовой форме
     # with open("adminConfig", "wb"):
@@ -513,6 +611,6 @@ def startAdmin_page(page:ft.Page):
     #     pass
 
     #page.add(ft.Row([backPageButton]),ft.Column([fslField,loginField,usernameField,passwordField,regirtrAdminButton], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER, width=800,height=700))
-    page.add(ft.Row([backPageButton], alignment=ft.MainAxisAlignment.START),fslField,loginField,usernameField,passwordField,regirtrAdminButton)
+    page.add(ft.Row([backPageButton], alignment=ft.MainAxisAlignment.START),ft.Column([startLabel,startDescriptionLabel],spacing=5),ft.Text("",height=30) ,fslField,loginField,usernameField,passwordField,regirtrAdminButton)
     logger_pages.info("'StartAdmin' page was openned")
     page.update()
