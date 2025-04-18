@@ -128,11 +128,13 @@ def checkFieldOnIncosist(self:list,fieldType:int):
         chc=True
 
         for i in range(1,len(self.page.controls)):
-            if (self.page.controls[i]=="" or self.page.controls[i]==None):
-                self.page.controls[i].border_color=ft.colors.RED_300
-                chc=False
-            else:
-                self.page.controls[i].border_color=ft.colors.GREEN
+            print(type(self.page.controls[i]))
+            if (type(self.page.controls[i]) not in [ft.Row,ft.Column]):
+                if((self.page.controls[i].value=="" or self.page.controls[i].value==None)):
+                    self.page.controls[i].border_color=ft.colors.RED_300
+                    chc=False
+                else:
+                    self.page.controls[i].border_color=ft.colors.GREEN
 
         self.page.update()
 
@@ -184,7 +186,7 @@ def pageClose(self):
         with open("Admin Configure", 'r') as file:
             lines=file.readlines()
 
-        lines[1]=f"Enter Today:{datetime.datetime.now().strftime("%D")}"
+        lines[1]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
 
         with open("Admin Configure", 'w+') as file:
             file.writelines(lines)
@@ -199,10 +201,12 @@ class Table:
         
     def viewMode(self,argc):
 
-        for i in range(0,len(argc.page.controls[1].controls[0].controls[0].rows)):
-            for cell in argc.page.controls[1].controls[0].controls[0].rows[i].cells:
-                cell.content.on_click=None
-                cell.content.read_only=False
+        for i in argc.page.controls[1].controls[0].controls[0].rows:
+            for cell in range(0,len(i.cells)):
+                if (cell==0):
+                    continue
+                i.cells[cell].content.on_click=self.viewData_mode
+                i.cells[cell].content.read_only=False
 
         argc.control.content=ft.Text("Изменение")
         argc.control.on_click=self.editMode
@@ -210,11 +214,12 @@ class Table:
         argc.page.update()
 
     def editMode(self,argc): 
-
-        for i in range(0,len(argc.page.controls[1].controls[0].controls[0].rows)):
-            for cell in argc.page.controls[1].controls[0].controls[0].rows[i].cells:
-                cell.content.on_click=self.changeCellData
-                cell.content.read_only=True
+        for i in argc.page.controls[1].controls[0].controls[0].rows:
+            for cell in range(0,len(i.cells)):
+                if (cell==0):
+                    continue
+                i.cells[cell].content.on_click=self.changeCellData
+                i.cells[cell].content.read_only=True
 
         argc.control.content=ft.Text("Просмотр")
         argc.control.on_click=self.viewMode
@@ -245,7 +250,7 @@ class Table:
         if (len(result)==0):
             return None
 
-        if (len(self_main.__table.controls[0].controls[0].rows)>1):
+        if (len(self_main.__table.controls[0].controls[0].rows)>=1):
            self_main.__table.controls[0].controls[0].rows.clear()
 
         for i in range(0,len(result)):
@@ -256,16 +261,18 @@ class Table:
 
                 if (table_type==1):
                     if (j in [2,5,6]):
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{result[i][j]}|{result[i][0]}|{result[i][3]}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}")))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{result[i][j]}|{result[i][0]}|{result[i][3]}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}", on_click=self_main.viewData_mode)))
                     else:
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{result[i][j]}|{result[i][0]}|{result[i][3]}|{int(table_type)}|{cellName_arr[j]}|TextField")))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{result[i][j]}|{result[i][0]}|{result[i][3]}|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode)))
 
                 elif (table_type==0):
                     if(j==3 or j==5):
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{result[i][j]}|{result[i][1]}|{result[i][2]}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}")))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{result[i][j]}|{result[i][1]}|{result[i][2]}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}", on_click=self_main.viewData_mode)))
+                    elif(j==0):
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{result[i][j]}|{result[i][1]}|{result[i][2]}|{int(table_type)}|{cellName_arr[j]}|TextField")))
                     else:
 
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{result[i][j]}|{result[i][1]}|{result[i][2]}|{int(table_type)}|{cellName_arr[j]}|TextField")))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{result[i][j]}|{result[i][1]}|{result[i][2]}|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode)))
 
                 else:
                     self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str(result[i][j]), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{result[i][j]}|None|None|{int(table_type)}|{cellName_arr[j]}|TextField")))
@@ -305,7 +312,7 @@ class Table:
                         chc=False
                 elif (argc.control.data.split('|')[3]=='0'):
                     if (len(bd.reqExecute(f"Select * from Repair_Request where {argc.control.data.split('|')[4]}='{argc.page.overlay[len(argc.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Update Repair_Request set {argc.control.data.split('|')[4]}='{argc.page.overlay[len(argc.page.overlay)-1].content.value}' where FSL='{argc.control.data.split('|')[1]}' AND TG_Username='{argc.control.data.split('|')[2]}'")
+                        bd.reqExecute(f"Update Repair_Request set {argc.control.data.split('|')[4]}='{argc.page.overlay[len(argc.page.overlay)-1].content.value}' where TG_ID='{argc.control.data.split('|')[1]}' AND TG_Username='{argc.control.data.split('|')[2]}'")
                     else:
                         argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
                         chc=False
@@ -365,14 +372,24 @@ class Table:
                 if(argc.control.data.split('|')[6]=='3'):
                     result=bd.reqExecute("Select * from Cabinets")
                 else:
-                    result=bd.reqExecute("Select * from Request_Status")
+                    result=bd.reqExecute("Select * from Repair_Request")
 
             if (len(result)!=0):
 
-                changeCellData_Dialog.content=ft.DropdownM2(value=argc.control.data.split('|')[0],options=[], border_color=ft.colors.TRANSPARENT)
+                if(argc.control.data.split('|')[3]=='0' and argc.control.data.split('|')[6]!='3'):
+                    changeCellData_Dialog.content=ft.DropdownM2(value=argc.control.data.split('|')[0],options=[
+                        ft.dropdownm2.Option("Исполнено"),
+                        ft.dropdownm2.Option("В работе"),
+                        ft.dropdownm2.Option("Ожидание"),
+                        ft.dropdownm2.Option("Отказано в выполнении"),
+                    ], border_color=ft.colors.TRANSPARENT)
 
-                for i in result:
-                     changeCellData_Dialog.content.options.append(ft.dropdownm2.Option(i[0]))
+                else:
+
+                    changeCellData_Dialog.content=ft.DropdownM2(value=argc.control.data.split('|')[0],options=[], border_color=ft.colors.TRANSPARENT)
+
+                    for i in result:
+                        changeCellData_Dialog.content.options.append(ft.dropdownm2.Option(i[0]))
 
             else:
                 changeCellData_Dialog.content=ft.DropdownM2(' ',[], border_color=ft.colors.TRANSPARENT)
@@ -381,4 +398,14 @@ class Table:
             changeCellData_Dialog.content=ft.TextField(argc.control.data.split('|')[0])
      
         argc.page.open(changeCellData_Dialog)
+
+    
+    def viewData_mode(self,argc):
+        
+        viewMode_dialog=ft.AlertDialog(title=ft.Text("Просмотр данных"),
+                                       content=ft.TextField(argc.control.data.split("|")[0],text_align=ft.TextAlign.CENTER,border_color=ft.colors.TRANSPARENT,read_only=True,text_size=17, width=200 ,multiline=True), 
+                                       actions=[ft.ElevatedButton("Выйти",on_click=lambda _:argc.page.close(viewMode_dialog))],)
+
+        argc.page.open(viewMode_dialog)
+
     

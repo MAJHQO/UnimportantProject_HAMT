@@ -29,7 +29,7 @@ class teacherFilter_Call(BaseFilter):
 
         if (chc==False):
 
-            bd.reqExecute(f"Insert into Users(TG_ID, Usename,FSL) values ({callback.from_user.id }, '{callback.from_user.username}','-')")
+            bd.reqExecute(f"Insert into Users(TG_ID, Username,FSL) values ({callback.from_user.id }, '{callback.from_user.username}','-')")
 
             
         del result,chc
@@ -57,7 +57,7 @@ class teacherFilter(BaseFilter):
 
         if (chc==False):
 
-            bd.reqExecute(f"Insert into Users(TG_ID, Usename,FSL) values ({message.from_user.id }, '{message.from_user.username}','-')")
+            bd.reqExecute(f"Insert into Users(TG_ID, Username,FSL) values ({message.from_user.id }, '{message.from_user.username}','-')")
 
             
         del result,chc

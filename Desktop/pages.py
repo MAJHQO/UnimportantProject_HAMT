@@ -313,7 +313,8 @@ def request_page(page:ft.Page):
     page.window.height=700
 
     table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("Номер заявки", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
+        ft.DataColumn(ft.Text("Номер заявки", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("ID пользователя", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
         ft.DataColumn(ft.Text("Имя пользователя", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
         ft.DataColumn(ft.Text("Кабинет", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
         ft.DataColumn(ft.Text("Описание заявки", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
@@ -413,7 +414,7 @@ def resetPassword_page(page: ft.Page):
 def start_page(page:ft.Page, fromRegistr:bool=False):
 
     def nextPage(self):
-        result=bd.reqExecute(f"Select * from Administators where Login='{loginField.value}' OR TG_Username='{loginField.value}' AND Password='{passwordField.value}'")
+        result=bd.reqExecute(f"Select * from Administrators where Login='{loginField.value}' OR TG_Username='{loginField.value}' AND Password='{passwordField.value}'")
         if (len(result)!=0):
             main_page(self.page)
         else:
@@ -449,7 +450,7 @@ def start_page(page:ft.Page, fromRegistr:bool=False):
         line=File.readlines()
         if (line[1]=="Enter Today:1"):
             startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
-        elif (line[1]!=f"Enter Today:{datetime.datetime.now().strftime("%D")}"):
+        elif (line[1]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
             startDescriptionLabel.value=deskU.login_coLabelText[2]
         else:
             startDescriptionLabel.value=deskU.login_coLabelText[1]
@@ -497,12 +498,12 @@ def startAdmin_page(page:ft.Page):
 
     def adminRegInBD(self):
 
-        result=bd.reqExecute(f"Select * from Administators where TG_Username='{usernameField.value}'")
+        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{usernameField.value}' AND FSL='{fslField.value}'")
 
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and deskU.dynamicPassCheck(self,False)==True and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
             if (len(result)==0):
-                result=bd.reqExecute(f"Insert into Administators(FSL,Login, Password, TG_Username) values ('{fslField.value}', '{loginField.value}', '{passwordField.value}', '{usernameField.value}')")
+                result=bd.reqExecute(f"Insert into Administrators(FSL,Login, Password, TG_Username) values ('{fslField.value}', '{loginField.value}', '{passwordField.value}', '{usernameField.value}')")
 
                 if (result!=False):
                     with open("Admin Configure", 'w') as bFile:
@@ -519,11 +520,13 @@ def startAdmin_page(page:ft.Page):
 
             else:
                 usernameField.border_color=ft.colors.RED_300
+                fslField.border_color=ft.colors.RED_300
 
                 self.page.update()
                 time.sleep(0.7)
 
                 usernameField.border_color=ft.colors.BLACK
+                fslField.border_color=ft.colors.BLACK
                 self.page.update()
 
         else:

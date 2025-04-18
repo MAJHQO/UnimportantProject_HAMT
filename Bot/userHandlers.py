@@ -38,7 +38,8 @@ async def start(message:types.Message, command: CommandObject, state: FSMContext
         if (command.args!=None):
             pass
         else:
-            if (len(bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'"))==0):
+            result=bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'")
+            if (result!=False and len(result)==0):
                 await message.answer(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
             else:
                 await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
@@ -80,8 +81,8 @@ async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext)
     try:
 
         if(callback.data.split("_")[2]=="0"):
-
-            if (len(bd.reqExecute(f"Select * from Users where TG_ID={callback.from_user.id} AND FSL!='-'"))==0):
+            result=f"Select * from Users where TG_ID={callback.from_user.id} AND FSL!='-'"
+            if (result!=False and len(result)==0):
                 await callback.message.edit_text(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
             else:
                 await callback.message.edit_text("Главное меню", reply_markup=keyboards.mainKeyboard)
@@ -160,6 +161,8 @@ async def view_request(callback:types.CallbackQuery):
         if (len(toUserMessage)>4096):
             await callback.message.edit_text(toUserMessage[:len(toUserMessage)])
             await callback.message.answer(toUserMessage[len(toUserMessage)+1:], reply_markup=inKeyboard)
+        elif(len(toUserMessage)==0):
+            await callback.message.edit_text("На данный момент - у вас не имеется активных заявок", reply_markup=inKeyboard)
         else:
             await callback.message.edit_text(toUserMessage,reply_markup=inKeyboard)
 
@@ -186,10 +189,16 @@ async def User_Registration_name(message:types.Message, state: FSMContext):
             await state.update_data(FSL_name=message.text)
             data=await state.get_data()
         
-            bd.reqExecute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+            result=bd.reqExecute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
 
-            await message.answer("Регистрация выполнена успешно")
-            await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+            if (result!=False):
+
+                await message.answer("Регистрация выполнена успешно")
+                await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+            else:
+                await message.answer("При выполнении регистрации возникла ошибка", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+                    [InlineKeyboardButton(text="Повторить",callback_data="Retry_FSLState")], 
+                    [InlineKeyboardButton(text="Назад",callback_data="Back_Scenario_0")]]))
 
         else:
 
@@ -219,7 +228,8 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
     main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
     try:
-        if (message.text.isdigit()==True and len(bd.reqExecute(f"Select * from Cabinets where Number='{message.text}'"))>0):
+        result=bd.reqExecute(f"Select * from Cabinets where Number='{message.text}'")
+        if (message.text.isdigit()==True and result!=False and len(result)>0):
             await state.update_data(Cabinet_Number=int(message.text))
             await message.answer("Введите описание заявки")
             await state.set_state(FSM.New_Request.Request_Description)
@@ -250,10 +260,18 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
        
         await state.update_data(Request_Description=message.text)
         data=await state.get_data()
-        bd.reqExecute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values((Select COUNT(*) as count from Repair_Request)+1, {message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
-        await message.answer("Заявка успешно сформирована", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="Новая заявка", callback_data="New_Request")],
-            [InlineKeyboardButton(text="Назад", callback_data="Back_Scenario_0")]]))
+        result=bd.reqExecute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values((Select COUNT(*) as count from Repair_Request)+1, {message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
+        
+        if(result!=False):
+        
+            await message.answer("Заявка успешно сформирована", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+                [InlineKeyboardButton(text="Новая заявка", callback_data="New_Request")],
+                [InlineKeyboardButton(text="Назад", callback_data="Back_Scenario_0")]]))
+            
+        else:
+
+            await message.answer("При выполнении программы возникла ошибка\n\nВведите описание заявки", reply_markup=keyboards.backButton)
+            await state.set_state(FSM.New_Request.Request_Description)
 
     except Exception as ex:
 

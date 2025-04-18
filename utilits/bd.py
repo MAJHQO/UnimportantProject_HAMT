@@ -74,7 +74,7 @@ def reqExecute(request:str):
 #             Name VARCHAR PRIMARY KEY,
 #             Components VARCHAR,
 #             Equipment_Category VARCHAR,
-#             Serial_Number INTEGER,
+#             Serial_Number VARCHAR,
 #             Invetory_Number VARCHAR,
 #             Equipment_Status VARCHAR,
 #             Cabinet_Number VARCHAR,
@@ -82,7 +82,7 @@ def reqExecute(request:str):
 #             FOREIGN KEY (Equipment_Status)  REFERENCES Equipment_Status (Status_Name),
 #             FOREIGN KEY (Cabinet_Number)  REFERENCES Cabinets (Number))""")
 
-# reqExecute("""Create table Administators(
+# reqExecute("""Create table Administrators(
 #             FSL VARCHAR,
 #             Login VARCHAR PRIMARY KEY,
 #             Password VARCHAR,
