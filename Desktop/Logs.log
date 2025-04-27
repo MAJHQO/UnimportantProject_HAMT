@@ -1,0 +1,461 @@
+[INFO] [2025-04-26 21:59:50,090] - main: App Started
+[INFO] [2025-04-26 21:59:50,246] - database: Connected to database was successfull
+[INFO] [2025-04-26 21:59:51,645] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-26 22:00:09,764] - asyncio: Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 186, in pageClose
+    with open("Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Admin Configure'
+[ERROR] [2025-04-26 22:00:15,277] - asyncio: Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 186, in pageClose
+    with open("Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Admin Configure'
+[ERROR] [2025-04-26 22:00:18,724] - asyncio: Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 186, in pageClose
+    with open("Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Admin Configure'
+[INFO] [2025-04-26 22:01:03,656] - main: App Started
+[INFO] [2025-04-26 22:01:03,719] - database: Connected to database was successfull
+[INFO] [2025-04-26 22:01:04,259] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-26 22:01:07,877] - asyncio: Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 186, in pageClose
+    with open("Desktop\\Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Desktop\\Admin Configure'
+[ERROR] [2025-04-26 22:01:11,432] - asyncio: Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 186, in pageClose
+    with open("Desktop\\Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Desktop\\Admin Configure'
+[INFO] [2025-04-26 22:02:17,771] - main: App Started
+[INFO] [2025-04-26 22:02:17,869] - database: Connected to database was successfull
+[INFO] [2025-04-26 22:02:18,381] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 11:05:29,626] - main: App Started
+[INFO] [2025-04-27 11:05:29,690] - database: Connected to database was successfull
+[INFO] [2025-04-27 11:06:03,372] - main: App Started
+[INFO] [2025-04-27 11:06:03,423] - database: Connected to database was successfull
+[INFO] [2025-04-27 11:06:04,117] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 11:08:43,424] - main: App Started
+[INFO] [2025-04-27 11:08:43,487] - database: Connected to database was successfull
+[INFO] [2025-04-27 11:08:43,944] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 11:09:08,515] - main: App Started
+[INFO] [2025-04-27 11:09:08,742] - database: Connected to database was successfull
+[INFO] [2025-04-27 11:09:09,197] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 12:05:16,239] - main: App Started
+[INFO] [2025-04-27 12:05:16,312] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:05:16,808] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 12:08:45,628] - main: App Started
+[INFO] [2025-04-27 12:08:45,683] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:08:46,341] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 12:09:48,663] - main: App Started
+[INFO] [2025-04-27 12:09:48,718] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:09:49,156] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 12:10:33,411] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "AttributeError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in encrypt
+    dataOut=config.fernet.encrypt(dataIn.encode())
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'encrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 549, in adminRegInBD
+    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{deskU.encrypt(usernameField.value)}' AND FSL='{deskU.encrypt(fslField.value)}'")
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 219, in encrypt
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "AttributeError") to str
+[INFO] [2025-04-27 12:11:34,813] - main: App Started
+[INFO] [2025-04-27 12:11:34,923] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:11:35,796] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 12:12:31,389] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "AttributeError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in encrypt
+    dataOut=config.fernet.encrypt(dataIn.encode())
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'encrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 549, in adminRegInBD
+    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{deskU.encrypt(usernameField.value)}' AND FSL='{deskU.encrypt(fslField.value)}'")
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 219, in encrypt
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "AttributeError") to str
+[ERROR] [2025-04-27 12:13:02,534] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "AttributeError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in encrypt
+    dataOut=config.fernet.encrypt(dataIn.encode())
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'encrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 549, in adminRegInBD
+    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{deskU.encrypt(usernameField.value)}' AND FSL='{deskU.encrypt(fslField.value)}'")
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 219, in encrypt
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "AttributeError") to str
+[INFO] [2025-04-27 12:24:27,608] - main: App Started
+[INFO] [2025-04-27 12:24:27,664] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:24:28,224] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 12:26:21,214] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('Strings must be encoded before hashing')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 549, in adminRegInBD
+    config.token=sha384(passwordField.value).digest()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Strings must be encoded before hashing
+[ERROR] [2025-04-27 12:26:23,825] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('Strings must be encoded before hashing')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 549, in adminRegInBD
+    config.token=sha384(passwordField.value).digest()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Strings must be encoded before hashing
+[INFO] [2025-04-27 12:26:48,595] - main: App Started
+[INFO] [2025-04-27 12:26:48,654] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:26:49,160] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 12:27:06,439] - asyncio: Future exception was never retrieved
+future: <Future finished exception=ValueError('Fernet key must be 32 url-safe base64-encoded bytes.')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\cryptography\fernet.py", line 34, in __init__
+    key = base64.urlsafe_b64decode(key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\base64.py", line 134, in urlsafe_b64decode
+    return b64decode(s)
+           ^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+binascii.Error: Incorrect padding
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 550, in adminRegInBD
+    config.fernet=Fernet(config.token)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\cryptography\fernet.py", line 36, in __init__
+    raise ValueError(
+ValueError: Fernet key must be 32 url-safe base64-encoded bytes.
+[INFO] [2025-04-27 12:28:09,849] - main: App Started
+[INFO] [2025-04-27 12:28:10,003] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:28:10,810] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 12:28:37,989] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnicodeDecodeError('utf-8', b'\xcf\x0c\x13\x9d\xd9\x07\x9fZ=\xac\xc0p\xc6h\xa5\xf8X\x98vj)\xff\xd5\xe1\xd7\xf3%Of\xba{f\xf9\xb2A\xb1\xdb\x04F\x12;\xda\x08\xee\xbc:g\xbb', 0, 1, 'invalid continuation byte')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 550, in adminRegInBD
+    config.fernet=Fernet(config.token.decode()[:32])
+                         ^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xcf in position 0: invalid continuation byte
+[INFO] [2025-04-27 12:29:15,547] - main: App Started
+[INFO] [2025-04-27 12:29:15,608] - database: Connected to database was successfull
+[INFO] [2025-04-27 12:29:16,264] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 13:01:31,773] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "FileNotFoundError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 194, in pageClose
+    with open("Desktop\\Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Desktop\\Admin Configure'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 204, in pageClose
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "FileNotFoundError") to str
+[ERROR] [2025-04-27 13:01:39,427] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "FileNotFoundError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 194, in pageClose
+    with open("Desktop\\Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Desktop\\Admin Configure'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 204, in pageClose
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "FileNotFoundError") to str
+[ERROR] [2025-04-27 13:01:39,941] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "FileNotFoundError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 194, in pageClose
+    with open("Desktop\\Admin Configure", 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Desktop\\Admin Configure'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 204, in pageClose
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "FileNotFoundError") to str
+[INFO] [2025-04-27 15:30:54,068] - main: App Started
+[INFO] [2025-04-27 15:30:54,122] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:30:56,513] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 15:34:49,497] - main: App Started
+[INFO] [2025-04-27 15:34:49,564] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:34:56,204] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 15:35:15,634] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('Strings must be encoded before hashing')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 548, in adminRegInBD
+    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value)}' AND FSL='{(fslField.value)}'")
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Strings must be encoded before hashing
+[INFO] [2025-04-27 15:36:36,562] - main: App Started
+[INFO] [2025-04-27 15:36:36,621] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:36:37,099] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 15:37:08,010] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('Strings must be encoded before hashing')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 548, in adminRegInBD
+    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value).digest().decode()}' AND FSL='{(fslField.value)}'")
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Strings must be encoded before hashing
+[INFO] [2025-04-27 15:37:51,480] - main: App Started
+[INFO] [2025-04-27 15:37:51,536] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:37:52,162] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 15:38:26,392] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnicodeDecodeError('utf-8', b'\xad\xc9\x90?kF1\xe0\x14\x10\xfb`\xea\x9d\x15\x90\xa2\xeeG JD\xfb0\t\xaa\x84\\\x12\xab\r\x8a\xa6\x06\xc6\x9f\x03WUo:\xba\xd8\xb6M\x15d\x98', 0, 1, 'invalid start byte')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 548, in adminRegInBD
+    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).digest().decode()}' AND FSL='{(fslField.value)}'")
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xad in position 0: invalid start byte
+[INFO] [2025-04-27 15:39:33,547] - main: App Started
+[INFO] [2025-04-27 15:39:33,609] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:39:34,014] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 15:41:44,459] - main: App Started
+[INFO] [2025-04-27 15:41:44,632] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:41:45,363] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 15:41:58,299] - main: App Started
+[INFO] [2025-04-27 15:41:58,352] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:41:58,762] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 15:43:00,523] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Row' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 583, in adminRegInBD
+    baseColor=self.page.controls[0].border_color
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Row' object has no attribute 'border_color'
+[ERROR] [2025-04-27 15:44:35,833] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Row' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 583, in adminRegInBD
+    baseColor=self.page.controls[0].border_color
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Row' object has no attribute 'border_color'
+[INFO] [2025-04-27 15:46:36,166] - main: App Started
+[INFO] [2025-04-27 15:46:36,692] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:46:38,823] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 15:48:56,299] - main: App Started
+[INFO] [2025-04-27 15:48:56,350] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:48:56,818] - pages: 'StartAdmin' page was openned
+[INFO] [2025-04-27 15:51:06,903] - main: App Started
+[INFO] [2025-04-27 15:51:07,057] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:51:07,471] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-04-27 15:52:10,704] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 590, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[ERROR] [2025-04-27 15:52:19,133] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 544, in backPage
+    start_page(self.page,True)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 498, in start_page
+    if (line[1]=="Enter Today:1"):
+        ~~~~^^^
+IndexError: list index out of range
+[INFO] [2025-04-27 15:52:54,508] - main: App Started
+[INFO] [2025-04-27 15:52:54,744] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:53:11,425] - main: App Started
+[INFO] [2025-04-27 15:53:11,484] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:53:12,103] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:53:16,728] - pages: 'Reset password' page was openned
+[ERROR] [2025-04-27 15:54:06,967] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('can only concatenate str (not "IndexError") to str')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 195, in pageClose
+    lines[1]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
+    ~~~~~^^^
+IndexError: list assignment index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 202, in pageClose
+    logger_deskU.exception(" "+ex)
+                           ~~~^~~
+TypeError: can only concatenate str (not "IndexError") to str
+[INFO] [2025-04-27 15:55:01,998] - main: App Started
+[INFO] [2025-04-27 15:55:02,067] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:55:02,545] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:55:25,215] - main: App Started
+[INFO] [2025-04-27 15:55:25,298] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:55:25,951] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:56:55,483] - main: App Started
+[INFO] [2025-04-27 15:56:55,535] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:56:56,099] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:57:02,679] - pages: 'Reset password' page was openned
+[INFO] [2025-04-27 15:57:25,502] - main: App Started
+[INFO] [2025-04-27 15:57:25,555] - database: Connected to database was successfull
+[INFO] [2025-04-27 15:57:25,977] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:57:31,742] - pages: 'Reset password' page was openned
+[INFO] [2025-04-27 15:57:32,632] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:57:33,610] - pages: 'Reset password' page was openned
+[INFO] [2025-04-27 15:57:35,008] - pages: 'Start' page was openned
+[INFO] [2025-04-27 15:57:48,868] - pages: 'Reset password' page was openned
+[INFO] [2025-04-27 15:57:50,103] - pages: 'Start' page was openned
+[INFO] [2025-04-27 16:00:32,247] - main: App Started
+[INFO] [2025-04-27 16:00:32,334] - database: Connected to database was successfull
+[INFO] [2025-04-27 16:00:33,098] - pages: 'Start' page was openned

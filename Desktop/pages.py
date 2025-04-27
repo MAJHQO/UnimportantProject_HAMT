@@ -1,7 +1,10 @@
-import flet as ft, time, hashlib as hLib, logging,datetime
+import flet as ft, time, hashlib as hLib, logging,datetime,requests
 from utilits import bd,utilits_desktop as deskU
-#from cryptography.fernet import Fernet
 from random import randint
+
+from cryptography.fernet import Fernet
+from hashlib import sha384
+
 
 
 logger_pages=logging.getLogger("pages")
@@ -27,13 +30,13 @@ def addData_page(self_main):
             if (deskU.checkFieldOnIncosist(self,1)==True and len(bd.reqExecute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
                 
                 bd.reqExecute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
-                              '{name_field.value}',
-                              '{components_field.value}',
-                              '{equipmentCategory_field.value}',
-                              '{serialNumber_field.value}',
-                              '{inventoryNumber_field.value}',
-                              '{equipmentStatus_field.value}',
-                              '{cabinets_field.value}',)""")
+                              '{(name_field.value)}',
+                              '{(components_field.value)}',
+                              '{(equipmentCategory_field.value)}',
+                              '{(serialNumber_field.value)}',
+                              '{(inventoryNumber_field.value)}',
+                              '{(equipmentStatus_field.value)}',
+                              '{(cabinets_field.value)}',)""")
                 
                 deskU.successField(self)
 
@@ -47,21 +50,21 @@ def addData_page(self_main):
 
                 if(self.control.data[0]==2):
                     if(len(bd.reqExecute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Insert into Cabinets(Number) values ('{self.page.overlay[len(self.page.overlay)-1].content.value}')")
+                        bd.reqExecute(f"Insert into Cabinets(Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
                 elif(self.control.data[0]==3):
                     if(len(bd.reqExecute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Insert into Equipment_Status(Status_Name) values ('{self.page.overlay[len(self.page.overlay)-1].content.value}')")
+                        bd.reqExecute(f"Insert into Equipment_Status(Status_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
                 elif(self.control.data[0]==4):
                     if(len(bd.reqExecute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Insert into Equipment_Category(Category_Name) values ('{self.page.overlay[len(self.page.overlay)-1].content.value}')")
+                        bd.reqExecute(f"Insert into Equipment_Category(Category_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
 
                     else:
@@ -168,13 +171,13 @@ def deleteData_page(self_main):
             baseBorderColor=self.page.overlay[len(self.page.overlay)-1].content.border_color
 
             if (self_main.control.data[0]==1):
-                bd.reqExecute(f"Delete from Equipment where Serial_Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                bd.reqExecute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==2):
-                bd.reqExecute(f"Delete from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                bd.reqExecute(f"Delete from Cabinets where Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==3):
-                bd.reqExecute(f"Delete from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                bd.reqExecute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==4):
-                bd.reqExecute(f"Delete from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                bd.reqExecute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
             self.page.update()
@@ -399,14 +402,60 @@ def main_page(page:ft.Page):
 
 def resetPassword_page(page: ft.Page):
 
+    def resetPassword_handler(self):
+        usernameReq=bd.reqExecute(f"Select Username from Users where TG_ID={userIdField.value}")
+        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{usernameReq[0][0]}'")
+        baseColor=userIdField.border_color
+
+        if(len(usernameReq)!=0 and len(result)!=0):
+            req=requests.post("https://api.telegram.org/bot7527441182:AAEI1sSafhOnZ1oLgeRgdaJALzxoHEmiWLY/sendMessage", data={"chat_id":userIdField.value, "text": f'Ваш пароль: {result[0][2]}'})
+            if (req.status_code==200):
+                userIdField.border_color=ft.colors.GREEN
+            else:
+                userIdField.border_color=ft.colors.RED
+        else:
+            userIdField.border_color=ft.colors.RED
+
+        self.page.update()
+        time.sleep(0.7)
+
+        userIdField.border_color=baseColor
+        self.page.update()
+
     page.clean()
 
-    information_Text_1=ft.Text("Забыли пароль?", size=30, selectable=False,weight=ft.FontWeight.BOLD)
-    information_Text_2=ft.Text("Для восстановления пароля нужно перейти в Telegram бота технической поддержки?", size=20, selectable=False)
+    information_Text_1=ft.Text("Забыли пароль?", size=30, selectable=False,weight=ft.FontWeight.BOLD,font_family="Main Label", text_align=ft.TextAlign.CENTER)
+    information_Text_2=ft.Text("Для восстановления пароля нужно ввести ID, который привязан к профилю Telegram", size=14, selectable=False,font_family="Moderustic Light",width=230,text_align=ft.TextAlign.CENTER)
 
-    resetPasswButton=ft.ElevatedButton("Перейти", icon=ft.icons.LINK, on_click=lambda _:page.launch_url("https://t.me/HAMT_Tech_Bot?start=Password_Forget"))
+    userIdField=ft.TextField(
+        hint_text="Telegram ID", 
+        hint_style=ft.TextStyle(font_family="Moderustic Light"),
+        max_lines=1,
+        text_style=ft.TextStyle(font_family="Moderustic Regular"),
+        border_radius=14, 
+        border_color=deskU.ui_colors[0],
+        on_focus=deskU.contentColor_focus,
+        on_blur=deskU.contentColor_blur,
+        width=200
+        )
+    resetPasswButton=ft.ElevatedButton(
+        "Сбросить пароль", 
+        icon=ft.icons.RESTART_ALT_OUTLINED,
+        icon_color=ft.colors.WHITE,
+        bgcolor=deskU.ui_colors[1],
+        color=ft.colors.WHITE,
+        on_click=resetPassword_handler)
+    
+    findIDButton=ft.ElevatedButton(
+        "Узнать свой ID",
+        bgcolor=deskU.ui_colors[0],
+        color=ft.colors.BLACK,
+        on_click=lambda _:page.launch_url("https://t.me/userinfobot")
+    )
 
-    page.add(ft.Column([information_Text_1, information_Text_2], spacing=10),resetPasswButton)
+    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: start_page(page), visible=True, icon_color=deskU.ui_colors[1], splash_radius=10)
+
+    page.add(ft.Row([backPageButton],alignment=ft.MainAxisAlignment.START),ft.Column([information_Text_1, information_Text_2], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("", height=20),userIdField,resetPasswButton,findIDButton)
     logger_pages.info("'Reset password' page was openned")
     page.update()
 
@@ -446,11 +495,11 @@ def start_page(page:ft.Page, fromRegistr:bool=False):
 
     startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
     startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
-    with open("Admin Configure", 'r') as File:
+    with open("Desktop\\Admin Configure", 'r') as File:
         line=File.readlines()
-        if (line[1]=="Enter Today:1"):
+        if (line[0]=="Enter Today:1"):
             startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
-        elif (line[1]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
+        elif (line[0]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
             startDescriptionLabel.value=deskU.login_coLabelText[2]
         else:
             startDescriptionLabel.value=deskU.login_coLabelText[1]
@@ -498,18 +547,21 @@ def startAdmin_page(page:ft.Page):
 
     def adminRegInBD(self):
 
-        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{usernameField.value}' AND FSL='{fslField.value}'")
+        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' AND FSL='{(fslField.value)}'")
 
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and deskU.dynamicPassCheck(self,False)==True and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
             if (len(result)==0):
-                result=bd.reqExecute(f"Insert into Administrators(FSL,Login, Password, TG_Username) values ('{fslField.value}', '{loginField.value}', '{passwordField.value}', '{usernameField.value}')")
+
+                result=bd.reqExecute(f"Insert into Administrators(FSL,Login, Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
 
                 if (result!=False):
-                    with open("Admin Configure", 'w') as bFile:
 
-                        bFile.write("Registration:"+loginField.value+"\n")
+                    with open("Desktop\\Admin Configure", 'w') as bFile:
                         bFile.write(f"Enter Today: 1")
+
+                    for i in range(1,len(self.page.controls)):
+                        self.page.controls[i].disabled=True
                     
                     backPageButton.visible=True
                     deskU.successField(self)
@@ -530,14 +582,14 @@ def startAdmin_page(page:ft.Page):
                 self.page.update()
 
         else:
-
+            baseColor=self.page.controls[0].border_color
             deskU.checkFieldOnIncosist(self,0)
 
             time.sleep(0.7)
 
         for control in self.page.controls:
                 if (type(control)==ft.TextField):
-                    control.border_color=ft.colors.BLACK
+                    control.border_color=baseColor
         self.page.update()
             
 
@@ -606,7 +658,7 @@ def startAdmin_page(page:ft.Page):
         on_blur=deskU.contentColor_blur)
 
     regirtrAdminButton=ft.ElevatedButton("Зарегистрироваться", width=165, on_click=adminRegInBD, bgcolor=deskU.ui_colors[1],color=ft.colors.WHITE)
-    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=backPage, visible=True, icon_color=deskU.ui_colors[1], splash_radius=10)
+    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=backPage, visible=False, icon_color=deskU.ui_colors[1], splash_radius=10)
 
     #Для записи токена инициализации шифрования в байтовой форме
     # with open("adminConfig", "wb"):

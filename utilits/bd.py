@@ -49,7 +49,7 @@ def reqExecute(request:str):
 # reqExecute("Drop table Administrators")
 # reqExecute("Drop table Cabinets")
 # reqExecute("Drop table Equipment_Status")
-#reqExecute("Drop table Equipment_Category")
+# reqExecute("Drop table Equipment_Category")
 # reqExecute("Drop table Users")
 
 # reqExecute("""Create table Cabinets(
@@ -98,4 +98,4 @@ def reqExecute(request:str):
 
 
 #reqExecute("Insert into Equipment(Name, Components, Equipment_Category, Serial_Number, Equipment_Status, Cabinet_Number) values ('ПК-305', 'Intel i3-12800, 16GB 3200GHZ, 1TB SSD', 'Компьютер' ,2315123, 'Исправен', 305)")
-
+#reqExecute("""""")
