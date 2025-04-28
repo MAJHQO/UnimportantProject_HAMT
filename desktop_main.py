@@ -15,8 +15,4 @@ if (__name__=="__main__"):
     logger_main.info("App Started")
     bd.connect=bd.connectionToDatabase()
     
-    if(os.path.isfile("Desktop\\Admin Configure")==False):
-        ft.app(pages.startAdmin_page)
-
-    else:
-        ft.app(pages.start_page)
+    ft.app(pages.start_page)

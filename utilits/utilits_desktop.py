@@ -101,7 +101,7 @@ def dynamicPassCheck(self, dynamicCheck=True):
                             return False
 
                     elif (elemSum>=13):
-                        if( passwordCheck[0]>=5 and passwordCheck[1]>3 and passwordCheck[2]>=4 and  passwordCheck[3]>2):
+                        if(passwordCheck[0]>=3 and passwordCheck[1]>=3 and passwordCheck[2]>=4 and  passwordCheck[3]>=2):
                             return True
                 
     return False
@@ -146,9 +146,12 @@ def checkFieldOnIncosist(self:list,fieldType:int):
 
 def errorField(self):
 
+    baseColor=None
+
     for control in self.page.controls:
 
         if(type(control)==ft.TextField):
+            baseColor=control.border_color
             control.border_color=ft.colors.RED_300
 
     self.page.update()
@@ -156,7 +159,7 @@ def errorField(self):
     
     for control in self.page.controls:
         if (type(control)==ft.TextField):
-            control.border_color=ft.colors.BLACK
+            control.border_color=baseColor
 
     self.page.update()
 
@@ -354,7 +357,7 @@ class Table:
                             argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
                             chc=False
 
-                if(chc==True and req.status_code==200):
+                if(chc==True or req.status_code==200):
                     self.updateTable(argc)
                     argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.GREEN
 

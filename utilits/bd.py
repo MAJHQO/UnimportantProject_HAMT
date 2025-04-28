@@ -3,7 +3,7 @@ import psycopg2 as sq, logging,sys,os
 logger_bd=logging.getLogger("database")
 logger_bd.setLevel(logging.INFO)
 
-sys.path.append(os.getcwd())
+connect=None
 
 def connectionToDatabase():
 
@@ -85,6 +85,7 @@ def reqExecute(request:str):
 # reqExecute("""Create table Administrators(
 #             FSL VARCHAR,
 #             Login VARCHAR PRIMARY KEY,
+#             Mac_Address VARCHAR,
 #             Password VARCHAR,
 #             TG_Username VARCHAR);""")
 

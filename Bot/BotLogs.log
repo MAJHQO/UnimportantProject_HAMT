@@ -1,0 +1,4 @@
+[2025-04-28 13:31:56,134] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-04-28 13:31:56,193] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-04-28 13:32:02,967] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 30
+[2025-04-28 13:32:03,353] - [aiogram.event] - [INFO]: Update id=112029994 is handled. Duration 1062 ms by bot id=7527441182
