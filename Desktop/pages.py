@@ -150,50 +150,52 @@ def addData_page(self_main):
 def deleteAllData(self_main):
 
     def deleteAllData_confirm(self):
-        bd.reqExecute(f"Delete from {self.control.data[2]}")
+        if (type(self_main.page.controls[1].controls[0])!=ft.Text):
 
-        self_main.page.close(deleteAllData_dialog)
-        # self.page.overlay[len(self.page.overlay)-1].content=ft.Text("Удаление прошло успешно", weight=ft.FontWeight.BOLD)
-        # self.page.overlay[len(self.page.overlay)-1].actions.pop(0)
-        # self.page.overlay[len(self.page.overlay)-1].actions[0].text="Выйти"
+            bd.reqExecute(f"Delete from {self.control.data[2]}")
+
+            self_main.page.close(deleteAllData_dialog)
+            # self.page.overlay[len(self.page.overlay)-1].content=ft.Text("Удаление прошло успешно", weight=ft.FontWeight.BOLD)
+            # self.page.overlay[len(self.page.overlay)-1].actions.pop(0)
+            # self.page.overlay[len(self.page.overlay)-1].actions[0].text="Выйти"
+            
+            if (type(self_main.control.data)!=list):
+                    if(int(self_main.control.data.split('|')[3])==0):
+                        request_page(self_main.page)
+                    elif (int(self_main.control.data.split('|')[3])==1):
+                        equipment_page(self_main.page)
+                    elif (int(self_main.control.data.split('|')[3])==2):
+                        cabinets_page(self_main.page)
+                    elif (int(self_main.control.data.split('|')[3])==3):
+                        equipmentStatus_page(self_main.page)
+                    elif (int(self_main.control.data.split('|')[3])==4):
+                        equipmentCategory_page(self_main.page)
+            else:
+                    if(self_main.control.data[0]==0):
+                        request_page(self_main.page)
+                    elif(self_main.control.data[0]==1):
+                        equipment_page(self_main.page)
+                    elif(self_main.control.data[0]==2):
+                        cabinets_page(self_main.page)
+                    elif(self_main.control.data[0]==3):
+                        equipmentStatus_page(self_main.page)
+                    elif(self_main.control.data[0]==4):
+                        equipmentCategory_page(self_main.page)
         
-        if (type(self_main.control.data)!=list):
-                if(int(self_main.control.data.split('|')[3])==0):
-                    request_page(self_main.page)
-                elif (int(self_main.control.data.split('|')[3])==1):
-                    equipment_page(self_main.page)
-                elif (int(self_main.control.data.split('|')[3])==2):
-                    cabinets_page(self_main.page)
-                elif (int(self_main.control.data.split('|')[3])==3):
-                    equipmentStatus_page(self_main.page)
-                elif (int(self_main.control.data.split('|')[3])==4):
-                    equipmentCategory_page(self_main.page)
-        else:
-                if(self_main.control.data[0]==0):
-                    request_page(self_main.page)
-                elif(self_main.control.data[0]==1):
-                    equipment_page(self_main.page)
-                elif(self_main.control.data[0]==2):
-                    cabinets_page(self_main.page)
-                elif(self_main.control.data[0]==3):
-                    equipmentStatus_page(self_main.page)
-                elif(self_main.control.data[0]==4):
-                    equipmentCategory_page(self_main.page)
-    
-    deleteAllData_dialog=ft.AlertDialog(title=ft.Text("Подтверждение удаления"), content=ft.Text("Вы действительно хотите удалить все данные из данной таблицы?", weight=ft.FontWeight.BOLD,),
-                                        actions=[
-                                            ft.ElevatedButton("Да", data=self_main.control.data,on_click=deleteAllData_confirm),
-                                            ft.ElevatedButton("Нет", on_click=lambda _:self_main.page.close(deleteAllData_dialog))])
-    
-    self_main.page.open(deleteAllData_dialog)
+        deleteAllData_dialog=ft.AlertDialog(title=ft.Text("Подтверждение удаления"), content=ft.Text("Вы действительно хотите удалить все данные из данной таблицы?", weight=ft.FontWeight.BOLD,),
+                                            actions=[
+                                                ft.ElevatedButton("Да", data=self_main.control.data,on_click=deleteAllData_confirm),
+                                                ft.ElevatedButton("Нет", on_click=lambda _:self_main.page.close(deleteAllData_dialog))])
+        
+        self_main.page.open(deleteAllData_dialog)
 
 def deleteData_page(self_main):
 
     def deleteData(self):
         
-        if (self.page.overlay[len(self.page.overlay)-1].content.value not in [""," ", None]):
+        baseBorderColor=self.page.overlay[len(self.page.overlay)-1].content.border_color
 
-            baseBorderColor=self.page.overlay[len(self.page.overlay)-1].content.border_color
+        if (self.page.overlay[len(self.page.overlay)-1].content.value not in [""," ", None]):
 
             if (self_main.control.data[0]==1):
                 bd.reqExecute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
@@ -216,6 +218,15 @@ def deleteData_page(self_main):
             self.page.overlay[len(self.page.overlay)-1].content.border_color=baseBorderColor
             self.page.update()
             self_main.control.data[1].updateTable(self_main)
+
+        else:
+            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED
+            self.page.update()
+            time.sleep(0.7)
+            self.page.overlay[len(self.page.overlay)-1].content.border_color=baseBorderColor
+            self.page.update()
+
+
 
 
     deleteData_dialog=ft.AlertDialog(title=ft.Text("Удаление данных"),content=ft.DropdownM2(options=[]),actions=[

@@ -1116,3 +1116,40 @@ AttributeError: 'NoneType' object has no attribute '_Control__uid'
 [INFO] [2025-04-28 19:31:24,586] - pages: 'Main' page was openned
 [INFO] [2025-04-28 19:31:25,932] - pages: 'Main' page was openned
 [INFO] [2025-04-28 19:31:28,291] - pages: 'Main' page was openned
+[INFO] [2025-04-28 19:52:13,263] - main: App Started
+[INFO] [2025-04-28 19:52:13,314] - database: Connected to database was successfull
+[INFO] [2025-04-28 19:52:13,733] - pages: 'Start' page was openned
+[INFO] [2025-04-28 19:53:41,132] - pages: 'Main' page was openned
+[INFO] [2025-04-28 19:53:44,362] - pages: 'Main' page was openned
+[INFO] [2025-04-28 19:53:45,916] - pages: 'Main' page was openned
+[INFO] [2025-04-28 19:53:47,538] - pages: 'Main' page was openned
+[INFO] [2025-04-28 19:53:48,944] - pages: 'Main' page was openned
+[INFO] [2025-04-28 19:56:23,011] - main: App Started
+[INFO] [2025-04-28 19:56:23,064] - database: Connected to database was successfull
+[INFO] [2025-04-28 19:56:23,461] - pages: 'Start' page was openned
+[INFO] [2025-04-28 21:14:41,050] - main: App Started
+[INFO] [2025-04-28 21:14:41,111] - database: Connected to database was successfull
+[INFO] [2025-04-28 21:14:41,607] - pages: 'Start' page was openned
+[INFO] [2025-04-28 21:15:02,974] - pages: 'Main' page was openned
+[ERROR] [2025-04-28 21:15:10,125] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Text' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 231, in editMode
+    for i in argc.page.controls[1].controls[0].controls[0].rows:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Text' object has no attribute 'controls'
+[INFO] [2025-04-28 21:15:41,514] - pages: 'Main' page was openned
+[INFO] [2025-04-28 21:17:19,984] - main: App Started
+[INFO] [2025-04-28 21:17:20,033] - database: Connected to database was successfull
+[INFO] [2025-04-28 21:17:20,592] - pages: 'Start' page was openned
+[INFO] [2025-04-28 21:17:32,791] - pages: 'Main' page was openned
+[INFO] [2025-04-28 21:17:34,622] - pages: 'Main' page was openned
+[INFO] [2025-04-28 21:18:06,878] - main: App Started
+[INFO] [2025-04-28 21:18:06,929] - database: Connected to database was successfull
+[INFO] [2025-04-28 21:18:07,351] - pages: 'Start' page was openned
+[INFO] [2025-04-28 21:18:21,656] - pages: 'Main' page was openned

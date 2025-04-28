@@ -214,29 +214,31 @@ class Table:
             ], height=500)
         
     def viewMode(self,argc):
+        if (type(argc.page.controls[1].controls[0])==ft.Row):
+            for i in argc.page.controls[1].controls[0].controls[0].rows:
+                for cell in range(0,len(i.cells)):
+                    if (i.cells[cell].data=="0" and cell==0):
+                        continue
+                    i.cells[cell].content.on_click=self.viewData_mode
+                    i.cells[cell].content.read_only=False
 
-        for i in argc.page.controls[1].controls[0].controls[0].rows:
-            for cell in range(0,len(i.cells)):
-                if (i.cells[cell].data=="0" and cell==0):
-                    continue
-                i.cells[cell].content.on_click=self.viewData_mode
-                i.cells[cell].content.read_only=False
-
-        argc.control.content=ft.Text("Изменение")
-        argc.control.on_click=self.editMode
+            argc.control.content=ft.Text("Изменение")
+            argc.control.on_click=self.editMode
 
         argc.page.update()
 
     def editMode(self,argc): 
-        for i in argc.page.controls[1].controls[0].controls[0].rows:
-            for cell in range(0,len(i.cells)):
-                if (i.cells[cell].data=="0" and cell==0):
-                    continue
-                i.cells[cell].content.on_click=self.changeCellData
-                i.cells[cell].content.read_only=True
+        
+        if (type(argc.page.controls[1].controls[0])==ft.Row):
+            for i in argc.page.controls[1].controls[0].controls[0].rows:
+                for cell in range(0,len(i.cells)):
+                    if (i.cells[cell].data=="0" and cell==0):
+                        continue
+                    i.cells[cell].content.on_click=self.changeCellData
+                    i.cells[cell].content.read_only=True
 
-        argc.control.content=ft.Text("Просмотр")
-        argc.control.on_click=self.viewMode
+            argc.control.content=ft.Text("Просмотр")
+            argc.control.on_click=self.viewMode
 
         argc.page.update()
         
