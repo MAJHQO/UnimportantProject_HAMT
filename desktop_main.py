@@ -15,4 +15,4 @@ if (__name__=="__main__"):
     logger_main.info("App Started")
     bd.connect=bd.connectionToDatabase()
     
-    ft.app(pages.start_page)
+    ft.app(pages.main_page)

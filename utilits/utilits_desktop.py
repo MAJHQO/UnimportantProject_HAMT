@@ -1,6 +1,8 @@
 import flet as ft,time,datetime, requests,logging
 from utilits import bd
 
+from hashlib import sha384
+
 ui_colors=['#E1DCE0',"#589A74"]
 login_coLabelText=[
     'Привет! С возращением, что-то мы тебя потеряли.\nМного работы?',
@@ -307,13 +309,18 @@ class Table:
                 table=self.getTable(int(argc.control.data.split('|')[3]))
             else:
                 table=self.getTable(argc.control.data[0])
-            argc.page.controls.pop(1)
-            argc.page.controls.insert(1, table)
-            
-            if (type(argc.control.data)!=list):
-                argc.control.data=f"{argc.page.overlay[len(argc.page.overlay)-1].content.value}_{argc.page.overlay[len(argc.page.overlay)-1].content.value}_{argc.control.data.split('|')[2]}_{argc.control.data.split('|')[3]}_{argc.control.data.split('|')[4]}"
 
-            argc.page.update()
+            if (table!=None):
+                argc.page.controls.pop(1)
+                argc.page.controls.insert(1, table)
+                
+                if (type(argc.control.data)!=list):
+                    argc.control.data=f"{argc.page.overlay[len(argc.page.overlay)-1].content.value}_{argc.page.overlay[len(argc.page.overlay)-1].content.value}_{argc.control.data.split('|')[2]}_{argc.control.data.split('|')[3]}_{argc.control.data.split('|')[4]}"
+
+                argc.page.update()
+            
+            else:
+                return None
         
     def __changeData(self,argc):
 
@@ -362,12 +369,7 @@ class Table:
                         else:
                             argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
                             chc=False
-                    elif (argc.control.data.split("|")[3]=="5"):
-                        if(len(bd.reqExecute(f"Select * from Administrators where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
-                            bd.reqExecute(f"Update Administrators set {argc.control.data.split('|')[4]}='{argc.page.overlay[len(argc.page.overlay)-1].content.value}' where TG_Username='{argc.control.data.split('|')[1]}'")
-                        else:
-                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
-                            chc=False
+
 
                 if(chc==True or req.status_code==200):
                     self.updateTable(argc)

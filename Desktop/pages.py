@@ -4,7 +4,6 @@ from random import randint
 
 import uuid 
 
-from cryptography.fernet import Fernet
 from hashlib import sha384
 
 
@@ -92,25 +91,25 @@ def addData_page(self_main):
 
         name_field=ft.TextField(label="Наименование",hint_text="Наименование оборудование",width=300)
         components_field=ft.TextField(label="Компоненты", hint_text="Список компонентов",width=300)
-        equipmentCategory_field=ft.DropdownM2(label="Категория",options=[],width=300)
+        equipmentCategory_field=ft.SearchBar(bar_hint_text="Категория",controls=[],width=300)
 
         result=bd.reqExecute("Select * from Equipment_Category")
         for i in result:
-            equipmentCategory_field.options.append(ft.dropdownm2.Option(i[0]))
+            equipmentCategory_field.controls.append(ft.Text(str(i[0])))
 
         serialNumber_field=ft.TextField(label="Серийный номер",width=300)
         inventoryNumber_field=ft.TextField(label="Инвентарный номер",width=300)
-        equipmentStatus_field=ft.DropdownM2(label="Статус",options=[],width=300)
+        equipmentStatus_field=ft.SearchBar(bar_hint_text="Статус оборудования",controls=[],width=300, on_tap=lambda _: equipmentStatus_field.open_view())
 
         result=bd.reqExecute("Select * from Equipment_Status")
         for i in result:
-            equipmentStatus_field.options.append(ft.dropdownm2.Option(i[0]))
+            equipmentStatus_field.controls.append(ft.Text(str(i[0])))
 
-        cabinets_field=ft.DropdownM2(label="Кабинет", options=[],width=300)
+        cabinets_field=ft.SearchBar(bar_hint_text="Кабинет", controls=[],width=300)
 
         result=bd.reqExecute("Select * from Cabinets")
         for i in result:
-            cabinets_field.options.append(ft.dropdownm2.Option(i[0]))
+            cabinets_field.controls.append(ft.Text(str(i[0])))
 
         addData_button=ft.ElevatedButton("Добавить", on_click=addData,data=self_main.control.data)
         clearFields_button=ft.ElevatedButton("Очистить", on_click=clearFields)
@@ -170,6 +169,8 @@ def deleteAllData(self_main):
                         equipmentStatus_page(self_main.page)
                     elif (int(self_main.control.data.split('|')[3])==4):
                         equipmentCategory_page(self_main.page)
+                    elif (int(self_main.control.data.split('|')[3])==5):
+                        manageAdminAcc_page(self_main.page)
             else:
                     if(self_main.control.data[0]==0):
                         request_page(self_main.page)
@@ -181,6 +182,8 @@ def deleteAllData(self_main):
                         equipmentStatus_page(self_main.page)
                     elif(self_main.control.data[0]==4):
                         equipmentCategory_page(self_main.page)
+                    elif(self_main.control.data[0]==5):
+                        manageAdminAcc_page(self_main.page)
         
         deleteAllData_dialog=ft.AlertDialog(title=ft.Text("Подтверждение удаления"), content=ft.Text("Вы действительно хотите удалить все данные из данной таблицы?", weight=ft.FontWeight.BOLD,),
                                             actions=[
@@ -205,6 +208,8 @@ def deleteData_page(self_main):
                 bd.reqExecute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==4):
                 bd.reqExecute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+            elif(self_main.control.data[0]==5):
+                bd.reqExecute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
             self.page.update()
@@ -217,7 +222,23 @@ def deleteData_page(self_main):
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=baseBorderColor
             self.page.update()
-            self_main.control.data[1].updateTable(self_main)
+            result_update=self_main.control.data[1].updateTable(self_main)
+            if (result_update==None):
+
+                if(self_main.control.data[0]==0):
+                        request_page(self_main.page)
+                elif(self_main.control.data[0]==1):
+                        equipment_page(self_main.page)
+                elif(self_main.control.data[0]==2):
+                        cabinets_page(self_main.page)
+                elif(self_main.control.data[0]==3):
+                        equipmentStatus_page(self_main.page)
+                elif(self_main.control.data[0]==4):
+                        equipmentCategory_page(self_main.page)
+                elif(self_main.control.data[0]==5):
+                        self_main.page.close(deleteData_dialog)
+                        manageAdminAcc_page(self_main.page)
+
 
         else:
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED
@@ -247,6 +268,9 @@ def deleteData_page(self_main):
             
     elif (self_main.control.data[0]==4):
         result=bd.reqExecute("Select Category_Name from Equipment_Category")
+    
+    elif (self_main.control.data[0]==5):
+        result=bd.reqExecute("Select FSL from Administrators")
 
     for dataRes in result:
          deleteData_dialog.content.options.append(ft.dropdownm2.Option(dataRes[0]))
@@ -415,25 +439,23 @@ def equipment_page(page:ft.Page):
 def manageAdminAcc_page(page: ft.Page):
     page.clean()
 
-    page.window.width=1400
+    page.window.width=1250
     page.window.height=700
 
     table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("ФИО")),
-        ft.DataColumn(ft.Text("Логин")),
-        ft.DataColumn(ft.Text("Mac-адрес")),
-        ft.DataColumn(ft.Text("Пароль")),
-        ft.DataColumn(ft.Text("Имя_пользователя"))
+        ft.DataColumn(ft.Text("ФИО",weight=ft.FontWeight.BOLD, size=13,width=180 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Логин",weight=ft.FontWeight.BOLD, size=13,width=170 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Mac-адрес",weight=ft.FontWeight.BOLD, size=13,width=155 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Пароль",weight=ft.FontWeight.BOLD, size=13,width=155 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Имя_пользователя",weight=ft.FontWeight.BOLD, size=13,width=240 ,text_align=ft.TextAlign.CENTER))
     ],1200)
 
     table=table_obj.getTable(5)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
             ft.SubmenuButton(ft.Text("Функции"), [
-                ft.MenuItemButton(ft.Text("Добавление"), data=[1,table_obj,"Equipment"],on_click=addData_page), 
-                ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[1,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[1,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
+                ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[5,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[5,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
 
