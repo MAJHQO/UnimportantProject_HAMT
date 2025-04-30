@@ -411,7 +411,40 @@ def equipment_page(page:ft.Page):
     
     page.update()
 
-    pass
+
+def manageAdminAcc_page(page: ft.Page):
+    page.clean()
+
+    page.window.width=1400
+    page.window.height=700
+
+    table_obj=deskU.Table([
+        ft.DataColumn(ft.Text("ФИО")),
+        ft.DataColumn(ft.Text("Логин")),
+        ft.DataColumn(ft.Text("Mac-адрес")),
+        ft.DataColumn(ft.Text("Пароль")),
+        ft.DataColumn(ft.Text("Имя_пользователя"))
+    ],1200)
+
+    table=table_obj.getTable(5)
+
+    menuBar=ft.MenuBar(
+        [
+            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
+            ft.SubmenuButton(ft.Text("Функции"), [
+                ft.MenuItemButton(ft.Text("Добавление"), data=[1,table_obj,"Equipment"],on_click=addData_page), 
+                ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[1,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[1,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
+        style=ft.MenuStyle(ft.alignment.top_left))
+    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
+
+    if(table!=None):
+        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
+    else:
+        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой",weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER))
+    
+    page.update()
+
+    
 
 
 def main_page(page:ft.Page):
@@ -426,12 +459,13 @@ def main_page(page:ft.Page):
     cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=130, icon=ft.icons.ROOM)
     equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.icons.ARCHIVE)
     equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.icons.SEGMENT)
-    
+    manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
+
 
     page.add(
         ft.Row([requestPageButton,equipmentPageButton], spacing=20, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
         ft.Row([cabinetsButton,equipmentStatusButton],spacing=20, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
-        ft.Row([equipmentCategoryButton], alignment=ft.MainAxisAlignment.CENTER))
+        ft.Row([equipmentCategoryButton,manageAdminAccButton], alignment=ft.MainAxisAlignment.CENTER))
     logger_pages.info("'Main' page was openned")
     page.update()
 
@@ -441,30 +475,42 @@ def resetPassword_page(page: ft.Page):
     def resetPassword_handler(self):
 
         try:
-            if (userIdField.value!="\n" or userIdField.value!=""):
+            baseColor=userIdField.border_color
+
+            if (type(page.controls[4])==ft.Column):
+                page.controls.pop(4)
+
+            if (userIdField.value.isdigit()==True and userIdField.value!="\n" and userIdField.value!=""):
                 usernameReq=bd.reqExecute(f"Select Username from Users where TG_ID={userIdField.value}")
-                baseColor=userIdField.border_color
 
-                if (type(page.controls[4])==ft.Column):
-                    page.controls.pop(4)
-
-                if(len(usernameReq)!=0):
-                    result=bd.reqExecute(f"Select * from Administrators where TG_Username='{usernameReq[0][0]}'")
-                    if (result!=False and len(result)!=0):
-                        req=requests.post("https://api.telegram.org/bot7527441182:AAEI1sSafhOnZ1oLgeRgdaJALzxoHEmiWLY/sendMessage", data={"chat_id":userIdField.value, "text": f'Ваш пароль: {result[0][2]}'})
-                        if (req.status_code==200):
-                            userIdField.border_color=ft.colors.GREEN
+                if(usernameReq!=False):
+                    if (len(usernameReq)!=0):
+                        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameReq[0][0].encode()).hexdigest()}'")
+                        if (result!=False):
+                            if (len(result)!=0):
+                                req=requests.post("https://api.telegram.org/bot7527441182:AAEI1sSafhOnZ1oLgeRgdaJALzxoHEmiWLY/sendMessage", data={"chat_id":userIdField.value, "text": f'Ваш пароль: {result[0][2]}'})
+                                if (req.status_code==200):
+                                    userIdField.border_color=ft.colors.GREEN
+                                else:
+                                    userIdField.border_color=ft.colors.RED
+                                    errorLabel.value="Произошла ошибка при отправке запроса"
+                                    page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
+                            else:
+                                userIdField.border_color=ft.colors.RED
+                                errorLabel.value="Не имеется администратора с данным ID"
+                                page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
                         else:
                             userIdField.border_color=ft.colors.RED
-                            errorLabel.value="Произошла ошибка при отправке запроса"
+                            errorLabel.value="При выполнеии запроса возникла ошибка"
                             page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
+
                     else:
-                        userIdField.border_color=ft.colors.RED
-                        errorLabel.value="Не имеется администратора с данным ID"
-                        page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
+                            userIdField.border_color=ft.colors.RED
+                            errorLabel.value="Данный ID не зарегистрировано в базе данных приложения"
+                            page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
                 else:
                     userIdField.border_color=ft.colors.RED
-                    errorLabel.value="Данное ID не зарегистрировано в базе данных приложения"
+                    errorLabel.value="При выполнении запроса возникла ошибка"
                     page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
 
             else:
@@ -515,7 +561,7 @@ def resetPassword_page(page: ft.Page):
         "Узнать свой ID",
         bgcolor=deskU.ui_colors[0],
         color=ft.colors.BLACK,
-        on_click=lambda _:page.launch_url("https://t.me/userinfobot?start=info")
+        on_click=lambda _:page.launch_url("https://web.t.me/userinfobot?start=info")
     )
 
     errorLabel=ft.Text("", font_family="Moderustic Regular", size=13,disabled=True,height=30)
@@ -535,8 +581,11 @@ def start_page(page:ft.Page, fromRegistr:bool=False):
 
     def nextPage(self):
         result=bd.reqExecute(f"Select * from Administrators where Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}' AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
-        if (len(result)!=0):
-            main_page(self.page)
+        if (result!=False):
+            if(len(result)!=0):
+                main_page(self.page)
+            else:
+                deskU.errorField(self)
         else:
             deskU.errorField(self)
 
@@ -600,9 +649,9 @@ def start_page(page:ft.Page, fromRegistr:bool=False):
 
     page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,ft.Text("",height=20),ft.Row([registrPasswordButton,resetPasswordButton],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
 
-    if(os.path.isfile("Desktop\\Admin Configure")==True):
+    if(os.path.isfile("Desktop/Admin Configure")==True):
 
-        with open("Desktop\\Admin Configure", 'r') as File:
+        with open("Desktop/Admin Configure", 'r') as File:
             line=File.readlines()
             if (line[0]=="Enter Today:1"):
                 startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
@@ -629,39 +678,52 @@ def startAdmin_page(page:ft.Page):
 
     def adminRegInBD(self):
 
+        if (failedRegistLabel.value!=""):
+            failedRegistLabel.value=""
+
         result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' AND FSL='{(fslField.value)}' AND Mac_Address='{hex(uuid.getnode())}'")
 
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and deskU.dynamicPassCheck(self,False)==True and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
-            if (len(result)==0):
+            if (result!=False):
+                if (len(result)==0):
 
-                result=bd.reqExecute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
+                    result=bd.reqExecute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
 
-                if (result!=False):
+                    if (result!=False):
 
-                    with open("Desktop\\Admin Configure", 'w') as bFile:
-                        bFile.write(f"Enter Today: 1")
+                        with open("Desktop/Admin Configure", 'w') as bFile:
+                            bFile.write(f"Enter Today: 1")
 
-                    for i in range(1,len(self.page.controls)):
-                        self.page.controls[i].disabled=True
-                    
-                    deskU.successField(self)
+                        for i in range(1,len(self.page.controls)):
+                            self.page.controls[i].disabled=True
+                        
+                        deskU.successField(self)
+
+                    else:
+
+                        deskU.errorField(self)
 
                 else:
+                    usernameField.border_color=ft.colors.RED_300
+                    fslField.border_color=ft.colors.RED_300
+                    failedRegistLabel.value="Аккаут с такими данными уже зарегистрирован или данное устройство уже\nнаходится в базе данных приложения"
 
-                    deskU.errorField(self)
+                    self.page.update()
+                    time.sleep(0.7)
 
+                    usernameField.border_color=ft.colors.BLACK
+                    fslField.border_color=ft.colors.BLACK
+                    failedRegistLabel.value=""
+                    self.page.update()
             else:
-                usernameField.border_color=ft.colors.RED_300
-                fslField.border_color=ft.colors.RED_300
-                failedRegistLabel.value="Возможно неверно заполенные данные\nили данное устройство уже зарегистрировано в приложении"
+                page.window.bgcolor=ft.colors.RED_300
+                failedRegistLabel.value="Ошибка выполнения запроса\nВозможно неверно заполненные данные"
 
                 self.page.update()
                 time.sleep(0.7)
 
-                usernameField.border_color=ft.colors.BLACK
-                fslField.border_color=ft.colors.BLACK
-                failedRegistLabel.value=""
+                page.window.bgcolor=ft.colors.TRANSPARENT
                 self.page.update()
 
         else:

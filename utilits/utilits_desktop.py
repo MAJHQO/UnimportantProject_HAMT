@@ -192,12 +192,12 @@ def pageClose(self):
 
         try:
             lines=[]
-            with open("Desktop\\Admin Configure", 'r') as file:
+            with open("Desktop/Admin Configure", 'r') as file:
                 lines=file.readlines()
 
             lines[0]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
 
-            with open("Desktop\\Admin Configure", 'w+') as file:
+            with open("Desktop/Admin Configure", 'w+') as file:
                 file.writelines(lines)
 
         except Exception as ex:
@@ -259,6 +259,9 @@ class Table:
         elif (table_type==4):
             result=bd.reqExecute("Select * from Equipment_Category")
             cellName_arr.extend(["Status_Name"])
+        elif (table_type==5):
+            result=bd.reqExecute("Select * from Administrators")
+            cellName_arr.extend(["FSL", "Login", "Mac-Address", "Password", "TG_Username"])
         else:
             result=bd.reqExecute("Select * from Repair_Request")
             cellName_arr.extend(["TG_ID","TG_Username","Request_Number","Cabinet_Number", "Request_Description","Request_Status"])
@@ -289,7 +292,8 @@ class Table:
                     else:
 
                         self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|TextField|{(result[i][0])}", on_click=self_main.viewData_mode), data="0"))
-
+                elif (table_type==5):
+                    self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|{result[i][4]}|None|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data=str(table_type)))
                 else:
                     self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|None|None|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data=str(table_type)))
 
@@ -358,13 +362,16 @@ class Table:
                         else:
                             argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
                             chc=False
+                    elif (argc.control.data.split("|")[3]=="5"):
+                        if(len(bd.reqExecute(f"Select * from Administrators where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
+                            bd.reqExecute(f"Update Administrators set {argc.control.data.split('|')[4]}='{argc.page.overlay[len(argc.page.overlay)-1].content.value}' where TG_Username='{argc.control.data.split('|')[1]}'")
+                        else:
+                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                            chc=False
 
                 if(chc==True or req.status_code==200):
                     self.updateTable(argc)
                     argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.GREEN
-
-                else:
-                    argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED
 
             argc.page.update()
 

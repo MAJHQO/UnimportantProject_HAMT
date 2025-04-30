@@ -40,7 +40,7 @@ def reqExecute(request:str):
 
     except Exception as ex:
 
-        logger_bd.error(f"Request execute was failed. Reason: {ex}")
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
         return False
 
 
