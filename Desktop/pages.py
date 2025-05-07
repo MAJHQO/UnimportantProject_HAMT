@@ -37,9 +37,12 @@ def addData_page(self_main):
                               '{(serialNumber_field.value)}',
                               '{(inventoryNumber_field.value)}',
                               '{(equipmentStatus_field.value)}',
-                              '{(cabinets_field.value)}',)""")
+                              '{(cabinets_field.value)}')""")
                 
                 deskU.successField(self)
+                equipmentCategory_field.border_color=self.page.controls[1].border_color
+                equipmentStatus_field.border_color=self.page.controls[1].border_color
+                cabinets_field.border_color=self.page.controls[1].border_color
 
             else:
                 deskU.errorField(self)
@@ -91,25 +94,25 @@ def addData_page(self_main):
 
         name_field=ft.TextField(label="Наименование",hint_text="Наименование оборудование",width=300)
         components_field=ft.TextField(label="Компоненты", hint_text="Список компонентов",width=300)
-        equipmentCategory_field=ft.SearchBar(bar_hint_text="Категория",controls=[],width=300)
+        equipmentCategory_field=ft.DropdownM2(label="Категория",options=[],width=300)
 
         result=bd.reqExecute("Select * from Equipment_Category")
         for i in result:
-            equipmentCategory_field.controls.append(ft.Text(str(i[0])))
+            equipmentCategory_field.options.append(ft.dropdownm2.Option(i[0]))
 
         serialNumber_field=ft.TextField(label="Серийный номер",width=300)
         inventoryNumber_field=ft.TextField(label="Инвентарный номер",width=300)
-        equipmentStatus_field=ft.SearchBar(bar_hint_text="Статус оборудования",controls=[],width=300, on_tap=lambda _: equipmentStatus_field.open_view())
+        equipmentStatus_field=ft.DropdownM2(label="Статус",options=[],width=300)
 
         result=bd.reqExecute("Select * from Equipment_Status")
         for i in result:
-            equipmentStatus_field.controls.append(ft.Text(str(i[0])))
+            equipmentStatus_field.options.append(ft.dropdownm2.Option(i[0]))
 
-        cabinets_field=ft.SearchBar(bar_hint_text="Кабинет", controls=[],width=300)
+        cabinets_field=ft.DropdownM2(label="Кабинет", options=[],width=300)
 
         result=bd.reqExecute("Select * from Cabinets")
         for i in result:
-            cabinets_field.controls.append(ft.Text(str(i[0])))
+            cabinets_field.options.append(ft.dropdownm2.Option(i[0]))
 
         addData_button=ft.ElevatedButton("Добавить", on_click=addData,data=self_main.control.data)
         clearFields_button=ft.ElevatedButton("Очистить", on_click=clearFields)
@@ -185,12 +188,12 @@ def deleteAllData(self_main):
                     elif(self_main.control.data[0]==5):
                         manageAdminAcc_page(self_main.page)
         
-        deleteAllData_dialog=ft.AlertDialog(title=ft.Text("Подтверждение удаления"), content=ft.Text("Вы действительно хотите удалить все данные из данной таблицы?", weight=ft.FontWeight.BOLD,),
+    deleteAllData_dialog=ft.AlertDialog(title=ft.Text("Подтверждение удаления"), content=ft.Text("Вы действительно хотите удалить все данные из данной таблицы?", weight=ft.FontWeight.BOLD,),
                                             actions=[
                                                 ft.ElevatedButton("Да", data=self_main.control.data,on_click=deleteAllData_confirm),
                                                 ft.ElevatedButton("Нет", on_click=lambda _:self_main.page.close(deleteAllData_dialog))])
         
-        self_main.page.open(deleteAllData_dialog)
+    self_main.page.open(deleteAllData_dialog)
 
 def deleteData_page(self_main):
 
@@ -403,6 +406,33 @@ def request_page(page:ft.Page):
 
 def equipment_page(page:ft.Page):
 
+    def dataSearch(self):
+        pass
+
+    def baseMode(self):
+        page.controls.pop(len(page.controls)-1)
+        self.control.content=ft.Text("Поиск")
+        self.control.on_click=searchMode
+
+        page.update()
+
+    def searchMode(self):
+        self.control.content=ft.Text("Стандартный")
+        self.control.on_click=baseMode
+
+        page.controls.append(ft.TextField(
+            hint_text="Поиск...",
+            width=350,
+            hint_style=ft.TextStyle(font_family="Moderustic Regular",),
+            border_radius=14, 
+            border_color=deskU.ui_colors[0],
+            on_focus=deskU.contentColor_focus,
+            on_blur=deskU.contentColor_blur,
+            on_change=deskU.searchInTable,
+            data=self.control.data
+        ))
+        page.update()
+
     page.clean()
 
     page.window.width=1400
@@ -421,15 +451,19 @@ def equipment_page(page:ft.Page):
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
+            ft.SubmenuButton(ft.Text("Режимы"), [
+                ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode),
+                ft.MenuItemButton(ft.Text("Поиск"), on_click=searchMode, data=[1,table_obj])]),
             ft.SubmenuButton(ft.Text("Функции"), [
                 ft.MenuItemButton(ft.Text("Добавление"), data=[1,table_obj,"Equipment"],on_click=addData_page), 
                 ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[1,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[1,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
 
+    searchModeButton=ft.IconButton(icon=ft.icons.SEARCH, icon_size=13, bgcolor=deskU.ui_colors[1], icon_color=ft.colors.WHITE, on_click=searchMode)
+
     if(table!=None):
-        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
+        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([table,searchModeButton],spacing=70))
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой",weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
@@ -464,9 +498,7 @@ def manageAdminAcc_page(page: ft.Page):
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой",weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
-    page.update()
-
-    
+    page.update() 
 
 
 def main_page(page:ft.Page):
@@ -475,6 +507,8 @@ def main_page(page:ft.Page):
 
     page.window.width=1280
     page.window.height=960
+
+    page.decoration=ft.BoxDecoration(image=ft.DecorationImage("Desktop\\Image\\Backgroud.jpg"))
 
     requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=130, on_click=lambda _:request_page(page))
     equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.icons.LAPTOP_CHROMEBOOK, width=150, on_click= lambda _:equipment_page(page))
@@ -599,7 +633,7 @@ def resetPassword_page(page: ft.Page):
     page.update()
 
 
-def start_page(page:ft.Page, fromRegistr:bool=False):
+def start_page(page:ft.Page):
 
     def nextPage(self):
         result=bd.reqExecute(f"Select * from Administrators where Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}' AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
@@ -616,26 +650,27 @@ def start_page(page:ft.Page, fromRegistr:bool=False):
 
     page.clean()
 
-    if (fromRegistr==False):
 
-        page.window.width=800
-        page.window.height=700
+    page.window.width=800
+    page.window.height=700
 
-        page.title="НАМТ.Администраторы"
-        page.theme_mode=ft.ThemeMode.LIGHT
-        page.vertical_alignment=ft.MainAxisAlignment.CENTER
-        page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
-        page.window.resizable=False
-        page.window.prevent_close=True
-        page.window.on_event=deskU.pageClose
+    page.title="НАМТ.Администраторы"
+    page.theme_mode=ft.ThemeMode.LIGHT
+    page.vertical_alignment=ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
+    page.window.resizable=False
+    page.window.prevent_close=True
+    page.window.on_event=deskU.pageClose
 
-        page.fonts={
+    page.window.icon=ft.Image("Icons\\HAMT_Logo.png")
+
+    page.fonts={
         'Main Label': 'Fonts\\TechMonoRegular.otf',
         'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf',
         'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf',
         'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf'}
 
-        page.decoration=ft.BoxDecoration(image=ft.DecorationImage("Desktop\\Image\\Background.jpg", fit=ft.ImageFit.CONTAIN),shape=ft.BoxShape.RECTANGLE)
+    page.decoration=ft.BoxDecoration(image=ft.DecorationImage("Desktop\\Image\\Background.jpg", fit=ft.ImageFit.CONTAIN),shape=ft.BoxShape.RECTANGLE)
 
     startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
     startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
@@ -696,7 +731,7 @@ def startAdmin_page(page:ft.Page):
 
     def backPage(self):
 
-        start_page(self.page,True)
+        start_page(self.page)
 
     def adminRegInBD(self):
 

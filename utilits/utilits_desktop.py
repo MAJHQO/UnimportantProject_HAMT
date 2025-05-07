@@ -209,6 +209,34 @@ def pageClose(self):
 
         self.page.window.destroy()
 
+def searchInTable(self):
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+    if (self.control.value!=""):
+        check=False
+        columnArr:list=actualTable.columns
+        width:int=actualTable.width
+        searchTable:ft.DataTable=ft.DataTable(columns=columnArr, rows=[],width=width)
+
+        for row in actualTable.rows:
+            for cell in row.cells:
+                if (cell.content.value.find(self.control.value)!=-1):
+                    check=True
+            if (check==True):
+                searchTable.rows.append(row)
+            check=False
+
+        if (len(searchTable.rows)!=0):
+
+            self.page.controls[1].controls[0].controls[0].controls.pop(0)
+            self.page.controls[1].controls[0].controls[0].controls.append(searchTable)
+
+    else:
+        self.page.controls[1].controls[0].controls[0].controls.pop(0)
+        self.page.controls[1].controls[0].controls[0].controls.append(actualTable)
+
+    self.page.update()
+        
+
 class Table:
     def __init__(self, column_list:list[ft.Text],table_width:int):
         self.__column=column_list

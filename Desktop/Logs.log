@@ -1429,3 +1429,319 @@ UnboundLocalError: cannot access local variable 'baseColor' where it is not asso
 [INFO] [2025-04-30 20:36:52,543] - main: App Started
 [INFO] [2025-04-30 20:36:52,717] - database: Connected to database was successfull
 [INFO] [2025-04-30 20:36:53,894] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:07:46,718] - main: App Started
+[INFO] [2025-05-01 20:07:46,797] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:07:48,288] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:10:18,351] - main: App Started
+[INFO] [2025-05-01 20:10:18,417] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:10:18,947] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:11:24,049] - main: App Started
+[INFO] [2025-05-01 20:11:24,115] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:11:24,665] - pages: 'Main' page was openned
+[ERROR] [2025-05-01 20:11:29,788] - asyncio: Future exception was never retrieved
+future: <Future finished exception=ValueError('100 is not a valid ControlState')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 102, in addData_page
+    equipmentStatus_field=ft.SearchBar(bar_hint_text="Статус оборудования",controls=[],width=300, on_tap=lambda _: equipmentStatus_field.open_view(), bar_shape=ft.ControlState(100))
+                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 711, in __call__
+    return cls.__new__(cls, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 1128, in __new__
+    raise ve_exc
+ValueError: 100 is not a valid ControlState
+[INFO] [2025-05-01 20:21:44,145] - main: App Started
+[INFO] [2025-05-01 20:21:44,213] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:21:44,786] - pages: 'Start' page was openned
+[INFO] [2025-05-01 20:22:16,299] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-01 20:22:34,336] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 763, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-01 20:22:35,426] - pages: 'Start' page was openned
+[INFO] [2025-05-01 20:22:48,472] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:27:40,743] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:27:49,716] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:32:41,864] - main: App Started
+[INFO] [2025-05-01 20:32:41,944] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:32:42,431] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:33:26,338] - main: App Started
+[INFO] [2025-05-01 20:33:26,402] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:33:26,974] - pages: 'Main' page was openned
+[INFO] [2025-05-01 20:34:08,851] - main: App Started
+[INFO] [2025-05-01 20:34:08,920] - database: Connected to database was successfull
+[INFO] [2025-05-01 20:34:09,400] - pages: 'Main' page was openned
+[INFO] [2025-05-01 21:32:34,707] - main: App Started
+[INFO] [2025-05-01 21:32:34,767] - database: Connected to database was successfull
+[INFO] [2025-05-01 21:32:35,421] - pages: 'Main' page was openned
+[INFO] [2025-05-01 21:45:10,614] - main: App Started
+[INFO] [2025-05-01 21:45:10,720] - database: Connected to database was successfull
+[INFO] [2025-05-01 21:45:11,572] - pages: 'Main' page was openned
+[INFO] [2025-05-01 21:47:11,880] - main: App Started
+[INFO] [2025-05-01 21:47:11,941] - database: Connected to database was successfull
+[INFO] [2025-05-01 21:47:12,429] - pages: 'Main' page was openned
+[INFO] [2025-05-01 21:48:25,481] - main: App Started
+[INFO] [2025-05-01 21:48:25,554] - database: Connected to database was successfull
+[INFO] [2025-05-01 21:48:26,015] - pages: 'Main' page was openned
+[INFO] [2025-05-02 10:40:54,945] - main: App Started
+[INFO] [2025-05-02 10:40:55,152] - database: Connected to database was successfull
+[INFO] [2025-05-02 10:40:56,441] - pages: 'Main' page was openned
+[INFO] [2025-05-02 10:42:28,907] - main: App Started
+[INFO] [2025-05-02 10:42:28,959] - database: Connected to database was successfull
+[INFO] [2025-05-02 10:42:29,372] - pages: 'Main' page was openned
+[ERROR] [2025-05-02 10:42:55,845] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 78, in addData
+    self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.BLACK
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+[INFO] [2025-05-02 10:47:24,893] - main: App Started
+[INFO] [2025-05-02 10:47:24,947] - database: Connected to database was successfull
+[INFO] [2025-05-02 10:47:25,346] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:01:26,840] - main: App Started
+[INFO] [2025-05-02 12:01:27,063] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:01:27,521] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:01:39,376] - pages: 'Main' page was openned
+[ERROR] [2025-05-02 12:01:53,163] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("property 'height' of 'Page' object has no setter")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 419, in searchMode
+    page.height=900
+    ^^^^^^^^^^^
+AttributeError: property 'height' of 'Page' object has no setter
+[INFO] [2025-05-02 12:02:20,257] - main: App Started
+[INFO] [2025-05-02 12:02:20,464] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:02:20,924] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:02:29,429] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:08:54,688] - main: App Started
+[INFO] [2025-05-02 12:08:54,740] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:08:55,147] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:09:03,982] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:40:35,571] - main: App Started
+[INFO] [2025-05-02 12:40:35,723] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:40:36,240] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:40:48,631] - pages: 'Main' page was openned
+[ERROR] [2025-05-02 12:41:14,646] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('string index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in searchInTable
+    actualTable=self.data[1].getTable(self.data[0])
+                ~~~~~~~~~^^^
+IndexError: string index out of range
+[ERROR] [2025-05-02 12:41:14,694] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('string index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in searchInTable
+    actualTable=self.data[1].getTable(self.data[0])
+                ~~~~~~~~~^^^
+IndexError: string index out of range
+[ERROR] [2025-05-02 12:41:14,695] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'str' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in searchInTable
+    actualTable=self.data[1].getTable(self.data[0])
+                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'getTable'
+[ERROR] [2025-05-02 12:41:16,798] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'str' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 213, in searchInTable
+    actualTable=self.data[1].getTable(self.data[0])
+                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'getTable'
+[INFO] [2025-05-02 12:41:47,812] - main: App Started
+[INFO] [2025-05-02 12:41:47,986] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:41:48,460] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:42:00,323] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:42:43,446] - main: App Started
+[INFO] [2025-05-02 12:42:43,661] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:42:44,067] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:42:51,168] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:46:01,772] - main: App Started
+[INFO] [2025-05-02 12:46:01,927] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:46:02,395] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:46:11,995] - pages: 'Main' page was openned
+[ERROR] [2025-05-02 12:46:55,580] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'ListView' object has no attribute 'rows'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 218, in searchInTable
+    for row in actualTable.rows:
+               ^^^^^^^^^^^^^^^^
+AttributeError: 'ListView' object has no attribute 'rows'
+[ERROR] [2025-05-02 12:47:20,135] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Row' object has no attribute 'contols'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 232, in searchInTable
+    self.page.controls[1].contols[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Row' object has no attribute 'contols'
+[INFO] [2025-05-02 12:47:43,828] - main: App Started
+[INFO] [2025-05-02 12:47:43,981] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:47:44,431] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:49:23,302] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:51:03,496] - main: App Started
+[INFO] [2025-05-02 12:51:03,689] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:51:04,112] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:51:12,816] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:51:40,214] - main: App Started
+[INFO] [2025-05-02 12:51:40,299] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:51:40,737] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:51:47,774] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:52:28,104] - main: App Started
+[INFO] [2025-05-02 12:52:28,154] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:52:28,578] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:52:40,590] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:55:26,702] - main: App Started
+[INFO] [2025-05-02 12:55:26,788] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:55:27,308] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:56:08,979] - pages: 'Main' page was openned
+[ERROR] [2025-05-02 12:56:48,406] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 223, in searchInTable
+    searchTable.controls[0].controls[0].rows.append(row)
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[INFO] [2025-05-02 12:57:14,787] - main: App Started
+[INFO] [2025-05-02 12:57:14,976] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:57:15,476] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:57:25,359] - pages: 'Main' page was openned
+[INFO] [2025-05-02 12:57:38,472] - main: App Started
+[INFO] [2025-05-02 12:57:38,625] - database: Connected to database was successfull
+[INFO] [2025-05-02 12:57:39,198] - pages: 'Start' page was openned
+[INFO] [2025-05-02 12:59:41,221] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:00:21,023] - main: App Started
+[INFO] [2025-05-02 13:00:21,121] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:00:21,770] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:00:32,632] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:01:15,939] - main: App Started
+[INFO] [2025-05-02 13:01:16,099] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:01:16,684] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:01:28,607] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:03:07,681] - main: App Started
+[INFO] [2025-05-02 13:03:07,750] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:03:08,164] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:03:16,640] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:08:34,995] - main: App Started
+[INFO] [2025-05-02 13:08:35,067] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:08:35,770] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:08:47,054] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:09:14,283] - main: App Started
+[INFO] [2025-05-02 13:09:14,337] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:09:14,765] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:09:26,782] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:11:45,605] - main: App Started
+[INFO] [2025-05-02 13:11:45,658] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:11:46,087] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:11:55,388] - pages: 'Main' page was openned
+[ERROR] [2025-05-02 13:12:04,725] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('cannot unpack non-iterable int object')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 216, in searchInTable
+    columnArr=actualTable.columns, rowArr=actualTable.rows, width=actualTable.width
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable int object
+[INFO] [2025-05-02 13:12:46,527] - main: App Started
+[INFO] [2025-05-02 13:12:46,580] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:12:46,998] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:12:54,542] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:13:24,434] - main: App Started
+[INFO] [2025-05-02 13:13:24,600] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:13:25,206] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:13:41,824] - pages: 'Main' page was openned
+[INFO] [2025-05-02 13:14:34,066] - main: App Started
+[INFO] [2025-05-02 13:14:34,116] - database: Connected to database was successfull
+[INFO] [2025-05-02 13:14:34,534] - pages: 'Start' page was openned
+[INFO] [2025-05-02 13:14:42,778] - pages: 'Main' page was openned
+[INFO] [2025-05-02 17:56:29,506] - main: App Started
+[INFO] [2025-05-02 17:56:29,558] - database: Connected to database was successfull
+[INFO] [2025-05-02 17:56:30,003] - pages: 'Start' page was openned
+[INFO] [2025-05-02 17:56:45,208] - pages: 'Main' page was openned
+[INFO] [2025-05-02 17:59:32,287] - main: App Started
+[INFO] [2025-05-02 17:59:32,353] - database: Connected to database was successfull
+[INFO] [2025-05-02 17:59:32,768] - pages: 'Start' page was openned
+[INFO] [2025-05-02 17:59:41,117] - pages: 'Main' page was openned
+[INFO] [2025-05-02 18:01:08,483] - main: App Started
+[INFO] [2025-05-02 18:01:08,535] - database: Connected to database was successfull
+[INFO] [2025-05-02 18:01:08,972] - pages: 'Start' page was openned
+[INFO] [2025-05-02 18:01:17,247] - pages: 'Main' page was openned
+[INFO] [2025-05-02 18:01:49,061] - main: App Started
+[INFO] [2025-05-02 18:01:49,129] - database: Connected to database was successfull
+[INFO] [2025-05-02 18:01:49,655] - pages: 'Start' page was openned
+[INFO] [2025-05-02 18:01:56,420] - pages: 'Main' page was openned
+[INFO] [2025-05-02 18:03:35,016] - pages: 'Main' page was openned
+[INFO] [2025-05-02 18:04:03,580] - pages: 'Main' page was openned
+[INFO] [2025-05-02 18:10:10,677] - main: App Started
+[INFO] [2025-05-02 18:10:10,735] - database: Connected to database was successfull
+[INFO] [2025-05-02 18:10:11,207] - pages: 'Start' page was openned
+[INFO] [2025-05-02 18:10:19,595] - pages: 'Main' page was openned
+[INFO] [2025-05-07 08:26:28,038] - main: App Started
+[INFO] [2025-05-07 08:26:28,247] - database: Connected to database was successfull
+[INFO] [2025-05-07 08:26:29,589] - pages: 'Start' page was openned
+[INFO] [2025-05-07 08:27:25,592] - main: App Started
+[INFO] [2025-05-07 08:27:25,674] - database: Connected to database was successfull
+[INFO] [2025-05-07 08:27:26,990] - pages: 'Start' page was openned
