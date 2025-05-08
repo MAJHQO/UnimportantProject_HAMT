@@ -117,3 +117,34 @@ IndexError: list index out of range
 [INFO] [2025-05-08 21:54:25,504] - pages: 'Reset password' page was openned
 [INFO] [2025-05-08 21:54:26,652] - pages: 'Start' page was openned
 [INFO] [2025-05-08 21:54:35,382] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:20:34,662] - main: App Started
+[INFO] [2025-05-08 22:20:34,713] - database: Connected to database was successfull
+[INFO] [2025-05-08 22:20:35,263] - pages: 'Start' page was openned
+[INFO] [2025-05-08 22:20:49,902] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:22:02,663] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:22:25,161] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:22:28,146] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:29:54,082] - main: App Started
+[INFO] [2025-05-08 22:29:54,236] - database: Connected to database was successfull
+[INFO] [2025-05-08 22:29:54,740] - pages: 'Start' page was openned
+[INFO] [2025-05-08 22:30:46,852] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:30:48,836] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:31:20,636] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:31:23,395] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:31:53,931] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:31:56,129] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:03,213] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:05,024] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:33,076] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:36,548] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:38,511] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:41,670] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:43,466] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:45,805] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:47,578] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:32:49,136] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:33:19,558] - pages: 'Main' page was openned
+[INFO] [2025-05-08 22:35:14,735] - main: App Started
+[INFO] [2025-05-08 22:35:14,784] - database: Connected to database was successfull
+[INFO] [2025-05-08 22:35:15,235] - pages: 'Start' page was openned
+[INFO] [2025-05-08 22:35:27,418] - pages: 'Main' page was openned

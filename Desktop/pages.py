@@ -81,8 +81,6 @@ def addData_page(self_main):
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.BLACK
             self.page.update()
-
-        self_main.control.data[1].updateTable(self)
     
     if(self_main.control.data[0]==0):
         pass #Нужно делать функцию добавления задания от преподователей вручную?
@@ -395,8 +393,7 @@ def request_page(page:ft.Page):
     menuBar=ft.MenuBar(
         [
             ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
-            ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[0,table_obj,"Repair_Request"], on_click=addData_page), 
-                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[0,table_obj,"Repair_Request"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
+            ft.SubmenuButton(ft.Text("Функции"), [ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[0,table_obj,"Repair_Request"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
 

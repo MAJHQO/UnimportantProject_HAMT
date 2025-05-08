@@ -165,14 +165,14 @@ def successField(self):
 
     for control in self.page.controls:
 
-        if(type(control)==ft.TextField):
+        if(type(control)==ft.TextField or type(control)==ft.DropdownM2):
             control.border_color=ft.colors.GREEN
 
     self.page.update()
     time.sleep(0.7)
     
     for control in self.page.controls:
-        if (type(control)==ft.TextField):
+        if (type(control)==ft.TextField or type(control)==ft.DropdownM2):
             control.border_color=ft.colors.BLACK
 
     self.page.update()
@@ -325,7 +325,7 @@ class Table:
 
         return self_main.__table
         
-    def updateTable(self,argc):
+    def updateTable(self,argc, onEditMode:bool=False):
             
             table=None
 
@@ -337,6 +337,9 @@ class Table:
             if (table!=None):
                 argc.page.controls.pop(1)
                 argc.page.controls.insert(1, table)
+
+                if (onEditMode!=False):
+                    self.editMode(argc)
                 
                 if (type(argc.control.data)!=list):
                     argc.control.data=f"{argc.page.overlay[len(argc.page.overlay)-1].content.value}_{argc.page.overlay[len(argc.page.overlay)-1].content.value}_{argc.control.data.split('|')[2]}_{argc.control.data.split('|')[3]}_{argc.control.data.split('|')[4]}"
@@ -396,7 +399,7 @@ class Table:
 
 
                 if(chc==True or req.status_code==200):
-                    self.updateTable(argc)
+                    self.updateTable(argc,True)
                     argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.GREEN
 
             argc.page.update()
