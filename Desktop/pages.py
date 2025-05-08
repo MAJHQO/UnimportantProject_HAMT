@@ -47,6 +47,7 @@ def addData_page(self_main):
             else:
                 deskU.errorField(self)
 
+
         else:
             if (self.page.overlay[len(self.page.overlay)-1].content.value in [""," "]):
                 self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
@@ -74,12 +75,12 @@ def addData_page(self_main):
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
 
-        self.page.update()
+            self.page.update()
 
-        time.sleep(0.7)
+            time.sleep(0.7)
 
-        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.BLACK
-        self.page.update()
+            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.BLACK
+            self.page.update()
 
         self_main.control.data[1].updateTable(self)
     
@@ -307,6 +308,7 @@ def equipmentCategory_page(page:ft.Page):
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
+    page.window.center()
     page.update()
 
 
@@ -340,6 +342,7 @@ def equipmentStatus_page(page:ft.Page):
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
+    page.window.center()
     page.update()
 
 
@@ -368,6 +371,7 @@ def cabinets_page(page:ft.Page):
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=15)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
+    page.window.center()
     page.update()
 
 
@@ -405,9 +409,6 @@ def request_page(page:ft.Page):
 
 
 def equipment_page(page:ft.Page):
-
-    def dataSearch(self):
-        pass
 
     def baseMode(self):
         page.controls.pop(len(page.controls)-1)
@@ -462,11 +463,13 @@ def equipment_page(page:ft.Page):
 
     searchModeButton=ft.IconButton(icon=ft.icons.SEARCH, icon_size=13, bgcolor=deskU.ui_colors[1], icon_color=ft.colors.WHITE, on_click=searchMode)
 
-    if(table!=None):
-        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([table,searchModeButton],spacing=70))
-    else:
-        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой",weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
+    if(table!=None):
+        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
+    else:
+        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
+    
+    page.window.center()
     page.update()
 
 
@@ -498,6 +501,7 @@ def manageAdminAcc_page(page: ft.Page):
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой",weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
+    page.window.center()
     page.update() 
 
 
@@ -523,6 +527,7 @@ def main_page(page:ft.Page):
         ft.Row([cabinetsButton,equipmentStatusButton],spacing=20, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
         ft.Row([equipmentCategoryButton,manageAdminAccButton], alignment=ft.MainAxisAlignment.CENTER))
     logger_pages.info("'Main' page was openned")
+    page.window.center()
     page.update()
 
 
@@ -630,6 +635,7 @@ def resetPassword_page(page: ft.Page):
         ft.Text("", height=20),
         userIdField,resetPasswButton,findIDButton)
     logger_pages.info("'Reset password' page was openned")
+    page.window.center()
     page.update()
 
 
@@ -874,4 +880,5 @@ def startAdmin_page(page:ft.Page):
         ft.Text("", height=30),
         failedRegistLabel)
     logger_pages.info("'StartAdmin' page was openned")
+    page.window.center()
     page.update()

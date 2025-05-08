@@ -97,6 +97,16 @@ async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext)
 
             await callback.message.edit_text(f"Аккаунт: {bd.reqExecute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
 
+        elif(callback.data.split("_")[2]=="3"):
+
+            await callback.message.edit_text("Введите Ваше ФИО")
+
+            await state.set_state(FSM.User_Registration.FSL_Rename)
+
+        elif(callback.data.split("_")[2]=="4"):
+
+            await account(callback)
+
     except Exception as ex:
 
         frameinfo = getframeinfo(currentframe())
@@ -173,6 +183,24 @@ async def view_request(callback:types.CallbackQuery):
         main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
 
 
+@router.callback_query(F.data=="Change_User_FSL")
+async def view_request(callback:types.CallbackQuery, state:FSMContext):
+    
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+
+        await callback.message.edit_text("Введите ваше ФИО")
+        await state.set_state(FSM.User_Registration.FSL_Rename)
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
 
 
 @router.message(FSM.User_Registration.FSL_name)
@@ -197,7 +225,7 @@ async def User_Registration_name(message:types.Message, state: FSMContext):
                 await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
             else:
                 await message.answer("При выполнении регистрации возникла ошибка", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
-                    [InlineKeyboardButton(text="Повторить",callback_data="Retry_FSLState")], 
+                    [InlineKeyboardButton(text="Повторить",callback_data="Back_Scenario_1")], 
                     [InlineKeyboardButton(text="Назад",callback_data="Back_Scenario_0")]]))
 
         else:
@@ -281,3 +309,46 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
 
         await message.answer("При выполнении программы возникла ошибка\n\nВведите описание заявки", reply_markup=keyboards.backButton)
         await state.set_state(FSM.New_Request.Request_Description)
+
+@router.message(FSM.User_Registration.FSL_Rename)
+async def user_rename(message:types.Message, state: FSMContext):
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+       
+        if (len(message.text.split(" "))==3):
+
+            await state.update_data(FSL_name=message.text)
+            data=await state.get_data()
+        
+            result=bd.reqExecute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+
+            if (result!=False):
+
+                await message.answer("Изменение выполнено успешно")
+                await message.answer("Главное меню", reply_markup=keyboards.mainKeyboard)
+            else:
+                await message.answer("При выполнении изменения возникла ошибка", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+                    [InlineKeyboardButton(text="Повторить",callback_data="Back_Scenario_3")], 
+                    [InlineKeyboardButton(text="Назад",callback_data="Back_Scenario_0")]]))
+
+        else:
+
+            inKeyboard=keyboards.backButton
+            inKeyboard.inline_keyboard[0][0].callback_data='Back_Scenario_4'
+           
+            await message.answer("Данное сообщение не явлется соответствующим ФИО, т.к не содержит нужного количества частей.\n\nВведите Ваше ФИО",reply_markup=inKeyboard)
+
+            await state.set_state(FSM.User_Registration.FSL_Rename)
+
+            frameinfo = getframeinfo(currentframe())
+
+            main.logger.exception(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: Недостаточное количество слов для ФИО')
+
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')

@@ -1,0 +1,119 @@
+[INFO] [2025-05-07 19:13:39,452] - main: App Started
+[INFO] [2025-05-07 19:13:39,505] - database: Connected to database was successfull
+[INFO] [2025-05-07 19:13:40,177] - pages: 'Start' page was openned
+[INFO] [2025-05-07 19:14:08,058] - pages: 'Reset password' page was openned
+[INFO] [2025-05-07 19:14:36,846] - pages: 'Start' page was openned
+[INFO] [2025-05-07 19:14:37,880] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-07 19:14:38,768] - pages: 'Start' page was openned
+[INFO] [2025-05-07 19:14:58,360] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-07 19:15:08,448] - pages: 'Start' page was openned
+[INFO] [2025-05-07 19:55:52,092] - main: App Started
+[INFO] [2025-05-07 19:55:52,253] - database: Connected to database was successfull
+[INFO] [2025-05-07 19:55:52,756] - pages: 'Start' page was openned
+[INFO] [2025-05-08 20:51:35,655] - main: App Started
+[INFO] [2025-05-08 20:51:35,861] - database: Connected to database was successfull
+[INFO] [2025-05-08 20:51:37,102] - pages: 'Start' page was openned
+[INFO] [2025-05-08 20:57:05,288] - pages: 'Reset password' page was openned
+[INFO] [2025-05-08 20:57:13,479] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:11:08,299] - main: App Started
+[INFO] [2025-05-08 21:11:08,486] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:11:08,901] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:13:28,388] - main: App Started
+[INFO] [2025-05-08 21:13:28,450] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:13:29,031] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:30:26,014] - main: App Started
+[INFO] [2025-05-08 21:30:26,070] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:30:26,533] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:30:36,712] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-08 21:30:38,323] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:30:39,304] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-08 21:30:41,624] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:30:42,640] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-08 21:32:11,657] - main: App Started
+[INFO] [2025-05-08 21:32:11,711] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:32:12,147] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:32:13,801] - pages: 'Reset password' page was openned
+[INFO] [2025-05-08 21:32:14,844] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:32:15,469] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-08 21:32:16,820] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:32:18,740] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-08 21:32:20,012] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:32:20,653] - pages: 'Reset password' page was openned
+[INFO] [2025-05-08 21:32:21,695] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:32:32,007] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-08 21:32:35,782] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:34:00,037] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-08 21:34:38,565] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 805, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-08 21:34:43,056] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:34:46,345] - pages: 'Reset password' page was openned
+[INFO] [2025-05-08 21:34:47,784] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:34:50,377] - pages: 'Reset password' page was openned
+[INFO] [2025-05-08 21:37:22,130] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:37:32,450] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:39,820] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:41,862] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:49,857] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:51,939] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:53,400] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:55,304] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:57,929] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:37:59,686] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:38:01,127] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:38:02,630] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:38:58,479] - main: App Started
+[INFO] [2025-05-08 21:38:58,541] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:39:00,698] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:39:54,474] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:40:18,521] - main: App Started
+[INFO] [2025-05-08 21:40:18,601] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:40:19,308] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:42:11,250] - pages: 'Main' page was openned
+[ERROR] [2025-05-08 21:42:49,498] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 81, in addData
+    self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.BLACK
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+[INFO] [2025-05-08 21:45:47,872] - main: App Started
+[INFO] [2025-05-08 21:45:48,065] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:45:48,485] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:45:57,050] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:47:39,422] - main: App Started
+[INFO] [2025-05-08 21:47:39,610] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:47:40,163] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:48:09,206] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:49:31,055] - main: App Started
+[INFO] [2025-05-08 21:49:31,255] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:49:31,706] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:50:26,870] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:50:59,671] - main: App Started
+[INFO] [2025-05-08 21:50:59,721] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:51:00,144] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:51:33,797] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:52:52,918] - main: App Started
+[INFO] [2025-05-08 21:52:52,982] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:52:53,855] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:53:03,684] - pages: 'Main' page was openned
+[INFO] [2025-05-08 21:54:12,881] - main: App Started
+[INFO] [2025-05-08 21:54:12,976] - database: Connected to database was successfull
+[INFO] [2025-05-08 21:54:13,581] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:54:25,504] - pages: 'Reset password' page was openned
+[INFO] [2025-05-08 21:54:26,652] - pages: 'Start' page was openned
+[INFO] [2025-05-08 21:54:35,382] - pages: 'Main' page was openned

@@ -1,4 +1,4 @@
-import flet as ft,time,datetime, requests,logging
+import flet as ft,time,datetime, requests,logging,os
 from utilits import bd
 
 from hashlib import sha384
@@ -137,10 +137,7 @@ def checkFieldOnIncosist(self:list,fieldType:int):
             print(type(self.page.controls[i]))
             if (type(self.page.controls[i]) not in [ft.Row,ft.Column]):
                 if((self.page.controls[i].value=="" or self.page.controls[i].value==None)):
-                    self.page.controls[i].border_color=ft.colors.RED_300
                     chc=False
-                else:
-                    self.page.controls[i].border_color=ft.colors.GREEN
 
         self.page.update()
 
@@ -148,19 +145,18 @@ def checkFieldOnIncosist(self:list,fieldType:int):
 
 def errorField(self):
 
-    baseColor=None
+    baseColor=self.page.controls[1].border_color
 
     for control in self.page.controls:
 
-        if(type(control)==ft.TextField):
-            baseColor=control.border_color
+        if(type(control)==ft.TextField or type(control)==ft.DropdownM2):
             control.border_color=ft.colors.RED_300
 
     self.page.update()
     time.sleep(0.7)
     
     for control in self.page.controls:
-        if (type(control)==ft.TextField):
+        if (type(control)==ft.TextField or type(control)==ft.DropdownM2):
             control.border_color=baseColor
 
     self.page.update()
@@ -191,21 +187,21 @@ def contentColor_blur(self):
 
 def pageClose(self):
     if (self.data=='close'):
+        if(os.path.isfile("Desktop/Admin Configure")==True):
+            try:
+                lines=[]
+                with open("Desktop/Admin Configure", 'r') as file:
+                    lines=file.readlines()
 
-        try:
-            lines=[]
-            with open("Desktop/Admin Configure", 'r') as file:
-                lines=file.readlines()
+                lines[0]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
 
-            lines[0]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
+                with open("Desktop/Admin Configure", 'w+') as file:
+                    file.writelines(lines)
 
-            with open("Desktop/Admin Configure", 'w+') as file:
-                file.writelines(lines)
+            except Exception as ex:
 
-        except Exception as ex:
-
-            logger_deskU.exception(f" {ex}")
-            raise Exception(f" {ex}")
+                logger_deskU.exception(f" {ex}")
+                raise Exception(f" {ex}")
 
         self.page.window.destroy()
 
