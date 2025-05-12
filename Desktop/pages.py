@@ -507,22 +507,55 @@ def main_page(page:ft.Page):
     page.clean()
 
     page.window.width=1280
-    page.window.height=960
+    page.window.height=800
 
-    page.decoration=ft.BoxDecoration(image=ft.DecorationImage("Desktop\\Image\\Backgroud.jpg"))
 
-    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=130, on_click=lambda _:request_page(page))
-    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.icons.LAPTOP_CHROMEBOOK, width=150, on_click= lambda _:equipment_page(page))
-    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=130, icon=ft.icons.ROOM)
+    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page))
+    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.icons.LAPTOP_CHROMEBOOK, width=200, on_click= lambda _:equipment_page(page))
+    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=200, icon=ft.icons.ROOM)
     equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.icons.ARCHIVE)
     equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.icons.SEGMENT)
     manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
 
 
     page.add(
-        ft.Row([requestPageButton,equipmentPageButton], spacing=20, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
-        ft.Row([cabinetsButton,equipmentStatusButton],spacing=20, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
-        ft.Row([equipmentCategoryButton,manageAdminAccButton], alignment=ft.MainAxisAlignment.CENTER))
+            ft.Row([requestPageButton,equipmentPageButton], spacing=40, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
+            ft.Row([cabinetsButton,equipmentStatusButton], spacing=40,alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
+            ft.Row([equipmentCategoryButton,manageAdminAccButton], spacing=40 , alignment=ft.MainAxisAlignment.CENTER),
+            ft.Row([]),
+            ft.Row([ft.Image("Desktop\Image\main_object_1.png", width=150,height=230)], alignment=ft.MainAxisAlignment.START))
+    logger_pages.info("'Main' page was openned")
+    page.window.center()
+    page.update()
+
+
+def main_page_v2(page:ft.Page):
+    page.clean()
+
+    page.window.width=1280
+    page.window.height=800
+
+
+    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page))
+    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.icons.LAPTOP_CHROMEBOOK, width=200, on_click= lambda _:equipment_page(page))
+    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=200, icon=ft.icons.ROOM)
+    equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.icons.ARCHIVE)
+    equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.icons.SEGMENT)
+    manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
+
+
+    page.add(ft.Row([
+        ft.Image("Desktop\Image\main_object_1.png", width=500,height=400),
+        ft.Column([
+            ft.Text("",height=20),
+            requestPageButton,
+            equipmentPageButton,
+            cabinetsButton,
+            equipmentStatusButton,
+            equipmentCategoryButton,
+            manageAdminAccButton
+        ])
+        ], spacing=100, alignment=ft.MainAxisAlignment.CENTER))
     logger_pages.info("'Main' page was openned")
     page.window.center()
     page.update()
@@ -642,7 +675,7 @@ def start_page(page:ft.Page):
         result=bd.reqExecute(f"Select * from Administrators where Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}' AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
         if (result!=False):
             if(len(result)!=0):
-                main_page(self.page)
+                main_page_v2(self.page)
             else:
                 deskU.errorField(self)
         else:
@@ -661,7 +694,7 @@ def start_page(page:ft.Page):
     page.theme_mode=ft.ThemeMode.LIGHT
     page.vertical_alignment=ft.MainAxisAlignment.CENTER
     page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
-    page.window.resizable=False
+    #page.window.resizable=False
     page.window.prevent_close=True
     page.window.on_event=deskU.pageClose
 
@@ -672,8 +705,6 @@ def start_page(page:ft.Page):
         'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf',
         'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf',
         'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf'}
-
-    page.decoration=ft.BoxDecoration(image=ft.DecorationImage("Desktop\\Image\\Background.jpg", fit=ft.ImageFit.CONTAIN),shape=ft.BoxShape.RECTANGLE)
 
     startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
     startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)

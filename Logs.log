@@ -148,3 +148,282 @@ IndexError: list index out of range
 [INFO] [2025-05-08 22:35:14,784] - database: Connected to database was successfull
 [INFO] [2025-05-08 22:35:15,235] - pages: 'Start' page was openned
 [INFO] [2025-05-08 22:35:27,418] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:07:18,581] - main: App Started
+[INFO] [2025-05-12 16:07:18,648] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:07:19,967] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:07:29,363] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:11:18,048] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:11:24,145] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:11:34,992] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:11:48,273] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:12:02,658] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:12:05,064] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:12:11,388] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:12:16,069] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:13:53,384] - main: App Started
+[INFO] [2025-05-12 16:13:53,437] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:13:53,908] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:14:06,469] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:29:11,431] - main: App Started
+[INFO] [2025-05-12 16:29:11,609] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:29:12,441] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:29:20,631] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:29:32,735] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:31:06,021] - main: App Started
+[INFO] [2025-05-12 16:31:06,071] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:31:06,484] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:31:14,245] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:31:45,781] - main: App Started
+[INFO] [2025-05-12 16:31:45,836] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:31:46,387] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:31:53,409] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:33:44,220] - main: App Started
+[INFO] [2025-05-12 16:33:44,273] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:33:44,719] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:34:17,219] - main: App Started
+[INFO] [2025-05-12 16:34:17,271] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:34:17,754] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:34:37,218] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:35:31,805] - main: App Started
+[INFO] [2025-05-12 16:35:32,019] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:35:32,432] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:35:41,719] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:39:16,500] - main: App Started
+[INFO] [2025-05-12 16:39:16,552] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:39:16,976] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:40:31,222] - main: App Started
+[INFO] [2025-05-12 16:40:31,272] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:40:31,698] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:40:52,932] - main: App Started
+[INFO] [2025-05-12 16:40:53,141] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:40:53,564] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:41:33,761] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:44:07,749] - main: App Started
+[INFO] [2025-05-12 16:44:07,806] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:44:08,260] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:44:25,995] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:45:28,555] - main: App Started
+[INFO] [2025-05-12 16:45:28,761] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:45:29,254] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:45:35,235] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:46:34,985] - main: App Started
+[INFO] [2025-05-12 16:46:35,107] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:46:35,515] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:46:45,767] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:52:03,430] - main: App Started
+[INFO] [2025-05-12 16:52:03,482] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:52:03,888] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:52:27,810] - pages: 'Main' page was openned
+[INFO] [2025-05-12 16:55:44,345] - main: App Started
+[INFO] [2025-05-12 16:55:44,395] - database: Connected to database was successfull
+[INFO] [2025-05-12 16:55:44,797] - pages: 'Start' page was openned
+[INFO] [2025-05-12 16:55:52,134] - pages: 'Main' page was openned
+[INFO] [2025-05-12 17:52:19,005] - main: App Started
+[INFO] [2025-05-12 17:52:19,176] - database: Connected to database was successfull
+[INFO] [2025-05-12 17:52:19,851] - pages: 'Start' page was openned
+[INFO] [2025-05-12 17:52:28,326] - pages: 'Main' page was openned
+[INFO] [2025-05-12 17:53:19,143] - main: App Started
+[INFO] [2025-05-12 17:53:19,192] - database: Connected to database was successfull
+[INFO] [2025-05-12 17:53:19,618] - pages: 'Start' page was openned
+[INFO] [2025-05-12 17:56:03,471] - main: App Started
+[INFO] [2025-05-12 17:56:03,528] - database: Connected to database was successfull
+[INFO] [2025-05-12 17:56:04,180] - pages: 'Start' page was openned
+[INFO] [2025-05-12 17:56:09,622] - pages: 'Main' page was openned
+[INFO] [2025-05-12 17:56:33,564] - main: App Started
+[INFO] [2025-05-12 17:56:33,739] - database: Connected to database was successfull
+[INFO] [2025-05-12 17:56:34,277] - pages: 'Start' page was openned
+[INFO] [2025-05-12 17:56:45,627] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:31:40,743] - main: App Started
+[INFO] [2025-05-12 18:31:40,799] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:31:41,390] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:31:48,761] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:32:22,709] - main: App Started
+[INFO] [2025-05-12 18:32:22,763] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:32:23,195] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:32:29,863] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:36:22,985] - main: App Started
+[INFO] [2025-05-12 18:36:23,052] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:36:23,463] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:36:36,619] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:37:24,451] - main: App Started
+[INFO] [2025-05-12 18:37:24,503] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:37:24,937] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:37:27,908] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:40:45,852] - main: App Started
+[INFO] [2025-05-12 18:40:45,915] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:40:46,346] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:40:50,070] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:50:46,197] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:50:48,263] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:50:50,100] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:55:15,422] - main: App Started
+[INFO] [2025-05-12 18:55:15,604] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:55:16,049] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:55:18,758] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:56:16,733] - main: App Started
+[INFO] [2025-05-12 18:56:16,796] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:56:17,328] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:56:25,639] - pages: 'Main' page was openned
+[INFO] [2025-05-12 18:58:08,305] - main: App Started
+[INFO] [2025-05-12 18:58:08,376] - database: Connected to database was successfull
+[INFO] [2025-05-12 18:58:08,890] - pages: 'Start' page was openned
+[INFO] [2025-05-12 18:58:14,145] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:29:43,987] - main: App Started
+[INFO] [2025-05-12 22:29:44,141] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:29:44,757] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:29:47,961] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:30:39,525] - main: App Started
+[INFO] [2025-05-12 22:30:39,679] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:30:40,194] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:30:42,991] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:31:05,992] - main: App Started
+[INFO] [2025-05-12 22:31:06,049] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:31:06,482] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:31:09,485] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:31:58,669] - main: App Started
+[INFO] [2025-05-12 22:31:58,738] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:31:59,177] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:32:01,817] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:32:35,634] - main: App Started
+[INFO] [2025-05-12 22:32:35,691] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:32:36,196] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:32:38,836] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:33:06,977] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:33:08,692] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:33:10,095] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:33:11,575] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:33:50,271] - main: App Started
+[INFO] [2025-05-12 22:33:50,452] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:33:50,921] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:33:53,389] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:35:05,148] - main: App Started
+[INFO] [2025-05-12 22:35:05,307] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:35:05,716] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:35:09,525] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:35:33,893] - main: App Started
+[INFO] [2025-05-12 22:35:34,049] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:35:34,553] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:35:37,767] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:36:17,498] - main: App Started
+[INFO] [2025-05-12 22:36:17,551] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:36:17,975] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:36:20,963] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:37:20,877] - main: App Started
+[INFO] [2025-05-12 22:37:21,058] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:37:21,496] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:37:24,430] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:37:45,472] - main: App Started
+[INFO] [2025-05-12 22:37:45,666] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:37:46,114] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:37:51,815] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:39:46,892] - main: App Started
+[INFO] [2025-05-12 22:39:46,956] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:39:47,455] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:39:50,109] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:40:11,167] - main: App Started
+[INFO] [2025-05-12 22:40:11,350] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:40:11,782] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:40:14,433] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:40:46,604] - main: App Started
+[INFO] [2025-05-12 22:40:46,795] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:40:47,221] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:40:50,125] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:41:09,366] - main: App Started
+[INFO] [2025-05-12 22:41:09,428] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:41:09,910] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:41:12,873] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:41:36,230] - main: App Started
+[INFO] [2025-05-12 22:41:36,283] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:41:36,724] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:41:39,679] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:42:32,248] - main: App Started
+[INFO] [2025-05-12 22:42:32,301] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:42:32,740] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:42:35,401] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:43:15,693] - main: App Started
+[INFO] [2025-05-12 22:43:15,850] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:43:16,329] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:43:19,301] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:44:07,292] - main: App Started
+[INFO] [2025-05-12 22:44:07,344] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:44:07,823] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:44:11,227] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:44:43,879] - main: App Started
+[INFO] [2025-05-12 22:44:43,934] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:44:44,393] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:44:48,392] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:46:36,750] - main: App Started
+[INFO] [2025-05-12 22:46:36,921] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:46:37,391] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:46:40,193] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:46:59,296] - main: App Started
+[INFO] [2025-05-12 22:46:59,351] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:46:59,801] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:47:03,790] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:48:02,058] - main: App Started
+[INFO] [2025-05-12 22:48:02,110] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:48:02,543] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:48:05,096] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:49:00,415] - main: App Started
+[INFO] [2025-05-12 22:49:00,474] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:49:00,958] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:49:03,688] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:50:58,924] - main: App Started
+[INFO] [2025-05-12 22:50:58,976] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:50:59,456] - pages: 'Start' page was openned
+[ERROR] [2025-05-12 22:51:03,035] - asyncio: Future exception was never retrieved
+future: <Future finished exception=NameError("name 'ico' is not defined")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 646, in nextPage
+    main_page(self.page)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 513, in main_page
+    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page), style=ft.ButtonStyle(ico))
+                                                                                                                                                           ^^^
+NameError: name 'ico' is not defined
+[INFO] [2025-05-12 22:51:33,093] - main: App Started
+[INFO] [2025-05-12 22:51:33,172] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:51:33,579] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:51:36,269] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:51:39,372] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:51:41,026] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:51:42,350] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:57:54,198] - main: App Started
+[INFO] [2025-05-12 22:57:54,282] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:57:55,031] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:57:59,971] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:58:54,741] - main: App Started
+[INFO] [2025-05-12 22:58:54,802] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:58:55,282] - pages: 'Start' page was openned
+[ERROR] [2025-05-12 22:58:55,994] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Text' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 903, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 679, in nextPage
+    deskU.errorField(self)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 148, in errorField
+    baseColor=self.page.controls[1].border_color
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Text' object has no attribute 'border_color'
+[INFO] [2025-05-12 22:58:59,547] - pages: 'Main' page was openned
+[INFO] [2025-05-12 22:59:38,638] - main: App Started
+[INFO] [2025-05-12 22:59:38,825] - database: Connected to database was successfull
+[INFO] [2025-05-12 22:59:39,277] - pages: 'Start' page was openned
+[INFO] [2025-05-12 22:59:43,724] - pages: 'Main' page was openned
+[INFO] [2025-05-12 23:00:22,341] - main: App Started
+[INFO] [2025-05-12 23:00:22,400] - database: Connected to database was successfull
+[INFO] [2025-05-12 23:00:22,872] - pages: 'Start' page was openned
+[INFO] [2025-05-12 23:00:25,555] - pages: 'Main' page was openned
+[INFO] [2025-05-12 23:01:04,092] - main: App Started
+[INFO] [2025-05-12 23:01:04,285] - database: Connected to database was successfull
+[INFO] [2025-05-12 23:01:04,715] - pages: 'Start' page was openned
+[INFO] [2025-05-12 23:01:07,742] - pages: 'Main' page was openned
+[INFO] [2025-05-12 23:05:25,345] - pages: 'Main' page was openned
