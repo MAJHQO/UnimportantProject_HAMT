@@ -8,3 +8,6 @@ class New_Request(StatesGroup):
     Cabinet_Number=State()
     Request_Description=State()
     Request_Status=State()
+
+class Password_Reset(StatesGroup):
+    password=State()

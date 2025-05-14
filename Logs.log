@@ -427,3 +427,504 @@ AttributeError: 'Text' object has no attribute 'border_color'
 [INFO] [2025-05-12 23:01:04,715] - pages: 'Start' page was openned
 [INFO] [2025-05-12 23:01:07,742] - pages: 'Main' page was openned
 [INFO] [2025-05-12 23:05:25,345] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:15:49,879] - main: App Started
+[INFO] [2025-05-13 15:15:49,936] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:15:50,935] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:15:55,010] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:16:39,030] - main: App Started
+[INFO] [2025-05-13 15:16:39,227] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:16:39,738] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:16:42,730] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:18:48,808] - main: App Started
+[INFO] [2025-05-13 15:18:48,861] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:18:49,315] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:18:52,298] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:20:34,330] - main: App Started
+[INFO] [2025-05-13 15:20:34,406] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:20:34,870] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:20:38,237] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:21:00,831] - main: App Started
+[INFO] [2025-05-13 15:21:00,882] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:21:01,407] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:21:03,918] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:26:50,578] - main: App Started
+[INFO] [2025-05-13 15:26:50,637] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:26:51,059] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:26:54,072] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:27:58,494] - main: App Started
+[INFO] [2025-05-13 15:27:58,550] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:27:58,988] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:28:01,696] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:28:32,141] - main: App Started
+[INFO] [2025-05-13 15:28:32,314] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:28:32,768] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:28:35,088] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:28:57,882] - main: App Started
+[INFO] [2025-05-13 15:28:57,937] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:28:58,390] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:29:01,038] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:29:20,416] - main: App Started
+[INFO] [2025-05-13 15:29:20,468] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:29:21,053] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:29:23,566] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:32:27,071] - main: App Started
+[INFO] [2025-05-13 15:32:27,121] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:32:27,653] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:32:30,573] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:34:13,796] - main: App Started
+[INFO] [2025-05-13 15:34:13,975] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:34:14,579] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:34:17,153] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:34:53,572] - main: App Started
+[INFO] [2025-05-13 15:34:53,677] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:34:54,162] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:34:56,779] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:38:04,516] - main: App Started
+[INFO] [2025-05-13 15:38:04,602] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:38:05,098] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:38:07,965] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:41:53,696] - main: App Started
+[INFO] [2025-05-13 15:41:53,755] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:41:54,188] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:41:56,564] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:42:31,393] - main: App Started
+[INFO] [2025-05-13 15:42:31,445] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:42:31,895] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:42:38,901] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:43:26,256] - main: App Started
+[INFO] [2025-05-13 15:43:26,358] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:43:27,131] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:44:23,853] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:44:53,610] - main: App Started
+[INFO] [2025-05-13 15:44:53,663] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:44:54,067] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:45:17,167] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:46:22,484] - main: App Started
+[INFO] [2025-05-13 15:46:22,551] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:46:23,924] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:46:26,370] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:46:47,022] - main: App Started
+[INFO] [2025-05-13 15:46:47,177] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:46:47,639] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:46:53,701] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:49:34,758] - main: App Started
+[INFO] [2025-05-13 15:49:34,956] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:49:35,419] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:49:38,779] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:52:08,472] - main: App Started
+[INFO] [2025-05-13 15:52:08,524] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:52:08,958] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:52:12,385] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:53:18,716] - main: App Started
+[INFO] [2025-05-13 15:53:18,874] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:53:19,366] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:53:23,154] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:54:56,087] - main: App Started
+[INFO] [2025-05-13 15:54:56,139] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:54:56,682] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:54:59,469] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:56:16,063] - main: App Started
+[INFO] [2025-05-13 15:56:16,120] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:56:16,623] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:56:19,056] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:56:52,918] - main: App Started
+[INFO] [2025-05-13 15:56:52,972] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:56:53,486] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:56:55,996] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:57:14,705] - main: App Started
+[INFO] [2025-05-13 15:57:14,760] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:57:15,213] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:57:19,597] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:57:51,009] - main: App Started
+[INFO] [2025-05-13 15:57:51,184] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:57:51,932] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:58:01,626] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:58:15,990] - pages: 'Main' page was openned
+[INFO] [2025-05-13 15:58:30,741] - main: App Started
+[INFO] [2025-05-13 15:58:30,796] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:58:31,270] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:59:01,606] - main: App Started
+[INFO] [2025-05-13 15:59:01,779] - database: Connected to database was successfull
+[INFO] [2025-05-13 15:59:02,199] - pages: 'Start' page was openned
+[INFO] [2025-05-13 15:59:04,737] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:20,734] - main: App Started
+[INFO] [2025-05-13 16:00:20,807] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:00:21,421] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:00:24,793] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:31,231] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:36,402] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:38,675] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:40,946] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:49,735] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:00:51,824] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:03:00,867] - main: App Started
+[INFO] [2025-05-13 16:03:00,921] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:03:01,355] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:03:03,976] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:03:30,671] - main: App Started
+[INFO] [2025-05-13 16:03:30,723] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:03:31,136] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:04:17,121] - main: App Started
+[INFO] [2025-05-13 16:04:17,272] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:04:17,707] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:04:20,317] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:05:15,359] - main: App Started
+[INFO] [2025-05-13 16:05:15,411] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:05:15,830] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:05:18,374] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:10:09,793] - main: App Started
+[INFO] [2025-05-13 16:10:09,845] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:10:10,264] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:11:24,441] - main: App Started
+[INFO] [2025-05-13 16:11:24,506] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:12:35,889] - main: App Started
+[INFO] [2025-05-13 16:12:36,084] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:12:36,682] - pages: 'Start' page was openned
+[ERROR] [2025-05-13 16:12:39,179] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("module 'flet' has no attribute 'icons'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 738, in nextPage
+    main_page_v2(self.page)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 541, in main_page_v2
+    icon=ft.icons.HOME_REPAIR_SERVICE,
+         ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+[INFO] [2025-05-13 16:13:21,393] - main: App Started
+[INFO] [2025-05-13 16:13:21,551] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:13:21,996] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:13:25,222] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:13:27,722] - pages: 'Main' page was openned
+[ERROR] [2025-05-13 16:13:28,336] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("module 'flet' has no attribute 'colors'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 554, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 448, in equipment_page
+    table=table_obj.getTable(1)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 311, in getTable
+    self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{(result[i][j])}|{(result[i][0])}|{(result[i][3])}|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data="1"))
+                                                                                                                                                                                         ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+[INFO] [2025-05-13 16:14:00,085] - main: App Started
+[INFO] [2025-05-13 16:14:00,137] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:14:00,565] - pages: 'Start' page was openned
+[ERROR] [2025-05-13 16:14:05,515] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Text' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 740, in nextPage
+    deskU.errorField(self)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 148, in errorField
+    baseColor=self.page.controls[1].border_color
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Text' object has no attribute 'border_color'
+[INFO] [2025-05-13 16:14:07,885] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:14:10,577] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:14:14,559] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:17:46,858] - main: App Started
+[INFO] [2025-05-13 16:17:46,911] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:17:47,406] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:18:06,618] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:22:02,890] - main: App Started
+[INFO] [2025-05-13 16:22:02,945] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:22:03,350] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:23:32,430] - main: App Started
+[INFO] [2025-05-13 16:23:32,488] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:23:33,008] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:23:35,972] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:23:51,184] - pages: 'Main' page was openned
+[INFO] [2025-05-13 16:25:18,401] - main: App Started
+[INFO] [2025-05-13 16:25:18,480] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:25:18,917] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:26:31,561] - main: App Started
+[INFO] [2025-05-13 16:26:31,618] - database: Connected to database was successfull
+[INFO] [2025-05-13 16:26:32,072] - pages: 'Start' page was openned
+[INFO] [2025-05-13 16:26:45,804] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:14:49,130] - main: App Started
+[INFO] [2025-05-13 20:14:49,286] - database: Connected to database was successfull
+[INFO] [2025-05-13 20:14:50,278] - pages: 'Start' page was openned
+[INFO] [2025-05-13 20:15:08,474] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:15:40,909] - main: App Started
+[INFO] [2025-05-13 20:15:41,063] - database: Connected to database was successfull
+[INFO] [2025-05-13 20:15:41,469] - pages: 'Start' page was openned
+[INFO] [2025-05-13 20:15:59,671] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:16:50,466] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:16:52,240] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:16:54,978] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:16:56,901] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:16:59,871] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:17:11,920] - pages: 'Main' page was openned
+[INFO] [2025-05-13 20:17:14,180] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:11:15,840] - main: App Started
+[INFO] [2025-05-13 23:11:15,896] - database: Connected to database was successfull
+[INFO] [2025-05-13 23:11:16,431] - pages: 'Start' page was openned
+[INFO] [2025-05-13 23:11:54,985] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:16,350] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:17,912] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:20,353] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:26,721] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:28,639] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:30,288] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:12:35,558] - pages: 'Main' page was openned
+[INFO] [2025-05-13 23:13:19,775] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:27:35,830] - main: App Started
+[INFO] [2025-05-14 08:27:35,911] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:27:37,240] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:28:07,730] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:28:31,259] - pages: 'Main' page was openned
+[ERROR] [2025-05-14 08:28:31,916] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("TextButton.__init__() got an unexpected keyword argument 'icon_size'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 560, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 460, in equipment_page
+    ft.MenuItemButton(ft.TextButton("Поиск",icon=ft.Icons.SEARCH, icon_size=13, icon_color=ft.Colors.WHITE), on_click=searchMode, data=[1,table_obj])]),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TextButton.__init__() got an unexpected keyword argument 'icon_size'
+[INFO] [2025-05-14 08:28:54,571] - main: App Started
+[INFO] [2025-05-14 08:28:54,642] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:28:55,086] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:28:59,772] - pages: 'Main' page was openned
+[ERROR] [2025-05-14 08:29:00,770] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AssertionError('each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (13)')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 560, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 471, in equipment_page
+    page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 743, in add
+    r = self.__update(self)
+        ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 801, in __update
+    commands, added_controls, removed_controls = self.__prepare_update(*controls)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 817, in __prepare_update
+    control.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 490, in build_update_commands
+    innerCmds = ctrl._build_add_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 545, in _build_add_commands
+    childCmd = control._build_add_commands(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 545, in _build_add_commands
+    childCmd = control._build_add_commands(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 545, in _build_add_commands
+    childCmd = control._build_add_commands(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 534, in _build_add_commands
+    command = self._build_command(False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 561, in _build_command
+    self.before_update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\datatable.py", line 469, in before_update
+    assert all(
+AssertionError: each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (13)
+[INFO] [2025-05-14 08:44:21,038] - main: App Started
+[INFO] [2025-05-14 08:44:21,094] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:44:21,562] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:44:25,804] - pages: 'Main' page was openned
+[ERROR] [2025-05-14 08:44:54,922] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 209, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'controls'
+[ERROR] [2025-05-14 08:44:55,024] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 209, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'controls'
+[ERROR] [2025-05-14 08:44:55,064] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 209, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'controls'
+[ERROR] [2025-05-14 08:44:56,776] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 209, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'controls'
+[ERROR] [2025-05-14 08:44:56,950] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 209, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'controls'
+[ERROR] [2025-05-14 08:44:57,455] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 209, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'controls'
+[INFO] [2025-05-14 08:47:44,588] - main: App Started
+[INFO] [2025-05-14 08:47:44,646] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:47:45,081] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:48:06,391] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:48:13,864] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:48:31,736] - main: App Started
+[INFO] [2025-05-14 08:48:31,941] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:48:32,418] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:48:35,311] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:49:07,891] - main: App Started
+[INFO] [2025-05-14 08:49:08,077] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:49:08,530] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:49:12,126] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:49:31,649] - main: App Started
+[INFO] [2025-05-14 08:49:31,707] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:49:32,185] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:49:35,409] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:51:47,541] - main: App Started
+[INFO] [2025-05-14 08:51:47,595] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:51:48,040] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:51:51,069] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:53:00,467] - main: App Started
+[INFO] [2025-05-14 08:53:00,520] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:53:00,978] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:53:06,047] - pages: 'Main' page was openned
+[INFO] [2025-05-14 08:56:40,364] - main: App Started
+[INFO] [2025-05-14 08:56:40,418] - database: Connected to database was successfull
+[INFO] [2025-05-14 08:56:40,848] - pages: 'Start' page was openned
+[INFO] [2025-05-14 08:56:44,201] - pages: 'Main' page was openned
+[INFO] [2025-05-14 20:24:24,554] - main: App Started
+[INFO] [2025-05-14 20:24:24,612] - database: Connected to database was successfull
+[INFO] [2025-05-14 20:24:25,364] - pages: 'Start' page was openned
+[INFO] [2025-05-14 20:26:15,265] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-14 20:29:06,105] - main: App Started
+[INFO] [2025-05-14 20:29:06,167] - database: Connected to database was successfull
+[INFO] [2025-05-14 20:29:06,800] - pages: 'Start' page was openned
+[INFO] [2025-05-14 20:29:08,169] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-14 20:30:42,664] - main: App Started
+[INFO] [2025-05-14 20:30:42,821] - database: Connected to database was successfull
+[INFO] [2025-05-14 20:30:43,540] - pages: 'Start' page was openned
+[INFO] [2025-05-14 20:31:14,872] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-14 20:32:24,096] - main: App Started
+[INFO] [2025-05-14 20:32:24,175] - database: Connected to database was successfull
+[INFO] [2025-05-14 20:32:24,913] - pages: 'Start' page was openned
+[INFO] [2025-05-14 20:33:45,130] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-14 20:35:17,563] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 899, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[ERROR] [2025-05-14 20:37:00,032] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 899, in adminRegInBD
+    page.window.height=700
+                           
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-14 20:38:24,957] - main: App Started
+[INFO] [2025-05-14 20:38:25,136] - database: Connected to database was successfull
+[INFO] [2025-05-14 20:38:25,573] - pages: 'Start' page was openned
+[INFO] [2025-05-14 20:38:26,760] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-14 20:39:00,094] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Column' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 867, in adminRegInBD
+    deskU.errorField(self)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 148, in errorField
+    baseColor=self.page.controls[1].border_color
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Column' object has no attribute 'border_color'
+[ERROR] [2025-05-14 20:39:00,782] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Column' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 867, in adminRegInBD
+    deskU.errorField(self)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 148, in errorField
+    baseColor=self.page.controls[1].border_color
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Column' object has no attribute 'border_color'
+[INFO] [2025-05-14 20:44:48,463] - main: App Started
+[INFO] [2025-05-14 20:44:48,622] - database: Connected to database was successfull
+[INFO] [2025-05-14 20:44:49,154] - pages: 'Start' page was openned

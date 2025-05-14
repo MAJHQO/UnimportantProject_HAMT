@@ -72,7 +72,13 @@ def reqExecute(request:str):
 
 # reqExecute("""Create table Equipment(
 #             Name VARCHAR PRIMARY KEY,
-#             Components VARCHAR,
+#             IP_Address VARCHAR,
+#             MAC_Address VARCHAR,
+#             Network_Name VARCHAR,
+#             CPU_Model VARCHAR,
+#             CPU_Frequency VARCHAR,
+#             RAM INTEGER,
+#             HDD INTEGER,
 #             Equipment_Category VARCHAR,
 #             Serial_Number VARCHAR,
 #             Invetory_Number VARCHAR,

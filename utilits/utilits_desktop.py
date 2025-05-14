@@ -18,11 +18,11 @@ def dynamicPassCheck(self, dynamicCheck=True):
     if (dynamicCheck==True):
 
         if (self.control.value==''):
-            self.control.border_color=ft.colors.BLACK
+            self.control.border_color=ft.Colors.BLACK
 
         elif (len(self.control.value)<=15):
 
-            self.control.border_color=ft.colors.RED_300
+            self.control.border_color=ft.Colors.RED_300
 
         else:
 
@@ -48,16 +48,16 @@ def dynamicPassCheck(self, dynamicCheck=True):
 
             if (elemSum>=1 and elemSum<=8):
                 if((passwordCheck[0]>0 and passwordCheck[0]<=3) and (passwordCheck[1]>0 and passwordCheck[1]<=3) and (passwordCheck[2]>0 and passwordCheck[2]<=3) and (passwordCheck[3]>0 and passwordCheck[3]<=2)):
-                    self.control.border_color=ft.colors.ORANGE_300 
+                    self.control.border_color=ft.Colors.ORANGE_300 
                 else:
-                    self.control.border_color=ft.colors.RED_300 
+                    self.control.border_color=ft.Colors.RED_300 
 
             elif (elemSum>=9):
                 if( passwordCheck[0]>=5 and passwordCheck[1]>3 and passwordCheck[2]>=4 and  passwordCheck[3]>2):
-                    self.control.border_color=ft.colors.GREEN_300
+                    self.control.border_color=ft.Colors.GREEN_300
 
                 else:
-                    self.control.border_color=ft.colors.ORANGE_300 
+                    self.control.border_color=ft.Colors.ORANGE_300 
                     
 
         self.page.update()
@@ -119,13 +119,13 @@ def checkFieldOnIncosist(self:list,fieldType:int):
         for control in self.page.controls:
 
             if(type(control)==ft.TextField and control.value==""):
-                control.border_color=ft.colors.RED_300
+                control.border_color=ft.Colors.RED_300
 
             elif (type(control)==ft.TextField and control.value!="" and control.hint_text=='Имя пользователя' and control.value.find("@")!=-1):
-                control.border_color=ft.colors.RED_300
+                control.border_color=ft.Colors.RED_300
 
             elif (type(control)==ft.TextField and control.value!="" and control.hint_text=='ФИО администратора' and len(control.value.split(" "))!=3):
-                control.border_color=ft.colors.RED_300
+                control.border_color=ft.Colors.RED_300
 
         self.page.update()
 
@@ -145,12 +145,16 @@ def checkFieldOnIncosist(self:list,fieldType:int):
 
 def errorField(self):
 
-    baseColor=self.page.controls[1].border_color
+    baseColor=None
+    for control in self.page.controls:
+        if (type(control) in [ft.ElevatedButton,ft.TextField,ft.DropdownM2]):
+            baseColor=control.border_color
+            break
 
     for control in self.page.controls:
 
         if(type(control)==ft.TextField or type(control)==ft.DropdownM2):
-            control.border_color=ft.colors.RED_300
+            control.border_color=ft.Colors.RED_300
 
     self.page.update()
     time.sleep(0.7)
@@ -166,14 +170,14 @@ def successField(self):
     for control in self.page.controls:
 
         if(type(control)==ft.TextField or type(control)==ft.DropdownM2):
-            control.border_color=ft.colors.GREEN
+            control.border_color=ft.Colors.GREEN
 
     self.page.update()
     time.sleep(0.7)
     
     for control in self.page.controls:
         if (type(control)==ft.TextField or type(control)==ft.DropdownM2):
-            control.border_color=ft.colors.BLACK
+            control.border_color=ft.Colors.BLACK
 
     self.page.update()
 
@@ -275,7 +279,7 @@ class Table:
         
         if (table_type==1):
             result=bd.reqExecute("Select * from Equipment")
-            cellName_arr.extend(["Name","Components","Equipment_Category","Serial_Number", "Invetory_Number" ,"Equipment_Status","Cabinet_Number"])
+            cellName_arr.extend(["Name","IP_Address","MAC_Address","Network_Name","CPU_Model","CPU_Frequency","RAM","HDD","Equipment_Category","Serial_Number", "Invetory_Number" ,"Equipment_Status","Cabinet_Number"])
         elif (table_type==2):
             result=bd.reqExecute("Select * from Cabinets")
             cellName_arr.extend(["Number"])
@@ -306,22 +310,22 @@ class Table:
 
                 if (table_type==1):
                     if (j in [2,5,6]):
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{(result[i][j])}|{(result[i][0])}|{(result[i][3])}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}", on_click=self_main.viewData_mode), data="1"))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.Colors.TRANSPARENT, data=f"{(result[i][j])}|{(result[i][0])}|{(result[i][3])}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}", on_click=self_main.viewData_mode), data="1"))
                     else:
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.colors.TRANSPARENT, data=f"{(result[i][j])}|{(result[i][0])}|{(result[i][3])}|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data="1"))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), text_align=ft.TextAlign.CENTER, read_only=True ,width=400, border_color=ft.Colors.TRANSPARENT, data=f"{(result[i][j])}|{(result[i][0])}|{(result[i][3])}|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data="1"))
 
                 elif (table_type==0):
                     if(j==3 or j==5):
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}|{(result[i][0])}", on_click=self_main.viewData_mode), data="0"))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.Colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|Dropdown|{j}|{(result[i][0])}", on_click=self_main.viewData_mode), data="0"))
                     elif(j==0):
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|TextField|{(result[i][0])}"), data="0"))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.Colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|TextField|{(result[i][0])}"), data="0"))
                     else:
 
-                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|TextField|{(result[i][0])}", on_click=self_main.viewData_mode), data="0"))
+                        self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.Colors.TRANSPARENT,data=f"{(result[i][j])}|{(result[i][1])}|{(result[i][2])}|{int(table_type)}|{cellName_arr[j]}|TextField|{(result[i][0])}", on_click=self_main.viewData_mode), data="0"))
                 elif (table_type==5):
-                    self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|{result[i][4]}|None|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data=str(table_type)))
+                    self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.Colors.TRANSPARENT,data=f"{(result[i][j])}|{result[i][4]}|None|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data=str(table_type)))
                 else:
-                    self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.colors.TRANSPARENT,data=f"{(result[i][j])}|None|None|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data=str(table_type)))
+                    self_main.__table.controls[0].controls[0].rows[i].cells.append(ft.DataCell(ft.TextField(str((result[i][j])), width=400 ,text_align=ft.TextAlign.CENTER, read_only=True , border_color=ft.Colors.TRANSPARENT,data=f"{(result[i][j])}|None|None|{int(table_type)}|{cellName_arr[j]}|TextField", on_click=self_main.viewData_mode), data=str(table_type)))
 
         return self_main.__table
         
@@ -355,7 +359,7 @@ class Table:
 
             if(argc.page.overlay[len(argc.page.overlay)-1].content.value==argc.control.data.split('|')[0] or argc.page.overlay[len(argc.page.overlay)-1].content.value=="" or argc.page.overlay[len(argc.page.overlay)-1].content.value==" "):
 
-                argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.RED_300
 
             else:
                 chc=True
@@ -365,7 +369,7 @@ class Table:
                     if (len(bd.reqExecute(f"Select * from Equipment where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
                         bd.reqExecute(f"Update Equipment set {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}' where Name='{(argc.control.data.split('|')[1])}' AND Serial_Number='{(argc.control.data.split('|')[2])}'")
                     else:
-                        argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                        argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.RED_300
                         chc=False
                 elif (argc.control.data.split('|')[3]=='0'):
                     if (len(bd.reqExecute(f"Select * from Repair_Request where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
@@ -375,32 +379,32 @@ class Table:
                         else:
                             req=requests.post("https://api.telegram.org/bot7527441182:AAEI1sSafhOnZ1oLgeRgdaJALzxoHEmiWLY/sendMessage", data={"chat_id": argc.control.data.split('|')[1], "text": f'Статус заявки №{argc.control.data.split("|")[6]} изменен на: {argc.page.overlay[len(argc.page.overlay)-1].content.value}'})
                     else:
-                        argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                        argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.RED_300
                         chc=False
                 else:
                     if (argc.control.data.split('|')[3]=='2'):
                         if (len(bd.reqExecute(f"Select * from Cabinets where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
                             bd.reqExecute(f"Update Cabinets set {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}' where {argc.control.data.split('|')[4]}='{(argc.control.data.split('|')[0])}'")
                         else:
-                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.RED_300
                             chc=False
                     elif(argc.control.data.split('|')[3]=='3'):
                         if (len(bd.reqExecute(f"Select * from Equipment_Status where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
                             bd.reqExecute(f"Update Equipment_Status set {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}' where {argc.control.data.split('|')[4]}='{(argc.control.data.split('|')[0])}'")
                         else:
-                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.RED_300
                             chc=False
                     elif(argc.control.data.split('|')[3]=='4'):
                         if (len(bd.reqExecute(f"Select * from Equipment_Category where {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}'"))==0):
                             bd.reqExecute(f"Update Equipment_Category set {argc.control.data.split('|')[4]}='{(argc.page.overlay[len(argc.page.overlay)-1].content.value)}' where {argc.control.data.split('|')[4]}='{(argc.control.data.split('|')[0])}'")
                         else:
-                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.RED_300
+                            argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.RED_300
                             chc=False
 
 
                 if(chc==True or req.status_code==200):
                     self.updateTable(argc,True)
-                    argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.colors.GREEN
+                    argc.page.overlay[len(argc.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
             argc.page.update()
 
@@ -443,17 +447,17 @@ class Table:
                         ft.dropdownm2.Option("В работе"),
                         ft.dropdownm2.Option("Ожидание"),
                         ft.dropdownm2.Option("Отказано в выполнении"),
-                    ], border_color=ft.colors.TRANSPARENT)
+                    ], border_color=ft.Colors.TRANSPARENT)
 
                 else:
 
-                    changeCellData_Dialog.content=ft.DropdownM2(value=argc.control.data.split('|')[0],options=[], border_color=ft.colors.TRANSPARENT)
+                    changeCellData_Dialog.content=ft.DropdownM2(value=argc.control.data.split('|')[0],options=[], border_color=ft.Colors.TRANSPARENT)
 
                     for i in result:
                         changeCellData_Dialog.content.options.append(ft.dropdownm2.Option(i[0]))
 
             else:
-                changeCellData_Dialog.content=ft.DropdownM2(' ',[], border_color=ft.colors.TRANSPARENT)
+                changeCellData_Dialog.content=ft.DropdownM2(' ',[], border_color=ft.Colors.TRANSPARENT)
 
         else:
             changeCellData_Dialog.content=ft.TextField(argc.control.data.split('|')[0])
@@ -464,7 +468,7 @@ class Table:
     def viewData_mode(self,argc):
         
         viewMode_dialog=ft.AlertDialog(title=ft.Text("Просмотр данных"),
-                                       content=ft.TextField(argc.control.data.split("|")[0],text_align=ft.TextAlign.CENTER,border_color=ft.colors.TRANSPARENT,read_only=True,text_size=17, width=200 ,multiline=True), 
+                                       content=ft.TextField(argc.control.data.split("|")[0],text_align=ft.TextAlign.CENTER,border_color=ft.Colors.TRANSPARENT,read_only=True,text_size=17, width=200 ,multiline=True), 
                                        actions=[ft.ElevatedButton("Выйти",on_click=lambda _:argc.page.close(viewMode_dialog))],)
 
         argc.page.open(viewMode_dialog)

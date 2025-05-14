@@ -50,36 +50,36 @@ def addData_page(self_main):
 
         else:
             if (self.page.overlay[len(self.page.overlay)-1].content.value in [""," "]):
-                self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
+                self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
             else:
 
                 if(self.control.data[0]==2):
                     if(len(bd.reqExecute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
                         bd.reqExecute(f"Insert into Cabinets(Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
-                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
+                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
-                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
+                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==3):
                     if(len(bd.reqExecute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
                         bd.reqExecute(f"Insert into Equipment_Status(Status_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
-                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
+                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
-                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
+                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==4):
                     if(len(bd.reqExecute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
                         bd.reqExecute(f"Insert into Equipment_Category(Category_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
-                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
+                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
-                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED_300
+                        self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
 
             self.page.update()
 
             time.sleep(0.7)
 
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.BLACK
+            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.BLACK
             self.page.update()
     
     if(self_main.control.data[0]==0):
@@ -115,7 +115,7 @@ def addData_page(self_main):
 
         addData_button=ft.ElevatedButton("Добавить", on_click=addData,data=self_main.control.data)
         clearFields_button=ft.ElevatedButton("Очистить", on_click=clearFields)
-        backButton=ft.IconButton(ft.icons.ARROW_BACK,on_click=lambda _: equipment_page(self_main.page))
+        backButton=ft.IconButton(ft.Icons.ARROW_BACK,on_click=lambda _: equipment_page(self_main.page))
 
         self_main.page.add(ft.Row([backButton]),name_field,components_field,equipmentCategory_field,serialNumber_field,inventoryNumber_field,equipmentStatus_field,cabinets_field,ft.Row([addData_button,clearFields_button],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
 
@@ -213,7 +213,7 @@ def deleteData_page(self_main):
             elif(self_main.control.data[0]==5):
                 bd.reqExecute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
 
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.GREEN
+            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
             self.page.update()
 
             for i in range(0,len(self.page.overlay[len(self.page.overlay)-1].content.options)-1):
@@ -243,7 +243,7 @@ def deleteData_page(self_main):
 
 
         else:
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.colors.RED
+            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED
             self.page.update()
             time.sleep(0.7)
             self.page.overlay[len(self.page.overlay)-1].content.border_color=baseBorderColor
@@ -299,7 +299,7 @@ def equipmentCategory_page(page:ft.Page):
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[4, table_obj,"Equipment_Category"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[4, table_obj,"Equipment_Category"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[4, table_obj,"Equipment_Category"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
-    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
+    backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
     if(table!=None):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
@@ -333,7 +333,7 @@ def equipmentStatus_page(page:ft.Page):
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[3,table_obj,"Equipment_Status"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[3,table_obj,"Equipment_Status"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[3,table_obj,"Equipment_Status"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
-    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
+    backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
     if(table!=None):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
@@ -362,7 +362,7 @@ def cabinets_page(page:ft.Page):
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[2,table_obj,"Cabinets"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[2,table_obj,"Cabinets"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[2,table_obj,"Cabinets"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
-    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
+    backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
     if(table!=None):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
@@ -395,7 +395,7 @@ def request_page(page:ft.Page):
             ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[0,table_obj,"Repair_Request"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
-    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
+    backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
     if(table!=None):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
@@ -438,7 +438,13 @@ def equipment_page(page:ft.Page):
 
     table_obj=deskU.Table([
         ft.DataColumn(ft.Text("Название", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Компоненты", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
+        ft.DataColumn(ft.Text("IP адрес", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Mac адрес", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Имя в сети", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Модель процессора", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Частота", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Объем ОЗУ", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
+        ft.DataColumn(ft.Text("Объем внешней памяти", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
         ft.DataColumn(ft.Text("Категория", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
         ft.DataColumn(ft.Text("Серийный номер", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
         ft.DataColumn(ft.Text("Инвентарный номер", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
@@ -451,20 +457,20 @@ def equipment_page(page:ft.Page):
         [
             ft.SubmenuButton(ft.Text("Режимы"), [
                 ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode),
-                ft.MenuItemButton(ft.Text("Поиск"), on_click=searchMode, data=[1,table_obj])]),
+                ft.MenuItemButton(ft.TextButton("Поиск",icon=ft.Icons.SEARCH, icon_color=ft.Colors.WHITE), on_click=searchMode, data=[1,table_obj])]),
             ft.SubmenuButton(ft.Text("Функции"), [
                 ft.MenuItemButton(ft.Text("Добавление"), data=[1,table_obj,"Equipment"],on_click=addData_page), 
                 ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[1,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[1,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
-    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
-
-    searchModeButton=ft.IconButton(icon=ft.icons.SEARCH, icon_size=13, bgcolor=deskU.ui_colors[1], icon_color=ft.colors.WHITE, on_click=searchMode)
+    
+    backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
+    loadData=ft.IconButton(icon=ft.Icons.UPLOAD_FILE, icon_size=23,tooltip="Подгрузка данных")
 
     
     if(table!=None):
-        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
+        page.add(ft.Row([backButton, loadData,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
     else:
-        page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
+        page.add(ft.Row([backButton,loadData,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
     page.window.center()
     page.update()
@@ -491,7 +497,7 @@ def manageAdminAcc_page(page: ft.Page):
             ft.SubmenuButton(ft.Text("Функции"), [
                 ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[5,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[5,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
-    backButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: main_page(page))
+    backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
     if(table!=None):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
@@ -510,12 +516,12 @@ def main_page(page:ft.Page):
     page.window.height=800
 
 
-    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page))
-    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.icons.LAPTOP_CHROMEBOOK, width=200, on_click= lambda _:equipment_page(page))
-    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=200, icon=ft.icons.ROOM)
-    equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.icons.ARCHIVE)
-    equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.icons.SEGMENT)
-    manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
+    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.Icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page))
+    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.Icons.LAPTOP_CHROMEBOOK, width=200, on_click= lambda _:equipment_page(page))
+    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=200, icon=ft.Icons.ROOM)
+    equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.Icons.ARCHIVE)
+    equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.Icons.SEGMENT)
+    manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.Icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
 
 
     page.add(
@@ -536,16 +542,76 @@ def main_page_v2(page:ft.Page):
     page.window.height=800
 
 
-    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page))
-    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.icons.LAPTOP_CHROMEBOOK, width=200, on_click= lambda _:equipment_page(page))
-    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=200, icon=ft.icons.ROOM)
-    equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.icons.ARCHIVE)
-    equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.icons.SEGMENT)
-    manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
+    requestPageButton=ft.ElevatedButton(
+        "Заявки", 
+        icon=ft.Icons.HOME_REPAIR_SERVICE,
+        width=220,
+        on_click=lambda _:request_page(page),
+        style=ft.ButtonStyle(
+            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+            animation_duration=200,
+            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+    equipmentPageButton=ft.ElevatedButton(
+        "Оборудование", 
+        icon=ft.Icons.LAPTOP_CHROMEBOOK,
+        width=220, 
+        on_click= lambda _:equipment_page(page),
+        style=ft.ButtonStyle(
+            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+            animation_duration=200,
+            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+    cabinetsButton=ft.ElevatedButton(
+        "Кабинеты", 
+        on_click=lambda _:cabinets_page(page),
+        width=220, 
+        icon=ft.Icons.ROOM,
+        style=ft.ButtonStyle(
+            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+            animation_duration=200,
+            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+    equipmentStatusButton=ft.ElevatedButton(
+        "Статус оборудования", 
+        on_click=lambda _: equipmentStatus_page(page),
+        width=220, 
+        icon=ft.Icons.ARCHIVE,
+        style=ft.ButtonStyle(
+            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+            animation_duration=200,
+            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+    equipmentCategoryButton=ft.ElevatedButton(
+        "Категории оборудования", 
+        on_click=lambda _:equipmentCategory_page(page),
+        width=220, 
+        icon=ft.Icons.SEGMENT,
+        style=ft.ButtonStyle(
+            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+            animation_duration=200,
+            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+    manageAdminAccButton=ft.ElevatedButton(
+        "Администраторы", 
+        icon=ft.Icons.VERIFIED_USER,
+        on_click=lambda _: manageAdminAcc_page(page),
+        width=220,
+        style=ft.ButtonStyle(
+            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+            animation_duration=200,
+            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
 
 
     page.add(ft.Row([
-        ft.Image("Desktop\Image\main_object_1.png", width=500,height=400),
+        ft.Image("Desktop\Image\main_object_2.png", width=700,height=700),
         ft.Column([
             ft.Text("",height=20),
             requestPageButton,
@@ -581,31 +647,31 @@ def resetPassword_page(page: ft.Page):
                             if (len(result)!=0):
                                 req=requests.post("https://api.telegram.org/bot7527441182:AAEI1sSafhOnZ1oLgeRgdaJALzxoHEmiWLY/sendMessage", data={"chat_id":userIdField.value, "text": f'Ваш пароль: {result[0][2]}'})
                                 if (req.status_code==200):
-                                    userIdField.border_color=ft.colors.GREEN
+                                    userIdField.border_color=ft.Colors.GREEN
                                 else:
-                                    userIdField.border_color=ft.colors.RED
+                                    userIdField.border_color=ft.Colors.RED
                                     errorLabel.value="Произошла ошибка при отправке запроса"
                                     page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
                             else:
-                                userIdField.border_color=ft.colors.RED
+                                userIdField.border_color=ft.Colors.RED
                                 errorLabel.value="Не имеется администратора с данным ID"
                                 page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
                         else:
-                            userIdField.border_color=ft.colors.RED
+                            userIdField.border_color=ft.Colors.RED
                             errorLabel.value="При выполнеии запроса возникла ошибка"
                             page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
 
                     else:
-                            userIdField.border_color=ft.colors.RED
+                            userIdField.border_color=ft.Colors.RED
                             errorLabel.value="Данный ID не зарегистрировано в базе данных приложения"
                             page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
                 else:
-                    userIdField.border_color=ft.colors.RED
+                    userIdField.border_color=ft.Colors.RED
                     errorLabel.value="При выполнении запроса возникла ошибка"
                     page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
 
             else:
-                userIdField.border_color=ft.colors.RED
+                userIdField.border_color=ft.Colors.RED
 
             self.page.update()
             time.sleep(0.7)
@@ -616,12 +682,12 @@ def resetPassword_page(page: ft.Page):
         except Exception as ex:
 
             logger_pages.exception(f" {ex}")
-            page.window.bgcolor=ft.colors.RED
+            page.window.bgcolor=ft.Colors.RED
             page.update()
 
             time.sleep(0.7)
 
-            page.window.bgcolor=ft.colors.TRANSPARENT
+            page.window.bgcolor=ft.Colors.TRANSPARENT
             page.update()
 
     page.clean()
@@ -642,22 +708,22 @@ def resetPassword_page(page: ft.Page):
         )
     resetPasswButton=ft.ElevatedButton(
         "Сбросить пароль", 
-        icon=ft.icons.RESTART_ALT_OUTLINED,
-        icon_color=ft.colors.WHITE,
+        icon=ft.Icons.RESTART_ALT_OUTLINED,
+        icon_color=ft.Colors.WHITE,
         bgcolor=deskU.ui_colors[1],
-        color=ft.colors.WHITE,
+        color=ft.Colors.WHITE,
         on_click=resetPassword_handler)
     
     findIDButton=ft.ElevatedButton(
         "Узнать свой ID",
         bgcolor=deskU.ui_colors[0],
-        color=ft.colors.BLACK,
+        color=ft.Colors.BLACK,
         on_click=lambda _:page.launch_url("https://web.t.me/userinfobot?start=info")
     )
 
     errorLabel=ft.Text("", font_family="Moderustic Regular", size=13,disabled=True,height=30)
 
-    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=lambda _: start_page(page), visible=True, icon_color=deskU.ui_colors[1], splash_radius=10)
+    backPageButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: start_page(page), visible=True, icon_color=deskU.ui_colors[1], splash_radius=10)
 
     page.add(
         ft.Row([backPageButton],alignment=ft.MainAxisAlignment.START),
@@ -697,8 +763,8 @@ def start_page(page:ft.Page):
     #page.window.resizable=False
     page.window.prevent_close=True
     page.window.on_event=deskU.pageClose
+    page.window.icon="E:\\PROJECT\\Python\\NAMT_BOT\\Git\\UnimportantProject_HAMT\\Desktop\Image\\HAMT_Logo.ico"
 
-    page.window.icon=ft.Image("Icons\\HAMT_Logo.png")
 
     page.fonts={
         'Main Label': 'Fonts\\TechMonoRegular.otf',
@@ -733,10 +799,10 @@ def start_page(page:ft.Page):
         on_click=nextPage, 
         width=100,
         bgcolor=deskU.ui_colors[1],
-        color=ft.colors.WHITE)
+        color=ft.Colors.WHITE)
     
-    resetPasswordButton=ft.ElevatedButton("Забыли пароль?", width=150, on_click=resetPassword, bgcolor=ft.colors.WHITE)
-    registrPasswordButton=ft.ElevatedButton("Регистрация", width=150, on_click=lambda _:startAdmin_page(page), bgcolor="#8FA2CA",color=ft.colors.WHITE)
+    resetPasswordButton=ft.ElevatedButton("Забыли пароль?", width=150, on_click=resetPassword, bgcolor=ft.Colors.WHITE)
+    registrPasswordButton=ft.ElevatedButton("Регистрация", width=150, on_click=lambda _:startAdmin_page(page), bgcolor="#8FA2CA",color=ft.Colors.WHITE)
 
     page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,ft.Text("",height=20),ft.Row([registrPasswordButton,resetPasswordButton],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
 
@@ -772,7 +838,8 @@ def startAdmin_page(page:ft.Page):
         if (failedRegistLabel.value!=""):
             failedRegistLabel.value=""
 
-        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' AND FSL='{(fslField.value)}' AND Mac_Address='{hex(uuid.getnode())}'")
+
+        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
 
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and deskU.dynamicPassCheck(self,False)==True and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
@@ -796,33 +863,26 @@ def startAdmin_page(page:ft.Page):
                         deskU.errorField(self)
 
                 else:
-                    usernameField.border_color=ft.colors.RED_300
-                    fslField.border_color=ft.colors.RED_300
                     failedRegistLabel.value="Аккаут с такими данными уже зарегистрирован или данное устройство уже\nнаходится в базе данных приложения"
-
-                    self.page.update()
-                    time.sleep(0.7)
-
-                    usernameField.border_color=ft.colors.BLACK
-                    fslField.border_color=ft.colors.BLACK
-                    failedRegistLabel.value=""
+                    deskU.errorField(self)
+                
                     self.page.update()
             else:
-                page.window.bgcolor=ft.colors.RED_300
+                page.window.bgcolor=ft.Colors.RED_300
                 failedRegistLabel.value="Ошибка выполнения запроса\nВозможно неверно заполненные данные"
 
                 self.page.update()
                 time.sleep(0.7)
 
-                page.window.bgcolor=ft.colors.TRANSPARENT
+                page.window.bgcolor=ft.Colors.TRANSPARENT
                 self.page.update()
 
         else:
             baseColor=self.page.controls[3].border_color
             deskU.checkFieldOnIncosist(self,0)
 
-            if (page.controls[6].border_color!=ft.colors.RED):
-                page.controls[6].border_color=ft.colors.RED
+            if (page.controls[6].border_color!=ft.Colors.RED):
+                page.controls[6].border_color=ft.Colors.RED
                 page.update()
 
             time.sleep(0.7)
@@ -889,10 +949,10 @@ def startAdmin_page(page:ft.Page):
         on_focus=deskU.contentColor_focus,
         on_blur=deskU.contentColor_blur)
     
-    failedRegistLabel=ft.Text("", font_family="Moderustic Regular",size=13)
+    failedRegistLabel=ft.Text("", font_family="Moderustic Regular",size=13,width=200)
 
-    regirtrAdminButton=ft.ElevatedButton("Зарегистрироваться", width=165, on_click=adminRegInBD, bgcolor=deskU.ui_colors[1],color=ft.colors.WHITE)
-    backPageButton=ft.IconButton(icon=ft.icons.ARROW_BACK, on_click=backPage, icon_color=deskU.ui_colors[1], splash_radius=10)
+    regirtrAdminButton=ft.ElevatedButton("Зарегистрироваться", width=165, on_click=adminRegInBD, bgcolor=deskU.ui_colors[1],color=ft.Colors.WHITE)
+    backPageButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=backPage, icon_color=deskU.ui_colors[1], splash_radius=10)
 
     #Для записи токена инициализации шифрования в байтовой форме
     # with open("adminConfig", "wb"):
@@ -904,9 +964,10 @@ def startAdmin_page(page:ft.Page):
         ft.Row([backPageButton], alignment=ft.MainAxisAlignment.START),
         ft.Column([startLabel,startDescriptionLabel],spacing=5),
         ft.Text("",height=30) ,
-        fslField,loginField,usernameField,passwordField,regirtrAdminButton,
-        ft.Text("", height=30),
-        failedRegistLabel)
+        fslField,loginField,usernameField,passwordField,
+        failedRegistLabel,
+        ft.Text("",height=30),
+        regirtrAdminButton)
     logger_pages.info("'StartAdmin' page was openned")
     page.window.center()
     page.update()
