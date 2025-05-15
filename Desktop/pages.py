@@ -2,7 +2,7 @@ import flet as ft, time, hashlib as hLib, logging,datetime,requests,os
 from utilits import bd,utilits_desktop as deskU
 from random import randint
 
-import uuid 
+import uuid,pandas as pd
 
 from hashlib import sha384
 
@@ -431,6 +431,16 @@ def equipment_page(page:ft.Page):
         ))
         page.update()
 
+    def loadExcel_handler(self):
+        if (self.files[0].path!="" and self.files[0].path!=None):
+            if (self.files[0].path.find("Kompyuterny_park.xls")!=-1 or self.files[0].path.find("Компьютерный_парк.xls")!=-1):
+                excel_obj=pd.read_excel(self.files[0].path)
+                deskU.loadExcel(page,excel_obj)
+            else:
+                deskU.errorIcon(self)
+        else:
+            deskU.errorIcon(self)
+
     page.clean()
 
     page.window.width=1400
@@ -464,13 +474,22 @@ def equipment_page(page:ft.Page):
         style=ft.MenuStyle(ft.alignment.top_left))
     
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
-    loadData=ft.IconButton(icon=ft.Icons.UPLOAD_FILE, icon_size=23,tooltip="Подгрузка данных")
+    loadData=ft.IconButton(
+        icon=ft.Icons.UPLOAD_FILE, 
+        icon_size=23,tooltip="Подгрузка данных",
+        on_click=lambda _:excelPicker_obj.pick_files(
+            allow_multiple=False,
+            file_type=ft.FilePickerFileType.CUSTOM,
+            allowed_extensions=["xlsx", "xltx", "xltm","xls"])
+        )
+    
+    excelPicker_obj=ft.FilePicker(loadExcel_handler,data=[loadData,page])
 
     
     if(table!=None):
-        page.add(ft.Row([backButton, loadData,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
+        page.add(excelPicker_obj,ft.Row([backButton, loadData,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
     else:
-        page.add(ft.Row([backButton,loadData,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
+        page.add(excelPicker_obj,ft.Row([backButton,loadData,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
     page.window.center()
     page.update()

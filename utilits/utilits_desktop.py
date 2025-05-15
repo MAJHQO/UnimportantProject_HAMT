@@ -1,5 +1,6 @@
 import flet as ft,time,datetime, requests,logging,os
 from utilits import bd
+import pandas as pd
 
 from hashlib import sha384
 
@@ -165,6 +166,20 @@ def errorField(self):
 
     self.page.update()
 
+def errorIcon(self):
+
+    baseColor=self.control.data[0].icon_color
+
+    self.control.data[0].icon_color=ft.Colors.RED
+    self.control.data[1].update()
+    time.sleep(0.7)
+    self.control.data[0].icon_color=baseColor
+    self.control.data[1].update()
+
+def errorDialog(page:ft.Page,text:str):
+    dialog=ft.AlertDialog(title="Ошибка при выполнении", content=ft.Text(text, size=13,font_family="Moderustic Light"))
+    page.open(dialog)
+
 def successField(self):
 
     for control in self.page.controls:
@@ -235,6 +250,65 @@ def searchInTable(self):
         self.page.controls[1].controls[0].controls[0].controls.append(actualTable)
 
     self.page.update()
+
+def loadExcel(page:ft.Page,pd_obj):
+    result=bd.reqExecute("Select Invetory_Number,Name from Equipment")
+    if (result!=False and len(result)!=0):
+        chc:bool=True
+        chc_2:bool=None
+
+        for row in pd_obj.values:
+            if (type(row[0])==int):
+                for item in result:
+                    if (item[0]!="-"):
+                        if(item[0]==row[4] or item[1]==f"Компьютер №{row[0]}"):
+                            chc=False
+                            break
+                    elif (item[0] in [f"Монитор №{row[0]}", f"Принтер {row[14]}",f"Проектор №{row[0]}",f"Сканер №{row[0]}", row[17]]):
+                        chc=False
+                if (chc==True):
+                    bd.insertPC_Equipment(row)
+                    if (type(row[12])==str):
+                        result=bd.insertMonitor_Equipmet(row)
+                    if(type(row[14])==str):
+                        result=bd.insertPrinter_Equipment(row)
+                    if (type(row[15])==str):
+                        result=bd.insertProjector_Equipment(row)
+                    if (type(row[16])==str):
+                        result=bd.insertScanner_Equipment(row)
+                    if (type(row[17])==str):
+                        result=bd.insertOther_Equipment(row)
+                    if(result==False):
+                        chc_2=False
+                
+                if(chc_2==False):
+                    errorDialog(page, "В момент экспорта данных из таблицы произошла ошибка")
+
+
+
+    elif (len(result)==0):
+        chc:bool=None
+        for row in pd_obj.values:
+            if (type(row[0])==int):
+                bd.insertPC_Equipment(row)
+                if (type(row[12])==str):
+                    result=bd.insertMonitor_Equipmet(row)
+                if(type(row[14])==str):
+                    result=bd.insertPrinter_Equipment(row)
+                if (type(row[15])==str):
+                    result=bd.insertProjector_Equipment(row)
+                if (type(row[16])==str):
+                    result=bd.insertScanner_Equipment(row)
+                if (type(row[17])==str):
+                    result=bd.insertOther_Equipment(row)
+                
+                if(result==False):
+                    chc=False
+        if(chc==False):
+            errorDialog(page, "В момент экспорта данных из таблицы произошла ошибка")
+    else:
+        errorDialog(page, "В момент выборки данных произошла ошибка")
+                    
         
 
 class Table:

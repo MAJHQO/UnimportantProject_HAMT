@@ -42,6 +42,220 @@ def reqExecute(request:str):
 
         logger_bd.exception(f"Request execute was failed. Reason: {ex}")
         return False
+    
+def insertPC_Equipment(data:tuple):
+    try:
+
+        cursor=connect.cursor()
+
+        cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+
+        connect.commit()
+
+    except Exception as ex:
+
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
+        return False
+
+def insertMonitor_Equipmet(data:tuple):
+    try:
+
+        cursor=connect.cursor()
+
+        cursor.execute(f"""Insert into Equipment(
+                                 Name,
+                                 IP_Address,
+                                 MAC_Address,
+                                 Network_Name,
+                                 CPU_Model,
+                                 CPU_Frequency,
+                                 RAM,
+                                 HDD,
+                                 Equipment_Category,
+                                 Serial_Number,
+                                 Invetory_Number,
+                                 Equipment_Status,
+                                 Cabinet_Number) values(
+                                 'Монитор №{data[0]}',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 'Монитор',
+                                 '-',
+                                 '{data[13]}',
+                                 '-'
+                                 '{data[2]}')""")
+
+        connect.commit()
+
+    except Exception as ex:
+
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
+        return False
+
+def insertPrinter_Equipment(data:tuple):
+    try:
+
+        cursor=connect.cursor()
+
+        cursor.execute(f"""Insert into Equipment(
+                                 Name,
+                                 IP_Address,
+                                 MAC_Address,
+                                 Network_Name,
+                                 CPU_Model,
+                                 CPU_Frequency,
+                                 RAM,
+                                 HDD,
+                                 Equipment_Category,
+                                 Serial_Number,
+                                 Invetory_Number,
+                                 Equipment_Status,
+                                 Cabinet_Number) values(
+                                 'Принтер {data[14]}',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 'Принтер',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '{data[2]}')""")
+
+        connect.commit()
+
+    except Exception as ex:
+
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
+        return False
+
+def insertProjector_Equipment(data:tuple):
+    try:
+
+        cursor=connect.cursor()
+
+        cursor.execute(f"""Insert into Equipment(
+                                 Name,
+                                 IP_Address,
+                                 MAC_Address,
+                                 Network_Name,
+                                 CPU_Model,
+                                 CPU_Frequency,
+                                 RAM,
+                                 HDD,
+                                 Equipment_Category,
+                                 Serial_Number,
+                                 Invetory_Number,
+                                 Equipment_Status,
+                                 Cabinet_Number) values(
+                                 'Проектор №{data[0]}',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 'Проектор',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '{data[2]}')""")
+
+        connect.commit()
+
+    except Exception as ex:
+
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
+        return False
+    
+def insertScanner_Equipment(data:tuple):
+    try:
+
+        cursor=connect.cursor()
+
+        cursor.execute(f"""Insert into Equipment(
+                                 Name,
+                                 IP_Address,
+                                 MAC_Address,
+                                 Network_Name,
+                                 CPU_Model,
+                                 CPU_Frequency,
+                                 RAM,
+                                 HDD,
+                                 Equipment_Category,
+                                 Serial_Number,
+                                 Invetory_Number,
+                                 Equipment_Status,
+                                 Cabinet_Number) values(
+                                 'Сканер №{data[0]}',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 'Сканер',
+                                 '-',
+                                 '-',
+                                 '-'
+                                 '{data[2]}')""")
+
+        connect.commit()
+
+    except Exception as ex:
+
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
+        return False
+    
+def insertOther_Equipment(data:tuple):
+    try:
+
+        cursor=connect.cursor()
+
+        cursor.execute(f"""Insert into Equipment(
+                                 Name,
+                                 IP_Address,
+                                 MAC_Address,
+                                 Network_Name,
+                                 CPU_Model,
+                                 CPU_Frequency,
+                                 RAM,
+                                 HDD,
+                                 Equipment_Category,
+                                 Serial_Number,
+                                 Invetory_Number,
+                                 Equipment_Status,
+                                 Cabinet_Number) values(
+                                 '{data[17]}',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 'Дополнительное оборудование',
+                                 '-',
+                                 '-',
+                                 '-',
+                                 '{data[2]}')""")
+
+        connect.commit()
+
+    except Exception as ex:
+
+        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
+        return False
 
 
 # reqExecute("Drop table Repair_Request")

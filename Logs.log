@@ -947,3 +947,339 @@ AttributeError: 'Column' object has no attribute 'border_color'
 [INFO] [2025-05-14 23:09:15,930] - pages: 'Main' page was openned
 [INFO] [2025-05-14 23:09:17,782] - pages: 'Main' page was openned
 [INFO] [2025-05-14 23:22:08,589] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:35:02,917] - main: App Started
+[INFO] [2025-05-15 07:35:03,001] - database: Connected to database was successfull
+[INFO] [2025-05-15 07:35:03,762] - pages: 'Start' page was openned
+[INFO] [2025-05-15 07:35:10,394] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:37:18,407] - main: App Started
+[INFO] [2025-05-15 07:37:18,467] - database: Connected to database was successfull
+[INFO] [2025-05-15 07:37:18,907] - pages: 'Start' page was openned
+[INFO] [2025-05-15 07:37:24,331] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:38:04,520] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:49:22,049] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:50:30,022] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:59:17,976] - pages: 'Main' page was openned
+[INFO] [2025-05-15 07:59:27,385] - pages: 'Main' page was openned
+[INFO] [2025-05-15 08:01:43,254] - pages: 'Main' page was openned
+[INFO] [2025-05-15 08:03:55,713] - pages: 'Main' page was openned
+[INFO] [2025-05-15 08:15:36,392] - pages: 'Main' page was openned
+[INFO] [2025-05-15 08:16:43,856] - pages: 'Main' page was openned
+[INFO] [2025-05-15 08:17:32,004] - pages: 'Main' page was openned
+[INFO] [2025-05-15 18:29:33,490] - main: App Started
+[INFO] [2025-05-15 18:29:33,551] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:29:34,999] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:29:37,811] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 18:29:40,351] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AssertionError('FilePicker Control must be added to the page first')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 470, in <lambda>
+    loadData=ft.IconButton(icon=ft.Icons.UPLOAD_FILE, icon_size=23,tooltip="Подгрузка данных", on_click=lambda _:excelPicker_obj.pick_files(allow_multiple=False))
+                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\file_picker.py", line 172, in pick_files
+    self.update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 325, in update
+    assert (
+AssertionError: FilePicker Control must be added to the page first
+[INFO] [2025-05-15 18:30:22,672] - main: App Started
+[INFO] [2025-05-15 18:30:22,728] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:30:23,240] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:30:25,778] - pages: 'Main' page was openned
+[INFO] [2025-05-15 18:43:18,698] - main: App Started
+[INFO] [2025-05-15 18:43:18,751] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:43:19,194] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:43:21,694] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 18:43:22,724] - asyncio: Future exception was never retrieved
+future: <Future finished exception=ValueError("['xlsx', 'xlsb', 'xlsm'] is not a valid FilePickerFileType")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 566, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 473, in equipment_page
+    excelPicker_obj.file_type=ft.FilePickerFileType(["xlsx", "xlsb", "xlsm"])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 711, in __call__
+    return cls.__new__(cls, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 1128, in __new__
+    raise ve_exc
+ValueError: ['xlsx', 'xlsb', 'xlsm'] is not a valid FilePickerFileType
+[INFO] [2025-05-15 18:44:31,180] - main: App Started
+[INFO] [2025-05-15 18:44:31,521] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:44:32,045] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:44:36,422] - pages: 'Main' page was openned
+[INFO] [2025-05-15 18:46:05,410] - main: App Started
+[INFO] [2025-05-15 18:46:05,549] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:46:06,243] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:46:09,126] - pages: 'Main' page was openned
+[INFO] [2025-05-15 18:49:41,965] - main: App Started
+[INFO] [2025-05-15 18:49:42,049] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:49:42,575] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:49:47,442] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 18:49:53,124] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in Filepath_return
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 18:51:59,691] - main: App Started
+[INFO] [2025-05-15 18:51:59,749] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:52:00,315] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:52:02,766] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 18:52:08,061] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in Filepath_return
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 18:52:55,679] - main: App Started
+[INFO] [2025-05-15 18:52:55,732] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:52:56,263] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:52:59,248] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 18:53:04,898] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in Filepath_return
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 18:54:51,887] - main: App Started
+[INFO] [2025-05-15 18:54:51,941] - database: Connected to database was successfull
+[INFO] [2025-05-15 18:54:52,556] - pages: 'Start' page was openned
+[INFO] [2025-05-15 18:54:55,250] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 18:55:07,563] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in Filepath_return
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 19:15:39,931] - main: App Started
+[INFO] [2025-05-15 19:15:40,086] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:15:40,530] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:15:43,552] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 19:15:44,593] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'loadData' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 577, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 474, in equipment_page
+    excelPicker_obj=ft.FilePicker(loadExcel_handler,data=[loadData,page])
+                                                          ^^^^^^^^
+UnboundLocalError: cannot access local variable 'loadData' where it is not associated with a value
+[INFO] [2025-05-15 19:16:17,768] - main: App Started
+[INFO] [2025-05-15 19:16:17,832] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:16:18,320] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:16:21,371] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 19:16:26,725] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in loadExcel_handler
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 19:16:47,182] - main: App Started
+[INFO] [2025-05-15 19:16:47,342] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:16:47,857] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:16:51,501] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 19:17:13,432] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'FilePickerResultEvent' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 440, in loadExcel_handler
+    deskU.errorIcon(self)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 171, in errorIcon
+    baseColor=self[0].icon_color
+              ~~~~^^^
+TypeError: 'FilePickerResultEvent' object is not subscriptable
+[INFO] [2025-05-15 19:17:49,684] - main: App Started
+[INFO] [2025-05-15 19:17:49,837] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:17:50,482] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:17:53,218] - pages: 'Main' page was openned
+[INFO] [2025-05-15 19:24:27,753] - main: App Started
+[INFO] [2025-05-15 19:24:27,818] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:24:28,367] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:24:35,410] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 19:24:57,637] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in loadExcel_handler
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 19:27:07,434] - main: App Started
+[INFO] [2025-05-15 19:27:07,497] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:27:08,086] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:27:10,689] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 19:27:17,737] - asyncio: Future exception was never retrieved
+future: <Future finished exception=ImportError("Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\compat\_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'xlrd'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 437, in loadExcel_handler
+    excel_obj=pd.read_excel(self.files[0].path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\excel\_base.py", line 495, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\excel\_base.py", line 1567, in __init__
+    self._reader = self._engines[engine](
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\excel\_xlrd.py", line 45, in __init__
+    import_optional_dependency("xlrd", extra=err_msg)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\compat\_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.
+[INFO] [2025-05-15 19:28:18,604] - main: App Started
+[INFO] [2025-05-15 19:28:18,662] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:28:19,264] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:28:32,284] - pages: 'Main' page was openned
+[INFO] [2025-05-15 19:30:00,210] - main: App Started
+[INFO] [2025-05-15 19:30:00,270] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:30:01,125] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:30:04,203] - pages: 'Main' page was openned
+[INFO] [2025-05-15 19:30:26,514] - main: App Started
+[INFO] [2025-05-15 19:30:26,672] - database: Connected to database was successfull
+[INFO] [2025-05-15 19:30:27,120] - pages: 'Start' page was openned
+[INFO] [2025-05-15 19:30:30,396] - pages: 'Main' page was openned
+[INFO] [2025-05-15 21:53:00,909] - main: App Started
+[INFO] [2025-05-15 21:53:00,965] - database: Connected to database was successfull
+[INFO] [2025-05-15 21:53:02,290] - pages: 'Start' page was openned
+[INFO] [2025-05-15 21:53:05,982] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:01:11,772] - main: App Started
+[INFO] [2025-05-15 22:01:11,927] - database: Connected to database was successfull
+[INFO] [2025-05-15 22:01:12,378] - pages: 'Start' page was openned
+[INFO] [2025-05-15 22:01:23,008] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:06:39,665] - main: App Started
+[INFO] [2025-05-15 22:06:39,868] - database: Connected to database was successfull
+[INFO] [2025-05-15 22:06:40,264] - pages: 'Start' page was openned
+[INFO] [2025-05-15 22:06:43,713] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:07:06,972] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:07:10,066] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:07:20,040] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:08:01,765] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:08:04,520] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 22:08:32,527] - database: Request execute was failed. Reason: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_status_fkey"
+DETAIL:  Ключ (equipment_status)=(-) отсутствует в таблице "equipment_status".
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_status_fkey"
+DETAIL:  Ключ (equipment_status)=(-) отсутствует в таблице "equipment_status".
+
+[INFO] [2025-05-15 22:08:40,639] - main: App Started
+[INFO] [2025-05-15 22:08:40,692] - database: Connected to database was successfull
+[INFO] [2025-05-15 22:08:41,097] - pages: 'Start' page was openned
+[INFO] [2025-05-15 22:08:45,318] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:08:57,656] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:09:13,605] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:09:24,557] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:09:26,749] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:09:28,294] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:09:30,729] - pages: 'Main' page was openned
+[INFO] [2025-05-15 22:11:11,154] - main: App Started
+[INFO] [2025-05-15 22:11:11,205] - database: Connected to database was successfull
+[INFO] [2025-05-15 22:11:11,644] - pages: 'Start' page was openned
+[INFO] [2025-05-15 22:11:14,546] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 22:12:00,394] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('tuple index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 438, in loadExcel_handler
+    deskU.loadExcel(page,excel_obj)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 263, in loadExcel
+    if (item[10]!="-"):
+        ~~~~^^^^
+IndexError: tuple index out of range
+[INFO] [2025-05-15 22:12:31,575] - main: App Started
+[INFO] [2025-05-15 22:12:31,634] - database: Connected to database was successfull
+[INFO] [2025-05-15 22:12:32,199] - pages: 'Start' page was openned
+[INFO] [2025-05-15 22:12:41,592] - pages: 'Main' page was openned
+[ERROR] [2025-05-15 22:14:16,714] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in loadExcel_handler
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-15 22:15:20,521] - main: App Started
+[INFO] [2025-05-15 22:15:20,606] - database: Connected to database was successfull
+[INFO] [2025-05-15 22:15:21,156] - pages: 'Start' page was openned
+[INFO] [2025-05-15 22:15:28,327] - pages: 'Main' page was openned
