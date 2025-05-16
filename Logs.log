@@ -1283,3 +1283,19 @@ TypeError: 'NoneType' object is not subscriptable
 [INFO] [2025-05-15 22:15:20,606] - database: Connected to database was successfull
 [INFO] [2025-05-15 22:15:21,156] - pages: 'Start' page was openned
 [INFO] [2025-05-15 22:15:28,327] - pages: 'Main' page was openned
+[INFO] [2025-05-16 20:13:54,474] - main: App Started
+[INFO] [2025-05-16 20:13:54,566] - database: Connected to database was successfull
+[INFO] [2025-05-16 20:13:56,731] - pages: 'Start' page was openned
+[INFO] [2025-05-16 20:14:13,056] - pages: 'Main' page was openned
+[INFO] [2025-05-16 20:17:39,050] - main: App Started
+[INFO] [2025-05-16 20:17:39,101] - database: Connected to database was successfull
+[INFO] [2025-05-16 20:17:39,510] - pages: 'Start' page was openned
+[INFO] [2025-05-16 20:19:25,825] - pages: 'Main' page was openned
+[INFO] [2025-05-16 20:21:03,510] - main: App Started
+[INFO] [2025-05-16 20:21:03,670] - database: Connected to database was successfull
+[INFO] [2025-05-16 20:21:04,127] - pages: 'Start' page was openned
+[INFO] [2025-05-16 20:21:07,085] - pages: 'Main' page was openned
+[INFO] [2025-05-16 20:22:48,720] - main: App Started
+[INFO] [2025-05-16 20:22:48,799] - database: Connected to database was successfull
+[INFO] [2025-05-16 20:22:49,352] - pages: 'Start' page was openned
+[INFO] [2025-05-16 20:22:52,316] - pages: 'Main' page was openned
