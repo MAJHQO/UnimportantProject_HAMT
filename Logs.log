@@ -1299,3 +1299,1191 @@ TypeError: 'NoneType' object is not subscriptable
 [INFO] [2025-05-16 20:22:48,799] - database: Connected to database was successfull
 [INFO] [2025-05-16 20:22:49,352] - pages: 'Start' page was openned
 [INFO] [2025-05-16 20:22:52,316] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:49:45,484] - main: App Started
+[INFO] [2025-05-21 16:49:45,580] - database: Connected to database was successfull
+[INFO] [2025-05-21 16:49:46,738] - pages: 'Start' page was openned
+[INFO] [2025-05-21 16:50:12,411] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 16:51:06,383] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in loadExcel_handler
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-21 16:51:07,094] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:51:51,580] - main: App Started
+[INFO] [2025-05-21 16:51:51,732] - database: Connected to database was successfull
+[INFO] [2025-05-21 16:51:52,256] - pages: 'Start' page was openned
+[INFO] [2025-05-21 16:51:55,129] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:52:11,935] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:52:30,916] - main: App Started
+[INFO] [2025-05-21 16:52:30,969] - database: Connected to database was successfull
+[INFO] [2025-05-21 16:52:31,574] - pages: 'Start' page was openned
+[INFO] [2025-05-21 16:52:34,001] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:52:42,248] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:52:51,034] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:52:54,844] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:53:00,369] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:58:24,557] - main: App Started
+[INFO] [2025-05-21 16:58:24,610] - database: Connected to database was successfull
+[INFO] [2025-05-21 16:58:25,034] - pages: 'Start' page was openned
+[INFO] [2025-05-21 16:58:27,910] - pages: 'Main' page was openned
+[INFO] [2025-05-21 16:58:34,824] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:00:31,368] - main: App Started
+[INFO] [2025-05-21 17:00:31,423] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:00:31,981] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:00:39,260] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:00:45,868] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:03:29,822] - main: App Started
+[INFO] [2025-05-21 17:03:29,975] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:03:30,403] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:05:49,836] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:07:16,508] - main: App Started
+[INFO] [2025-05-21 17:07:16,573] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:07:17,052] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:08:10,342] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 17:09:20,180] - database: Request execute was failed. Reason: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_cabinet_number_fkey"
+DETAIL:  Ключ (cabinet_number)=(207) отсутствует в таблице "cabinets".
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_cabinet_number_fkey"
+DETAIL:  Ключ (cabinet_number)=(207) отсутствует в таблице "cabinets".
+
+[ERROR] [2025-05-21 17:09:21,564] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:24,884] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:25,700] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 225, in insertOther_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:27,007] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:27,644] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:28,024] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:28,407] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:28,612] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:28,814] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:29,105] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:29,689] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:30,067] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:30,592] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:30,891] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:31,175] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:31,578] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:31,781] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 225, in insertOther_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:31,982] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:32,269] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:32,682] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:32,885] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:33,120] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:33,324] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:33,526] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:33,728] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:34,557] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:34,916] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:35,119] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:35,322] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:35,643] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 145, in insertProjector_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:35,850] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:36,051] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:36,253] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:36,455] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:36,658] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:36,960] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:37,373] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:37,736] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:38,089] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:38,509] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:38,712] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:38,970] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:39,504] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 105, in insertPrinter_Equipment
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:39,791] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:40,206] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:40,408] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-05-21 17:09:40,642] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[INFO] [2025-05-21 17:09:50,727] - main: App Started
+[INFO] [2025-05-21 17:09:50,780] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:09:51,182] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:09:54,013] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:16:46,256] - main: App Started
+[INFO] [2025-05-21 17:16:46,418] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:16:46,882] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:16:49,528] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:17:28,279] - main: App Started
+[INFO] [2025-05-21 17:17:28,354] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:17:29,022] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:17:34,778] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:18:34,675] - main: App Started
+[INFO] [2025-05-21 17:18:34,752] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:18:35,249] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:18:38,077] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:21:35,951] - main: App Started
+[INFO] [2025-05-21 17:21:36,012] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:21:37,921] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:21:56,176] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:22:35,764] - main: App Started
+[INFO] [2025-05-21 17:22:35,925] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:22:36,478] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:22:38,891] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:23:20,734] - main: App Started
+[INFO] [2025-05-21 17:23:20,802] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:23:21,296] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:23:24,460] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:24:06,132] - main: App Started
+[INFO] [2025-05-21 17:24:06,192] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:24:06,629] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:24:09,478] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:24:42,977] - main: App Started
+[INFO] [2025-05-21 17:24:43,037] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:24:43,502] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:24:46,265] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:32:28,450] - main: App Started
+[INFO] [2025-05-21 17:32:28,503] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:32:28,923] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:32:33,882] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:34:12,829] - main: App Started
+[INFO] [2025-05-21 17:34:12,881] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:34:13,302] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:34:21,702] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:35:36,233] - main: App Started
+[INFO] [2025-05-21 17:35:36,288] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:35:36,966] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:35:39,418] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:36:05,787] - main: App Started
+[INFO] [2025-05-21 17:36:05,969] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:36:06,487] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:36:09,550] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:37:18,821] - main: App Started
+[INFO] [2025-05-21 17:37:18,875] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:37:19,519] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:37:22,285] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:38:25,010] - main: App Started
+[INFO] [2025-05-21 17:38:25,072] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:38:25,569] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:39:22,938] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:40:02,786] - main: App Started
+[INFO] [2025-05-21 17:40:02,841] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:40:03,307] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:40:06,175] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:40:27,644] - main: App Started
+[INFO] [2025-05-21 17:40:27,695] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:40:28,186] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:40:30,887] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:51:45,310] - main: App Started
+[INFO] [2025-05-21 17:51:45,371] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:51:45,924] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:51:50,667] - pages: 'Main' page was openned
+[INFO] [2025-05-21 17:52:42,320] - main: App Started
+[INFO] [2025-05-21 17:52:42,375] - database: Connected to database was successfull
+[INFO] [2025-05-21 17:52:42,850] - pages: 'Start' page was openned
+[INFO] [2025-05-21 17:52:46,264] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:18:37,150] - main: App Started
+[INFO] [2025-05-21 18:18:37,200] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:18:37,784] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:18:41,280] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:18:42,113] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 579, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 464, in equipment_page
+    table=table_obj.getTable(1)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[INFO] [2025-05-21 18:19:35,316] - main: App Started
+[INFO] [2025-05-21 18:19:35,384] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:19:36,035] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:20:45,537] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:21:34,396] - main: App Started
+[INFO] [2025-05-21 18:21:34,498] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:21:35,133] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:21:39,940] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:22:13,957] - main: App Started
+[INFO] [2025-05-21 18:22:14,010] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:22:14,481] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:22:19,637] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:23:15,469] - main: App Started
+[INFO] [2025-05-21 18:23:15,522] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:23:15,970] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:23:22,365] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:24:01,971] - main: App Started
+[INFO] [2025-05-21 18:24:02,027] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:24:02,468] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:24:05,314] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:27:44,834] - main: App Started
+[INFO] [2025-05-21 18:27:44,927] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:27:45,766] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:27:48,732] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:27:49,769] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Column' object has no attribute 'rows'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 579, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 464, in equipment_page
+    table=table_obj.getTable(1)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Column' object has no attribute 'rows'
+[INFO] [2025-05-21 18:28:19,908] - main: App Started
+[INFO] [2025-05-21 18:28:20,098] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:28:20,523] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:28:23,759] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:29:02,017] - main: App Started
+[INFO] [2025-05-21 18:29:02,192] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:29:02,678] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:29:05,198] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:29:32,600] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:33,428] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:33,562] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 249, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:33,798] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:34,038] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:34,419] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:35,373] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:35,409] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:35,618] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:36,086] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:36,132] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:29:36,220] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'IconButton' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[1].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IconButton' object has no attribute 'controls'
+[INFO] [2025-05-21 18:30:19,458] - main: App Started
+[INFO] [2025-05-21 18:30:19,509] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:30:19,943] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:30:24,154] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:31:16,602] - main: App Started
+[INFO] [2025-05-21 18:31:16,759] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:31:17,201] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:31:20,909] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:31:27,168] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[2].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:31:27,399] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[2].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:31:28,428] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[2].controls[0].controls[0].controls.pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[INFO] [2025-05-21 18:31:59,249] - main: App Started
+[INFO] [2025-05-21 18:31:59,436] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:31:59,854] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:32:03,750] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:32:10,092] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'pop'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[2].controls[0].controls[0].pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'pop'
+[ERROR] [2025-05-21 18:32:11,176] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'pop'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[2].controls[0].controls[0].pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'pop'
+[ERROR] [2025-05-21 18:32:11,208] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'pop'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 245, in searchInTable
+    self.page.controls[2].controls[0].controls[0].pop(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'pop'
+[INFO] [2025-05-21 18:32:41,827] - main: App Started
+[INFO] [2025-05-21 18:32:42,015] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:32:42,506] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:33:09,267] - main: App Started
+[INFO] [2025-05-21 18:33:09,346] - database: Connected to database was successfull
+[INFO] [2025-05-21 18:33:09,816] - pages: 'Start' page was openned
+[INFO] [2025-05-21 18:33:14,028] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:33:24,634] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:24,725] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:26,150] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:26,318] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:26,474] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[INFO] [2025-05-21 18:33:28,643] - pages: 'Main' page was openned
+[ERROR] [2025-05-21 18:33:36,718] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:37,087] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:37,207] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[ERROR] [2025-05-21 18:33:48,117] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'DataTable' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 228, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 375, in getTable
+    if (len(self_main.__table.controls[0].controls[0].rows)>=1):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataTable' object has no attribute 'controls'
+[INFO] [2025-05-21 18:33:54,867] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:34:00,088] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:34:01,581] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:34:03,317] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:34:05,243] - pages: 'Main' page was openned
+[INFO] [2025-05-21 18:34:06,872] - pages: 'Main' page was openned
+[INFO] [2025-05-23 09:17:44,151] - main: App Started
+[INFO] [2025-05-23 09:17:44,208] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:17:46,008] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:17:48,238] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:18:44,107] - main: App Started
+[INFO] [2025-05-23 09:18:44,159] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:18:44,758] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:18:46,486] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:19:46,250] - main: App Started
+[INFO] [2025-05-23 09:19:46,406] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:19:46,890] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:19:48,262] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:20:06,213] - main: App Started
+[INFO] [2025-05-23 09:20:06,266] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:20:06,669] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:20:14,113] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:20:31,803] - main: App Started
+[INFO] [2025-05-23 09:20:32,006] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:20:32,409] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:20:33,124] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:20:42,755] - main: App Started
+[INFO] [2025-05-23 09:20:42,804] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:20:43,192] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:20:43,945] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:20:56,923] - main: App Started
+[INFO] [2025-05-23 09:20:56,976] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:20:57,386] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:21:02,747] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:40:00,851] - main: App Started
+[INFO] [2025-05-23 09:40:00,953] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:40:01,407] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:40:02,851] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:42:08,132] - main: App Started
+[INFO] [2025-05-23 09:42:08,318] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:42:08,827] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:42:09,912] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:42:22,997] - main: App Started
+[INFO] [2025-05-23 09:42:23,052] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:42:23,467] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:42:24,395] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:42:37,370] - main: App Started
+[INFO] [2025-05-23 09:42:37,429] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:42:37,878] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:42:39,220] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:44:14,073] - main: App Started
+[INFO] [2025-05-23 09:44:14,176] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:44:14,692] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:44:17,401] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:44:41,052] - main: App Started
+[INFO] [2025-05-23 09:44:41,125] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:44:41,833] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:44:45,871] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-23 09:44:50,443] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Container' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 45, in password_generator
+    self.page.controls[6].controls[0].value=password
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Container' object has no attribute 'controls'
+[INFO] [2025-05-23 09:45:11,049] - main: App Started
+[INFO] [2025-05-23 09:45:11,101] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:45:11,496] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:45:14,386] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:45:15,910] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:47:06,520] - main: App Started
+[INFO] [2025-05-23 09:47:06,572] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:47:07,003] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:47:09,393] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:47:40,984] - main: App Started
+[INFO] [2025-05-23 09:47:41,154] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:47:41,571] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:47:42,651] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:47:53,026] - main: App Started
+[INFO] [2025-05-23 09:47:53,216] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:47:53,635] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:47:54,610] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:48:06,097] - main: App Started
+[INFO] [2025-05-23 09:48:06,164] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:48:06,635] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:48:11,545] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:48:28,115] - main: App Started
+[INFO] [2025-05-23 09:48:28,322] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:48:28,753] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:48:42,061] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:48:55,776] - main: App Started
+[INFO] [2025-05-23 09:48:55,833] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:48:56,371] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:49:08,139] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:49:32,742] - main: App Started
+[INFO] [2025-05-23 09:49:32,795] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:49:33,210] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:49:34,408] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:49:50,408] - main: App Started
+[INFO] [2025-05-23 09:49:50,485] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:49:50,938] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:49:52,383] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:50:05,703] - main: App Started
+[INFO] [2025-05-23 09:50:05,760] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:50:06,175] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:50:09,802] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:50:20,702] - main: App Started
+[INFO] [2025-05-23 09:50:20,757] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:50:21,173] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:50:22,520] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:50:39,360] - main: App Started
+[INFO] [2025-05-23 09:50:39,412] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:50:39,849] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:50:41,429] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:51:27,936] - main: App Started
+[INFO] [2025-05-23 09:51:27,988] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:51:28,500] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:51:32,283] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:52:01,206] - main: App Started
+[INFO] [2025-05-23 09:52:01,362] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:52:01,780] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:52:02,909] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:52:44,990] - main: App Started
+[INFO] [2025-05-23 09:52:45,142] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:52:45,552] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:53:01,983] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:53:20,834] - main: App Started
+[INFO] [2025-05-23 09:53:20,897] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:53:21,411] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:53:22,040] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:53:31,475] - main: App Started
+[INFO] [2025-05-23 09:53:31,543] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:53:32,191] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:53:32,881] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:53:45,335] - main: App Started
+[INFO] [2025-05-23 09:53:45,487] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:53:45,963] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:53:46,946] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 09:53:57,667] - main: App Started
+[INFO] [2025-05-23 09:53:57,821] - database: Connected to database was successfull
+[INFO] [2025-05-23 09:53:58,251] - pages: 'Start' page was openned
+[INFO] [2025-05-23 09:53:59,263] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 12:36:18,000] - main: App Started
+[INFO] [2025-05-23 12:36:18,051] - database: Connected to database was successfull
+[INFO] [2025-05-23 12:36:19,592] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:36:21,282] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 12:36:55,217] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:41:43,524] - main: App Started
+[INFO] [2025-05-23 12:41:43,707] - database: Connected to database was successfull
+[INFO] [2025-05-23 12:41:44,144] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:42:06,814] - main: App Started
+[INFO] [2025-05-23 12:42:06,963] - database: Connected to database was successfull
+[INFO] [2025-05-23 12:42:07,360] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:42:30,782] - main: App Started
+[INFO] [2025-05-23 12:42:30,838] - database: Connected to database was successfull
+[INFO] [2025-05-23 12:42:31,246] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:47:00,528] - main: App Started
+[INFO] [2025-05-23 12:47:00,586] - database: Connected to database was successfull
+[INFO] [2025-05-23 12:47:01,048] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:47:05,835] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 12:47:08,575] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:47:09,215] - pages: 'Reset password' page was openned
+[INFO] [2025-05-23 12:47:14,868] - pages: 'Start' page was openned
+[INFO] [2025-05-23 12:56:47,019] - main: App Started
+[INFO] [2025-05-23 12:56:47,072] - database: Connected to database was successfull
+[INFO] [2025-05-23 12:56:47,555] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:01:56,062] - main: App Started
+[INFO] [2025-05-23 13:01:56,145] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:01:56,806] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:02:50,987] - main: App Started
+[INFO] [2025-05-23 13:02:51,155] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:02:51,632] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:03:49,245] - main: App Started
+[INFO] [2025-05-23 13:03:49,297] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:03:49,709] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:04:43,714] - main: App Started
+[INFO] [2025-05-23 13:04:43,795] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:04:44,340] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:05:28,677] - main: App Started
+[INFO] [2025-05-23 13:05:28,841] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:05:29,347] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:06:17,362] - main: App Started
+[INFO] [2025-05-23 13:06:17,436] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:06:17,919] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:06:36,551] - main: App Started
+[INFO] [2025-05-23 13:06:36,603] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:06:37,018] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:06:42,694] - pages: 'Reset password' page was openned
+[INFO] [2025-05-23 13:08:25,611] - main: App Started
+[INFO] [2025-05-23 13:08:25,718] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:08:26,398] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:08:59,475] - pages: 'Reset password' page was openned
+[ERROR] [2025-05-23 13:09:01,110] - pages:  name 'userIdField' is not defined
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 627, in resetPassword_handler
+    baseColor=userIdField.border_color
+              ^^^^^^^^^^^
+NameError: name 'userIdField' is not defined
+[INFO] [2025-05-23 13:10:01,787] - main: App Started
+[INFO] [2025-05-23 13:10:01,851] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:10:02,305] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:10:03,122] - pages: 'Reset password' page was openned
+[INFO] [2025-05-23 13:10:16,377] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:10:17,885] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 13:12:10,683] - main: App Started
+[INFO] [2025-05-23 13:12:10,760] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:12:11,212] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:12:12,664] - pages: 'StartAdmin' page was openned
+[INFO] [2025-05-23 13:12:22,852] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:48:20,176] - main: App Started
+[INFO] [2025-05-23 13:48:20,244] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:48:20,745] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:48:38,951] - pages: 'Reset password' page was openned
+[INFO] [2025-05-23 13:50:06,015] - main: App Started
+[INFO] [2025-05-23 13:50:06,068] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:50:06,469] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:50:09,580] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:20,459] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:22,004] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:23,813] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:25,298] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:27,083] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:29,098] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:32,375] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:34,543] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:36,336] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:50:38,623] - pages: 'Main' page was openned
+[ERROR] [2025-05-23 13:52:03,068] - database: Request execute was failed. Reason: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_cabinet_number_fkey"
+DETAIL:  Ключ (cabinet_number)=(207) отсутствует в таблице "cabinets".
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 51, in insertPC_Equipment
+    cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_cabinet_number_fkey"
+DETAIL:  Ключ (cabinet_number)=(207) отсутствует в таблице "cabinets".
+
+[ERROR] [2025-05-23 13:52:05,165] - database: Request execute was failed. Reason: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 65, in insertMonitor_Equipmet
+    cursor.execute(f"""Insert into Equipment(
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[INFO] [2025-05-23 13:52:12,083] - main: App Started
+[INFO] [2025-05-23 13:52:12,136] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:52:12,580] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:52:16,667] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:52:24,019] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:53:34,544] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:53:42,699] - pages: 'Main' page was openned
+[INFO] [2025-05-23 13:55:59,298] - main: App Started
+[INFO] [2025-05-23 13:55:59,350] - database: Connected to database was successfull
+[INFO] [2025-05-23 13:55:59,772] - pages: 'Start' page was openned
+[INFO] [2025-05-23 13:56:08,292] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:00:32,076] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:03:22,248] - main: App Started
+[INFO] [2025-05-23 14:03:22,404] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:03:22,879] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:03:31,150] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:04:42,910] - main: App Started
+[INFO] [2025-05-23 14:04:43,066] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:04:43,531] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:04:46,379] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:04:55,626] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:04:57,831] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:05:00,633] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:06:10,134] - main: App Started
+[INFO] [2025-05-23 14:06:10,314] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:06:10,848] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:06:57,581] - main: App Started
+[INFO] [2025-05-23 14:06:57,637] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:06:58,292] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:07:04,381] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:10:54,817] - main: App Started
+[INFO] [2025-05-23 14:10:54,879] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:10:55,341] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:11:00,213] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:12:34,691] - main: App Started
+[INFO] [2025-05-23 14:12:34,743] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:12:35,172] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:12:49,112] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:13:32,495] - main: App Started
+[INFO] [2025-05-23 14:13:32,707] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:13:33,123] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:13:38,894] - pages: 'Main' page was openned
+[ERROR] [2025-05-23 14:13:43,389] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("'NoneType' object is not subscriptable")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 435, in loadExcel_handler
+    if (self.files[0].path!="" and self.files[0].path!=None):
+        ~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+[INFO] [2025-05-23 14:13:44,007] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:13:50,927] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:16:53,010] - main: App Started
+[INFO] [2025-05-23 14:16:53,160] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:16:53,597] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:17:17,363] - main: App Started
+[INFO] [2025-05-23 14:17:17,431] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:17:17,959] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:18:06,254] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:20:00,652] - main: App Started
+[INFO] [2025-05-23 14:20:00,821] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:20:01,255] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:20:04,045] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:20:59,032] - main: App Started
+[INFO] [2025-05-23 14:20:59,084] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:20:59,510] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:21:02,985] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:22:22,139] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:22:25,227] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:23:31,205] - main: App Started
+[INFO] [2025-05-23 14:23:31,398] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:23:31,846] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:23:37,493] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:25:06,586] - main: App Started
+[INFO] [2025-05-23 14:25:06,638] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:25:07,045] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:25:10,362] - pages: 'Main' page was openned
+[INFO] [2025-05-23 14:27:35,405] - main: App Started
+[INFO] [2025-05-23 14:27:35,471] - database: Connected to database was successfull
+[INFO] [2025-05-23 14:27:36,010] - pages: 'Start' page was openned
+[INFO] [2025-05-23 14:28:40,602] - pages: 'Main' page was openned

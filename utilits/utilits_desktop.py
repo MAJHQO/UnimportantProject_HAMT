@@ -1,6 +1,6 @@
 import flet as ft,time,datetime, requests,logging,os
 from utilits import bd
-import pandas as pd
+import pandas as pd, string,random
 
 from hashlib import sha384
 
@@ -14,100 +14,36 @@ login_coLabelText=[
 logger_deskU=logging.getLogger("pages")
 logger_deskU.setLevel(logging.INFO)
 
-def dynamicPassCheck(self, dynamicCheck=True):
+def password_generator(self):
+    length=random.randint(10,25)
 
-    if (dynamicCheck==True):
-
-        if (self.control.value==''):
-            self.control.border_color=ft.Colors.BLACK
-
-        elif (len(self.control.value)<=15):
-
-            self.control.border_color=ft.Colors.RED_300
-
+    lowercase_letters = list(string.ascii_lowercase)
+    uppercase_letters = list(string.ascii_uppercase) 
+    digits = list(string.digits)  
+    special_characters = list(string.punctuation)
+    
+    password=""
+    for i in range(0, length):
+        a=random.randint(1,length)
+        if(a%2==0 and a>7):
+            if(a>7):
+                password+=lowercase_letters[random.randint(0,len(digits)-1)]
+            else:
+                password+=lowercase_letters[a]
+        elif(a>=5 and a%5==0):
+            if (a%7==0):
+                password+=uppercase_letters[a]
+            else:
+                password+=special_characters[a]
+        elif(a>=3 or a%4==0):
+            if(a%6==0):
+                password+=special_characters[random.randint(0,len(digits)-1)]
+            else:
+                password+=digits[random.randint(0,len(digits)-1)]
         else:
-
-            passwordCheck=[0,0,0,0]
-            elemSum=0
-
-            for i in self.control.value:
-
-                if (i>='A' and i<='Z'):
-                    passwordCheck[0]+=1
-
-                elif (i>='a' and i<='z'):
-                    passwordCheck[1]+=1
-
-                elif (i>='0' and i<='9'):
-                    passwordCheck[2]+=1
-
-                elif (i in ['%','$','@','*','&','<','>','#','!']):
-                    passwordCheck[3]+=1
-
-            for i in passwordCheck:
-                elemSum+=int(i)
-
-            if (elemSum>=1 and elemSum<=8):
-                if((passwordCheck[0]>0 and passwordCheck[0]<=3) and (passwordCheck[1]>0 and passwordCheck[1]<=3) and (passwordCheck[2]>0 and passwordCheck[2]<=3) and (passwordCheck[3]>0 and passwordCheck[3]<=2)):
-                    self.control.border_color=ft.Colors.ORANGE_300 
-                else:
-                    self.control.border_color=ft.Colors.RED_300 
-
-            elif (elemSum>=9):
-                if( passwordCheck[0]>=5 and passwordCheck[1]>3 and passwordCheck[2]>=4 and  passwordCheck[3]>2):
-                    self.control.border_color=ft.Colors.GREEN_300
-
-                else:
-                    self.control.border_color=ft.Colors.ORANGE_300 
-                    
-
-        self.page.update()
-
-    else:
-
-        for control in self.page.controls:
-
-            if (type(control)==ft.TextField and control.hint_text=='Пароль'):
-
-                if (control.value==''):
-                    return False
-                elif (len(control.value)<=15):
-
-                    return False
-
-                else:
-
-                    passwordCheck=[0,0,0,0]
-                    elemSum=0
-
-                    for i in control.value:
-
-                        if (i>='A' and i<='Z'):
-                            passwordCheck[0]+=1
-
-                        elif (i>='a' and i<='z'):
-                            passwordCheck[1]+=1
-
-                        elif (i>='0' and i<='9'):
-                            passwordCheck[2]+=1
-
-                        elif (i in ['%','$','@','*','&','<','>','#','!']):
-                            passwordCheck[3]+=1
-
-                    for i in passwordCheck:
-                        elemSum+=int(i)
-
-                    if (elemSum>=1 and elemSum<=13):
-                        if((passwordCheck[0]>0 and passwordCheck[0]<=3) and (passwordCheck[1]>0 and passwordCheck[1]<=3) and (passwordCheck[2]>0 and passwordCheck[2]<=3) and (passwordCheck[3]>0 and passwordCheck[3]<=2)):
-                            return True
-                        else:
-                            return False
-
-                    elif (elemSum>=13):
-                        if(passwordCheck[0]>=3 and passwordCheck[1]>=3 and passwordCheck[2]>=4 and  passwordCheck[3]>=2):
-                            return True
-                
-    return False
+            password+=uppercase_letters[a]
+    self.page.controls[6].controls[1].value=password
+    self.page.update()
 
 def checkFieldOnIncosist(self:list,fieldType:int):
     """
@@ -148,33 +84,33 @@ def errorField(self):
 
     baseColor=None
     for control in self.page.controls:
-        if (type(control) in [ft.ElevatedButton,ft.TextField,ft.DropdownM2]):
+        if (type(control) in [ft.TextField,ft.DropdownM2]):
             baseColor=control.border_color
             break
 
     for control in self.page.controls:
 
-        if(type(control)==ft.TextField or type(control)==ft.DropdownM2):
+        if(type(control) in [ft.TextField,ft.DropdownM2]):
             control.border_color=ft.Colors.RED_300
 
     self.page.update()
     time.sleep(0.7)
     
     for control in self.page.controls:
-        if (type(control)==ft.TextField or type(control)==ft.DropdownM2):
+        if (type(control) in [ft.TextField,ft.DropdownM2]):
             control.border_color=baseColor
 
     self.page.update()
 
-def errorIcon(self):
+def errorIcon(icon_obj: object, page:ft.Page):
 
-    baseColor=self.control.data[0].icon_color
+    baseColor=icon_obj.icon_color
 
-    self.control.data[0].icon_color=ft.Colors.RED
-    self.control.data[1].update()
+    icon_obj.icon_color=ft.Colors.RED
+    page.update()
     time.sleep(0.7)
-    self.control.data[0].icon_color=baseColor
-    self.control.data[1].update()
+    icon_obj.icon_color=baseColor
+    page.update()
 
 def errorDialog(page:ft.Page,text:str):
     dialog=ft.AlertDialog(title="Ошибка при выполнении", content=ft.Text(text, size=13,font_family="Moderustic Light"))
@@ -184,14 +120,14 @@ def successField(self):
 
     for control in self.page.controls:
 
-        if(type(control)==ft.TextField or type(control)==ft.DropdownM2):
+        if(type(control) in [ft.TextField,ft.DropdownM2]):
             control.border_color=ft.Colors.GREEN
 
     self.page.update()
     time.sleep(0.7)
     
     for control in self.page.controls:
-        if (type(control)==ft.TextField or type(control)==ft.DropdownM2):
+        if (type(control) in [ft.TextField,ft.DropdownM2]):
             control.border_color=ft.Colors.BLACK
 
     self.page.update()
@@ -242,12 +178,12 @@ def searchInTable(self):
 
         if (len(searchTable.rows)!=0):
 
-            self.page.controls[1].controls[0].controls[0].controls.pop(0)
-            self.page.controls[1].controls[0].controls[0].controls.append(searchTable)
+            self.page.controls[2].controls.pop(0)
+            self.page.controls[2].controls.append(searchTable)
 
     else:
-        self.page.controls[1].controls[0].controls[0].controls.pop(0)
-        self.page.controls[1].controls[0].controls[0].controls.append(actualTable)
+        self.page.controls[2].controls.pop(0)
+        self.page.controls[2].controls.append(actualTable)
 
     self.page.update()
 
@@ -260,12 +196,15 @@ def loadExcel(page:ft.Page,pd_obj):
         for row in pd_obj.values:
             if (type(row[0])==int):
                 for item in result:
+                    chc=True
                     if (item[0]!="-"):
                         if(item[0]==row[4] or item[1]==f"Компьютер №{row[0]}"):
                             chc=False
                             break
-                    elif (item[0] in [f"Монитор №{row[0]}", f"Принтер {row[14]}",f"Проектор №{row[0]}",f"Сканер №{row[0]}", row[17]]):
+                    elif (item[1] in [f"Монитор №{row[0]}", f"Принтер {row[0]} {row[14]}",f"Проектор №{row[0]}",f"Сканер №{row[0]}", row[17]]):
                         chc=False
+                        break
+                    
                 if (chc==True):
                     bd.insertPC_Equipment(row)
                     if (type(row[12])==str):
@@ -312,10 +251,9 @@ def loadExcel(page:ft.Page,pd_obj):
         
 
 class Table:
-    def __init__(self, column_list:list[ft.Text],table_width:int):
+    def __init__(self, column_list:list[ft.Text]):
         self.__column=column_list
-        self.__table=ft.ListView([ft.Row([ft.DataTable(self.__column,width=table_width)], alignment=ft.MainAxisAlignment.CENTER , scroll=True)
-            ], height=500)
+        self.__table=ft.Row([ft.Column([ft.DataTable(self.__column)], scroll=True, height=500)], scroll=True, expand=1)
         
     def viewMode(self,argc):
         if (type(argc.page.controls[1].controls[0])==ft.Row):

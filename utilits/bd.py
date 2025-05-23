@@ -48,7 +48,7 @@ def insertPC_Equipment(data:tuple):
 
         cursor=connect.cursor()
 
-        cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}','{data[10]}','{data[11]}','ПК','-','{data[4]}','-','{data[2]}')""")
+        cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
 
         connect.commit()
 
@@ -76,7 +76,7 @@ def insertMonitor_Equipmet(data:tuple):
                                  Invetory_Number,
                                  Equipment_Status,
                                  Cabinet_Number) values(
-                                 'Монитор №{data[0]}',
+                                 'Монитор {str(data[0])+" "+data[12] if (len(data[12])!=0) else data[0]}',
                                  '-',
                                  '-',
                                  '-',
@@ -87,7 +87,7 @@ def insertMonitor_Equipmet(data:tuple):
                                  'Монитор',
                                  '-',
                                  '{data[13]}',
-                                 '-'
+                                 '-',
                                  '{data[2]}')""")
 
         connect.commit()
@@ -116,7 +116,7 @@ def insertPrinter_Equipment(data:tuple):
                                  Invetory_Number,
                                  Equipment_Status,
                                  Cabinet_Number) values(
-                                 'Принтер {data[14]}',
+                                 'Принтер {data[0]} {data[14]}',
                                  '-',
                                  '-',
                                  '-',

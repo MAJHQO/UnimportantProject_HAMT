@@ -23,11 +23,7 @@ def addData_page(self_main):
         self.page.update()
 
     def addData(self):
-
-        if(self.control.data[0]==0):
-            pass
-
-        elif(self.control.data[0]==1):
+        if(self.control.data[0]==1):
             if (deskU.checkFieldOnIncosist(self,1)==True and len(bd.reqExecute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
                 
                 bd.reqExecute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
@@ -81,9 +77,6 @@ def addData_page(self_main):
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.BLACK
             self.page.update()
-    
-    if(self_main.control.data[0]==0):
-        pass #Нужно делать функцию добавления задания от преподователей вручную?
 
     if(self_main.control.data[0]==1):
         self_main.page.clean()
@@ -325,11 +318,6 @@ def equipmentStatus_page(page:ft.Page):
     menuBar=ft.MenuBar(
         [
             ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
-            # ft.SubmenuButton(ft.Text("Режимы"),[
-            #      ft.MenuItemButton(
-            #          ft.Chip(ft.Text("Изменение"),on_select=lambda _:page.update())
-            #          ),
-            #      ],),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[3,table_obj,"Equipment_Status"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[3,table_obj,"Equipment_Status"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[3,table_obj,"Equipment_Status"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
@@ -443,7 +431,7 @@ def equipment_page(page:ft.Page):
 
     page.clean()
 
-    page.window.width=1400
+    page.window.width=1200
     page.window.height=700
 
     table_obj=deskU.Table([
@@ -459,7 +447,7 @@ def equipment_page(page:ft.Page):
         ft.DataColumn(ft.Text("Серийный номер", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
         ft.DataColumn(ft.Text("Инвентарный номер", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
         ft.DataColumn(ft.Text("Статус", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Местонахождение", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER))],1300)
+        ft.DataColumn(ft.Text("Местонахождение", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER))],1700)
     
     table=table_obj.getTable(1)
 
@@ -514,7 +502,11 @@ def manageAdminAcc_page(page: ft.Page):
     menuBar=ft.MenuBar(
         [
             ft.SubmenuButton(ft.Text("Функции"), [
-                ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[5,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[5,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
+                ft.SubmenuButton(ft.Text("Удаление"), [
+                    ft.MenuItemButton(ft.Text("Запись"), data=[5,table_obj,"Equipment"] ,on_click=deleteData_page), 
+                    ft.MenuItemButton(ft.Text("Всё"), data=[5,table_obj,"Equipment"] ,on_click=deleteAllData)]
+                    )]
+                    )],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
@@ -525,33 +517,6 @@ def manageAdminAcc_page(page: ft.Page):
     
     page.window.center()
     page.update() 
-
-
-def main_page(page:ft.Page):
-    
-    page.clean()
-
-    page.window.width=1280
-    page.window.height=800
-
-
-    requestPageButton=ft.ElevatedButton("Заявки", icon=ft.Icons.HOME_REPAIR_SERVICE, width=200, on_click=lambda _:request_page(page))
-    equipmentPageButton=ft.ElevatedButton("Оборудование", icon=ft.Icons.LAPTOP_CHROMEBOOK, width=200, on_click= lambda _:equipment_page(page))
-    cabinetsButton=ft.ElevatedButton("Кабинеты", on_click=lambda _:cabinets_page(page),width=200, icon=ft.Icons.ROOM)
-    equipmentStatusButton=ft.ElevatedButton("Статус оборудования", on_click=lambda _: equipmentStatus_page(page),width=200, icon=ft.Icons.ARCHIVE)
-    equipmentCategoryButton=ft.ElevatedButton("Категории оборудования", on_click=lambda _:equipmentCategory_page(page),width=200, icon=ft.Icons.SEGMENT)
-    manageAdminAccButton=ft.ElevatedButton("Администраторы", icon=ft.Icons.VERIFIED_USER, on_click=lambda _: manageAdminAcc_page(page),width=200)
-
-
-    page.add(
-            ft.Row([requestPageButton,equipmentPageButton], spacing=40, alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
-            ft.Row([cabinetsButton,equipmentStatusButton], spacing=40,alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER),
-            ft.Row([equipmentCategoryButton,manageAdminAccButton], spacing=40 , alignment=ft.MainAxisAlignment.CENTER),
-            ft.Row([]),
-            ft.Row([ft.Image("Desktop\Image\main_object_1.png", width=150,height=230)], alignment=ft.MainAxisAlignment.START))
-    logger_pages.info("'Main' page was openned")
-    page.window.center()
-    page.update()
 
 
 def main_page_v2(page:ft.Page):
@@ -648,97 +613,19 @@ def main_page_v2(page:ft.Page):
 
 def resetPassword_page(page: ft.Page):
 
-    def resetPassword_handler(self):
-
-        try:
-            baseColor=userIdField.border_color
-
-            if (type(page.controls[4])==ft.Column):
-                page.controls.pop(4)
-
-            if (userIdField.value.isdigit()==True and userIdField.value!="\n" and userIdField.value!=""):
-                usernameReq=bd.reqExecute(f"Select Username from Users where TG_ID={userIdField.value}")
-
-                if(usernameReq!=False):
-                    if (len(usernameReq)!=0):
-                        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameReq[0][0].encode()).hexdigest()}'")
-                        if (result!=False):
-                            if (len(result)!=0):
-                                req=requests.post("https://api.telegram.org/bot7527441182:AAEI1sSafhOnZ1oLgeRgdaJALzxoHEmiWLY/sendMessage", data={"chat_id":userIdField.value, "text": f'Ваш пароль: {result[0][2]}'})
-                                if (req.status_code==200):
-                                    userIdField.border_color=ft.Colors.GREEN
-                                else:
-                                    userIdField.border_color=ft.Colors.RED
-                                    errorLabel.value="Произошла ошибка при отправке запроса"
-                                    page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
-                            else:
-                                userIdField.border_color=ft.Colors.RED
-                                errorLabel.value="Не имеется администратора с данным ID"
-                                page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
-                        else:
-                            userIdField.border_color=ft.Colors.RED
-                            errorLabel.value="При выполнеии запроса возникла ошибка"
-                            page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
-
-                    else:
-                            userIdField.border_color=ft.Colors.RED
-                            errorLabel.value="Данный ID не зарегистрировано в базе данных приложения"
-                            page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
-                else:
-                    userIdField.border_color=ft.Colors.RED
-                    errorLabel.value="При выполнении запроса возникла ошибка"
-                    page.controls.insert(4,ft.Column([ft.Text("",height=20), errorLabel]))
-
-            else:
-                userIdField.border_color=ft.Colors.RED
-
-            self.page.update()
-            time.sleep(0.7)
-
-            userIdField.border_color=baseColor
-            self.page.update()
-
-        except Exception as ex:
-
-            logger_pages.exception(f" {ex}")
-            page.window.bgcolor=ft.Colors.RED
-            page.update()
-
-            time.sleep(0.7)
-
-            page.window.bgcolor=ft.Colors.TRANSPARENT
-            page.update()
-
     page.clean()
 
     information_Text_1=ft.Text("Забыли пароль?", size=30, selectable=False,weight=ft.FontWeight.BOLD,font_family="Main Label", text_align=ft.TextAlign.CENTER)
-    information_Text_2=ft.Text("Для восстановления пароля нужно ввести ID, который привязан к профилю Telegram", size=14, selectable=False,font_family="Moderustic Light",width=230,text_align=ft.TextAlign.CENTER)
+    information_Text_2=ft.Text("Для восстановления пароля нужно перейти в Telegram аккаунт, который зарегистрирован на данную машину", size=14, selectable=False,font_family="Moderustic Light",width=230,text_align=ft.TextAlign.CENTER)
 
-    userIdField=ft.TextField(
-        hint_text="Telegram ID", 
-        hint_style=ft.TextStyle(font_family="Moderustic Light"),
-        max_lines=1,
-        text_style=ft.TextStyle(font_family="Moderustic Regular"),
-        border_radius=14, 
-        border_color=deskU.ui_colors[0],
-        on_focus=deskU.contentColor_focus,
-        on_blur=deskU.contentColor_blur,
-        width=200
-        )
     resetPasswButton=ft.ElevatedButton(
         "Сбросить пароль", 
         icon=ft.Icons.RESTART_ALT_OUTLINED,
         icon_color=ft.Colors.WHITE,
         bgcolor=deskU.ui_colors[1],
         color=ft.Colors.WHITE,
-        on_click=resetPassword_handler)
-    
-    findIDButton=ft.ElevatedButton(
-        "Узнать свой ID",
-        bgcolor=deskU.ui_colors[0],
-        color=ft.Colors.BLACK,
-        on_click=lambda _:page.launch_url("https://web.t.me/userinfobot?start=info")
-    )
+        on_click=lambda _:page.launch_url("https://t.me/HAMT_Tech_Bot?start=resetPassword"))
+
 
     errorLabel=ft.Text("", font_family="Moderustic Regular", size=13,disabled=True,height=30)
 
@@ -748,7 +635,7 @@ def resetPassword_page(page: ft.Page):
         ft.Row([backPageButton],alignment=ft.MainAxisAlignment.START),
         ft.Column([information_Text_1, information_Text_2], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
         ft.Text("", height=20),
-        userIdField,resetPasswButton,findIDButton)
+        resetPasswButton)
     logger_pages.info("'Reset password' page was openned")
     page.window.center()
     page.update()
@@ -757,7 +644,7 @@ def resetPassword_page(page: ft.Page):
 def start_page(page:ft.Page):
 
     def nextPage(self):
-        result=bd.reqExecute(f"Select * from Administrators where Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}' AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+        result=bd.reqExecute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
         if (result!=False):
             if(len(result)!=0):
                 main_page_v2(self.page)
@@ -776,13 +663,14 @@ def start_page(page:ft.Page):
     page.window.height=700
 
     page.title="НАМТ.Администраторы"
+    path=os.getcwd()
     page.theme_mode=ft.ThemeMode.LIGHT
     page.vertical_alignment=ft.MainAxisAlignment.CENTER
     page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
     #page.window.resizable=False
     page.window.prevent_close=True
     page.window.on_event=deskU.pageClose
-    page.window.icon="E:\\PROJECT\\Python\\NAMT_BOT\\Git\\UnimportantProject_HAMT\\Desktop\Image\\HAMT_Logo.ico"
+    page.window.icon=path+"\Desktop\Image\\HAMT_Logo.ico"
 
 
     page.fonts={
@@ -860,7 +748,7 @@ def startAdmin_page(page:ft.Page):
 
         result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
 
-        if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and deskU.dynamicPassCheck(self,False)==True and (usernameField.value!="" and usernameField.value.find("@")==-1)):
+        if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
             if (result!=False):
                 if (len(result)==0):
@@ -917,12 +805,6 @@ def startAdmin_page(page:ft.Page):
     page.window.width=800
     page.window.height=700
 
-    # page.fonts={
-    #     'Main Label': 'Fonts\\TechMonoRegular.otf',
-    #     'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf',
-    #     'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf',
-    #     'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf'}
-
     startLabel=ft.Text("Создание аккаунта", size=30,font_family="Main Label")
     startDescriptionLabel=ft.Text("Заполните необходимые поля,\nчтобы получить полноценный доступ \nк приложению", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
 
@@ -959,8 +841,8 @@ def startAdmin_page(page:ft.Page):
     passwordField=ft.TextField(
         hint_text="Пароль", 
         width=210, 
-        password=True, 
-        on_change=deskU.dynamicPassCheck,
+        password=True,
+        can_reveal_password=True,
         hint_style=ft.TextStyle(font_family="Moderustic Regular"),
         border_radius=14, 
         max_lines=1, 
@@ -971,19 +853,14 @@ def startAdmin_page(page:ft.Page):
     failedRegistLabel=ft.Text("", font_family="Moderustic Regular",size=13,width=200)
 
     regirtrAdminButton=ft.ElevatedButton("Зарегистрироваться", width=165, on_click=adminRegInBD, bgcolor=deskU.ui_colors[1],color=ft.Colors.WHITE)
+    password_generate_button=ft.IconButton(ft.Icons.PASSWORD, on_click=deskU.password_generator, icon_color=deskU.ui_colors[1], tooltip="Генерация пароля")
     backPageButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=backPage, icon_color=deskU.ui_colors[1], splash_radius=10)
 
-    #Для записи токена инициализации шифрования в байтовой форме
-    # with open("adminConfig", "wb"):
-
-    #     pass
-
-    #page.add(ft.Row([backPageButton]),ft.Column([fslField,loginField,usernameField,passwordField,regirtrAdminButton], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER, width=800,height=700))
     page.add(
         ft.Row([backPageButton], alignment=ft.MainAxisAlignment.START),
         ft.Column([startLabel,startDescriptionLabel],spacing=5),
         ft.Text("",height=30) ,
-        fslField,loginField,usernameField,passwordField,
+        fslField,loginField,usernameField,ft.Row([ft.Text("", width=22),passwordField,password_generate_button], spacing=10,alignment=ft.MainAxisAlignment.CENTER , width=275),
         failedRegistLabel,
         ft.Text("",height=30),
         regirtrAdminButton)

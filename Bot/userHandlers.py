@@ -10,9 +10,10 @@ from aiogram.enums import ParseMode, ChatAction
 from aiogram import F
 
 from inspect import currentframe, getframeinfo
+from hashlib import sha384
 
 import bot_main as main
-from utilits import bd
+from utilits import bd, utilits_desktop as ut
 from Bot.filters import teacherFilter,teacherFilter_Call
 
 import Bot.FSM as FSM ,Bot.keyboards as keyboards,Bot.bot_config as bConfig
@@ -36,7 +37,10 @@ async def start(message:types.Message, command: CommandObject, state: FSMContext
         await state.set_state(None)
 
         if (command.args!=None):
-            pass
+            if(command.args=='resetPassword'):
+                if (len(bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'"))!=0):
+                    await message.answer("Введите новый пароль: ")
+                    await state.set_state(FSM.Password_Reset.password)
         else:
             result=bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'")
             if (result!=False and len(result)==0):
@@ -347,6 +351,20 @@ async def user_rename(message:types.Message, state: FSMContext):
 
             main.logger.exception(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: Недостаточное количество слов для ФИО')
 
+    except Exception as ex:
+
+        frameinfo = getframeinfo(currentframe())
+
+        main.logger.error(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno} | Text: {ex}')
+
+@router.message(FSM.Password_Reset.password)
+async def user_rename(message:types.Message, state: FSMContext):
+    frameinfo = getframeinfo(currentframe())
+
+    main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
+
+    try:
+        bd.reqExecute(f"Update Administrators Set Password='{sha384(message.text.encode()).hexdigest()}' where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'")
     except Exception as ex:
 
         frameinfo = getframeinfo(currentframe())

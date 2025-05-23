@@ -99,3 +99,31 @@ NoneType: None
 [2025-05-08 20:51:02,004] - [aiogram.event] - [INFO]: Update id=112030044 is handled. Duration 389 ms by bot id=7527441182
 [2025-05-08 20:51:04,748] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 140
 [2025-05-08 20:51:04,912] - [aiogram.event] - [INFO]: Update id=112030045 is handled. Duration 219 ms by bot id=7527441182
+[2025-05-22 21:46:30,965] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-05-22 21:46:31,049] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-05-22 21:46:45,773] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 31
+[2025-05-22 21:46:45,934] - [aiogram.event] - [INFO]: Update id=112030047 is handled. Duration 906 ms by bot id=7527441182
+[2025-05-22 21:46:53,158] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 31
+[2025-05-22 21:47:02,525] - [aiogram.event] - [INFO]: Update id=112030048 is handled. Duration 9438 ms by bot id=7527441182
+[2025-05-22 21:47:10,148] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-22 21:47:10,251] - [aiogram.event] - [INFO]: Update id=112030049 is handled. Duration 187 ms by bot id=7527441182
+[2025-05-22 21:47:15,307] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-22 21:47:15,393] - [aiogram.event] - [INFO]: Update id=112030050 is handled. Duration 156 ms by bot id=7527441182
+[2025-05-22 21:47:26,018] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-22 21:47:26,103] - [aiogram.event] - [INFO]: Update id=112030051 is handled. Duration 155 ms by bot id=7527441182
+[2025-05-22 21:47:34,786] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-22 21:47:34,955] - [aiogram.event] - [INFO]: Update id=112030052 is handled. Duration 219 ms by bot id=7527441182
+[2025-05-22 21:47:44,738] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-22 21:47:44,847] - [aiogram.event] - [INFO]: Update id=112030053 is handled. Duration 170 ms by bot id=7527441182
+[2025-05-22 21:48:25,139] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-05-22 21:48:25,227] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-05-22 21:48:32,496] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 31
+[2025-05-22 21:48:32,647] - [aiogram.event] - [INFO]: Update id=112030054 is handled. Duration 1000 ms by bot id=7527441182
+[2025-05-22 21:48:52,238] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-22 21:48:52,368] - [aiogram.event] - [INFO]: Update id=112030055 is handled. Duration 312 ms by bot id=7527441182
+[2025-05-23 13:49:09,701] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-05-23 13:49:09,769] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-05-23 13:49:30,895] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 31
+[2025-05-23 13:49:31,096] - [aiogram.event] - [INFO]: Update id=112030057 is handled. Duration 1202 ms by bot id=7527441182
+[2025-05-23 13:49:45,396] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 362
+[2025-05-23 13:49:54,014] - [aiogram.event] - [INFO]: Update id=112030058 is handled. Duration 8702 ms by bot id=7527441182
