@@ -1,56 +1,17 @@
-import psycopg2 as sq, logging,sys,os
+import logging
+from Desktop import simple_database as db
 
 logger_bd=logging.getLogger("database")
 logger_bd.setLevel(logging.INFO)
 
-connect=None
-
-def connectionToDatabase():
-
-    try:
-
-        connnection=sq.connect(host="localhost",database="AdminInfo", user="postgres", password="5525", port='5890')
-            
-        logger_bd.info("Connected to database was successfull")
-
-        return connnection
-
-    except Exception as ex:
-        
-        logger_bd.error(f"Connection to database was failed. Reason: {ex}")
-        raise Exception("Connection to database was failed")
-
-connect=connectionToDatabase()
-
-def reqExecute(request:str):
-
-    try:
-
-        cursor=connect.cursor()
-
-        cursor.execute(request)
-
-        connect.commit()
-
-        if (request.startswith("Select")):
-
-            result=cursor.fetchall()
-
-            return result
-
-    except Exception as ex:
-
-        logger_bd.exception(f"Request execute was failed. Reason: {ex}")
-        return False
+db_object=db.Database(True, database='AdminInfo', user='postgres', password='5525', port='5890')
     
 def insertPC_Equipment(data:tuple):
     try:
 
-        cursor=connect.cursor()
+        db_object.cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
 
-        cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
-
-        connect.commit()
+        db_object.__connect__.commit()
 
     except Exception as ex:
 
@@ -60,9 +21,7 @@ def insertPC_Equipment(data:tuple):
 def insertMonitor_Equipmet(data:tuple):
     try:
 
-        cursor=connect.cursor()
-
-        cursor.execute(f"""Insert into Equipment(
+        db_object.cursor.execute(f"""Insert into Equipment(
                                  Name,
                                  IP_Address,
                                  MAC_Address,
@@ -90,7 +49,7 @@ def insertMonitor_Equipmet(data:tuple):
                                  '-',
                                  '{data[2]}')""")
 
-        connect.commit()
+        db_object.__connect__.commit()
 
     except Exception as ex:
 
@@ -100,9 +59,7 @@ def insertMonitor_Equipmet(data:tuple):
 def insertPrinter_Equipment(data:tuple):
     try:
 
-        cursor=connect.cursor()
-
-        cursor.execute(f"""Insert into Equipment(
+        db_object.cursor.execute(f"""Insert into Equipment(
                                  Name,
                                  IP_Address,
                                  MAC_Address,
@@ -130,7 +87,7 @@ def insertPrinter_Equipment(data:tuple):
                                  '-',
                                  '{data[2]}')""")
 
-        connect.commit()
+        db_object.__connect__.commit()
 
     except Exception as ex:
 
@@ -140,9 +97,7 @@ def insertPrinter_Equipment(data:tuple):
 def insertProjector_Equipment(data:tuple):
     try:
 
-        cursor=connect.cursor()
-
-        cursor.execute(f"""Insert into Equipment(
+        db_object.cursor.execute(f"""Insert into Equipment(
                                  Name,
                                  IP_Address,
                                  MAC_Address,
@@ -170,7 +125,7 @@ def insertProjector_Equipment(data:tuple):
                                  '-',
                                  '{data[2]}')""")
 
-        connect.commit()
+        db_object.__connect__.commit()
 
     except Exception as ex:
 
@@ -180,9 +135,7 @@ def insertProjector_Equipment(data:tuple):
 def insertScanner_Equipment(data:tuple):
     try:
 
-        cursor=connect.cursor()
-
-        cursor.execute(f"""Insert into Equipment(
+        db_object.cursor.execute(f"""Insert into Equipment(
                                  Name,
                                  IP_Address,
                                  MAC_Address,
@@ -210,7 +163,7 @@ def insertScanner_Equipment(data:tuple):
                                  '-'
                                  '{data[2]}')""")
 
-        connect.commit()
+        db_object.__connect__.commit()
 
     except Exception as ex:
 
@@ -220,9 +173,7 @@ def insertScanner_Equipment(data:tuple):
 def insertOther_Equipment(data:tuple):
     try:
 
-        cursor=connect.cursor()
-
-        cursor.execute(f"""Insert into Equipment(
+        db_object.cursor.execute(f"""Insert into Equipment(
                                  Name,
                                  IP_Address,
                                  MAC_Address,
@@ -250,13 +201,44 @@ def insertOther_Equipment(data:tuple):
                                  '-',
                                  '{data[2]}')""")
 
-        connect.commit()
+        db_object.__connect__.commit()
 
     except Exception as ex:
 
         logger_bd.exception(f"Request execute was failed. Reason: {ex}")
         return False
 
+# db_object.create_table('Cabinets', {'Number': 'VARCHAR PRIMARY KEY'},1300)
+# db_object.create_table('Equipment_Status', {'Status_Name': 'VARCHAR PRIMARY KEY'},1300)
+# db_object.create_table('Equipment_Category', {'Category_Name': 'VARCHAR PRIMARY KEY'},1300)
+# db_object.create_table('Repair_Request', 
+#                        {'Request_Number': 'INT PRIMARY KEY',
+#                         'TG_ID':'INTEGER', 
+#                         'TG_Username':'VARCHAR',
+#                         'Cabinet_Number':'VARCHAR REFERENCES Cabinets (Number)',
+#                         'Request_Description':'VARCHAR',
+#                         'Request_Status':'VARCHAR',},1300)
+# db_object.create_table('Equipment', 
+#                        {'Name': 'VARCHAR PRIMARY KEY',
+#                         'IP_Address':'VARCHAR', 
+#                         'MAC_Address':'VARCHAR',
+#                         'CPU_Model':'VARCHAR',
+#                         'CPU_Frequency':'VARCHAR',
+#                         'Equipment_Category':'VARCHAR REFERENCES Equipment_Category (Category_Name)',
+#                         'Serial_Number':'VARCHAR',
+#                         'Invetory_Number':'VARCHAR',
+#                         'Equipment_Status':'VARCHAR REFERENCES Equipment_Status (Status_Name)',
+#                         'Cabinet_Number':'VARCHAR REFERENCES Cabinets (Number)',},1300)
+# db_object.create_table('Administrators', {
+#     'FSL': 'VARCHAR',
+#     'Login':'VARCHAR PRIMARY KEY',
+#     'Mac_Address':'VARCHAR',
+#     'Password':'VARCHAR',
+#     'TG_Username':'VARCHAR',},1300)
+# db_object.create_table('Users', {
+#     'TG_ID': 'VARCHAR',
+#     'Username':'VARCHAR',
+#     'FSL':'VARCHAR'},1300)
 
 # reqExecute("Drop table Repair_Request")
 # reqExecute("Drop table Equipment")

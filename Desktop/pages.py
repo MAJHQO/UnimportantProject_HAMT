@@ -1,6 +1,7 @@
-import flet as ft, time, hashlib as hLib, logging,datetime,requests,os
+import flet as ft, time, logging,datetime,os
 from utilits import bd,utilits_desktop as deskU
 from random import randint
+from utilits.bd import db_object
 
 import uuid,pandas as pd
 
@@ -488,16 +489,7 @@ def manageAdminAcc_page(page: ft.Page):
 
     page.window.width=1250
     page.window.height=700
-
-    table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("ФИО",weight=ft.FontWeight.BOLD, size=13,width=180 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Логин",weight=ft.FontWeight.BOLD, size=13,width=170 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Mac-адрес",weight=ft.FontWeight.BOLD, size=13,width=155 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Пароль",weight=ft.FontWeight.BOLD, size=13,width=155 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Имя_пользователя",weight=ft.FontWeight.BOLD, size=13,width=240 ,text_align=ft.TextAlign.CENTER))
-    ],1200)
-
-    table=table_obj.getTable(5)
+    
 
     menuBar=ft.MenuBar(
         [
