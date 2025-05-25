@@ -11,6 +11,5 @@ if (__name__=="__main__"):
     logging.basicConfig(filename=".\Logs.log", format='[%(levelname)s] [%(asctime)s] - %(name)s: %(message)s')
 
     logger_main.info("App Started")
-    bd.connect=bd.connectionToDatabase()
     
     ft.app(pages.start_page)

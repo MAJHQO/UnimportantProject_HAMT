@@ -2487,3 +2487,18 @@ TypeError: 'NoneType' object is not subscriptable
 [INFO] [2025-05-23 14:27:35,471] - database: Connected to database was successfull
 [INFO] [2025-05-23 14:27:36,010] - pages: 'Start' page was openned
 [INFO] [2025-05-23 14:28:40,602] - pages: 'Main' page was openned
+[INFO] [2025-05-24 13:45:21,741] - main: App Started
+[INFO] [2025-05-24 13:46:37,921] - main: App Started
+[INFO] [2025-05-24 13:46:38,746] - pages: 'Start' page was openned
+[ERROR] [2025-05-24 13:46:50,433] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("module 'utilits.bd' has no attribute 'reqExecute'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 611, in nextPage
+    result=bd.reqExecute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+           ^^^^^^^^^^^^^
+AttributeError: module 'utilits.bd' has no attribute 'reqExecute'

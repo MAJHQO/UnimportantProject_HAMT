@@ -12,8 +12,6 @@ from hashlib import sha384
 logger_pages=logging.getLogger("pages")
 logger_pages.setLevel(logging.INFO)
 
-
-
 def addData_page(self_main):
 
     def clearFields(self):
@@ -274,7 +272,6 @@ def deleteData_page(self_main):
     self_main.page.open(deleteData_dialog)
 
 
-
 def equipmentCategory_page(page:ft.Page):
     
     page.clean()
@@ -282,20 +279,18 @@ def equipmentCategory_page(page:ft.Page):
     page.window.width=500
     page.window.height=700
 
-    table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("Наименование категории", weight=ft.FontWeight.BOLD, size=13,width=415 ,text_align=ft.TextAlign.CENTER))
-        ],500)
-    table=table_obj.getTable(4)
+    table_obj=db_object.get_table_obj('Equipment_Category')
+    table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
+            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[4, table_obj,"Equipment_Category"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[4, table_obj,"Equipment_Category"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[4, table_obj,"Equipment_Category"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
-    if(table!=None):
+    if(table!=False):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
@@ -311,20 +306,18 @@ def equipmentStatus_page(page:ft.Page):
     page.window.width=570
     page.window.height=700
 
-    table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("Статус", weight=ft.FontWeight.BOLD, size=16,width=400 ,text_align=ft.TextAlign.CENTER))
-        ],500)
-    table=table_obj.getTable(3)
+    table_obj=db_object.get_table_obj('Equipment_Status')
+    table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
+            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[3,table_obj,"Equipment_Status"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[3,table_obj,"Equipment_Status"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[3,table_obj,"Equipment_Status"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
-    if(table!=None):
+    if(table!=False):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
@@ -340,14 +333,12 @@ def cabinets_page(page:ft.Page):
     page.window.width=400
     page.window.height=700
 
-    table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("Номер кабинета", weight=ft.FontWeight.BOLD, size=13,width=260 ,text_align=ft.TextAlign.CENTER))
-        ],300)
-    table=table_obj.getTable(2)
+    table_obj=db_object.get_table_obj('Cabinets')
+    table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"), on_click=table_obj.editMode)]),
+            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"), on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[2,table_obj,"Cabinets"], on_click=addData_page), 
                                                   ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[2,table_obj,"Cabinets"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[2,table_obj,"Cabinets"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
@@ -369,24 +360,17 @@ def request_page(page:ft.Page):
     page.window.width=1400
     page.window.height=700
 
-    table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("Номер заявки", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("ID пользователя", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Имя пользователя", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Кабинет", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Описание заявки", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Статус заявки", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER))
-        ],1200)
-    table=table_obj.getTable(0)
+    table_obj=db_object.get_table_obj('Repair_Request')
+    table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode)]),
+            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[0,table_obj,"Repair_Request"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
-    if(table!=None):
+    if(table!=False):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
@@ -435,27 +419,13 @@ def equipment_page(page:ft.Page):
     page.window.width=1200
     page.window.height=700
 
-    table_obj=deskU.Table([
-        ft.DataColumn(ft.Text("Название", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("IP адрес", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Mac адрес", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Имя в сети", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Модель процессора", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Частота", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Объем ОЗУ", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Объем внешней памяти", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)),
-        ft.DataColumn(ft.Text("Категория", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Серийный номер", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Инвентарный номер", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Статус", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER)), 
-        ft.DataColumn(ft.Text("Местонахождение", weight=ft.FontWeight.BOLD, size=13,width=130 ,text_align=ft.TextAlign.CENTER))],1700)
-    
-    table=table_obj.getTable(1)
+    table_obj=db_object.get_table_obj('Equipment')
+    table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
             ft.SubmenuButton(ft.Text("Режимы"), [
-                ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.editMode),
+                ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler),
                 ft.MenuItemButton(ft.TextButton("Поиск",icon=ft.Icons.SEARCH, icon_color=ft.Colors.WHITE), on_click=searchMode, data=[1,table_obj])]),
             ft.SubmenuButton(ft.Text("Функции"), [
                 ft.MenuItemButton(ft.Text("Добавление"), data=[1,table_obj,"Equipment"],on_click=addData_page), 
@@ -475,7 +445,7 @@ def equipment_page(page:ft.Page):
     excelPicker_obj=ft.FilePicker(loadExcel_handler,data=[loadData,page])
 
     
-    if(table!=None):
+    if(table!=False):
         page.add(excelPicker_obj,ft.Row([backButton, loadData,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
     else:
         page.add(excelPicker_obj,ft.Row([backButton,loadData,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
@@ -489,7 +459,9 @@ def manageAdminAcc_page(page: ft.Page):
 
     page.window.width=1250
     page.window.height=700
-    
+
+    table_obj=db_object.get_table_obj('Administrators')
+    table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
@@ -502,7 +474,7 @@ def manageAdminAcc_page(page: ft.Page):
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
-    if(table!=None):
+    if(table!=False):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой",weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.CENTER))
@@ -636,7 +608,8 @@ def resetPassword_page(page: ft.Page):
 def start_page(page:ft.Page):
 
     def nextPage(self):
-        result=bd.reqExecute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+        db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+        result=db_object.cursor.fetchall()
         if (result!=False):
             if(len(result)!=0):
                 main_page_v2(self.page)
@@ -738,15 +711,16 @@ def startAdmin_page(page:ft.Page):
             failedRegistLabel.value=""
 
 
-        result=bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
+        db_object.cursor.execute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
+        result=db_object.cursor.fetchall()
 
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
             if (result!=False):
                 if (len(result)==0):
 
-                    result=bd.reqExecute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
-
+                    result=db_object.cursor.execute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
+                    db_object.__connect__.commit()
                     if (result!=False):
 
                         with open("Desktop/Admin Configure", 'w') as bFile:
