@@ -23,9 +23,9 @@ def addData_page(self_main):
 
     def addData(self):
         if(self.control.data[0]==1):
-            if (deskU.checkFieldOnIncosist(self,1)==True and len(bd.reqExecute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
+            if (deskU.checkFieldOnIncosist(self,1)==True and len(bd.db_object.cursor.execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
                 
-                bd.reqExecute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+                bd.db_object.cursor.execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
                               '{(name_field.value)}',
                               '{(components_field.value)}',
                               '{(equipmentCategory_field.value)}',
@@ -33,7 +33,7 @@ def addData_page(self_main):
                               '{(inventoryNumber_field.value)}',
                               '{(equipmentStatus_field.value)}',
                               '{(cabinets_field.value)}')""")
-                
+                bd.db_object.__connect__.commit()
                 deskU.successField(self)
                 equipmentCategory_field.border_color=self.page.controls[1].border_color
                 equipmentStatus_field.border_color=self.page.controls[1].border_color
@@ -49,27 +49,31 @@ def addData_page(self_main):
             else:
 
                 if(self.control.data[0]==2):
-                    if(len(bd.reqExecute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Insert into Cabinets(Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                    bd.db_object.cursor.execute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                    if(len(db_object.cursor.fetchall())==0):
+                        bd.db_object.cursor.execute(f"Insert into Cabinets(Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==3):
-                    if(len(bd.reqExecute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Insert into Equipment_Status(Status_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                    bd.db_object.cursor.execute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                    if(len(db_object.cursor.fetchall())==0):
+                        bd.db_object.cursor.execute(f"Insert into Equipment_Status(Status_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==4):
-                    if(len(bd.reqExecute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        bd.reqExecute(f"Insert into Equipment_Category(Category_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                    bd.db_object.cursor.execute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
+                    if(len(db_object.cursor.fetchall())==0):
+                        bd.db_object.cursor.execute(f"Insert into Equipment_Category(Category_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
-
+                bd.db_object.__connect__.commit()
             self.page.update()
 
             time.sleep(0.7)
@@ -87,7 +91,7 @@ def addData_page(self_main):
         components_field=ft.TextField(label="Компоненты", hint_text="Список компонентов",width=300)
         equipmentCategory_field=ft.DropdownM2(label="Категория",options=[],width=300)
 
-        result=bd.reqExecute("Select * from Equipment_Category")
+        result=bd.db_object.cursor.execute("Select * from Equipment_Category")
         for i in result:
             equipmentCategory_field.options.append(ft.dropdownm2.Option(i[0]))
 
@@ -95,13 +99,13 @@ def addData_page(self_main):
         inventoryNumber_field=ft.TextField(label="Инвентарный номер",width=300)
         equipmentStatus_field=ft.DropdownM2(label="Статус",options=[],width=300)
 
-        result=bd.reqExecute("Select * from Equipment_Status")
+        result=bd.db_object.cursor.execute("Select * from Equipment_Status")
         for i in result:
             equipmentStatus_field.options.append(ft.dropdownm2.Option(i[0]))
 
         cabinets_field=ft.DropdownM2(label="Кабинет", options=[],width=300)
 
-        result=bd.reqExecute("Select * from Cabinets")
+        result=bd.db_object.cursor.execute("Select * from Cabinets")
         for i in result:
             cabinets_field.options.append(ft.dropdownm2.Option(i[0]))
 
@@ -145,7 +149,7 @@ def deleteAllData(self_main):
     def deleteAllData_confirm(self):
         if (type(self_main.page.controls[1].controls[0])!=ft.Text):
 
-            bd.reqExecute(f"Delete from {self.control.data[2]}")
+            bd.db_object.cursor.execute(f"Delete from {self.control.data[2]}")
 
             self_main.page.close(deleteAllData_dialog)
             # self.page.overlay[len(self.page.overlay)-1].content=ft.Text("Удаление прошло успешно", weight=ft.FontWeight.BOLD)
@@ -195,15 +199,15 @@ def deleteData_page(self_main):
         if (self.page.overlay[len(self.page.overlay)-1].content.value not in [""," ", None]):
 
             if (self_main.control.data[0]==1):
-                bd.reqExecute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                bd.db_object.cursor.execute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==2):
-                bd.reqExecute(f"Delete from Cabinets where Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                bd.db_object.cursor.execute(f"Delete from Cabinets where Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==3):
-                bd.reqExecute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                bd.db_object.cursor.execute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==4):
-                bd.reqExecute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                bd.db_object.cursor.execute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==5):
-                bd.reqExecute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                bd.db_object.cursor.execute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
             self.page.update()
@@ -252,22 +256,22 @@ def deleteData_page(self_main):
     result=None
     
     if (self_main.control.data[0]==1):
-        result=bd.reqExecute("Select Serial_Number from Equipment")
+        result=bd.db_object.cursor.execute("Select Serial_Number from Equipment")
 
     elif (self_main.control.data[0]==2):
-        result=bd.reqExecute("Select Number from Cabinets")
+        result=bd.db_object.cursor.execute("Select Number from Cabinets")
 
     elif (self_main.control.data[0]==3):
-        result=bd.reqExecute("Select Status_Name from Equipment_Status")
+        result=bd.db_object.cursor.execute("Select Status_Name from Equipment_Status")
             
     elif (self_main.control.data[0]==4):
-        result=bd.reqExecute("Select Category_Name from Equipment_Category")
+        result=bd.db_object.cursor.execute("Select Category_Name from Equipment_Category")
     
     elif (self_main.control.data[0]==5):
-        result=bd.reqExecute("Select FSL from Administrators")
-
-    for dataRes in result:
-         deleteData_dialog.content.options.append(ft.dropdownm2.Option(dataRes[0]))
+        result=bd.db_object.cursor.execute("Select FSL from Administrators")
+    if (len(result)!=0):
+        for dataRes in result:
+            deleteData_dialog.content.options.append(ft.dropdownm2.Option(dataRes[0]))
 
     self_main.page.open(deleteData_dialog)
 
@@ -344,7 +348,7 @@ def cabinets_page(page:ft.Page):
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
-    if(table!=None):
+    if(table!=False):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=15)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
@@ -559,7 +563,7 @@ def main_page_v2(page:ft.Page):
 
 
     page.add(ft.Row([
-        ft.Image("Desktop\Image\main_object_2.png", width=700,height=700),
+        ft.Image(".\Image\main_object_2.png", width=700,height=700),
         ft.Column([
             ft.Text("",height=20),
             requestPageButton,
@@ -607,96 +611,104 @@ def resetPassword_page(page: ft.Page):
 
 def start_page(page:ft.Page):
 
-    def nextPage(self):
-        db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
-        result=db_object.cursor.fetchall()
-        if (result!=False):
-            if(len(result)!=0):
-                main_page_v2(self.page)
-            else:
+    try:
+
+        def nextPage(self):
+            try:
+                db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+                result=db_object.cursor.fetchall()
+                if (result!=False):
+                    if(len(result)!=0):
+                        main_page_v2(self.page)
+                    else:
+                        deskU.errorField(self)
+                else:
+                    deskU.errorField(self)
+            except Exception as ex:
                 deskU.errorField(self)
+                raise Exception(ex)
+
+        def resetPassword(self):
+            resetPassword_page(self.page)
+
+        page.clean()
+
+
+        page.window.width=800
+        page.window.height=700
+
+        page.title="НАМТ.Администраторы"
+        path=os.getcwd()
+        page.theme_mode=ft.ThemeMode.LIGHT
+        page.vertical_alignment=ft.MainAxisAlignment.CENTER
+        page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
+        #page.window.resizable=False
+        page.window.prevent_close=True
+        page.window.on_event=deskU.pageClose
+        page.window.icon=path+".\Desktop\Image\\HAMT_Logo.ico"
+
+
+        page.fonts={
+            'Main Label': '.\Fonts\\TechMonoRegular.otf',
+            'Moderustic Bold': '.\Fonts\\Moderustic\\Moderustic-Bold.ttf',
+            'Moderustic Light':'.\Fonts\\Moderustic\\Moderustic-Light.ttf',
+            'Moderustic Regular':'.\Fonts\\Moderustic\\Moderustic-Regular.ttf'}
+
+        startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
+        startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
+        
+        loginField=ft.TextField(
+            hint_text="Логин или Telegram", 
+            width=200,
+            max_lines=1,
+            text_style=ft.TextStyle(font_family="Moderustic Regular"),
+            border_radius=14, 
+            border_color=deskU.ui_colors[0],
+            on_focus=deskU.contentColor_focus,
+            on_blur=deskU.contentColor_blur)
+        passwordField=ft.TextField(
+            hint_text="Пароль",
+            width=200, 
+            password=True,
+            max_lines=1,
+            text_style=ft.TextStyle(font_family="Moderustic Regular"),
+            border_radius=14, 
+            border_color=deskU.ui_colors[0],
+            on_focus=deskU.contentColor_focus,
+            on_blur=deskU.contentColor_blur)
+        enterButton=ft.ElevatedButton(
+            "Войти",
+            on_click=nextPage, 
+            width=100,
+            bgcolor=deskU.ui_colors[1],
+            color=ft.Colors.WHITE)
+        
+        resetPasswordButton=ft.ElevatedButton("Забыли пароль?", width=150, on_click=resetPassword, bgcolor=ft.Colors.WHITE)
+        registrPasswordButton=ft.ElevatedButton("Регистрация", width=150, on_click=lambda _:startAdmin_page(page), bgcolor="#8FA2CA",color=ft.Colors.WHITE)
+
+        page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,ft.Text("",height=20),ft.Row([registrPasswordButton,resetPasswordButton],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
+
+        if(os.path.isfile(".\Admin Configure")==True):
+
+            with open(".\Admin Configure", 'r') as File:
+                line=File.readlines()
+                if (line[0]=="Enter Today:1"):
+                    startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
+                elif (line[0]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
+                    startDescriptionLabel.value=deskU.login_coLabelText[2]
+                else:
+                    startDescriptionLabel.value=deskU.login_coLabelText[1]
+
         else:
-            deskU.errorField(self)
 
-    def resetPassword(self):
-        resetPassword_page(self.page)
+            startDescriptionLabel.value="Вы здесь в первый раз?\nДля дальнейшей работы вам необходимо зарегистрироваться или войти в аккаунт"
+            registrPasswordButton.focus()
 
-    page.clean()
-
-
-    page.window.width=800
-    page.window.height=700
-
-    page.title="НАМТ.Администраторы"
-    path=os.getcwd()
-    page.theme_mode=ft.ThemeMode.LIGHT
-    page.vertical_alignment=ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
-    #page.window.resizable=False
-    page.window.prevent_close=True
-    page.window.on_event=deskU.pageClose
-    page.window.icon=path+"\Desktop\Image\\HAMT_Logo.ico"
-
-
-    page.fonts={
-        'Main Label': 'Fonts\\TechMonoRegular.otf',
-        'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf',
-        'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf',
-        'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf'}
-
-    startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
-    startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
-    
-    loginField=ft.TextField(
-        hint_text="Логин или Telegram", 
-        width=200,
-        max_lines=1,
-        text_style=ft.TextStyle(font_family="Moderustic Regular"),
-        border_radius=14, 
-        border_color=deskU.ui_colors[0],
-        on_focus=deskU.contentColor_focus,
-        on_blur=deskU.contentColor_blur)
-    passwordField=ft.TextField(
-        hint_text="Пароль",
-        width=200, 
-        password=True,
-        max_lines=1,
-        text_style=ft.TextStyle(font_family="Moderustic Regular"),
-        border_radius=14, 
-        border_color=deskU.ui_colors[0],
-        on_focus=deskU.contentColor_focus,
-        on_blur=deskU.contentColor_blur)
-    enterButton=ft.ElevatedButton(
-        "Войти",
-        on_click=nextPage, 
-        width=100,
-        bgcolor=deskU.ui_colors[1],
-        color=ft.Colors.WHITE)
-    
-    resetPasswordButton=ft.ElevatedButton("Забыли пароль?", width=150, on_click=resetPassword, bgcolor=ft.Colors.WHITE)
-    registrPasswordButton=ft.ElevatedButton("Регистрация", width=150, on_click=lambda _:startAdmin_page(page), bgcolor="#8FA2CA",color=ft.Colors.WHITE)
-
-    page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,ft.Text("",height=20),ft.Row([registrPasswordButton,resetPasswordButton],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
-
-    if(os.path.isfile("Desktop/Admin Configure")==True):
-
-        with open("Desktop/Admin Configure", 'r') as File:
-            line=File.readlines()
-            if (line[0]=="Enter Today:1"):
-                startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
-            elif (line[0]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
-                startDescriptionLabel.value=deskU.login_coLabelText[2]
-            else:
-                startDescriptionLabel.value=deskU.login_coLabelText[1]
-
-    else:
-
-        startDescriptionLabel.value="Вы здесь в первый раз?\nДля дальнейшей работы вам необходимо зарегистрироваться или войти в аккаунт"
-        registrPasswordButton.focus()
-
-    logger_pages.info("'Start' page was openned")
-    page.window.center()
-    page.update()
+        logger_pages.info("'Start' page was openned")
+        page.window.center()
+        page.update()
+    except Exception as ex:
+        raise Exception(ex)
 
 
 def startAdmin_page(page:ft.Page):
@@ -723,7 +735,7 @@ def startAdmin_page(page:ft.Page):
                     db_object.__connect__.commit()
                     if (result!=False):
 
-                        with open("Desktop/Admin Configure", 'w') as bFile:
+                        with open(".\Admin Configure", 'w') as bFile:
                             bFile.write(f"Enter Today: 1")
 
                         for i in range(1,len(self.page.controls)):

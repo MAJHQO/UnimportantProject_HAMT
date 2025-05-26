@@ -143,15 +143,15 @@ def contentColor_blur(self):
 
 def pageClose(self):
     if (self.data=='close'):
-        if(os.path.isfile("Desktop/Admin Configure")==True):
+        if(os.path.isfile(".\Admin Configure")==True):
             try:
                 lines=[]
-                with open("Desktop/Admin Configure", 'r') as file:
+                with open(".\Admin Configure", 'r') as file:
                     lines=file.readlines()
 
                 lines[0]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
 
-                with open("Desktop/Admin Configure", 'w+') as file:
+                with open(".\Admin Configure", 'w+') as file:
                     file.writelines(lines)
 
             except Exception as ex:

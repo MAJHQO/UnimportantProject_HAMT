@@ -3,7 +3,7 @@ import logging, database_simple as db
 logger_bd=logging.getLogger("database")
 logger_bd.setLevel(logging.INFO)
 
-db_object=db.Database(True, database='AdminInfo', user='postgres', password='5525', port='5890')
+db_object=db.Database(False, database='AdminInfo')
     
 def insertPC_Equipment(data:tuple):
     try:

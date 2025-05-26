@@ -2502,3 +2502,174 @@ Traceback (most recent call last):
     result=bd.reqExecute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
            ^^^^^^^^^^^^^
 AttributeError: module 'utilits.bd' has no attribute 'reqExecute'
+[INFO] [2025-05-26 20:55:44,541] - main: App Started
+[INFO] [2025-05-26 20:55:45,823] - pages: 'Start' page was openned
+[INFO] [2025-05-26 20:57:16,762] - main: App Started
+[INFO] [2025-05-26 20:57:17,246] - pages: 'Start' page was openned
+[INFO] [2025-05-26 20:59:17,542] - main: App Started
+[INFO] [2025-05-26 20:59:18,004] - pages: 'Start' page was openned
+[INFO] [2025-05-26 20:59:59,485] - main: App Started
+[INFO] [2025-05-26 20:59:59,922] - pages: 'Start' page was openned
+[INFO] [2025-05-26 21:18:12,048] - main: App Started
+[INFO] [2025-05-26 21:18:12,587] - pages: 'Start' page was openned
+[INFO] [2025-05-26 21:19:11,504] - main: App Started
+[INFO] [2025-05-26 21:19:12,259] - pages: 'Start' page was openned
+[ERROR] [2025-05-26 21:19:39,703] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 611, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+[ERROR] [2025-05-26 21:19:47,395] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 611, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+[INFO] [2025-05-26 21:21:33,488] - main: App Started
+[INFO] [2025-05-26 21:21:34,175] - pages: 'Start' page was openned
+[ERROR] [2025-05-26 21:21:36,136] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 613, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+[ERROR] [2025-05-26 21:21:38,321] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 613, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+[ERROR] [2025-05-26 21:21:59,897] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 613, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+[INFO] [2025-05-26 21:23:23,966] - main: App Started
+[INFO] [2025-05-26 21:23:24,511] - pages: 'Start' page was openned
+[ERROR] [2025-05-26 21:23:29,447] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError('exceptions must derive from BaseException')>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 614, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 624, in nextPage
+    raise(f"{ex}")
+TypeError: exceptions must derive from BaseException
+[INFO] [2025-05-26 21:24:12,943] - main: App Started
+[INFO] [2025-05-26 21:24:13,448] - pages: 'Start' page was openned
+[ERROR] [2025-05-26 21:25:46,805] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(OperationalError('no such table: Administrators'))>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 614, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 624, in nextPage
+    raise Exception(ex)
+Exception: no such table: Administrators
+[INFO] [2025-05-26 21:27:49,515] - main: App Started
+[INFO] [2025-05-26 21:27:50,532] - pages: 'Start' page was openned
+[ERROR] [2025-05-26 21:28:12,362] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(OperationalError('no such table: Administrators'))>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 614, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 625, in nextPage
+    raise Exception(ex)
+Exception: no such table: Administrators
+[ERROR] [2025-05-26 21:28:12,523] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(OperationalError('no such table: Administrators'))>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 614, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 625, in nextPage
+    raise Exception(ex)
+Exception: no such table: Administrators
+[INFO] [2025-05-26 21:28:31,474] - main: App Started
+[INFO] [2025-05-26 21:28:32,068] - pages: 'Start' page was openned
+[ERROR] [2025-05-26 21:28:33,077] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 613, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
+[ERROR] [2025-05-26 21:28:34,735] - asyncio: Future exception was never retrieved
+future: <Future finished exception=OperationalError('no such table: Administrators')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 613, in nextPage
+    db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
+sqlite3.OperationalError: no such table: Administrators
