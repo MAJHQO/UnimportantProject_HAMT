@@ -2,7 +2,6 @@ import logging,flet as ft, os.path
 from utilits import bd
 from Desktop import pages
 
-
 logger_main=logging.getLogger("main")
 logger_main.setLevel(logging.INFO)
 

@@ -2673,3 +2673,249 @@ Traceback (most recent call last):
   File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 613, in nextPage
     db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
 sqlite3.OperationalError: no such table: Administrators
+[INFO] [2025-05-28 11:46:09,015] - main: App Started
+[INFO] [2025-05-28 11:46:10,718] - pages: 'Start' page was openned
+[INFO] [2025-05-28 11:46:21,230] - pages: 'Reset password' page was openned
+[INFO] [2025-05-28 11:46:22,615] - pages: 'Start' page was openned
+[INFO] [2025-05-28 11:48:49,392] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-28 11:49:21,187] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 771, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-28 11:49:25,120] - pages: 'Start' page was openned
+[INFO] [2025-05-28 11:49:29,054] - pages: 'Main' page was openned
+[INFO] [2025-05-28 11:49:48,745] - main: App Started
+[INFO] [2025-05-28 11:49:49,139] - pages: 'Start' page was openned
+[INFO] [2025-05-28 11:49:57,706] - pages: 'Reset password' page was openned
+[INFO] [2025-05-28 11:49:59,307] - pages: 'Start' page was openned
+[INFO] [2025-05-28 11:50:35,916] - main: App Started
+[INFO] [2025-05-28 11:50:36,311] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:19:48,133] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:20:23,439] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:20:25,236] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 12:20:30,849] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Database' object has no attribute '__connect__'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 74, in addData
+    bd.db_object.__connect__.commit()
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute '__connect__'
+[INFO] [2025-05-28 12:21:22,448] - main: App Started
+[INFO] [2025-05-28 12:21:22,914] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:21:51,635] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:25:35,600] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:25:39,230] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:38:30,698] - main: App Started
+[INFO] [2025-05-28 12:38:31,207] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:38:36,595] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-28 12:38:51,159] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 769, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-28 12:38:51,883] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:38:53,958] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 12:38:59,689] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(OperationalError('1 values for 2 columns'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 58, in request_execute
+    self.__cursor.execute(request)
+sqlite3.OperationalError: 1 values for 2 columns
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 52, in addData
+    db_object.request_execute(f"Insert into Cabinets(ID,Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 63, in request_execute
+    raise Exception(ex)
+Exception: 1 values for 2 columns
+[INFO] [2025-05-28 12:40:33,348] - main: App Started
+[INFO] [2025-05-28 12:40:33,785] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:40:36,820] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:40:42,435] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:40:49,612] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:40:53,443] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:40:56,749] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:41:41,480] - main: App Started
+[INFO] [2025-05-28 12:41:42,043] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:41:51,083] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:41:56,438] - pages: 'Main' page was openned
+[INFO] [2025-05-28 12:48:16,978] - main: App Started
+[INFO] [2025-05-28 12:48:17,487] - pages: 'Start' page was openned
+[INFO] [2025-05-28 12:53:37,318] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:33:21,053] - main: App Started
+[INFO] [2025-05-28 16:33:21,837] - pages: 'Start' page was openned
+[INFO] [2025-05-28 16:35:28,858] - main: App Started
+[INFO] [2025-05-28 16:35:29,288] - pages: 'Start' page was openned
+[INFO] [2025-05-28 16:40:15,458] - main: App Started
+[INFO] [2025-05-28 16:40:15,932] - pages: 'Start' page was openned
+[INFO] [2025-05-28 16:40:20,433] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-28 16:40:35,611] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 771, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-28 16:40:35,963] - pages: 'Start' page was openned
+[INFO] [2025-05-28 16:40:38,734] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:40:47,250] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:40:58,599] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:41:01,073] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:41:08,664] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:41:57,472] - main: App Started
+[INFO] [2025-05-28 16:41:57,898] - pages: 'Start' page was openned
+[INFO] [2025-05-28 16:42:03,351] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:42:19,091] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:42:22,077] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:42:24,341] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:42:30,126] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:43:11,618] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:43:18,120] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:43:20,736] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:43:50,782] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:44:01,076] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:44:04,407] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:44:07,476] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:44:10,529] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:45:50,273] - main: App Started
+[INFO] [2025-05-28 16:45:50,733] - pages: 'Start' page was openned
+[INFO] [2025-05-28 16:45:54,086] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:45:59,171] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:46:00,714] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:46:02,250] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:46:04,406] - pages: 'Main' page was openned
+[INFO] [2025-05-28 16:46:06,781] - pages: 'Main' page was openned
+[INFO] [2025-05-28 17:16:16,722] - main: App Started
+[INFO] [2025-05-28 17:16:17,305] - pages: 'Start' page was openned
+[INFO] [2025-05-28 17:16:21,655] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 17:16:22,633] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 519, in <lambda>
+    on_click=lambda _:cabinets_page(page),
+                      ^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 338, in cabinets_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 205, in getTable
+    if(len(self.__table.controls[1].controls[-1].rows)):
+           ~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[INFO] [2025-05-28 17:31:06,675] - main: App Started
+[INFO] [2025-05-28 17:31:07,093] - pages: 'Start' page was openned
+[INFO] [2025-05-28 17:31:12,345] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 17:31:13,548] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AssertionError('each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (3)')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 519, in <lambda>
+    on_click=lambda _:cabinets_page(page),
+                      ^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 350, in cabinets_page
+    page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 743, in add
+    r = self.__update(self)
+        ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 801, in __update
+    commands, added_controls, removed_controls = self.__prepare_update(*controls)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 817, in __prepare_update
+    control.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 490, in build_update_commands
+    innerCmds = ctrl._build_add_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 545, in _build_add_commands
+    childCmd = control._build_add_commands(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 545, in _build_add_commands
+    childCmd = control._build_add_commands(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 545, in _build_add_commands
+    childCmd = control._build_add_commands(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 534, in _build_add_commands
+    command = self._build_command(False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 561, in _build_command
+    self.before_update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\datatable.py", line 469, in before_update
+    assert all(
+AssertionError: each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (3)
+[INFO] [2025-05-28 20:15:18,468] - main: App Started
+[INFO] [2025-05-28 20:15:18,950] - pages: 'Start' page was openned
+[INFO] [2025-05-28 20:15:22,837] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:22:49,351] - main: App Started
+[INFO] [2025-05-28 20:22:50,186] - pages: 'Start' page was openned
+[INFO] [2025-05-28 20:22:53,570] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:23:58,932] - main: App Started
+[INFO] [2025-05-28 20:23:59,707] - pages: 'Start' page was openned
+[INFO] [2025-05-28 20:24:05,054] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:26:14,976] - main: App Started
+[INFO] [2025-05-28 20:26:15,472] - pages: 'Start' page was openned
+[INFO] [2025-05-28 20:26:25,622] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:26:27,477] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:26:34,690] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:31:06,871] - main: App Started
+[INFO] [2025-05-28 20:31:07,298] - pages: 'Start' page was openned
+[INFO] [2025-05-28 20:31:10,100] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-28 20:31:19,473] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 771, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-28 20:31:19,529] - pages: 'Start' page was openned
+[INFO] [2025-05-28 20:31:21,890] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:31:28,718] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:31:51,643] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:32:00,268] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:32:09,200] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:32:15,752] - pages: 'Main' page was openned
+[INFO] [2025-05-28 20:32:22,779] - pages: 'Main' page was openned

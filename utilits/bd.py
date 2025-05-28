@@ -207,9 +207,17 @@ def insertOther_Equipment(data:tuple):
         logger_bd.exception(f"Request execute was failed. Reason: {ex}")
         return False
 
-# db_object.create_table('Cabinets', {'ID':'INTEGER','Number': 'VARCHAR PRIMARY KEY'},1300)
-# db_object.create_table('Equipment_Status', {'ID':'INTEGER','Status_Name': 'VARCHAR PRIMARY KEY'},1300)
-# db_object.create_table('Equipment_Category', {'ID':'INTEGER','Category_Name': 'VARCHAR PRIMARY KEY'},1300)
+# db_object.delete_table("Repair_Request")
+# db_object.delete_table("Equipment")
+# db_object.delete_table("Administrators")
+# db_object.delete_table("Cabinets")
+# db_object.delete_table("Equipment_Status")
+# db_object.delete_table("Equipment_Category")
+# db_object.delete_table("Users")
+
+# db_object.create_table('Cabinets', {'ID':'INTEGER','Number': 'VARCHAR PRIMARY KEY'},700)
+# db_object.create_table('Equipment_Status', {'ID':'INTEGER','Status_Name': 'VARCHAR PRIMARY KEY'},700)
+# db_object.create_table('Equipment_Category', {'ID':'INTEGER','Category_Name': 'VARCHAR PRIMARY KEY'},700)
 # db_object.create_table('Repair_Request', 
 #                        {
 #                         'ID':'INTEGER',
@@ -226,6 +234,9 @@ def insertOther_Equipment(data:tuple):
 #                         'MAC_Address':'VARCHAR',
 #                         'CPU_Model':'VARCHAR',
 #                         'CPU_Frequency':'VARCHAR',
+#                         'Network_Name': 'VARCHAR',
+#                         'RAM':'INTEGER',
+#                         'HDD':'INTEGER',
 #                         'Equipment_Category':'VARCHAR REFERENCES Equipment_Category (Category_Name)',
 #                         'Serial_Number':'VARCHAR',
 #                         'Invetory_Number':'VARCHAR',
@@ -243,11 +254,3 @@ def insertOther_Equipment(data:tuple):
 #     'TG_ID': 'VARCHAR',
 #     'Username':'VARCHAR',
 #     'FSL':'VARCHAR'},1300)
-
-# reqExecute("Drop table Repair_Request")
-# reqExecute("Drop table Equipment")
-# reqExecute("Drop table Administrators")
-# reqExecute("Drop table Cabinets")
-# reqExecute("Drop table Equipment_Status")
-# reqExecute("Drop table Equipment_Category")
-# reqExecute("Drop table Users")

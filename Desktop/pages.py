@@ -23,9 +23,10 @@ def addData_page(self_main):
 
     def addData(self):
         if(self.control.data[0]==1):
-            if (deskU.checkFieldOnIncosist(self,1)==True and len(bd.db_object.cursor.execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
+            if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
                 
-                bd.db_object.cursor.execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+                db_object.request_execute(f"""Insert into Equipment(ID,Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+                              (SELECT COUNT(*) from Equipment)+1,
                               '{(name_field.value)}',
                               '{(components_field.value)}',
                               '{(equipmentCategory_field.value)}',
@@ -33,7 +34,6 @@ def addData_page(self_main):
                               '{(inventoryNumber_field.value)}',
                               '{(equipmentStatus_field.value)}',
                               '{(cabinets_field.value)}')""")
-                bd.db_object.__connect__.commit()
                 deskU.successField(self)
                 equipmentCategory_field.border_color=self.page.controls[1].border_color
                 equipmentStatus_field.border_color=self.page.controls[1].border_color
@@ -49,31 +49,28 @@ def addData_page(self_main):
             else:
 
                 if(self.control.data[0]==2):
-                    bd.db_object.cursor.execute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
-                    if(len(db_object.cursor.fetchall())==0):
-                        bd.db_object.cursor.execute(f"Insert into Cabinets(Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                    if(len(db_object.request_execute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
+                        db_object.request_execute(f"Insert into Cabinets(ID,Number) values ((SELECT COUNT(*) from Cabinets)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==3):
-                    bd.db_object.cursor.execute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
-                    if(len(db_object.cursor.fetchall())==0):
-                        bd.db_object.cursor.execute(f"Insert into Equipment_Status(Status_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                    if(len(db_object.request_execute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
+                        db_object.request_execute(f"Insert into Equipment_Status(ID,Status_Name) values ((SELECT COUNT(*) from Equipment_Status)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==4):
-                    bd.db_object.cursor.execute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'")
-                    if(len(db_object.cursor.fetchall())==0):
-                        bd.db_object.cursor.execute(f"Insert into Equipment_Category(Category_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                   
+                    if(len(db_object.request_execute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
+                        db_object.request_execute(f"Insert into Equipment_Category(ID,Category_Name) values ((SELECT COUNT(*) from Equipment_Category)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
 
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
-                bd.db_object.__connect__.commit()
             self.page.update()
 
             time.sleep(0.7)
@@ -91,7 +88,7 @@ def addData_page(self_main):
         components_field=ft.TextField(label="Компоненты", hint_text="Список компонентов",width=300)
         equipmentCategory_field=ft.DropdownM2(label="Категория",options=[],width=300)
 
-        result=bd.db_object.cursor.execute("Select * from Equipment_Category")
+        result=db_object.request_execute("Select * from Equipment_Category")
         for i in result:
             equipmentCategory_field.options.append(ft.dropdownm2.Option(i[0]))
 
@@ -99,13 +96,13 @@ def addData_page(self_main):
         inventoryNumber_field=ft.TextField(label="Инвентарный номер",width=300)
         equipmentStatus_field=ft.DropdownM2(label="Статус",options=[],width=300)
 
-        result=bd.db_object.cursor.execute("Select * from Equipment_Status")
+        result=db_object.request_execute("Select * from Equipment_Status")
         for i in result:
             equipmentStatus_field.options.append(ft.dropdownm2.Option(i[0]))
 
         cabinets_field=ft.DropdownM2(label="Кабинет", options=[],width=300)
 
-        result=bd.db_object.cursor.execute("Select * from Cabinets")
+        result=db_object.request_execute("Select * from Cabinets")
         for i in result:
             cabinets_field.options.append(ft.dropdownm2.Option(i[0]))
 
@@ -124,7 +121,7 @@ def addData_page(self_main):
 
         self_main.page.open(cabinetsAdd_dialog)
 
-    elif(self_main.control.data[0]==3):
+    elif(self_main.control.data[0]==4):
         
         eqCategoryAdd_dialog=ft.AlertDialog(title=ft.Text("Добавление категории оборудования"),content=ft.TextField(hint_text="Наименование категории",width=300), actions=[
             ft.ElevatedButton("Добавить",on_click=addData,data=self_main.control.data,width=100),
@@ -133,7 +130,7 @@ def addData_page(self_main):
 
         self_main.page.open(eqCategoryAdd_dialog)
         
-    elif(self_main.control.data[0]==4):
+    elif(self_main.control.data[0]==3):
         
         eqStatusAdd_dialog=ft.AlertDialog(title=ft.Text("Добавление статуса оборудования"),content=ft.TextField(hint_text="Статус оборудования",width=300), actions=[
             ft.ElevatedButton("Добавить",on_click=addData,data=self_main.control.data,width=100),
@@ -149,7 +146,7 @@ def deleteAllData(self_main):
     def deleteAllData_confirm(self):
         if (type(self_main.page.controls[1].controls[0])!=ft.Text):
 
-            bd.db_object.cursor.execute(f"Delete from {self.control.data[2]}")
+            db_object.request_execute(f"Delete from {self.control.data[2]}")
 
             self_main.page.close(deleteAllData_dialog)
             # self.page.overlay[len(self.page.overlay)-1].content=ft.Text("Удаление прошло успешно", weight=ft.FontWeight.BOLD)
@@ -199,15 +196,15 @@ def deleteData_page(self_main):
         if (self.page.overlay[len(self.page.overlay)-1].content.value not in [""," ", None]):
 
             if (self_main.control.data[0]==1):
-                bd.db_object.cursor.execute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                db_object.request_execute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==2):
-                bd.db_object.cursor.execute(f"Delete from Cabinets where Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                db_object.request_execute(f"Delete from Cabinets where Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==3):
-                bd.db_object.cursor.execute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                db_object.request_execute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==4):
-                bd.db_object.cursor.execute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                db_object.request_execute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
             elif(self_main.control.data[0]==5):
-                bd.db_object.cursor.execute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
+                db_object.request_execute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
             self.page.update()
@@ -256,19 +253,19 @@ def deleteData_page(self_main):
     result=None
     
     if (self_main.control.data[0]==1):
-        result=bd.db_object.cursor.execute("Select Serial_Number from Equipment")
+        result=db_object.request_execute("Select Serial_Number from Equipment")
 
     elif (self_main.control.data[0]==2):
-        result=bd.db_object.cursor.execute("Select Number from Cabinets")
+        result=db_object.request_execute("Select Number from Cabinets")
 
     elif (self_main.control.data[0]==3):
-        result=bd.db_object.cursor.execute("Select Status_Name from Equipment_Status")
+        result=db_object.request_execute("Select Status_Name from Equipment_Status")
             
     elif (self_main.control.data[0]==4):
-        result=bd.db_object.cursor.execute("Select Category_Name from Equipment_Category")
+        result=db_object.request_execute("Select Category_Name from Equipment_Category")
     
     elif (self_main.control.data[0]==5):
-        result=bd.db_object.cursor.execute("Select FSL from Administrators")
+        result=db_object.request_execute("Select FSL from Administrators")
     if (len(result)!=0):
         for dataRes in result:
             deleteData_dialog.content.options.append(ft.dropdownm2.Option(dataRes[0]))
@@ -280,7 +277,7 @@ def equipmentCategory_page(page:ft.Page):
     
     page.clean()
 
-    page.window.width=500
+    page.window.width=600
     page.window.height=700
 
     table_obj=db_object.get_table_obj('Equipment_Category')
@@ -334,11 +331,12 @@ def cabinets_page(page:ft.Page):
     
     page.clean()
 
-    page.window.width=400
+    page.window.width=800
     page.window.height=700
 
     table_obj=db_object.get_table_obj('Cabinets')
     table=table_obj.getTable(db_object)
+
 
     menuBar=ft.MenuBar(
         [
@@ -560,10 +558,11 @@ def main_page_v2(page:ft.Page):
             shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
             icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
             color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-
+    
+    main_image=ft.Image(".\Desktop\Image\main_object_2.png", width=700,height=700) if(os.path.isdir(".\_internal")!=True) else ft.Image(".\_internal\Image\main_object_2.png", width=700,height=700)
 
     page.add(ft.Row([
-        ft.Image(".\Image\main_object_2.png", width=700,height=700),
+        main_image,
         ft.Column([
             ft.Text("",height=20),
             requestPageButton,
@@ -594,7 +593,6 @@ def resetPassword_page(page: ft.Page):
         color=ft.Colors.WHITE,
         on_click=lambda _:page.launch_url("https://t.me/HAMT_Tech_Bot?start=resetPassword"))
 
-
     errorLabel=ft.Text("", font_family="Moderustic Regular", size=13,disabled=True,height=30)
 
     backPageButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: start_page(page), visible=True, icon_color=deskU.ui_colors[1], splash_radius=10)
@@ -615,8 +613,7 @@ def start_page(page:ft.Page):
 
         def nextPage(self):
             try:
-                db_object.cursor.execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
-                result=db_object.cursor.fetchall()
+                result=db_object.request_execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
                 if (result!=False):
                     if(len(result)!=0):
                         main_page_v2(self.page)
@@ -642,17 +639,17 @@ def start_page(page:ft.Page):
         page.theme_mode=ft.ThemeMode.LIGHT
         page.vertical_alignment=ft.MainAxisAlignment.CENTER
         page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
-        #page.window.resizable=False
+        page.window.resizable=False
         page.window.prevent_close=True
         page.window.on_event=deskU.pageClose
-        page.window.icon=path+".\Desktop\Image\\HAMT_Logo.ico"
+        page.window.icon=path+".\Desktop\Image\\HAMT_Logo.ico" if (os.path.isdir(".\_internal")!=True) else path+'\\_internal\\Image\\HAMT_Logo.ico'
 
 
         page.fonts={
-            'Main Label': '.\Fonts\\TechMonoRegular.otf',
-            'Moderustic Bold': '.\Fonts\\Moderustic\\Moderustic-Bold.ttf',
-            'Moderustic Light':'.\Fonts\\Moderustic\\Moderustic-Light.ttf',
-            'Moderustic Regular':'.\Fonts\\Moderustic\\Moderustic-Regular.ttf'}
+            'Main Label': '.\Fonts\\TechMonoRegular.otf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\TechMonoRegular.otf',
+            'Moderustic Bold': '.\Fonts\\Moderustic\\Moderustic-Bold.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Bold.ttf',
+            'Moderustic Light':'.\Fonts\\Moderustic\\Moderustic-Light.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Light.ttf',
+            'Moderustic Regular':'.\Fonts\\Moderustic\\Moderustic-Regular.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Regular.ttf'}
 
         startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
         startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
@@ -723,18 +720,15 @@ def startAdmin_page(page:ft.Page):
             failedRegistLabel.value=""
 
 
-        db_object.cursor.execute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
-        result=db_object.cursor.fetchall()
+        result=db_object.request_execute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
 
         if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and (usernameField.value!="" and usernameField.value.find("@")==-1)):
 
             if (result!=False):
                 if (len(result)==0):
 
-                    result=db_object.cursor.execute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
-                    db_object.__connect__.commit()
+                    result=db_object.request_execute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
                     if (result!=False):
-
                         with open(".\Admin Configure", 'w') as bFile:
                             bFile.write(f"Enter Today: 1")
 
