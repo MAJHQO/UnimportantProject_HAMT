@@ -25,10 +25,15 @@ def addData_page(self_main):
         if(self.control.data[0]==1):
             if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
                 
-                db_object.request_execute(f"""Insert into Equipment(ID,Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
-                              (SELECT COUNT(*) from Equipment)+1,
+                db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
                               '{(name_field.value)}',
-                              '{(components_field.value)}',
+                              '{(ip_field.value)}',
+                              '{(mac_field.value)}',
+                              '{(cpuModel_field.value)}',
+                              '{(cpuFreq_field.value)}',
+                              '{(networkName_field.value)}',
+                              '{(ram_field.value)}',
+                              '{(hdd_field.value)}',
                               '{(equipmentCategory_field.value)}',
                               '{(serialNumber_field.value)}',
                               '{(inventoryNumber_field.value)}',
@@ -50,14 +55,14 @@ def addData_page(self_main):
 
                 if(self.control.data[0]==2):
                     if(len(db_object.request_execute(f"Select * from Cabinets where Number='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        db_object.request_execute(f"Insert into Cabinets(ID,Number) values ((SELECT COUNT(*) from Cabinets)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                        db_object.request_execute(f"Insert into Cabinets(Number) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED_300
                 elif(self.control.data[0]==3):
                     if(len(db_object.request_execute(f"Select * from Equipment_Status where Status_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        db_object.request_execute(f"Insert into Equipment_Status(ID,Status_Name) values ((SELECT COUNT(*) from Equipment_Status)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                        db_object.request_execute(f"Insert into Equipment_Status(Status_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
                     else:
@@ -65,7 +70,7 @@ def addData_page(self_main):
                 elif(self.control.data[0]==4):
                    
                     if(len(db_object.request_execute(f"Select * from Equipment_Category where Category_Name='{self.page.overlay[len(self.page.overlay)-1].content.value}'"))==0):
-                        db_object.request_execute(f"Insert into Equipment_Category(ID,Category_Name) values ((SELECT COUNT(*) from Equipment_Category)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+                        db_object.request_execute(f"Insert into Equipment_Category(Category_Name) values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
 
                         self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
 
@@ -76,6 +81,7 @@ def addData_page(self_main):
             time.sleep(0.7)
 
             self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.BLACK
+            deskU.page_update(self.page,self.control.data[1])
             self.page.update()
 
     if(self_main.control.data[0]==1):
@@ -85,12 +91,18 @@ def addData_page(self_main):
         self_main.page.window.height=900
 
         name_field=ft.TextField(label="Наименование",hint_text="Наименование оборудование",width=300)
-        components_field=ft.TextField(label="Компоненты", hint_text="Список компонентов",width=300)
+        ip_field=ft.TextField(label="IP-адрес", hint_text="IP-адрес оборудования",width=300)
+        mac_field=ft.TextField(label="Mac-адрес", hint_text="Mac-адрес оборудования",width=300)
+        cpuModel_field=ft.TextField(label="Процессор", hint_text="Модель процессора",width=300)
+        cpuFreq_field=ft.TextField(label="Частота", hint_text="Частота процессора",width=300)
+        networkName_field=ft.TextField(label="Имя в сети", width=300)
+        ram_field=ft.TextField(label="RAM", hint_text="Объем ОЗУ",width=300)
+        hdd_field=ft.TextField(label="HDD", hint_text="Объем ЖД",width=300)
         equipmentCategory_field=ft.DropdownM2(label="Категория",options=[],width=300)
 
         result=db_object.request_execute("Select * from Equipment_Category")
         for i in result:
-            equipmentCategory_field.options.append(ft.dropdownm2.Option(i[0]))
+            equipmentCategory_field.options.append(ft.dropdownm2.Option(i[1]))
 
         serialNumber_field=ft.TextField(label="Серийный номер",width=300)
         inventoryNumber_field=ft.TextField(label="Инвентарный номер",width=300)
@@ -98,19 +110,34 @@ def addData_page(self_main):
 
         result=db_object.request_execute("Select * from Equipment_Status")
         for i in result:
-            equipmentStatus_field.options.append(ft.dropdownm2.Option(i[0]))
+            equipmentStatus_field.options.append(ft.dropdownm2.Option(i[1]))
 
         cabinets_field=ft.DropdownM2(label="Кабинет", options=[],width=300)
 
         result=db_object.request_execute("Select * from Cabinets")
         for i in result:
-            cabinets_field.options.append(ft.dropdownm2.Option(i[0]))
+            cabinets_field.options.append(ft.dropdownm2.Option(i[1]))
 
         addData_button=ft.ElevatedButton("Добавить", on_click=addData,data=self_main.control.data)
         clearFields_button=ft.ElevatedButton("Очистить", on_click=clearFields)
         backButton=ft.IconButton(ft.Icons.ARROW_BACK,on_click=lambda _: equipment_page(self_main.page))
 
-        self_main.page.add(ft.Row([backButton]),name_field,components_field,equipmentCategory_field,serialNumber_field,inventoryNumber_field,equipmentStatus_field,cabinets_field,ft.Row([addData_button,clearFields_button],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
+        self_main.page.add(
+            ft.Row([backButton]),
+            name_field,
+            ip_field,
+            mac_field,
+            cpuModel_field,
+            cpuFreq_field,
+            networkName_field,
+            ram_field,
+            hdd_field,
+            equipmentCategory_field,
+            serialNumber_field,
+            inventoryNumber_field
+            ,equipmentStatus_field,
+            cabinets_field,
+            ft.Row([addData_button,clearFields_button],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
 
     elif(self_main.control.data[0]==2):
         
@@ -187,107 +214,20 @@ def deleteAllData(self_main):
         
     self_main.page.open(deleteAllData_dialog)
 
-def deleteData_page(self_main):
-
-    def deleteData(self):
-        
-        baseBorderColor=self.page.overlay[len(self.page.overlay)-1].content.border_color
-
-        if (self.page.overlay[len(self.page.overlay)-1].content.value not in [""," ", None]):
-
-            if (self_main.control.data[0]==1):
-                db_object.request_execute(f"Delete from Equipment where Serial_Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
-            elif(self_main.control.data[0]==2):
-                db_object.request_execute(f"Delete from Cabinets where Number='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
-            elif(self_main.control.data[0]==3):
-                db_object.request_execute(f"Delete from Equipment_Status where Status_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
-            elif(self_main.control.data[0]==4):
-                db_object.request_execute(f"Delete from Equipment_Category where Category_Name='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
-            elif(self_main.control.data[0]==5):
-                db_object.request_execute(f"Delete from Administrators where FSL='{(self.page.overlay[len(self.page.overlay)-1].content.value)}'")
-
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.GREEN
-            self.page.update()
-
-            for i in range(0,len(self.page.overlay[len(self.page.overlay)-1].content.options)-1):
-                if (self.page.overlay[len(self.page.overlay)-1].content.options[i].key==self.page.overlay[len(self.page.overlay)-1].content.value):
-                    self.page.overlay[len(self.page.overlay)-1].content.options.pop(i)
-
-            time.sleep(0.7)
-
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=baseBorderColor
-            self.page.update()
-            result_update=self_main.control.data[1].updateTable(self_main)
-            if (result_update==None):
-
-                if(self_main.control.data[0]==0):
-                        request_page(self_main.page)
-                elif(self_main.control.data[0]==1):
-                        equipment_page(self_main.page)
-                elif(self_main.control.data[0]==2):
-                        cabinets_page(self_main.page)
-                elif(self_main.control.data[0]==3):
-                        equipmentStatus_page(self_main.page)
-                elif(self_main.control.data[0]==4):
-                        equipmentCategory_page(self_main.page)
-                elif(self_main.control.data[0]==5):
-                        self_main.page.close(deleteData_dialog)
-                        manageAdminAcc_page(self_main.page)
-
-
-        else:
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=ft.Colors.RED
-            self.page.update()
-            time.sleep(0.7)
-            self.page.overlay[len(self.page.overlay)-1].content.border_color=baseBorderColor
-            self.page.update()
-
-
-
-
-    deleteData_dialog=ft.AlertDialog(title=ft.Text("Удаление данных"),content=ft.DropdownM2(options=[]),actions=[
-        ft.ElevatedButton("Удалить", on_click=deleteData,width=100),
-        ft.ElevatedButton("Выйти", on_click=lambda _: self_main.page.close(deleteData_dialog),width=100)
-    ])
-
-    result=None
-    
-    if (self_main.control.data[0]==1):
-        result=db_object.request_execute("Select Serial_Number from Equipment")
-
-    elif (self_main.control.data[0]==2):
-        result=db_object.request_execute("Select Number from Cabinets")
-
-    elif (self_main.control.data[0]==3):
-        result=db_object.request_execute("Select Status_Name from Equipment_Status")
-            
-    elif (self_main.control.data[0]==4):
-        result=db_object.request_execute("Select Category_Name from Equipment_Category")
-    
-    elif (self_main.control.data[0]==5):
-        result=db_object.request_execute("Select FSL from Administrators")
-    if (len(result)!=0):
-        for dataRes in result:
-            deleteData_dialog.content.options.append(ft.dropdownm2.Option(dataRes[0]))
-
-    self_main.page.open(deleteData_dialog)
-
-
 def equipmentCategory_page(page:ft.Page):
     
     page.clean()
 
-    page.window.width=600
+    page.window.width=820
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('Equipment_Category')
+    table_obj=db_object.get_table_obj('equipment_category')
     table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[4, table_obj,"Equipment_Category"], on_click=addData_page), 
-                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[4, table_obj,"Equipment_Category"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[4, table_obj,"Equipment_Category"], on_click=deleteAllData)])])],
+                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Всё"),data=[4, table_obj,"Equipment_Category"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
@@ -304,17 +244,16 @@ def equipmentStatus_page(page:ft.Page):
     
     page.clean()
 
-    page.window.width=570
+    page.window.width=900
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('Equipment_Status')
+    table_obj=db_object.get_table_obj('equipment_status')
     table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[3,table_obj,"Equipment_Status"], on_click=addData_page), 
-                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[3,table_obj,"Equipment_Status"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"),data=[3,table_obj,"Equipment_Status"], on_click=deleteAllData)])])],
+                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Всё"),data=[3,table_obj,"Equipment_Status"], on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
@@ -331,18 +270,17 @@ def cabinets_page(page:ft.Page):
     
     page.clean()
 
-    page.window.width=800
+    page.window.width=830
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('Cabinets')
+    table_obj=db_object.get_table_obj('cabinets')
     table=table_obj.getTable(db_object)
 
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"), on_click=table_obj.changeMode_handler)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.MenuItemButton(ft.Text("Добавление"),data=[2,table_obj,"Cabinets"], on_click=addData_page), 
-                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[2,table_obj,"Cabinets"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[2,table_obj,"Cabinets"],on_click=deleteAllData)])])],
+                                                  ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Всё"), data=[2,table_obj,"Cabinets"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
@@ -362,13 +300,13 @@ def request_page(page:ft.Page):
     page.window.width=1400
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('Repair_Request')
+    table_obj=db_object.get_table_obj('repair_Request')
     table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
             ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
-            ft.SubmenuButton(ft.Text("Функции"), [ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"),data=[0,table_obj,"Repair_Request"],on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
+            ft.SubmenuButton(ft.Text("Функции"), [ft.SubmenuButton(ft.Text("Удаление"), [ ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
 
@@ -410,18 +348,18 @@ def equipment_page(page:ft.Page):
         if (self.files[0].path!="" and self.files[0].path!=None):
             if (self.files[0].path.find("Kompyuterny_park.xls")!=-1 or self.files[0].path.find("Компьютерный_парк.xls")!=-1):
                 excel_obj=pd.read_excel(self.files[0].path)
-                deskU.loadExcel(page,excel_obj)
+                deskU.loadExcel(page,excel_obj,table_obj)
             else:
-                deskU.errorIcon(self)
+                deskU.errorIcon(self.page)
         else:
-            deskU.errorIcon(self)
+            deskU.errorIcon(self.page)
 
     page.clean()
 
     page.window.width=1200
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('Equipment')
+    table_obj=db_object.get_table_obj('equipment')
     table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
@@ -431,7 +369,7 @@ def equipment_page(page:ft.Page):
                 ft.MenuItemButton(ft.TextButton("Поиск",icon=ft.Icons.SEARCH, icon_color=ft.Colors.WHITE), on_click=searchMode, data=[1,table_obj])]),
             ft.SubmenuButton(ft.Text("Функции"), [
                 ft.MenuItemButton(ft.Text("Добавление"), data=[1,table_obj,"Equipment"],on_click=addData_page), 
-                ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Запись"), data=[1,table_obj,"Equipment"] ,on_click=deleteData_page), ft.MenuItemButton(ft.Text("Всё"), data=[1,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
+                ft.SubmenuButton(ft.Text("Удаление"), [ft.MenuItemButton(ft.Text("Всё"), data=[1,table_obj,"Equipment"] ,on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
@@ -448,9 +386,9 @@ def equipment_page(page:ft.Page):
 
     
     if(table!=False):
-        page.add(excelPicker_obj,ft.Row([backButton, loadData,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table)
+        page.add(ft.Row([backButton, loadData,ft.Text(" ", width=30),menuBar,ft.Divider(1)]),table,excelPicker_obj)
     else:
-        page.add(excelPicker_obj,ft.Row([backButton,loadData,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
+        page.add(ft.Row([backButton,loadData,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=17)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER),excelPicker_obj)
     
     page.window.center()
     page.update()
@@ -462,14 +400,13 @@ def manageAdminAcc_page(page: ft.Page):
     page.window.width=1250
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('Administrators')
+    table_obj=db_object.get_table_obj('administrators')
     table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(
         [
             ft.SubmenuButton(ft.Text("Функции"), [
-                ft.SubmenuButton(ft.Text("Удаление"), [
-                    ft.MenuItemButton(ft.Text("Запись"), data=[5,table_obj,"Equipment"] ,on_click=deleteData_page), 
+                ft.SubmenuButton(ft.Text("Удаление"), [ 
                     ft.MenuItemButton(ft.Text("Всё"), data=[5,table_obj,"Equipment"] ,on_click=deleteAllData)]
                     )]
                     )],

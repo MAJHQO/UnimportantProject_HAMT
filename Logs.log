@@ -2919,3 +2919,1444 @@ UnboundLocalError: cannot access local variable 'baseColor' where it is not asso
 [INFO] [2025-05-28 20:32:09,200] - pages: 'Main' page was openned
 [INFO] [2025-05-28 20:32:15,752] - pages: 'Main' page was openned
 [INFO] [2025-05-28 20:32:22,779] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:27:36,835] - main: App Started
+[INFO] [2025-05-28 21:27:37,464] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:27:46,671] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:28:00,497] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:29:13,656] - main: App Started
+[INFO] [2025-05-28 21:29:14,058] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:29:22,812] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:29:37,052] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:29:39,260] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:30:03,100] - main: App Started
+[INFO] [2025-05-28 21:30:03,553] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:30:14,584] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:30:42,284] - main: App Started
+[INFO] [2025-05-28 21:30:42,914] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:30:46,736] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:33:16,776] - main: App Started
+[INFO] [2025-05-28 21:33:17,310] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:33:30,945] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:33:37,284] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:33:38,631] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:33:43,739] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:33:59,838] - main: App Started
+[INFO] [2025-05-28 21:34:00,409] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:34:03,637] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:34:21,295] - main: App Started
+[INFO] [2025-05-28 21:34:21,869] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:34:37,619] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:35:05,384] - main: App Started
+[INFO] [2025-05-28 21:35:05,808] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:35:55,004] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:35:57,981] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:36:09,288] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:36:11,686] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:36:37,016] - main: App Started
+[INFO] [2025-05-28 21:36:37,603] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:36:50,227] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:39:58,233] - main: App Started
+[INFO] [2025-05-28 21:39:58,748] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:40:04,291] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:40:14,644] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:40:35,708] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:40:48,115] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:44:25,754] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:44:28,454] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 21:44:49,653] - pages:  module 'utilits.bd' has no attribute 'reqExecute'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 226, in loadExcel
+    result=bd.reqExecute("Select Invetory_Number,Name from Equipment")
+           ^^^^^^^^^^^^^
+AttributeError: module 'utilits.bd' has no attribute 'reqExecute'
+[ERROR] [2025-05-28 21:44:49,657] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(" module 'utilits.bd' has no attribute 'reqExecute'")>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 226, in loadExcel
+    result=bd.reqExecute("Select Invetory_Number,Name from Equipment")
+           ^^^^^^^^^^^^^
+AttributeError: module 'utilits.bd' has no attribute 'reqExecute'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 413, in loadExcel_handler
+    deskU.loadExcel(page,excel_obj)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 261, in loadExcel
+    raise Exception(f" {ex}")
+Exception:  module 'utilits.bd' has no attribute 'reqExecute'
+[INFO] [2025-05-28 21:46:32,282] - main: App Started
+[INFO] [2025-05-28 21:46:32,728] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:46:40,755] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 21:46:46,727] - pages:  'Database' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 226, in loadExcel
+    result=db_object.cursor.execute("Select Invetory_Number,Name from Equipment")
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'cursor'
+[ERROR] [2025-05-28 21:46:46,732] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(" 'Database' object has no attribute 'cursor'")>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 226, in loadExcel
+    result=db_object.cursor.execute("Select Invetory_Number,Name from Equipment")
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'cursor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 413, in loadExcel_handler
+    deskU.loadExcel(page,excel_obj)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 261, in loadExcel
+    raise Exception(f" {ex}")
+Exception:  'Database' object has no attribute 'cursor'
+[INFO] [2025-05-28 21:49:31,681] - main: App Started
+[INFO] [2025-05-28 21:49:32,108] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:49:45,314] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 21:49:52,027] - pages:  insert_equipment() missing 1 required positional argument: 'row'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 253, in loadExcel
+    if(insert_equipment()==False):
+       ^^^^^^^^^^^^^^^^^^
+TypeError: insert_equipment() missing 1 required positional argument: 'row'
+[ERROR] [2025-05-28 21:49:52,035] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(" insert_equipment() missing 1 required positional argument: 'row'")>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 253, in loadExcel
+    if(insert_equipment()==False):
+       ^^^^^^^^^^^^^^^^^^
+TypeError: insert_equipment() missing 1 required positional argument: 'row'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 413, in loadExcel_handler
+    deskU.loadExcel(page,excel_obj)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 261, in loadExcel
+    raise Exception(f" {ex}")
+Exception:  insert_equipment() missing 1 required positional argument: 'row'
+[INFO] [2025-05-28 21:50:15,705] - main: App Started
+[INFO] [2025-05-28 21:50:16,309] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:50:19,165] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 21:50:25,240] - database: Request execute was failed. Reason: 'Database' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'cursor'
+[ERROR] [2025-05-28 21:50:25,246] - database: Request execute was failed. Reason: 'Database' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 61, in insertPrinter_Equipment
+    db_object.cursor.execute(f"""Insert into Equipment(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'cursor'
+[ERROR] [2025-05-28 21:50:25,247] - database: Request execute was failed. Reason: 'Database' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.cursor.execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'cursor'
+[ERROR] [2025-05-28 21:50:25,247] - database: Request execute was failed. Reason: 'Database' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 23, in insertMonitor_Equipmet
+    db_object.cursor.execute(f"""Insert into Equipment(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'cursor'
+[INFO] [2025-05-28 21:51:42,259] - main: App Started
+[INFO] [2025-05-28 21:51:42,891] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:52:04,915] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 21:52:42,159] - database: Request execute was failed. Reason: unrecognized token: "504МБ"
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.OperationalError: unrecognized token: "504МБ"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: unrecognized token: "504МБ"
+[INFO] [2025-05-28 21:52:54,482] - pages: 'Main' page was openned
+[ERROR] [2025-05-28 21:52:55,326] - database: Request execute was failed. Reason: Recursive use of cursors not allowed.
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.ProgrammingError: Recursive use of cursors not allowed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: Recursive use of cursors not allowed.
+[ERROR] [2025-05-28 21:52:55,328] - asyncio: Future exception was never retrieved
+future: <Future finished exception=ProgrammingError('Recursive use of cursors not allowed.')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 510, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 425, in equipment_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    result=self._cursor.fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Recursive use of cursors not allowed.
+[INFO] [2025-05-28 21:54:13,900] - main: App Started
+[INFO] [2025-05-28 21:54:14,379] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:54:17,513] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:56:53,416] - main: App Started
+[INFO] [2025-05-28 21:56:53,865] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:56:58,928] - pages: 'Main' page was openned
+[INFO] [2025-05-28 21:59:22,713] - main: App Started
+[INFO] [2025-05-28 21:59:23,316] - pages: 'Start' page was openned
+[INFO] [2025-05-28 21:59:25,789] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:00:37,519] - main: App Started
+[INFO] [2025-05-28 22:00:38,168] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:00:46,874] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:01:47,256] - main: App Started
+[INFO] [2025-05-28 22:01:47,823] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:01:51,774] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:02:48,624] - main: App Started
+[INFO] [2025-05-28 22:02:49,053] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:02:51,579] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:03:43,418] - main: App Started
+[INFO] [2025-05-28 22:03:44,117] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:03:47,142] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:06:23,743] - main: App Started
+[INFO] [2025-05-28 22:06:24,240] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:06:30,348] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:07:09,161] - main: App Started
+[INFO] [2025-05-28 22:07:09,682] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:07:12,462] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:07:54,415] - main: App Started
+[INFO] [2025-05-28 22:07:55,409] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:08:00,536] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:08:42,481] - main: App Started
+[INFO] [2025-05-28 22:08:43,310] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:08:46,167] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:09:34,374] - main: App Started
+[INFO] [2025-05-28 22:09:35,865] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:09:39,503] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:10:44,789] - main: App Started
+[INFO] [2025-05-28 22:10:45,365] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:10:49,798] - pages: 'Main' page was openned
+[INFO] [2025-05-28 22:11:32,019] - main: App Started
+[INFO] [2025-05-28 22:11:32,589] - pages: 'Start' page was openned
+[INFO] [2025-05-28 22:11:36,684] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:35:47,743] - main: App Started
+[INFO] [2025-05-29 08:35:48,345] - pages: 'Start' page was openned
+[INFO] [2025-05-29 08:35:53,802] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:36:06,935] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:36:09,708] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:36:24,699] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:36:47,728] - main: App Started
+[INFO] [2025-05-29 08:36:48,195] - pages: 'Start' page was openned
+[INFO] [2025-05-29 08:36:51,106] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:01,094] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:03,412] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:07,446] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:12,940] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:16,078] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:17,987] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:34,415] - pages: 'Main' page was openned
+[INFO] [2025-05-29 08:37:43,868] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:00:10,795] - main: App Started
+[INFO] [2025-05-29 09:00:11,336] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:00:18,255] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:01:45,113] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 09:02:41,753] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(AttributeError("'__Table' object has no attribute 'get_table'"))>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 265, in page_update
+    table=table_obj.get_table(db_object)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: '__Table' object has no attribute 'get_table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 85, in addData
+    deskU.page_update(self.page,self.control.data[1])
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 269, in page_update
+    raise Exception(ex)
+Exception: '__Table' object has no attribute 'get_table'
+[INFO] [2025-05-29 09:03:14,634] - main: App Started
+[INFO] [2025-05-29 09:03:15,424] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:03:19,238] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:03:46,836] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:06:17,651] - main: App Started
+[INFO] [2025-05-29 09:06:18,105] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:06:27,094] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:11:47,791] - main: App Started
+[INFO] [2025-05-29 09:11:48,207] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:11:52,432] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 09:11:58,229] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(IntegrityError('UNIQUE constraint failed: Cabinets.Number'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 315, in __updateCellData
+    self._cursor.execute(f"Update {self.table_name} set {obj.control.data.split('|')[2]}={obj.page.overlay[-1].content.value}")
+sqlite3.IntegrityError: UNIQUE constraint failed: Cabinets.Number
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 322, in __updateCellData
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Cabinets.Number
+[INFO] [2025-05-29 09:12:00,823] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:18:19,070] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:19:42,978] - main: App Started
+[INFO] [2025-05-29 09:19:43,489] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:19:46,619] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:19:59,288] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:20:01,052] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:21:15,886] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:21:18,690] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:21:21,602] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:21:56,698] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:23:27,398] - main: App Started
+[INFO] [2025-05-29 09:23:27,796] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:24:25,384] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:27:05,465] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:30:10,885] - main: App Started
+[INFO] [2025-05-29 09:30:11,295] - pages: 'Start' page was openned
+[INFO] [2025-05-29 09:30:16,400] - pages: 'Main' page was openned
+[INFO] [2025-05-29 09:30:20,816] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:06:36,566] - main: App Started
+[INFO] [2025-05-29 10:06:37,154] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:06:48,981] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 10:07:19,219] - database: Request execute was failed. Reason: unrecognized token: "504МБ"
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.OperationalError: unrecognized token: "504МБ"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: unrecognized token: "504МБ"
+[ERROR] [2025-05-29 10:07:52,471] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,475] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,477] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,479] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,481] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,482] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,484] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,485] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,487] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,488] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,490] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:07:52,491] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[INFO] [2025-05-29 10:11:24,661] - main: App Started
+[INFO] [2025-05-29 10:11:25,140] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:28:10,562] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:28:42,162] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 10:29:45,899] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(IndexError('pop index out of range'))>
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 264, in page_update
+    page.controls.pop(1)
+IndexError: pop index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 85, in addData
+    deskU.page_update(self.page,self.control.data[1])
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 269, in page_update
+    raise Exception(ex)
+Exception: pop index out of range
+[INFO] [2025-05-29 10:29:56,088] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:30:03,704] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:30:10,354] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:30:55,280] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:31:49,194] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:33:32,895] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:34:04,948] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:34:38,205] - main: App Started
+[INFO] [2025-05-29 10:34:39,293] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:34:42,144] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:34:46,491] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:34:48,739] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:35:05,640] - main: App Started
+[INFO] [2025-05-29 10:35:06,087] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:35:08,807] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:35:11,637] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:35:14,798] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:39:37,103] - main: App Started
+[INFO] [2025-05-29 10:39:37,522] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:39:41,922] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:39:47,685] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:39:49,965] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:39:58,872] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:40:00,811] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:41:31,392] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:41:34,825] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:41:36,660] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:41:38,269] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 10:41:59,910] - database: Request execute was failed. Reason: unrecognized token: "504МБ"
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.OperationalError: unrecognized token: "504МБ"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: unrecognized token: "504МБ"
+[ERROR] [2025-05-29 10:42:26,568] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,570] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,572] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,573] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,575] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,578] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,580] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,581] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,583] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,584] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,585] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 10:42:26,586] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address, Network_Name,CPU_Model, CPU_Frequency,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values('Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[INFO] [2025-05-29 10:44:19,879] - main: App Started
+[INFO] [2025-05-29 10:44:20,378] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:44:29,350] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:45:18,378] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:52:17,609] - main: App Started
+[INFO] [2025-05-29 10:52:19,464] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:52:24,233] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:53:11,009] - main: App Started
+[INFO] [2025-05-29 10:53:12,668] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:53:17,846] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:54:01,872] - main: App Started
+[INFO] [2025-05-29 10:54:02,464] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:54:38,555] - main: App Started
+[INFO] [2025-05-29 10:54:39,446] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:55:43,314] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:57:39,905] - main: App Started
+[INFO] [2025-05-29 10:57:40,353] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:57:44,104] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:58:45,736] - main: App Started
+[INFO] [2025-05-29 10:58:46,149] - pages: 'Start' page was openned
+[INFO] [2025-05-29 10:59:05,628] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:59:42,609] - pages: 'Main' page was openned
+[INFO] [2025-05-29 10:59:58,330] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:00:02,213] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:00:05,704] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:00:13,734] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:00:48,406] - main: App Started
+[INFO] [2025-05-29 11:00:48,820] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:00:53,508] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:02:00,104] - main: App Started
+[INFO] [2025-05-29 11:02:00,694] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:02:06,590] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:02:51,567] - main: App Started
+[INFO] [2025-05-29 11:02:54,025] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:02:58,819] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:04:08,870] - main: App Started
+[INFO] [2025-05-29 11:04:09,275] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:04:13,076] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:05:12,769] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:05:23,008] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:05:24,740] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:07:02,066] - main: App Started
+[INFO] [2025-05-29 11:07:02,474] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:07:05,689] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:07:57,498] - main: App Started
+[INFO] [2025-05-29 11:07:57,925] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:09:33,065] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:11:00,311] - main: App Started
+[INFO] [2025-05-29 11:11:00,718] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:11:32,162] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 11:12:24,602] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(OperationalError('no such column: None'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 269, in __delete_row
+    self._cursor.execute(f"Delete from {self.table_name} where ID={obj.control.data.split('|')[1]}")
+sqlite3.OperationalError: no such column: None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 277, in __delete_row
+    raise Exception(ex)
+Exception: no such column: None
+[INFO] [2025-05-29 11:13:50,343] - main: App Started
+[INFO] [2025-05-29 11:13:50,771] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:13:54,980] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:16:03,251] - main: App Started
+[INFO] [2025-05-29 11:16:03,765] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:16:06,830] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:16:47,056] - main: App Started
+[INFO] [2025-05-29 11:16:47,499] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:16:52,619] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:18:40,365] - main: App Started
+[INFO] [2025-05-29 11:18:40,783] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:18:46,994] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 11:19:44,692] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(OperationalError('near "№1": syntax error'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 269, in __delete_row
+    self._cursor.execute(f"Delete from {self.table_name} where ID={obj.control.data.split('|')[1]}")
+sqlite3.OperationalError: near "№1": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 277, in __delete_row
+    raise Exception(ex)
+Exception: near "№1": syntax error
+[INFO] [2025-05-29 11:20:45,053] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:21:00,448] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:21:10,779] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:21:30,895] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:21:47,039] - main: App Started
+[INFO] [2025-05-29 11:21:47,482] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:21:50,421] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:23:00,633] - main: App Started
+[INFO] [2025-05-29 11:23:01,094] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:23:03,957] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:25:16,498] - main: App Started
+[INFO] [2025-05-29 11:25:16,891] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:25:35,307] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 11:27:08,743] - database: Request execute was failed. Reason: unrecognized token: "504МБ"
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.OperationalError: unrecognized token: "504МБ"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: unrecognized token: "504МБ"
+[ERROR] [2025-05-29 11:27:34,944] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,948] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,952] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,958] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,963] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,968] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,971] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,972] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,973] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,975] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,976] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[ERROR] [2025-05-29 11:27:34,978] - database: Request execute was failed. Reason: UNIQUE constraint failed: Equipment.Name
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+sqlite3.IntegrityError: UNIQUE constraint failed: Equipment.Name
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment values(((SELECT COUNT(*) from Equipment)+1),'Компьютер №{data[0]}','{data[5]}','{data[6]}','{data[7]}','{data[8]}','{data[9]}',{data[10] if str(data[10])!='nan' else 0},{data[11] if str(data[11])!='nan' else 0},'ПК','-','{data[4]}','-','{data[2]}')""")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: UNIQUE constraint failed: Equipment.Name
+[INFO] [2025-05-29 11:31:31,711] - main: App Started
+[INFO] [2025-05-29 11:31:32,116] - pages: 'Start' page was openned
+[INFO] [2025-05-29 11:31:55,553] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:32:44,089] - pages: 'Main' page was openned
+[INFO] [2025-05-29 11:36:47,873] - pages: 'Main' page was openned
+[INFO] [2025-05-29 12:28:35,091] - main: App Started
+[INFO] [2025-05-29 12:28:35,517] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:28:43,893] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-29 12:29:06,682] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 709, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-29 12:29:07,004] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:29:09,633] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 12:29:40,537] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(AttributeError("'Database' object has no attribute 'load_table'"))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 347, in get_table_obj
+    return self.__tables[table_name] if self.__tables.get(table_name)!=None else self.load_table()
+                                                                                 ^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'load_table'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 448, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 363, in equipment_page
+    table_obj=db_object.get_table_obj('Equipment')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 349, in get_table_obj
+    raise Exception(ex)
+Exception: 'Database' object has no attribute 'load_table'
+[INFO] [2025-05-29 12:33:55,624] - main: App Started
+[INFO] [2025-05-29 12:33:56,098] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:34:38,979] - main: App Started
+[INFO] [2025-05-29 12:34:40,322] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:34:45,550] - pages: 'Main' page was openned
+[INFO] [2025-05-29 12:35:37,014] - main: App Started
+[INFO] [2025-05-29 12:35:37,606] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:35:42,015] - pages: 'Main' page was openned
+[INFO] [2025-05-29 12:37:23,294] - main: App Started
+[INFO] [2025-05-29 12:37:23,868] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:38:43,680] - main: App Started
+[INFO] [2025-05-29 12:38:44,295] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:41:28,451] - main: App Started
+[INFO] [2025-05-29 12:41:29,021] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:41:48,772] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 12:41:57,167] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 448, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 364, in equipment_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'getTable'
+[INFO] [2025-05-29 12:44:25,167] - main: App Started
+[INFO] [2025-05-29 12:44:25,914] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:44:38,261] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 12:44:41,312] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 448, in <lambda>
+    on_click= lambda _:equipment_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 364, in equipment_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'getTable'
+[INFO] [2025-05-29 12:51:39,552] - main: App Started
+[INFO] [2025-05-29 12:51:39,970] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:51:50,775] - pages: 'Main' page was openned
+[INFO] [2025-05-29 12:52:13,206] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 12:52:17,510] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(ProgrammingError('no results to fetch'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 70, in request_execute
+    return self.__cursor.fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.ProgrammingError: no results to fetch
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 59, in addData
+    db_object.request_execute(f"Insert into Cabinets(ID,Number) values ((SELECT COUNT(*) from Cabinets)+1,'{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: no results to fetch
+[INFO] [2025-05-29 12:53:42,224] - main: App Started
+[INFO] [2025-05-29 12:53:42,775] - pages: 'Start' page was openned
+[INFO] [2025-05-29 12:53:49,302] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 12:53:57,104] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(NotNullViolation('ОШИБКА:  значение NULL в столбце "number" отношения "cabinets" нарушает ограничение NOT NULL\nDETAIL:  Ошибочная строка содержит (102, null).\n'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.NotNullViolation: ОШИБКА:  значение NULL в столбце "number" отношения "cabinets" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (102, null).
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 58, in addData
+    db_object.request_execute(f"Insert into Cabinets values ('{(self.page.overlay[len(self.page.overlay)-1].content.value)}')")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  значение NULL в столбце "number" отношения "cabinets" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (102, null).
+
+[INFO] [2025-05-29 12:54:07,310] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 12:54:08,745] - asyncio: Future exception was never retrieved
+future: <Future finished exception=InFailedSqlTransaction('ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 456, in <lambda>
+    on_click=lambda _:cabinets_page(page),
+                      ^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 277, in cabinets_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 197, in getTable
+    self._cursor.execute(f"Select * from {self.table_name}")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[INFO] [2025-05-29 13:00:35,321] - main: App Started
+[INFO] [2025-05-29 13:00:35,797] - pages: 'Start' page was openned
+[INFO] [2025-05-29 13:00:59,021] - pages: 'Main' page was openned
+[INFO] [2025-05-29 13:01:06,370] - pages: 'Main' page was openned
+[INFO] [2025-05-29 13:01:24,883] - pages: 'Main' page was openned
+[INFO] [2025-05-29 13:01:37,917] - pages: 'Main' page was openned
+[INFO] [2025-05-29 13:01:40,393] - pages: 'Main' page was openned
+[INFO] [2025-05-29 13:24:33,621] - main: App Started
+[INFO] [2025-05-29 13:24:34,051] - pages: 'Start' page was openned
+[INFO] [2025-05-29 13:24:38,692] - pages: 'Main' page was openned
+[INFO] [2025-05-29 13:24:46,759] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 13:24:47,867] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 467, in <lambda>
+    on_click=lambda _: equipmentStatus_page(page),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 251, in equipmentStatus_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'getTable'
+[INFO] [2025-05-29 13:25:24,857] - main: App Started
+[INFO] [2025-05-29 13:25:25,378] - pages: 'Start' page was openned
+[INFO] [2025-05-29 13:25:33,073] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:29:37,754] - main: App Started
+[INFO] [2025-05-29 21:29:39,416] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:29:47,810] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:29:53,392] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:18,841] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:27,864] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:38,223] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:40,255] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:46,649] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:48,740] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:32:53,690] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:33:08,687] - database: Request execute was failed. Reason: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(ПК) отсутствует в таблице "equipment_category".
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(ПК) отсутствует в таблице "equipment_category".
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(ПК) отсутствует в таблице "equipment_category".
+
+[INFO] [2025-05-29 21:33:24,518] - main: App Started
+[INFO] [2025-05-29 21:33:25,050] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:33:56,982] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:34:01,491] - database: Request execute was failed. Reason: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(ПК) отсутствует в таблице "equipment_category".
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(ПК) отсутствует в таблице "equipment_category".
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(ПК) отсутствует в таблице "equipment_category".
+
+[INFO] [2025-05-29 21:37:20,856] - main: App Started
+[INFO] [2025-05-29 21:37:21,380] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:37:25,815] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-05-29 21:37:40,009] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 708, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-05-29 21:37:40,658] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:37:43,165] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:39:38,481] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:39:52,508] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:40:35,061] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:40:50,755] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:41:01,185] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("errorIcon() missing 1 required positional argument: 'page'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 353, in loadExcel_handler
+    deskU.errorIcon(self)
+TypeError: errorIcon() missing 1 required positional argument: 'page'
+[INFO] [2025-05-29 21:41:59,008] - main: App Started
+[INFO] [2025-05-29 21:41:59,456] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:42:08,155] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:42:13,952] - asyncio: Future exception was never retrieved
+future: <Future finished exception=TypeError("errorIcon() missing 1 required positional argument: 'page'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 353, in loadExcel_handler
+    deskU.errorIcon(self)
+TypeError: errorIcon() missing 1 required positional argument: 'page'
+[INFO] [2025-05-29 21:43:04,611] - main: App Started
+[INFO] [2025-05-29 21:43:05,238] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:43:10,519] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:44:14,111] - database: Request execute was failed. Reason: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(Дополнительное оборудование) отсутствует в таблице "equipment_category".
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(Дополнительное оборудование) отсутствует в таблице "equipment_category".
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 178, in insertOther_Equipment
+    db_object.request_execute(f"""Insert into Equipment(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  INSERT или UPDATE в таблице "equipment" нарушает ограничение внешнего ключа "equipment_equipment_category_fkey"
+DETAIL:  Ключ (equipment_category)=(Дополнительное оборудование) отсутствует в таблице "equipment_category".
+
+[INFO] [2025-05-29 21:44:24,006] - main: App Started
+[INFO] [2025-05-29 21:44:24,435] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:44:30,762] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:44:35,825] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:44:46,161] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:45:15,905] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:45:17,199] - asyncio: Future exception was never retrieved
+future: <Future finished exception=InFailedSqlTransaction('ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 478, in <lambda>
+    on_click=lambda _:equipmentCategory_page(page),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 225, in equipmentCategory_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 197, in getTable
+    self._cursor.execute(f"Select * from {self.table_name}")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[INFO] [2025-05-29 21:45:27,005] - main: App Started
+[INFO] [2025-05-29 21:45:27,443] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:45:33,621] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:45:45,760] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:46:03,459] - database: Request execute was failed. Reason: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "504МБ")
+LINE 14: ...','nan','nan','Intel(R) pentiumM proccesor','1.7',504МБ,100,...
+                                                              ^
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.SyntaxError: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "504МБ")
+LINE 14: ...','nan','nan','Intel(R) pentiumM proccesor','1.7',504МБ,100,...
+                                                              ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\bd.py", line 11, in insertPC_Equipment
+    db_object.request_execute(f"""Insert into Equipment(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "504МБ")
+LINE 14: ...','nan','nan','Intel(R) pentiumM proccesor','1.7',504МБ,100,...
+                                                              ^
+
+[INFO] [2025-05-29 21:46:12,812] - main: App Started
+[INFO] [2025-05-29 21:46:13,230] - pages: 'Start' page was openned
+[INFO] [2025-05-29 21:46:19,941] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:02,347] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:05,939] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:08,071] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:09,593] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:11,678] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:13,211] - pages: 'Main' page was openned
+[INFO] [2025-05-29 21:47:18,771] - pages: 'Main' page was openned
+[ERROR] [2025-05-29 21:47:20,418] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 436, in <lambda>
+    on_click=lambda _:request_page(page),
+                      ^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 304, in request_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'getTable'

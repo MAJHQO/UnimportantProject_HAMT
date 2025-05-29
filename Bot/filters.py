@@ -2,7 +2,7 @@ from aiogram import Bot
 from aiogram.types import  Message, ChatMemberAdministrator, ChatMemberMember, ChatMemberOwner,CallbackQuery
 from aiogram.filters import BaseFilter, CommandObject
 
-from utilits import bd
+from utilits.bd import db_object
 
 import Bot.bot_config as bot_config
 
@@ -14,7 +14,7 @@ class teacherFilter_Call(BaseFilter):
         if (not callback.from_user): 
             return False
         
-        result=bd.reqExecute("Select TG_ID from Users")
+        result=db_object.request_execute("Select TG_ID from Users")
 
         chc=False
 
@@ -29,7 +29,7 @@ class teacherFilter_Call(BaseFilter):
 
         if (chc==False):
 
-            bd.reqExecute(f"Insert into Users(TG_ID, Username,FSL) values ({callback.from_user.id }, '{callback.from_user.username}','-')")
+            db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ({callback.from_user.id }, '{callback.from_user.username}','-')")
 
             
         del result,chc
@@ -42,7 +42,7 @@ class teacherFilter(BaseFilter):
         if (not message.from_user): 
             return False
         
-        result=bd.reqExecute("Select TG_ID from Users")
+        result=db_object.request_execute("Select TG_ID from Users")
 
         chc=False
 
@@ -57,7 +57,7 @@ class teacherFilter(BaseFilter):
 
         if (chc==False):
 
-            bd.reqExecute(f"Insert into Users(TG_ID, Username,FSL) values ({message.from_user.id }, '{message.from_user.username}','-')")
+            db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ({message.from_user.id }, '{message.from_user.username}','-')")
 
             
         del result,chc

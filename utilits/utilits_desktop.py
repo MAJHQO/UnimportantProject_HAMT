@@ -221,12 +221,11 @@ def insert_equipment(row):
         logger_deskU.exception(f" {ex}")
         raise Exception(f" {ex}")
 
-def loadExcel(page:ft.Page,pd_obj):
+def loadExcel(page:ft.Page,pd_obj, table_obj:object):
     try:
-        result=bd.reqExecute("Select Invetory_Number,Name from Equipment")
+        result=db_object.request_execute("Select Invetory_Number,Name from Equipment")
         if (result!=False and len(result)!=0):
             chc:bool=True
-            chc_2:bool=None
 
             for row in pd_obj.values:
                 if (type(row[0])==int):
@@ -242,20 +241,29 @@ def loadExcel(page:ft.Page,pd_obj):
                         
                     if (chc==True):
                         if(insert_equipment(row)==False):
-                            chc_2=False         
-                    if(chc_2==False):
-                        errorDialog(page, "В момент экспорта данных из таблицы произошла ошибка")
+                            errorDialog(page, "В момент экспорта данных из таблицы произошла ошибка")
 
         elif (len(result)==0):
             chc:bool=None
             for row in pd_obj.values:
                 if (type(row[0])==int):
-                    if(insert_equipment()==False):
+                    if(insert_equipment(row)==False):
                         chc=False
             if(chc==False):
                 errorDialog(page, "В момент экспорта данных из таблицы произошла ошибка")
         else:
             errorDialog(page, "В момент выборки данных произошла ошибка")
+
+        page_update(page,table_obj)
     except Exception as ex:
         logger_deskU.exception(f" {ex}")
         raise Exception(f" {ex}")
+    
+def page_update(page, table_obj:object):
+    try:
+        page.controls.pop(1)
+        table=table_obj.getTable(db_object)
+        page.controls.insert(1,table)
+        page.update()
+    except Exception as ex:
+        raise Exception(ex)

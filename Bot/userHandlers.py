@@ -13,7 +13,8 @@ from inspect import currentframe, getframeinfo
 from hashlib import sha384
 
 import bot_main as main
-from utilits import bd, utilits_desktop as ut
+from utilits import utilits_desktop as ut
+from utilits.bd import db_object
 from Bot.filters import teacherFilter,teacherFilter_Call
 
 import Bot.FSM as FSM ,Bot.keyboards as keyboards,Bot.bot_config as bConfig
@@ -38,11 +39,11 @@ async def start(message:types.Message, command: CommandObject, state: FSMContext
 
         if (command.args!=None):
             if(command.args=='resetPassword'):
-                if (len(bd.reqExecute(f"Select * from Administrators where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'"))!=0):
+                if (len(db_object.request_execute(f"Select * from Administrators where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'"))!=0):
                     await message.answer("Введите новый пароль: ")
                     await state.set_state(FSM.Password_Reset.password)
         else:
-            result=bd.reqExecute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'")
+            result=db_object.request_execute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'")
             if (result!=False and len(result)==0):
                 await message.answer(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
             else:
@@ -99,7 +100,7 @@ async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext)
 
         elif (callback.data.split("_")[2]=="2"):
 
-            await callback.message.edit_text(f"Аккаунт: {bd.reqExecute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
+            await callback.message.edit_text(f"Аккаунт: {db_object.request_execute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
 
         elif(callback.data.split("_")[2]=="3"):
 
@@ -146,7 +147,7 @@ async def account(callback:types.CallbackQuery):
     main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
     try:
-        await callback.message.edit_text(f"Аккаунт: {bd.reqExecute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
+        await callback.message.edit_text(f"Аккаунт: {db_object.request_execute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
 
     except Exception as ex:
 
@@ -164,7 +165,7 @@ async def view_request(callback:types.CallbackQuery):
 
     try:
 
-        result=bd.reqExecute(f"Select Cabinet_Number, Request_Description,Request_Status from Repair_Request where TG_ID={callback.from_user.id}")
+        result=db_object.request_execute(f"Select Cabinet_Number, Request_Description,Request_Status from Repair_Request where TG_ID={callback.from_user.id}")
         toUserMessage=""
         inKeyboard=keyboards.backButton
         inKeyboard.inline_keyboard[0][0].callback_data='Back_Scenario_2'
@@ -221,7 +222,7 @@ async def User_Registration_name(message:types.Message, state: FSMContext):
             await state.update_data(FSL_name=message.text)
             data=await state.get_data()
         
-            result=bd.reqExecute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+            result=db_object.request_execute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
 
             if (result!=False):
 
@@ -260,7 +261,7 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
     main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
     try:
-        result=bd.reqExecute(f"Select * from Cabinets where Number='{message.text}'")
+        result=db_object.request_execute(f"Select * from Cabinets where Number='{message.text}'")
         if (message.text.isdigit()==True and result!=False and len(result)>0):
             await state.update_data(Cabinet_Number=int(message.text))
             await message.answer("Введите описание заявки")
@@ -292,7 +293,7 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
        
         await state.update_data(Request_Description=message.text)
         data=await state.get_data()
-        result=bd.reqExecute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values((Select COUNT(*) as count from Repair_Request)+1, {message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
+        result=db_object.request_execute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values((Select COUNT(*) as count from Repair_Request)+1, {message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
         
         if(result!=False):
         
@@ -327,7 +328,7 @@ async def user_rename(message:types.Message, state: FSMContext):
             await state.update_data(FSL_name=message.text)
             data=await state.get_data()
         
-            result=bd.reqExecute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+            result=db_object.request_execute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
 
             if (result!=False):
 
@@ -364,7 +365,7 @@ async def user_rename(message:types.Message, state: FSMContext):
     main.logger.info(f' UserID/Username: {message.from_user.id}/{message.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
     try:
-        bd.reqExecute(f"Update Administrators Set Password='{sha384(message.text.encode()).hexdigest()}' where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'")
+        db_object.request_execute(f"Update Administrators Set Password='{sha384(message.text.encode()).hexdigest()}' where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'")
     except Exception as ex:
 
         frameinfo = getframeinfo(currentframe())
