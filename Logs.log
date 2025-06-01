@@ -4360,3 +4360,258 @@ Traceback (most recent call last):
     table=table_obj.getTable(db_object)
           ^^^^^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'getTable'
+[INFO] [2025-06-01 10:30:01,583] - main: App Started
+[INFO] [2025-06-01 10:30:03,195] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:30:12,763] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:30:21,620] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:30:30,353] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:30:40,712] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:30:45,513] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:30:48,331] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:31:05,561] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:31:07,531] - pages: 'Main' page was openned
+[ERROR] [2025-06-01 10:31:54,971] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'int' object has no attribute 'get_table_columns'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    columns=db_object.get_table_columns(self.table_name).split(",")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get_table_columns'
+[ERROR] [2025-06-01 10:31:57,340] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'int' object has no attribute 'get_table_columns'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    columns=db_object.get_table_columns(self.table_name).split(",")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get_table_columns'
+[ERROR] [2025-06-01 10:31:58,088] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'int' object has no attribute 'get_table_columns'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    columns=db_object.get_table_columns(self.table_name).split(",")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get_table_columns'
+[ERROR] [2025-06-01 10:32:12,112] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'int' object has no attribute 'get_table_columns'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0]).controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    columns=db_object.get_table_columns(self.table_name).split(",")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get_table_columns'
+[INFO] [2025-06-01 10:33:11,666] - main: App Started
+[INFO] [2025-06-01 10:33:12,137] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:33:53,386] - pages: 'Main' page was openned
+[ERROR] [2025-06-01 10:34:08,434] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'int' object has no attribute 'get_table_columns'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    columns=db_object.get_table_columns(self.table_name).split(",")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get_table_columns'
+[ERROR] [2025-06-01 10:34:17,264] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'int' object has no attribute 'get_table_columns'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(self.control.data[0])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 199, in getTable
+    columns=db_object.get_table_columns(self.table_name).split(",")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get_table_columns'
+[INFO] [2025-06-01 10:35:01,673] - main: App Started
+[INFO] [2025-06-01 10:35:02,089] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:35:05,444] - pages: 'Main' page was openned
+[ERROR] [2025-06-01 10:36:44,590] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'ElevatedButton' object has no attribute 'value'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 189, in searchInTable
+    if (cell.content.value.find(self.control.value)!=-1):
+        ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ElevatedButton' object has no attribute 'value'
+[INFO] [2025-06-01 10:37:51,670] - main: App Started
+[INFO] [2025-06-01 10:37:52,228] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:37:56,014] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:39:40,100] - main: App Started
+[INFO] [2025-06-01 10:39:40,676] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:39:43,528] - pages: 'Main' page was openned
+[INFO] [2025-06-01 10:40:50,515] - main: App Started
+[INFO] [2025-06-01 10:40:51,087] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:40:53,921] - pages: 'Main' page was openned
+[ERROR] [2025-06-01 10:41:09,079] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'FilePicker' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 199, in searchInTable
+    self.page.controls[2].controls[0].controls.append(searchTable)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FilePicker' object has no attribute 'controls'
+[INFO] [2025-06-01 10:41:25,610] - main: App Started
+[INFO] [2025-06-01 10:41:26,045] - pages: 'Start' page was openned
+[INFO] [2025-06-01 10:41:31,516] - pages: 'Main' page was openned
+[ERROR] [2025-06-01 10:42:10,958] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AssertionError('each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (15)')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 205, in searchInTable
+    self.page.update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 735, in update
+    r = self.__update(self)
+        ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 801, in __update
+    commands, added_controls, removed_controls = self.__prepare_update(*controls)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 817, in __prepare_update
+    control.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 477, in build_update_commands
+    ctrl.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 477, in build_update_commands
+    ctrl.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 477, in build_update_commands
+    ctrl.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 458, in build_update_commands
+    innerCmds = ctrl._build_add_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 534, in _build_add_commands
+    command = self._build_command(False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 561, in _build_command
+    self.before_update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\datatable.py", line 469, in before_update
+    assert all(
+AssertionError: each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (15)
+[ERROR] [2025-06-01 10:42:11,345] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AssertionError('each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (15)')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 205, in searchInTable
+    self.page.update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 735, in update
+    r = self.__update(self)
+        ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 801, in __update
+    commands, added_controls, removed_controls = self.__prepare_update(*controls)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 817, in __prepare_update
+    control.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 477, in build_update_commands
+    ctrl.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 477, in build_update_commands
+    ctrl.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 477, in build_update_commands
+    ctrl.build_update_commands(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 458, in build_update_commands
+    innerCmds = ctrl._build_add_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 534, in _build_add_commands
+    command = self._build_command(False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\control.py", line 561, in _build_command
+    self.before_update()
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\datatable.py", line 469, in before_update
+    assert all(
+AssertionError: each visible DataRow must contain exactly as many visible DataCells as there are visible DataColumns (15)
+[ERROR] [2025-06-01 10:42:17,762] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'bool' object has no attribute 'controls'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 180, in searchInTable
+    actualTable=actualTable.controls[0].controls[0]
+                ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'controls'
+[ERROR] [2025-06-01 10:42:17,763] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(db_object)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 233, in getTable
+    self.__table.controls[-1].controls[-1].rows[-1].cells.append(ft.DataCell(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+[ERROR] [2025-06-01 10:42:17,765] - asyncio: Future exception was never retrieved
+future: <Future finished exception=IndexError('list index out of range')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\utilits\utilits_desktop.py", line 179, in searchInTable
+    actualTable=self.control.data[1].getTable(db_object)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 233, in getTable
+    self.__table.controls[-1].controls[-1].rows[-1].cells.append(ft.DataCell(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+[INFO] [2025-06-01 10:42:47,705] - pages: 'Main' page was openned

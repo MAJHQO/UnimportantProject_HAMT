@@ -129,3 +129,602 @@ NoneType: None
 [2025-05-23 13:49:54,014] - [aiogram.event] - [INFO]: Update id=112030058 is handled. Duration 8702 ms by bot id=7527441182
 [2025-05-28 21:29:00,043] - [aiogram.dispatcher] - [INFO]: Start polling
 [2025-05-28 21:29:00,132] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 10:29:23,768] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 10:29:23,888] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 10:43:09,539] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 10:43:09,598] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 10:47:27,752] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 10:47:27,758] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  оператор не существует: character varying = integer
+LINE 1: Select * from Users where TG_ID=956847261 AND FSL!='-'
+                                       ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+
+[2025-06-01 10:47:27,758] - [aiogram.event] - [INFO]: Update id=112030064 is handled. Duration 827 ms by bot id=7527441182
+[2025-06-01 10:47:37,793] - [aiogram.event] - [INFO]: Update id=112030065 is not handled. Duration 0 ms by bot id=7527441182
+[2025-06-01 10:47:37,794] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030065 by bot id=7527441182
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 45, in __call__
+    result=db_object.request_execute("Select TG_ID from Users")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[2025-06-01 10:48:39,617] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 10:48:39,703] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 10:48:49,882] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 10:48:49,885] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  оператор не существует: character varying = integer
+LINE 1: Select * from Users where TG_ID=956847261 AND FSL!='-'
+                                       ^
+HINT:  Оператор с данными именем и типами аргументов не найден. Возможно, вам следует добавить явные приведения типов.
+
+[2025-06-01 10:48:49,885] - [aiogram.event] - [INFO]: Update id=112030066 is handled. Duration 812 ms by bot id=7527441182
+[2025-06-01 10:57:48,786] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 10:57:48,864] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 10:58:12,068] - [aiogram.event] - [INFO]: Update id=112030067 is not handled. Duration 15 ms by bot id=7527441182
+[2025-06-01 10:58:12,068] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030067 by bot id=7527441182
+Exception: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Insert into Users(TG_ID, Username,FSL) values (09afa4309f0d7...
+                                                       ^
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.SyntaxError: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Insert into Users(TG_ID, Username,FSL) values (09afa4309f0d7...
+                                                       ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 61, in __call__
+    db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ({sha384(str(message.from_user.id).encode()).hexdigest()}, '{sha384(message.from_user.username.encode()).hexdigest}','-')")
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Insert into Users(TG_ID, Username,FSL) values (09afa4309f0d7...
+                                                       ^
+
+[2025-06-01 10:59:50,438] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 10:59:50,497] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 10:59:58,743] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 10:59:58,746] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Select * from Users where TG_ID=09afa4309f0d708002b0085dc1f2...
+                                        ^
+
+[2025-06-01 10:59:58,746] - [aiogram.event] - [INFO]: Update id=112030068 is handled. Duration 780 ms by bot id=7527441182
+[2025-06-01 11:00:15,633] - [aiogram.event] - [INFO]: Update id=112030069 is not handled. Duration 0 ms by bot id=7527441182
+[2025-06-01 11:00:15,633] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030069 by bot id=7527441182
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 46, in __call__
+    result=db_object.request_execute("Select TG_ID from Users")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[2025-06-01 11:04:13,264] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:04:13,333] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:05:14,986] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:05:14,989] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Select * from Users where TG_ID=09afa4309f0d708002b0085dc1f2...
+                                        ^
+
+[2025-06-01 11:05:14,989] - [aiogram.event] - [INFO]: Update id=112030070 is handled. Duration 55077 ms by bot id=7527441182
+[2025-06-01 11:06:09,060] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:06:09,122] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:06:21,354] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:06:21,357] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Select * from Users where TG_ID=09afa4309f0d708002b0085dc1f2...
+                                        ^
+
+[2025-06-01 11:06:21,358] - [aiogram.event] - [INFO]: Update id=112030071 is handled. Duration 11391 ms by bot id=7527441182
+[2025-06-01 11:07:08,654] - [aiogram.event] - [INFO]: Update id=112030072 is not handled. Duration 0 ms by bot id=7527441182
+[2025-06-01 11:07:08,655] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030072 by bot id=7527441182
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 46, in __call__
+    result=db_object.request_execute("Select TG_ID from Users")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[2025-06-01 11:07:33,504] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:07:33,581] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:07:42,684] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:07:42,688] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Select * from Users where TG_ID=09afa4309f0d708002b0085dc1f2...
+                                        ^
+
+[2025-06-01 11:07:42,688] - [aiogram.event] - [INFO]: Update id=112030073 is handled. Duration 3969 ms by bot id=7527441182
+[2025-06-01 11:07:50,682] - [aiogram.event] - [INFO]: Update id=112030074 is not handled. Duration 0 ms by bot id=7527441182
+[2025-06-01 11:07:50,682] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030074 by bot id=7527441182
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 46, in __call__
+    result=db_object.request_execute("Select TG_ID from Users")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[2025-06-01 11:08:53,023] - [aiogram.event] - [INFO]: Update id=112030075 is not handled. Duration 15 ms by bot id=7527441182
+[2025-06-01 11:08:53,024] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030075 by bot id=7527441182
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 46, in __call__
+    result=db_object.request_execute("Select TG_ID from Users")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[2025-06-01 11:09:00,031] - [aiogram.event] - [INFO]: Update id=112030076 is not handled. Duration 0 ms by bot id=7527441182
+[2025-06-01 11:09:00,032] - [aiogram.event] - [ERROR]: Cause exception while process update id=112030076 by bot id=7527441182
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in _propagate_event
+    result, data = await observer.check_root_filters(event, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\filters.py", line 46, in __call__
+    result=db_object.request_execute("Select TG_ID from Users")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(ex)
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[2025-06-01 11:09:14,735] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:09:14,794] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:09:38,669] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:09:38,671] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 54 | Text: ОШИБКА:  мусорное содержимое после числовой константы (примерное положение: "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Select * from Users where TG_ID=09afa4309f0d708002b0085dc1f2...
+                                        ^
+
+[2025-06-01 11:09:38,672] - [aiogram.event] - [INFO]: Update id=112030077 is handled. Duration 21530 ms by bot id=7527441182
+[2025-06-01 11:15:03,122] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:15:03,203] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:15:29,858] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:15:30,501] - [aiogram.event] - [INFO]: Update id=112030078 is handled. Duration 9844 ms by bot id=7527441182
+[2025-06-01 11:15:33,220] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 62
+[2025-06-01 11:15:33,500] - [aiogram.event] - [INFO]: Update id=112030079 is handled. Duration 358 ms by bot id=7527441182
+[2025-06-01 11:15:40,054] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 215
+[2025-06-01 11:15:40,237] - [aiogram.event] - [INFO]: Update id=112030080 is handled. Duration 264 ms by bot id=7527441182
+[2025-06-01 11:15:41,809] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 145
+[2025-06-01 11:15:41,815] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 155 | Text: ОШИБКА:  незавершённый идентификатор в кавычках (примерное положение: ""09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b8fc597a7247e53ef34d2972c6669fb024")
+LINE 1: Select FSL from Users where TG_ID="09afa4309f0d708002b0085dc...
+                                          ^
+
+[2025-06-01 11:15:41,818] - [aiogram.event] - [INFO]: Update id=112030081 is handled. Duration 78 ms by bot id=7527441182
+[2025-06-01 11:16:30,700] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:16:30,776] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:16:35,369] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:16:35,522] - [aiogram.event] - [INFO]: Update id=112030082 is handled. Duration 1015 ms by bot id=7527441182
+[2025-06-01 11:16:37,072] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 145
+[2025-06-01 11:16:37,074] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 155 | Text: ОШИБКА:  столбец "09afa4309f0d708002b0085dc1f25d7e42ebae794cb35197a7cdad7ba118e0b" не существует
+LINE 1: Select FSL from Users where TG_ID="09afa4309f0d708002b0085dc...
+                                          ^
+
+[2025-06-01 11:16:37,076] - [aiogram.event] - [INFO]: Update id=112030083 is handled. Duration 78 ms by bot id=7527441182
+[2025-06-01 11:25:16,315] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:25:16,382] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:25:31,413] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:25:31,566] - [aiogram.event] - [INFO]: Update id=112030084 is handled. Duration 1218 ms by bot id=7527441182
+[2025-06-01 11:25:33,168] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 145
+[2025-06-01 11:26:00,536] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:26:00,598] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:26:20,334] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:26:20,403] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:26:24,996] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:26:25,218] - [aiogram.event] - [INFO]: Update id=112030087 is handled. Duration 1094 ms by bot id=7527441182
+[2025-06-01 11:26:26,484] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 145
+[2025-06-01 11:26:28,969] - [aiogram.event] - [INFO]: Update id=112030088 is handled. Duration 2562 ms by bot id=7527441182
+[2025-06-01 11:26:31,788] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 163
+[2025-06-01 11:26:31,898] - [aiogram.event] - [INFO]: Update id=112030089 is handled. Duration 187 ms by bot id=7527441182
+[2025-06-01 11:26:32,889] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 82
+[2025-06-01 11:26:34,854] - [aiogram.event] - [INFO]: Update id=112030090 is handled. Duration 2047 ms by bot id=7527441182
+[2025-06-01 11:26:36,647] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 82
+[2025-06-01 11:26:36,730] - [aiogram.event] - [INFO]: Update id=112030091 is handled. Duration 141 ms by bot id=7527441182
+[2025-06-01 11:26:38,285] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 125
+[2025-06-01 11:26:38,355] - [aiogram.event] - [INFO]: Update id=112030092 is handled. Duration 125 ms by bot id=7527441182
+[2025-06-01 11:26:43,891] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 260
+[2025-06-01 11:26:43,985] - [aiogram.event] - [INFO]: Update id=112030093 is handled. Duration 155 ms by bot id=7527441182
+[2025-06-01 11:26:49,058] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 289
+[2025-06-01 11:26:49,067] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 312 | Text: no results to fetch
+[2025-06-01 11:26:49,142] - [aiogram.event] - [INFO]: Update id=112030094 is handled. Duration 171 ms by bot id=7527441182
+[2025-06-01 11:28:19,123] - [aiogram.dispatcher] - [INFO]: Start polling
+[2025-06-01 11:28:19,181] - [aiogram.dispatcher] - [INFO]: Run polling for bot @HAMT_Tech_Bot id=7527441182 - 'Техническая поддержка ГБПОУ "НАМТ"'
+[2025-06-01 11:28:29,121] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 32
+[2025-06-01 11:28:29,363] - [aiogram.event] - [INFO]: Update id=112030095 is handled. Duration 1125 ms by bot id=7527441182
+[2025-06-01 11:28:30,312] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 125
+[2025-06-01 11:28:30,457] - [aiogram.event] - [INFO]: Update id=112030096 is handled. Duration 219 ms by bot id=7527441182
+[2025-06-01 11:28:32,278] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 260
+[2025-06-01 11:28:32,369] - [aiogram.event] - [INFO]: Update id=112030097 is handled. Duration 155 ms by bot id=7527441182
+[2025-06-01 11:28:35,761] - [bot_main] - [INFO]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 289
+[2025-06-01 11:28:35,768] - [bot_main] - [ERROR]:  UserID/Username: 956847261/quuizhqo | Event: E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Bot\userHandlers.py | Line: 312 | Text: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "repair_request_pkey"
+DETAIL:  Ключ "(request_number)=(1)" уже существует.
+
+[2025-06-01 11:28:35,935] - [aiogram.event] - [INFO]: Update id=112030098 is handled. Duration 219 ms by bot id=7527441182

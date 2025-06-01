@@ -8,6 +8,7 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.types import BotCommand
 
 from Bot import bot_config,userHandlers
+from utilits import bd
 
 
 bot = Bot(token=bot_config.token, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN))

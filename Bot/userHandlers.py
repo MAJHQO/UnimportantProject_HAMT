@@ -43,7 +43,7 @@ async def start(message:types.Message, command: CommandObject, state: FSMContext
                     await message.answer("Введите новый пароль: ")
                     await state.set_state(FSM.Password_Reset.password)
         else:
-            result=db_object.request_execute(f"Select * from Users where TG_ID={message.from_user.id} AND FSL!='-'")
+            result=db_object.request_execute(f"Select * from Users where TG_ID='{sha384(str(message.from_user.id).encode()).hexdigest()}' AND FSL!='-'")
             if (result!=False and len(result)==0):
                 await message.answer(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
             else:
@@ -86,7 +86,7 @@ async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext)
     try:
 
         if(callback.data.split("_")[2]=="0"):
-            result=f"Select * from Users where TG_ID={callback.from_user.id} AND FSL!='-'"
+            result=f"Select * from Users where TG_ID='{sha384(str(callback.from_user.id).encode()).hexdigest()}' AND FSL!='-'"
             if (result!=False and len(result)==0):
                 await callback.message.edit_text(bConfig.startText, parse_mode=ParseMode.HTML , reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="Регистрация", callback_data="User_Registration")]]))
             else:
@@ -99,8 +99,8 @@ async def back_scenario_handler(callback:types.CallbackQuery, state: FSMContext)
             await state.set_state(FSM.User_Registration.FSL_name)
 
         elif (callback.data.split("_")[2]=="2"):
-
-            await callback.message.edit_text(f"Аккаунт: {db_object.request_execute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
+            fls=db_object.request_execute(f"Select FSL from Users where TG_ID='{sha384(str(callback.from_user.id).encode()).hexdigest()}'")
+            await callback.message.edit_text(f"Аккаунт: {fls[0][0]}",reply_markup=keyboards.accountKeyboard)
 
         elif(callback.data.split("_")[2]=="3"):
 
@@ -147,7 +147,8 @@ async def account(callback:types.CallbackQuery):
     main.logger.info(f' UserID/Username: {callback.from_user.id}/{callback.from_user.username} | Event: {__file__} | Line: {frameinfo.lineno}')
 
     try:
-        await callback.message.edit_text(f"Аккаунт: {db_object.request_execute(f'Select FSL from Users where TG_ID={callback.from_user.id}')[0][0]}",reply_markup=keyboards.accountKeyboard)
+        fls=db_object.request_execute(f"Select FSL from Users where TG_ID='{sha384(str(callback.from_user.id).encode()).hexdigest()}'")
+        await callback.message.edit_text(f"Аккаунт: {fls[0][0]}",reply_markup=keyboards.accountKeyboard)
 
     except Exception as ex:
 
@@ -165,7 +166,7 @@ async def view_request(callback:types.CallbackQuery):
 
     try:
 
-        result=db_object.request_execute(f"Select Cabinet_Number, Request_Description,Request_Status from Repair_Request where TG_ID={callback.from_user.id}")
+        result=db_object.request_execute(f"Select Cabinet_Number, Request_Description,Request_Status from Repair_Request where TG_Username='{callback.from_user.username}'")
         toUserMessage=""
         inKeyboard=keyboards.backButton
         inKeyboard.inline_keyboard[0][0].callback_data='Back_Scenario_2'
@@ -222,7 +223,7 @@ async def User_Registration_name(message:types.Message, state: FSMContext):
             await state.update_data(FSL_name=message.text)
             data=await state.get_data()
         
-            result=db_object.request_execute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+            result=db_object.request_execute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID='{sha384(str(message.from_user.id).encode()).hexdigest()}'")
 
             if (result!=False):
 
@@ -293,7 +294,7 @@ async def New_Request_CN(message:types.Message, state: FSMContext):
        
         await state.update_data(Request_Description=message.text)
         data=await state.get_data()
-        result=db_object.request_execute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values((Select COUNT(*) as count from Repair_Request)+1, {message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
+        result=db_object.request_execute(f"Insert into Repair_Request(Request_Number,TG_ID,TG_Username,Cabinet_Number,Request_Description,Request_Status) values(1,{message.from_user.id}, '{message.from_user.username}', {data['Cabinet_Number']}, '{data['Request_Description']}', '-')")
         
         if(result!=False):
         
@@ -328,7 +329,7 @@ async def user_rename(message:types.Message, state: FSMContext):
             await state.update_data(FSL_name=message.text)
             data=await state.get_data()
         
-            result=db_object.request_execute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID={message.from_user.id}")
+            result=db_object.request_execute(f"Update Users Set FSL='{data['FSL_name']}' where TG_ID='{sha384(str(message.from_user.id).encode()).hexdigest()}'")
 
             if (result!=False):
 

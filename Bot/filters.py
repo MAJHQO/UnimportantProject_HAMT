@@ -1,6 +1,7 @@
 from aiogram import Bot
 from aiogram.types import  Message, ChatMemberAdministrator, ChatMemberMember, ChatMemberOwner,CallbackQuery
 from aiogram.filters import BaseFilter, CommandObject
+from hashlib import sha384
 
 from utilits.bd import db_object
 
@@ -21,7 +22,7 @@ class teacherFilter_Call(BaseFilter):
         if (len(result)!=0):
 
             for i in result:
-                if (callback.from_user.id == i[0]):
+                if (sha384(str(callback.from_user.id).encode()).hexdigest() in i):
 
                     chc=True
                         
@@ -29,7 +30,7 @@ class teacherFilter_Call(BaseFilter):
 
         if (chc==False):
 
-            db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ({callback.from_user.id }, '{callback.from_user.username}','-')")
+            db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ('{sha384(str(callback.from_user.id).encode()).hexdigest()}', '{sha384(callback.from_user.username.encode()).hexdigest}','-')")
 
             
         del result,chc
@@ -49,7 +50,7 @@ class teacherFilter(BaseFilter):
         if (len(result)!=0):
 
             for i in result:
-                if (message.from_user.id in i):
+                if (sha384(str(message.from_user.id).encode()).hexdigest() in i):
 
                     chc=True
                         
@@ -57,7 +58,7 @@ class teacherFilter(BaseFilter):
 
         if (chc==False):
 
-            db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ({message.from_user.id }, '{message.from_user.username}','-')")
+            db_object.request_execute(f"Insert into Users(TG_ID, Username,FSL) values ('{sha384(str(message.from_user.id).encode()).hexdigest()}', '{sha384(message.from_user.username.encode()).hexdigest}','-')")
 
             
         del result,chc
