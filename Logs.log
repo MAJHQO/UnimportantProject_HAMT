@@ -4615,3 +4615,10 @@ Traceback (most recent call last):
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
 IndexError: list index out of range
 [INFO] [2025-06-01 10:42:47,705] - pages: 'Main' page was openned
+[INFO] [2025-06-01 22:49:41,701] - main: App Started
+[INFO] [2025-06-01 22:49:43,783] - pages: 'Start' page was openned
+[INFO] [2025-06-01 22:53:14,586] - pages: 'StartAdmin' page was openned
+[INFO] [2025-06-01 23:00:23,351] - pages: 'Start' page was openned
+[INFO] [2025-06-01 23:00:23,955] - pages: 'Reset password' page was openned
+[INFO] [2025-06-01 23:07:52,078] - pages: 'Start' page was openned
+[INFO] [2025-06-01 23:07:56,340] - pages: 'Main' page was openned
