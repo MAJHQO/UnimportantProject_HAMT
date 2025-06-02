@@ -300,7 +300,7 @@ def request_page(page:ft.Page):
     page.window.width=1400
     page.window.height=700
 
-    table_obj=db_object.get_table_obj('repair_Request')
+    table_obj=db_object.get_table_obj('repair_request')
     table=table_obj.getTable(db_object)
 
     menuBar=ft.MenuBar(

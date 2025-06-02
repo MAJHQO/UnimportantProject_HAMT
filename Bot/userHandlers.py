@@ -367,6 +367,7 @@ async def user_rename(message:types.Message, state: FSMContext):
 
     try:
         db_object.request_execute(f"Update Administrators Set Password='{sha384(message.text.encode()).hexdigest()}' where TG_Username='{sha384(message.from_user.username.encode()).hexdigest()}'")
+        await message.answer("Пароль успешно изменен")
     except Exception as ex:
 
         frameinfo = getframeinfo(currentframe())

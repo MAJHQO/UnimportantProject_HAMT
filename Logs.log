@@ -4622,3 +4622,124 @@ IndexError: list index out of range
 [INFO] [2025-06-01 23:00:23,955] - pages: 'Reset password' page was openned
 [INFO] [2025-06-01 23:07:52,078] - pages: 'Start' page was openned
 [INFO] [2025-06-01 23:07:56,340] - pages: 'Main' page was openned
+[INFO] [2025-06-02 09:42:57,061] - main: App Started
+[INFO] [2025-06-02 09:42:57,834] - pages: 'Start' page was openned
+[INFO] [2025-06-02 09:43:03,600] - pages: 'Main' page was openned
+[ERROR] [2025-06-02 09:43:06,920] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'NoneType' object has no attribute 'getTable'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 436, in <lambda>
+    on_click=lambda _:request_page(page),
+                      ^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 304, in request_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'getTable'
+[INFO] [2025-06-02 09:44:09,365] - main: App Started
+[INFO] [2025-06-02 09:44:09,864] - pages: 'Start' page was openned
+[INFO] [2025-06-02 09:46:09,658] - pages: 'Main' page was openned
+[INFO] [2025-06-02 09:46:12,561] - pages: 'Main' page was openned
+[INFO] [2025-06-02 09:46:14,815] - pages: 'Main' page was openned
+[INFO] [2025-06-02 09:46:18,594] - pages: 'Main' page was openned
+[INFO] [2025-06-02 10:18:28,632] - pages: 'Main' page was openned
+[INFO] [2025-06-02 10:18:30,769] - pages: 'Main' page was openned
+[INFO] [2025-06-02 10:18:34,584] - pages: 'Main' page was openned
+[INFO] [2025-06-02 10:18:43,229] - pages: 'Main' page was openned
+[INFO] [2025-06-02 14:51:33,303] - main: App Started
+[INFO] [2025-06-02 14:51:33,733] - pages: 'Start' page was openned
+[INFO] [2025-06-02 14:52:41,833] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-06-02 14:55:12,607] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Row' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 700, in adminRegInBD
+    if (page.controls[6].border_color!=ft.Colors.RED):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Row' object has no attribute 'border_color'
+[ERROR] [2025-06-02 14:55:19,691] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Row' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 700, in adminRegInBD
+    if (page.controls[6].border_color!=ft.Colors.RED):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Row' object has no attribute 'border_color'
+[ERROR] [2025-06-02 14:55:22,586] - asyncio: Future exception was never retrieved
+future: <Future finished exception=AttributeError("'Row' object has no attribute 'border_color'")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 700, in adminRegInBD
+    if (page.controls[6].border_color!=ft.Colors.RED):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Row' object has no attribute 'border_color'
+[INFO] [2025-06-02 15:19:56,003] - pages: 'Start' page was openned
+[INFO] [2025-06-02 15:20:00,502] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:24:00,143] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:35:36,319] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:40:07,908] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:41:35,316] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:42:09,506] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:42:17,726] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:42:28,428] - pages: 'Main' page was openned
+[ERROR] [2025-06-02 15:42:31,225] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(ForeignKeyViolation('ОШИБКА:  UPDATE или DELETE в таблице "equipment_status" нарушает ограничение внешнего ключа "equipment_equipment_status_fkey" таблицы "equipment"\nDETAIL:  На ключ (status_name)=(-) всё ещё есть ссылки в таблице "equipment".\n'))>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 269, in __delete_row
+    self._cursor.execute(f"Delete from {self.table_name} where ID={obj.control.data.split('|')[1]}")
+psycopg2.errors.ForeignKeyViolation: ОШИБКА:  UPDATE или DELETE в таблице "equipment_status" нарушает ограничение внешнего ключа "equipment_equipment_status_fkey" таблицы "equipment"
+DETAIL:  На ключ (status_name)=(-) всё ещё есть ссылки в таблице "equipment".
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 277, in __delete_row
+    raise Exception(ex)
+Exception: ОШИБКА:  UPDATE или DELETE в таблице "equipment_status" нарушает ограничение внешнего ключа "equipment_equipment_status_fkey" таблицы "equipment"
+DETAIL:  На ключ (status_name)=(-) всё ещё есть ссылки в таблице "equipment".
+
+[INFO] [2025-06-02 15:50:41,327] - main: App Started
+[INFO] [2025-06-02 15:50:42,026] - pages: 'Start' page was openned
+[INFO] [2025-06-02 15:50:46,225] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:50:48,445] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:50:57,799] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:51:00,137] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:51:01,873] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:51:10,849] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:51:18,398] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:51:21,862] - pages: 'Main' page was openned
+[INFO] [2025-06-02 15:59:03,850] - pages: 'Main' page was openned
+[INFO] [2025-06-02 16:06:27,398] - main: App Started
+[INFO] [2025-06-02 16:06:27,925] - pages: 'Start' page was openned
+[INFO] [2025-06-02 16:06:32,587] - pages: 'Main' page was openned
+[INFO] [2025-06-02 16:08:34,030] - pages: 'Main' page was openned
+[INFO] [2025-06-02 16:08:47,606] - pages: 'Main' page was openned
+[INFO] [2025-06-02 16:08:57,695] - pages: 'Main' page was openned
+[INFO] [2025-06-02 16:09:10,174] - main: App Started
+[INFO] [2025-06-02 16:09:10,708] - pages: 'Start' page was openned
+[INFO] [2025-06-02 16:09:13,771] - pages: 'Main' page was openned
+[INFO] [2025-06-02 16:09:51,379] - main: App Started
+[INFO] [2025-06-02 16:09:51,822] - pages: 'Start' page was openned
+[INFO] [2025-06-02 16:09:53,536] - pages: 'Reset password' page was openned
