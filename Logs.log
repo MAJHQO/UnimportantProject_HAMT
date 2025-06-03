@@ -4743,3 +4743,423 @@ DETAIL:  На ключ (status_name)=(-) всё ещё есть ссылки в таблице "equipment".
 [INFO] [2025-06-02 16:09:51,379] - main: App Started
 [INFO] [2025-06-02 16:09:51,822] - pages: 'Start' page was openned
 [INFO] [2025-06-02 16:09:53,536] - pages: 'Reset password' page was openned
+[INFO] [2025-06-03 15:21:18,615] - main: App Started
+[INFO] [2025-06-03 15:21:20,070] - pages: 'Start' page was openned
+[INFO] [2025-06-03 15:21:40,133] - pages: 'Main' page was openned
+[INFO] [2025-06-03 15:22:10,878] - pages: 'Main' page was openned
+[INFO] [2025-06-03 15:23:08,268] - main: App Started
+[INFO] [2025-06-03 15:23:08,693] - pages: 'Start' page was openned
+[INFO] [2025-06-03 15:23:16,342] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 15:23:21,153] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  ошибка синтаксиса (примерное положение: "PRAGMA")\nLINE 1: PRAGMA foreign_key_list(repair_request)\n        ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.SyntaxError: ОШИБКА:  ошибка синтаксиса (примерное положение: "PRAGMA")
+LINE 1: PRAGMA foreign_key_list(repair_request)
+        ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 235, in getTable
+    foreign_key=db_object.request_execute(f"PRAGMA foreign_key_list({self.table_name})")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  ошибка синтаксиса (примерное положение: "PRAGMA")
+LINE 1: PRAGMA foreign_key_list(repair_request)
+        ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 436, in <lambda>
+    on_click=lambda _:request_page(page),
+                      ^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 304, in request_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 283, in getTable
+    raise Exception (f'{ex}')
+Exception:  ОШИБКА:  ошибка синтаксиса (примерное положение: "PRAGMA")
+LINE 1: PRAGMA foreign_key_list(repair_request)
+        ^
+
+[INFO] [2025-06-03 21:24:40,745] - main: App Started
+[INFO] [2025-06-03 21:24:41,195] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:25:02,829] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:25:39,024] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception('ОШИБКА:  ошибка синтаксиса (примерное положение: "references")\nLINE 1: Select equipment_category from references\n                                       ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 167, in __changeMode
+    self._cursor.execute(f"Select {obj.control.data.split('|')[4].split(' ')[3]} from {obj.control.data.split('|')[4].split(' ')[2]}")
+psycopg2.errors.SyntaxError: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 177, in __changeMode
+    raise Exception(f'{ex}')
+Exception: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+[ERROR] [2025-06-03 21:25:43,954] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception('ОШИБКА:  ошибка синтаксиса (примерное положение: "references")\nLINE 1: Select equipment_category from references\n                                       ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 167, in __changeMode
+    self._cursor.execute(f"Select {obj.control.data.split('|')[4].split(' ')[3]} from {obj.control.data.split('|')[4].split(' ')[2]}")
+psycopg2.errors.SyntaxError: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 177, in __changeMode
+    raise Exception(f'{ex}')
+Exception: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+[ERROR] [2025-06-03 21:25:48,275] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception('ОШИБКА:  ошибка синтаксиса (примерное положение: "references")\nLINE 1: Select equipment_category from references\n                                       ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 167, in __changeMode
+    self._cursor.execute(f"Select {obj.control.data.split('|')[4].split(' ')[3]} from {obj.control.data.split('|')[4].split(' ')[2]}")
+psycopg2.errors.SyntaxError: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 177, in __changeMode
+    raise Exception(f'{ex}')
+Exception: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+[INFO] [2025-06-03 21:27:23,157] - main: App Started
+[INFO] [2025-06-03 21:27:23,585] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:27:27,934] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:27:42,894] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception('ОШИБКА:  ошибка синтаксиса (примерное положение: "references")\nLINE 1: Select equipment_category from references\n                                       ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 168, in __changeMode
+    self._cursor.execute(f"Select {obj.control.data.split('|')[4].split(' ')[3]} from {obj.control.data.split('|')[4].split(' ')[2]}")
+psycopg2.errors.SyntaxError: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 178, in __changeMode
+    raise Exception(f'{ex}')
+Exception: ОШИБКА:  ошибка синтаксиса (примерное положение: "references")
+LINE 1: Select equipment_category from references
+                                       ^
+
+[INFO] [2025-06-03 21:34:51,237] - main: App Started
+[INFO] [2025-06-03 21:34:51,726] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:34:53,170] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-06-03 21:35:09,746] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 708, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-06-03 21:35:10,100] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:35:12,198] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:35:13,890] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:35:15,344] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:35:41,363] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:35:56,381] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:36:08,548] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:36:36,855] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  столбец "components" в таблице "equipment" не существует\nLINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...\n                                   ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 28, in addData
+    db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+[ERROR] [2025-06-03 21:36:40,767] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception('ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 230, in getTable
+    self._cursor.execute(f"Select * from {self.table_name}")
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 123, in <lambda>
+    backButton=ft.IconButton(ft.Icons.ARROW_BACK,on_click=lambda _: equipment_page(self_main.page))
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 363, in equipment_page
+    table=table_obj.getTable(db_object)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 304, in getTable
+    raise Exception (f'{ex}')
+Exception: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[INFO] [2025-06-03 21:37:03,386] - main: App Started
+[INFO] [2025-06-03 21:37:03,834] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:37:08,398] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:37:51,213] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  столбец "components" в таблице "equipment" не существует\nLINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...\n                                   ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 28, in addData
+    db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+[INFO] [2025-06-03 21:39:25,500] - main: App Started
+[INFO] [2025-06-03 21:39:26,181] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:40:08,380] - pages: 'StartAdmin' page was openned
+[ERROR] [2025-06-03 21:40:24,814] - asyncio: Future exception was never retrieved
+future: <Future finished exception=UnboundLocalError("cannot access local variable 'baseColor' where it is not associated with a value")>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 708, in adminRegInBD
+    control.border_color=baseColor
+                         ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseColor' where it is not associated with a value
+[INFO] [2025-06-03 21:40:24,843] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:40:28,804] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:42:30,926] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:42:45,575] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:43:50,129] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:43:55,365] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:44:02,560] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:44:06,499] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:44:47,021] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  столбец "components" в таблице "equipment" не существует\nLINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...\n                                   ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 28, in addData
+    db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+[ERROR] [2025-06-03 21:45:13,876] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 26, in addData
+    if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[ERROR] [2025-06-03 21:45:43,282] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.InFailedSqlTransaction: ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 26, in addData
+    if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  текущая транзакция прервана, команды до конца блока транзакции игнорируются
+
+[INFO] [2025-06-03 21:50:21,648] - main: App Started
+[INFO] [2025-06-03 21:50:22,276] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:50:48,147] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:51:34,060] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  столбец "components" в таблице "equipment" не существует\nLINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...\n                                   ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 28, in addData
+    db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+[INFO] [2025-06-03 21:52:29,543] - main: App Started
+[INFO] [2025-06-03 21:52:30,135] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:52:34,088] - pages: 'Main' page was openned
+[ERROR] [2025-06-03 21:52:55,863] - asyncio: Future exception was never retrieved
+future: <Future finished exception=Exception(' ОШИБКА:  столбец "components" в таблице "equipment" не существует\nLINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...\n                                   ^\n')>
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 67, in request_execute
+    self.__cursor.execute(request)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "E:\PROJECT\Python\NAMT_BOT\Git\UnimportantProject_HAMT\Desktop\pages.py", line 28, in addData
+    db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+  File "c:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\database_simple.py", line 72, in request_execute
+    raise Exception(f" {ex}")
+Exception:  ОШИБКА:  столбец "components" в таблице "equipment" не существует
+LINE 1: Insert into Equipment(Name,Components,Equipment_Category,Ser...
+                                   ^
+
+[INFO] [2025-06-03 21:54:46,959] - main: App Started
+[INFO] [2025-06-03 21:54:47,676] - pages: 'Start' page was openned
+[INFO] [2025-06-03 21:54:50,596] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:55:40,627] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:55:47,495] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:56:02,206] - pages: 'Main' page was openned
+[INFO] [2025-06-03 21:56:44,345] - pages: 'Main' page was openned
+[INFO] [2025-06-03 22:11:41,678] - main: App Started
+[INFO] [2025-06-03 22:11:42,253] - pages: 'Start' page was openned
+[INFO] [2025-06-03 22:11:52,322] - pages: 'Main' page was openned
+[INFO] [2025-06-03 22:12:20,258] - main: App Started
+[INFO] [2025-06-03 22:12:20,713] - pages: 'Start' page was openned

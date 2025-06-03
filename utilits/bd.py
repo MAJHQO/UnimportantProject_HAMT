@@ -224,42 +224,42 @@ def insertOther_Equipment(data:tuple):
 # db_object.request_execute("CREATE SEQUENCE adm_seq START 1 INCREMENT BY 1;")
 # db_object.request_execute("CREATE SEQUENCE usr_seq START 1 INCREMENT BY 1;")
 
-# db_object.create_table('Cabinets', {'ID':"INTEGER NOT NULL DEFAULT nextval('cab_seq')",'Number': 'VARCHAR PRIMARY KEY'},780)
-# db_object.create_table('Equipment_Status', {'ID':"INTEGER NOT NULL DEFAULT nextval('eqStat_seq')",'Status_Name': 'VARCHAR PRIMARY KEY'},740)
-# db_object.create_table('Equipment_Category', {'ID':"INTEGER NOT NULL DEFAULT nextval('eqCat_seq')",'Category_Name': 'VARCHAR PRIMARY KEY'},740)
+# db_object.create_table('Cabinets', {'ID':"INTEGER NOT NULL DEFAULT nextval('cab_seq')",'Number': 'TEXT PRIMARY KEY'},780)
+# db_object.create_table('Equipment_Status', {'ID':"INTEGER NOT NULL DEFAULT nextval('eqStat_seq')",'Status_Name': 'TEXT PRIMARY KEY'},740)
+# db_object.create_table('Equipment_Category', {'ID':"INTEGER NOT NULL DEFAULT nextval('eqCat_seq')",'Category_Name': 'TEXT PRIMARY KEY'},740)
 # db_object.create_table('Repair_Request', 
 #                        {
 #                         'ID':"INTEGER NOT NULL DEFAULT nextval('req_seq')",
 #                         'Request_Number': 'INT PRIMARY KEY',
 #                         'TG_ID':'INTEGER', 
-#                         'TG_Username':'VARCHAR',
-#                         'Cabinet_Number':'VARCHAR REFERENCES Cabinets (Number)',
-#                         'Request_Description':'VARCHAR',
-#                         'Request_Status':'VARCHAR',},1300)
+#                         'TG_Username':'TEXT',
+#                         'Cabinet_Number':'TEXT REFERENCES Cabinets (Number) ON DELETE CASCADE',
+#                         'Request_Description':'TEXT',
+#                         'Request_Status':'TEXT',},1300)
 # db_object.create_table('Equipment', 
 #                        {'ID':"INTEGER NOT NULL DEFAULT nextval('equ_seq')",
-#                         'Name': 'VARCHAR PRIMARY KEY',
-#                         'IP_Address':'VARCHAR', 
-#                         'MAC_Address':'VARCHAR',
-#                         'CPU_Model':'VARCHAR',
-#                         'CPU_Frequency':'VARCHAR',
-#                         'Network_Name': 'VARCHAR',
+#                         'Name': 'TEXT PRIMARY KEY',
+#                         'IP_Address':'TEXT', 
+#                         'MAC_Address':'TEXT',
+#                         'CPU_Model':'TEXT',
+#                         'CPU_Frequency':'TEXT',
+#                         'Network_Name': 'TEXT',
 #                         'RAM':'INTEGER',
 #                         'HDD':'INTEGER',
-#                         'Equipment_Category':'VARCHAR REFERENCES Equipment_Category (Category_Name)',
-#                         'Serial_Number':'VARCHAR',
-#                         'Invetory_Number':'VARCHAR',
-#                         'Equipment_Status':'VARCHAR REFERENCES Equipment_Status (Status_Name)',
-#                         'Cabinet_Number':'VARCHAR REFERENCES Cabinets (Number)',},4000)
+#                         'Equipment_Category':'TEXT REFERENCES Equipment_Category (Category_Name) ON DELETE CASCADE',
+#                         'Serial_Number':'TEXT',
+#                         'Invetory_Number':'TEXT',
+#                         'Equipment_Status':'TEXT REFERENCES Equipment_Status (Status_Name) ON DELETE CASCADE',
+#                         'Cabinet_Number':'TEXT REFERENCES Cabinets (Number) ON DELETE CASCADE',},4000)
 # db_object.create_table('Administrators', {
 #     'ID':"INTEGER NOT NULL DEFAULT nextval('adm_seq')",
-#     'FSL': 'VARCHAR',
-#     'Login':'VARCHAR PRIMARY KEY',
-#     'Mac_Address':'VARCHAR',
-#     'Password':'VARCHAR',
-#     'TG_Username':'VARCHAR',},1300)
+#     'FSL': 'TEXT',
+#     'Login':'TEXT PRIMARY KEY',
+#     'Mac_Address':'TEXT',
+#     'Password':'TEXT',
+#     'TG_Username':'TEXT',},1300)
 # db_object.create_table('Users', {
 #     'ID':"INTEGER NOT NULL DEFAULT nextval('usr_seq')",
-#     'TG_ID': 'VARCHAR',
-#     'Username':'VARCHAR',
-#     'FSL':'VARCHAR'},1300)
+#     'TG_ID': 'TEXT',
+#     'Username':'TEXT',
+#     'FSL':'TEXT'},1300)

@@ -23,17 +23,17 @@ def addData_page(self_main):
 
     def addData(self):
         if(self.control.data[0]==1):
-            if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number='{serialNumber_field.value}'"))==0):
+            if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number Like'{serialNumber_field.value}'"))==0):
                 
-                db_object.request_execute(f"""Insert into Equipment(Name,Components,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+                db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address,CPU_Model,CPU_Frequency,Network_Name,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
                               '{(name_field.value)}',
                               '{(ip_field.value)}',
                               '{(mac_field.value)}',
                               '{(cpuModel_field.value)}',
                               '{(cpuFreq_field.value)}',
                               '{(networkName_field.value)}',
-                              '{(ram_field.value)}',
-                              '{(hdd_field.value)}',
+                              {(ram_field.value)},
+                              {(hdd_field.value)},
                               '{(equipmentCategory_field.value)}',
                               '{(serialNumber_field.value)}',
                               '{(inventoryNumber_field.value)}',
@@ -495,9 +495,10 @@ def main_page_v2(page:ft.Page):
             shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
             icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
             color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    
-    main_image=ft.Image(".\Desktop\Image\main_object_2.png", width=700,height=700) if(os.path.isdir(".\_internal")!=True) else ft.Image(".\_internal\Image\main_object_2.png", width=700,height=700)
-
+    if(page.platform==ft.PagePlatform.WINDOWS):
+        main_image=ft.Image(".\Desktop\Image\main_object_2.png", width=700,height=700) if(os.path.isdir(".\_internal")!=True) else ft.Image(".\_internal\Image\main_object_2.png", width=700,height=700)
+    else:
+        main_image=ft.Image("./Desktop/Image/main_object_2.png", width=700,height=700) if(os.path.isdir("./_internal")!=True) else ft.Image("./_internal/Image/main_object_2.png", width=700,height=700)
     page.add(ft.Row([
         main_image,
         ft.Column([
@@ -579,14 +580,21 @@ def start_page(page:ft.Page):
         page.window.resizable=False
         page.window.prevent_close=True
         page.window.on_event=deskU.pageClose
-        page.window.icon=path+".\Desktop\Image\\HAMT_Logo.ico" if (os.path.isdir(".\_internal")!=True) else path+'\\_internal\\Image\\HAMT_Logo.ico'
-
-
-        page.fonts={
+        if(page.platform==ft.PagePlatform.WINDOWS):
+            page.window.icon=path+".\Desktop\Image\\HAMT_Logo.ico" if (os.path.isdir(".\_internal")!=True) else path+'\\_internal\\Image\\HAMT_Logo.ico'
+            page.fonts={
             'Main Label': '.\Fonts\\TechMonoRegular.otf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\TechMonoRegular.otf',
             'Moderustic Bold': '.\Fonts\\Moderustic\\Moderustic-Bold.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Bold.ttf',
-            'Moderustic Light':'.\Fonts\\Moderustic\\Moderustic-Light.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Light.ttf',
-            'Moderustic Regular':'.\Fonts\\Moderustic\\Moderustic-Regular.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Regular.ttf'}
+            'Moderustic Light':'.\Fonts\\Moderustic\\Moderustic-Light.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\Moderustic\\Moderustic-Light.ttf',
+            'Moderustic Regular':'.\Fonts\\Moderustic\\Moderustic-Regular.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\Moderustic\\Moderustic-Regular.ttf'}
+        else:
+            page.window.icon=path+"./Desktop/Image/HAMT_Logo.ico" if (os.path.isdir("./_internal")!=True) else path+'/_internal/Image/HAMT_Logo.ico'
+            page.fonts={
+            'Main Label': './Fonts/TechMonoRegular.otf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/TechMonoRegular.otf',
+            'Moderustic Bold': './Fonts/Moderustic/Moderustic-Bold.ttf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/Moderustic/Moderustic-Bold.ttf',
+            'Moderustic Light':'./Fonts/Moderustic/Moderustic-Light.ttf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/Moderustic/Moderustic-Light.ttf',
+            'Moderustic Regular':'./Fonts/Moderustic/Moderustic-Regular.ttf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/Moderustic/Moderustic-Regular.ttf'}
+
 
         startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
         startDescriptionLabel=ft.Text("", width=280, size=13, font_family="Moderustic Regular", text_align=ft.TextAlign.CENTER)
@@ -621,10 +629,10 @@ def start_page(page:ft.Page):
         registrPasswordButton=ft.ElevatedButton("Регистрация", width=150, on_click=lambda _:startAdmin_page(page), bgcolor="#8FA2CA",color=ft.Colors.WHITE)
 
         page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,ft.Text("",height=20),ft.Row([registrPasswordButton,resetPasswordButton],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
+        
+        if(os.path.isfile(".\Admin Configure" if(page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure")==True):
 
-        if(os.path.isfile(".\Admin Configure")==True):
-
-            with open(".\Admin Configure", 'r') as File:
+            with open(".\Admin Configure" if(page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure", 'r') as File:
                 line=File.readlines()
                 if (line[0]=="Enter Today:1"):
                     startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
@@ -666,7 +674,7 @@ def startAdmin_page(page:ft.Page):
 
                     result=db_object.request_execute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
                     if (result!=False):
-                        with open(".\Admin Configure", 'w') as bFile:
+                        with open(".\Admin Configure" if(page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure", 'w') as bFile:
                             bFile.write(f"Enter Today: 1")
 
                         for i in range(1,len(self.page.controls)):
