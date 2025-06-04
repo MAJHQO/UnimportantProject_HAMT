@@ -23,27 +23,28 @@ def addData_page(self_main):
 
     def addData(self):
         if(self.control.data[0]==1):
-            if (deskU.checkFieldOnIncosist(self,1)==True and len(db_object.request_execute(f"Select * from Equipment where Serial_Number Like'{serialNumber_field.value}'"))==0):
-                
-                db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address,CPU_Model,CPU_Frequency,Network_Name,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
-                              '{(name_field.value)}',
-                              '{(ip_field.value)}',
-                              '{(mac_field.value)}',
-                              '{(cpuModel_field.value)}',
-                              '{(cpuFreq_field.value)}',
-                              '{(networkName_field.value)}',
-                              {(ram_field.value)},
-                              {(hdd_field.value)},
-                              '{(equipmentCategory_field.value)}',
-                              '{(serialNumber_field.value)}',
-                              '{(inventoryNumber_field.value)}',
-                              '{(equipmentStatus_field.value)}',
-                              '{(cabinets_field.value)}')""")
-                deskU.successField(self)
-                equipmentCategory_field.border_color=self.page.controls[1].border_color
-                equipmentStatus_field.border_color=self.page.controls[1].border_color
-                cabinets_field.border_color=self.page.controls[1].border_color
-
+            if (len(db_object.request_execute(f"Select * from Equipment where Serial_Number Like'{serialNumber_field.value}'"))==0):
+                if(deskU.checkEqAdd_OnIncosist(self_main.page.controls[1].controls)):
+                    db_object.request_execute(f"""Insert into Equipment(Name,IP_Address,MAC_Address,CPU_Model,CPU_Frequency,Network_Name,RAM,HDD,Equipment_Category,Serial_Number,Invetory_Number,Equipment_Status,Cabinet_Number) values(
+                                '{(name_field.value)}',
+                                '{(ip_field.value)}',
+                                '{(mac_field.value)}',
+                                '{(cpuModel_field.value)}',
+                                '{(cpuFreq_field.value)}',
+                                '{(networkName_field.value)}',
+                                {(ram_field.value)},
+                                {(hdd_field.value)},
+                                '{(equipmentCategory_field.value)}',
+                                '{(serialNumber_field.value)}',
+                                '{(inventoryNumber_field.value)}',
+                                '{(equipmentStatus_field.value)}',
+                                '{(cabinets_field.value)}')""")
+                    deskU.successField(self)
+                    equipmentCategory_field.border_color=self.page.controls[1].border_color
+                    equipmentStatus_field.border_color=self.page.controls[1].border_color
+                    cabinets_field.border_color=self.page.controls[1].border_color
+                else:
+                    deskU.errorDialog(self_main.page,"Введенные данные являются логически неправильными или неподходящими по формату")
             else:
                 deskU.errorField(self)
 
@@ -124,20 +125,22 @@ def addData_page(self_main):
 
         self_main.page.add(
             ft.Row([backButton]),
-            name_field,
-            ip_field,
-            mac_field,
-            cpuModel_field,
-            cpuFreq_field,
-            networkName_field,
-            ram_field,
-            hdd_field,
-            equipmentCategory_field,
-            serialNumber_field,
-            inventoryNumber_field
-            ,equipmentStatus_field,
-            cabinets_field,
-            ft.Row([addData_button,clearFields_button],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
+            ft.Column([
+                name_field,
+                ip_field,
+                mac_field,
+                cpuModel_field,
+                cpuFreq_field,
+                networkName_field,
+                ram_field,
+                hdd_field,
+                equipmentCategory_field,
+                serialNumber_field,
+                inventoryNumber_field
+                ,equipmentStatus_field,
+                cabinets_field,
+                ft.Row([addData_button,clearFields_button],spacing=15,alignment=ft.MainAxisAlignment.CENTER)    
+            ], scroll=True, height=700, horizontal_alignment=ft.CrossAxisAlignment.CENTER))
 
     elif(self_main.control.data[0]==2):
         
@@ -305,7 +308,7 @@ def request_page(page:ft.Page):
 
     menuBar=ft.MenuBar(
         [
-            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=table_obj.changeMode_handler)]),
+            ft.SubmenuButton(ft.Text("Режимы"), [ft.MenuItemButton(ft.Text("Изменение"),on_click=deskU.change_eqPage_Mode)]),
             ft.SubmenuButton(ft.Text("Функции"), [ft.SubmenuButton(ft.Text("Удаление"), [ ft.MenuItemButton(ft.Text("Всё"), data=[0,table_obj,"Repair_Request"],on_click=deleteAllData)])])],
         style=ft.MenuStyle(ft.alignment.top_left))
     backButton=ft.IconButton(icon=ft.Icons.ARROW_BACK, on_click=lambda _: main_page_v2(page))
@@ -643,12 +646,16 @@ def start_page(page:ft.Page):
 
             with open("Admin Configure", 'r') as File:
                 line=File.readlines()
-                if (line[0]=="Enter Today:1"):
-                    startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
-                elif (line[0]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
-                    startDescriptionLabel.value=deskU.login_coLabelText[2]
+                if (len(line)!=0):
+                    if (line[0]=="Enter Today:1"):
+                        startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
+                    elif (line[0]!=f"Enter Today:{datetime.datetime.now().strftime('%D')}"):
+                        startDescriptionLabel.value=deskU.login_coLabelText[2]
+                    else:
+                        startDescriptionLabel.value=deskU.login_coLabelText[1]
                 else:
-                    startDescriptionLabel.value=deskU.login_coLabelText[1]
+                    startDescriptionLabel.value="Вы здесь в первый раз?\nДля дальнейшей работы вам необходимо зарегистрироваться или войти в аккаунт"
+
 
         else:
 
@@ -676,7 +683,7 @@ def startAdmin_page(page:ft.Page):
 
         result=db_object.request_execute(f"Select * from Administrators where TG_Username='{sha384(usernameField.value.encode()).hexdigest()}' OR FSL='{(fslField.value)}' OR Mac_Address='{hex(uuid.getnode())}'")
 
-        if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and (usernameField.value!="" and usernameField.value.find("@")==-1)):
+        if((fslField.value!="" and len(fslField.value.split(" "))==3) and (loginField.value!="" and len(loginField.value)<=255) and (usernameField.value!="" and usernameField.value.find("@")==-1) and (passwordField.value!="" and len(passwordField.value)>=3)):
 
             if (result!=False):
                 if (len(result)==0):

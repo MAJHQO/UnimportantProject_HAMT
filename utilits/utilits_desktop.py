@@ -53,11 +53,15 @@ def checkFieldOnIncosist(self:list,fieldType:int):
     """
 
     if (fieldType==0):
-
+        base_color=self.page.controls[3].border_color
         for control in self.page.controls:
 
             if(type(control)==ft.TextField and control.value==""):
                 control.border_color=ft.Colors.RED_300
+
+            elif (type(control)==ft.Row and len(control.controls)>2):
+                if(control.controls[1].value==""):
+                    control.controls[1].border_color=ft.Colors.RED
 
             elif (type(control)==ft.TextField and control.value!="" and control.hint_text=='Имя пользователя' and control.value.find("@")!=-1):
                 control.border_color=ft.Colors.RED_300
@@ -66,6 +70,14 @@ def checkFieldOnIncosist(self:list,fieldType:int):
                 control.border_color=ft.Colors.RED_300
 
         self.page.update()
+        time.sleep(0.7)
+        for control in self.page.controls:
+            if (type(control) in [ft.TextField, ft.DropdownM2]):
+                control.border_color=base_color
+            elif (type(control)==ft.Row and len(control.controls)>2):
+                control.controls[1].border_color=base_color
+        self.page.update()
+
 
     elif (fieldType==1):
 
@@ -80,6 +92,43 @@ def checkFieldOnIncosist(self:list,fieldType:int):
         self.page.update()
 
         return chc
+    
+def isfloat(self, value):
+    """
+    Проверяет полученную строку на то, является ли ее выражение десятичным типом данных
+    """
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
+def checkEqAdd_OnIncosist(controls:list):
+
+    try:
+        chc:bool=True
+        for control in controls:
+            if(type(control) in [ft.TextField, ft.DropdownM2]):
+                if (controls[8].value == "ПК" or controls[8].value=="Компьютер"):
+                    if (control.label=='IP-адрес' and (control.value.find(".")==-1 or len(control.value.split('.'))!=4)):
+                        chc=False
+                    elif (control.label=='Mac-адрес'):
+                        if((control.value.find(":")!=-1 or control.value.find(".")!=-1)):
+                            if((control.value.find(":")!=-1 and len(control.value.split(":"))!=6) or (control.value.find("-")!=-1 and len(control.value.split("-"))!=6)):
+                                chc=False
+                        else:
+                            chc=False
+                    elif(control.label=='Частота' and isfloat(control.value)==False):
+                        chc=False
+                    elif (control.label=='RAM' and control.value.isdigit()==False):
+                        chc=False
+                    elif (control.label=='HDD' and control.value.isdigit()==False):
+                        chc=False
+                else:
+                    pass
+        return chc
+    except Exception as ex:
+        raise Exception(f'{ex}')
 
 def errorField(self):
 
@@ -143,21 +192,26 @@ def contentColor_blur(self):
 
 def pageClose(self):
     if (self.data=='close'):
-        if(os.path.isfile(".\Admin Configure" if(self.page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure")==True):
+        if(os.path.isfile("Admin Configure")==True):
             try:
                 lines=[]
-                with open(".\Admin Configure" if(self.page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure", 'r') as file:
+                with open("Admin Configure", 'r') as file:
                     lines=file.readlines()
+                if(len(lines)!=0):
+                    lines[0]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
 
-                lines[0]=f"Enter Today:{datetime.datetime.now().strftime('%D')}"
-
-                with open(".\Admin Configure" if(self.page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure", 'w+') as file:
-                    file.writelines(lines)
-
+                    with open("Admin Configure", 'w+') as file:
+                        file.writelines(lines)
+                else:
+                    with open("Admin Configure", 'w+') as file:
+                        file.writelines(f"Enter Today:{datetime.datetime.now().strftime('%D')}")
             except Exception as ex:
-
                 logger_deskU.exception(f" {ex}")
                 raise Exception(f" {ex}")
+
+        else:
+            with open("Admin Configure", 'w') as file:
+                pass
 
         self.page.window.destroy()
 
@@ -275,8 +329,8 @@ def change_eqPage_Mode(page:ft.Page, table_obj:object):
         if (type(page.controls[1])==ft.Row and type(page.controls[1].controls[0].controls[0])==ft.DataTable):
             for rows in page.controls[1].controls[-1].controls[0].rows:
                 for i in range(0,len(rows.cells)):
-                    if(i!=6):
-                        rows.cells[i].content.on_click=None
+                    if(i==6):
+                        rows.cells[i].content.on_click=table_obj.__changeMode
 
             page.update()
     except Exception as ex:
