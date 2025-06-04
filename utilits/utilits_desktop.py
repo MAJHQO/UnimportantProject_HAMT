@@ -269,3 +269,15 @@ def page_update(page, table_obj:object):
         page.update()
     except Exception as ex:
         raise Exception(ex)
+    
+def change_eqPage_Mode(page:ft.Page, table_obj:object):
+    try:
+        if (type(page.controls[1])==ft.Row and type(page.controls[1].controls[0].controls[0])==ft.DataTable):
+            for rows in page.controls[1].controls[-1].controls[0].rows:
+                for i in range(0,len(rows.cells)):
+                    if(i!=6):
+                        rows.cells[i].content.on_click=None
+
+            page.update()
+    except Exception as ex:
+        raise Exception(ex)

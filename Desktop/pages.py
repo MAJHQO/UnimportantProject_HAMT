@@ -312,6 +312,7 @@ def request_page(page:ft.Page):
 
     if(table!=False):
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),table)
+        deskU.change_eqPage_Mode(page)
     else:
         page.add(ft.Row([backButton,ft.Text(" ", width=30),menuBar]),ft.Row([ft.Text("На данный момент - таблица является пустой", weight=ft.FontWeight.BOLD,size=20)], alignment=ft.MainAxisAlignment.CENTER,height=500, vertical_alignment=ft.CrossAxisAlignment.CENTER))
     
@@ -423,97 +424,105 @@ def manageAdminAcc_page(page: ft.Page):
 
 
 def main_page_v2(page:ft.Page):
-    page.clean()
+    try:
+        page.clean()
 
-    page.window.width=1280
-    page.window.height=800
+        page.window.width=1280
+        page.window.height=800
+        page.window.resizable=True
+        page.update()
 
 
-    requestPageButton=ft.ElevatedButton(
-        "Заявки", 
-        icon=ft.Icons.HOME_REPAIR_SERVICE,
-        width=220,
-        on_click=lambda _:request_page(page),
-        style=ft.ButtonStyle(
-            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
-            animation_duration=200,
-            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
-            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
-            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    equipmentPageButton=ft.ElevatedButton(
-        "Оборудование", 
-        icon=ft.Icons.LAPTOP_CHROMEBOOK,
-        width=220, 
-        on_click= lambda _:equipment_page(page),
-        style=ft.ButtonStyle(
-            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
-            animation_duration=200,
-            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
-            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
-            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    cabinetsButton=ft.ElevatedButton(
-        "Кабинеты", 
-        on_click=lambda _:cabinets_page(page),
-        width=220, 
-        icon=ft.Icons.ROOM,
-        style=ft.ButtonStyle(
-            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
-            animation_duration=200,
-            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
-            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
-            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    equipmentStatusButton=ft.ElevatedButton(
-        "Статус оборудования", 
-        on_click=lambda _: equipmentStatus_page(page),
-        width=220, 
-        icon=ft.Icons.ARCHIVE,
-        style=ft.ButtonStyle(
-            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
-            animation_duration=200,
-            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
-            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
-            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    equipmentCategoryButton=ft.ElevatedButton(
-        "Категории оборудования", 
-        on_click=lambda _:equipmentCategory_page(page),
-        width=220, 
-        icon=ft.Icons.SEGMENT,
-        style=ft.ButtonStyle(
-            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
-            animation_duration=200,
-            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
-            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
-            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    manageAdminAccButton=ft.ElevatedButton(
-        "Администраторы", 
-        icon=ft.Icons.VERIFIED_USER,
-        on_click=lambda _: manageAdminAcc_page(page),
-        width=220,
-        style=ft.ButtonStyle(
-            bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
-            animation_duration=200,
-            shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
-            icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
-            color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
-    if(page.platform==ft.PagePlatform.WINDOWS):
-        main_image=ft.Image(".\Desktop\Image\main_object_2.png", width=700,height=700) if(os.path.isdir(".\_internal")!=True) else ft.Image(".\_internal\Image\main_object_2.png", width=700,height=700)
-    else:
-        main_image=ft.Image("./Desktop/Image/main_object_2.png", width=700,height=700) if(os.path.isdir("./_internal")!=True) else ft.Image("./_internal/Image/main_object_2.png", width=700,height=700)
-    page.add(ft.Row([
-        main_image,
-        ft.Column([
-            ft.Text("",height=20),
-            requestPageButton,
-            equipmentPageButton,
-            cabinetsButton,
-            equipmentStatusButton,
-            equipmentCategoryButton,
-            manageAdminAccButton
-        ])
-        ], spacing=100, alignment=ft.MainAxisAlignment.CENTER))
-    logger_pages.info("'Main' page was openned")
-    page.window.center()
-    page.update()
+        requestPageButton=ft.ElevatedButton(
+            "Заявки", 
+            icon=ft.Icons.HOME_REPAIR_SERVICE,
+            width=220,
+            on_click=lambda _:request_page(page),
+            style=ft.ButtonStyle(
+                bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+                animation_duration=200,
+                shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+                icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+                color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+        equipmentPageButton=ft.ElevatedButton(
+            "Оборудование", 
+            icon=ft.Icons.LAPTOP_CHROMEBOOK,
+            width=220, 
+            on_click= lambda _:equipment_page(page),
+            style=ft.ButtonStyle(
+                bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+                animation_duration=200,
+                shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+                icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+                color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+        cabinetsButton=ft.ElevatedButton(
+            "Кабинеты", 
+            on_click=lambda _:cabinets_page(page),
+            width=220, 
+            icon=ft.Icons.ROOM,
+            style=ft.ButtonStyle(
+                bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+                animation_duration=200,
+                shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+                icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+                color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+        equipmentStatusButton=ft.ElevatedButton(
+            "Статус оборудования", 
+            on_click=lambda _: equipmentStatus_page(page),
+            width=220, 
+            icon=ft.Icons.ARCHIVE,
+            style=ft.ButtonStyle(
+                bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+                animation_duration=200,
+                shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+                icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+                color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+        equipmentCategoryButton=ft.ElevatedButton(
+            "Категории оборудования", 
+            on_click=lambda _:equipmentCategory_page(page),
+            width=220, 
+            icon=ft.Icons.SEGMENT,
+            style=ft.ButtonStyle(
+                bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+                animation_duration=200,
+                shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+                icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+                color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+        manageAdminAccButton=ft.ElevatedButton(
+            "Администраторы", 
+            icon=ft.Icons.VERIFIED_USER,
+            on_click=lambda _: manageAdminAcc_page(page),
+            width=220,
+            style=ft.ButtonStyle(
+                bgcolor={ft.ControlState.DEFAULT:"#F0F0F8", ft.ControlState.HOVERED:"#778FD2"},
+                animation_duration=200,
+                shape={ft.ControlState.DEFAULT:ft.RoundedRectangleBorder(3), ft.ControlState.HOVERED: ft.RoundedRectangleBorder(20)},
+                icon_color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"},
+                color={ft.ControlState.DEFAULT: "0d1611", ft.ControlState.HOVERED: "#ffffff"}))
+        if(page.platform==ft.PagePlatform.WINDOWS):
+            main_image=ft.Image("Desktop\\Image\\main_object_2.png", width=700,height=700) if(os.path.isdir("_internal")!=True) else ft.Image("_internal\\Image\\main_object_2.png", width=700,height=700)
+        else:
+            path=os.getcwd()
+            main_image=ft.Image(path+"/Desktop/Image/main_object_2.png", width=700,height=700) if(os.path.isdir("_internal")!=True) else ft.Image(path+"/_internal/Image/main_object_2.png", width=700,height=700)
+        
+        page.add(ft.Row([
+            main_image,
+            ft.Column([
+                ft.Text("",height=20),
+                requestPageButton,
+                equipmentPageButton,
+                cabinetsButton,
+                equipmentStatusButton,
+                equipmentCategoryButton,
+                manageAdminAccButton
+            ])
+            ], spacing=100, alignment=ft.MainAxisAlignment.CENTER))
+        
+        logger_pages.info("'Main' page was openned")
+        page.window.center()
+        page.update()
+    except Exception as ex:
+        logger_pages.error(ex)
 
 
 def resetPassword_page(page: ft.Page):
@@ -554,7 +563,7 @@ def start_page(page:ft.Page):
                 result=db_object.request_execute(f"Select * from Administrators where (Login='{(sha384(loginField.value.encode()).hexdigest())}' OR TG_Username='{(sha384(loginField.value.encode()).hexdigest())}') AND Password='{(sha384(passwordField.value.encode()).hexdigest())}'")
                 if (result!=False):
                     if(len(result)!=0):
-                        main_page_v2(self.page)
+                        main_page_v2(page)
                     else:
                         deskU.errorField(self)
                 else:
@@ -581,19 +590,19 @@ def start_page(page:ft.Page):
         page.window.prevent_close=True
         page.window.on_event=deskU.pageClose
         if(page.platform==ft.PagePlatform.WINDOWS):
-            page.window.icon=path+".\Desktop\Image\\HAMT_Logo.ico" if (os.path.isdir(".\_internal")!=True) else path+'\\_internal\\Image\\HAMT_Logo.ico'
+            page.window.icon=path+"\\Desktop\\Image\\HAMT_Logo.ico" if (os.path.isdir("_internal")!=True) else path+'\\_internal\\Image\\HAMT_Logo.ico'
             page.fonts={
-            'Main Label': '.\Fonts\\TechMonoRegular.otf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\TechMonoRegular.otf',
-            'Moderustic Bold': '.\Fonts\\Moderustic\\Moderustic-Bold.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\\Moderustic\\Moderustic-Bold.ttf',
-            'Moderustic Light':'.\Fonts\\Moderustic\\Moderustic-Light.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\Moderustic\\Moderustic-Light.ttf',
-            'Moderustic Regular':'.\Fonts\\Moderustic\\Moderustic-Regular.ttf' if (os.path.isdir(".\_internal")!=True) else '.\\_internal\\Fonts\\Moderustic\\Moderustic-Regular.ttf'}
+            'Main Label': 'Fonts\\TechMonoRegular.otf' if (os.path.isdir("_internal")!=True) else '_internal\\Fonts\\TechMonoRegular.otf',
+            'Moderustic Bold': 'Fonts\\Moderustic\\Moderustic-Bold.ttf' if (os.path.isdir("_internal")!=True) else '_internal\\Fonts\\Moderustic\\Moderustic-Bold.ttf',
+            'Moderustic Light':'Fonts\\Moderustic\\Moderustic-Light.ttf' if (os.path.isdir("_internal")!=True) else '_internal\\Fonts\\Moderustic\\Moderustic-Light.ttf',
+            'Moderustic Regular':'Fonts\\Moderustic\\Moderustic-Regular.ttf' if (os.path.isdir("_internal")!=True) else '_internal\\Fonts\\Moderustic\\Moderustic-Regular.ttf'}
         else:
-            page.window.icon=path+"./Desktop/Image/HAMT_Logo.ico" if (os.path.isdir("./_internal")!=True) else path+'/_internal/Image/HAMT_Logo.ico'
+            page.window.icon=path+"/Desktop/Image/HAMT_Logo.ico" if (os.path.isdir("_internal")!=True) else path+'/_internal/Image/HAMT_Logo.ico'
             page.fonts={
-            'Main Label': './Fonts/TechMonoRegular.otf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/TechMonoRegular.otf',
-            'Moderustic Bold': './Fonts/Moderustic/Moderustic-Bold.ttf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/Moderustic/Moderustic-Bold.ttf',
-            'Moderustic Light':'./Fonts/Moderustic/Moderustic-Light.ttf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/Moderustic/Moderustic-Light.ttf',
-            'Moderustic Regular':'./Fonts/Moderustic/Moderustic-Regular.ttf' if (os.path.isdir("./_internal")!=True) else './_internal/Fonts/Moderustic/Moderustic-Regular.ttf'}
+            'Main Label': path+'/Fonts/TechMonoRegular.otf' if (os.path.isdir("_internal")!=True) else '_internal/Fonts/TechMonoRegular.otf',
+            'Moderustic Bold': path+'/Fonts/Moderustic/Moderustic-Bold.ttf' if (os.path.isdir("_internal")!=True) else path+'/_internal/Fonts/Moderustic/Moderustic-Bold.ttf',
+            'Moderustic Light':path+'/Fonts/Moderustic/Moderustic-Light.ttf' if (os.path.isdir("_internal")!=True) else path+'/_internal/Fonts/Moderustic/Moderustic-Light.ttf',
+            'Moderustic Regular':path+'/Fonts/Moderustic/Moderustic-Regular.ttf' if (os.path.isdir("_internal")!=True) else path+'/_internal/Fonts/Moderustic/Moderustic-Regular.ttf'}
 
 
         startLabel=ft.Text("Вход", size=30,font_family="Main Label",text_align=ft.TextAlign.CENTER)
@@ -630,9 +639,9 @@ def start_page(page:ft.Page):
 
         page.add(ft.Column([startLabel,startDescriptionLabel],spacing=5,horizontal_alignment=ft.CrossAxisAlignment.CENTER),ft.Text("",height=30),loginField,passwordField,enterButton,ft.Text("",height=20),ft.Row([registrPasswordButton,resetPasswordButton],spacing=15,alignment=ft.MainAxisAlignment.CENTER))
         
-        if(os.path.isfile(".\Admin Configure" if(page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure")==True):
+        if(os.path.isfile("Admin Configure")==True):
 
-            with open(".\Admin Configure" if(page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure", 'r') as File:
+            with open("Admin Configure", 'r') as File:
                 line=File.readlines()
                 if (line[0]=="Enter Today:1"):
                     startDescriptionLabel.value=deskU.login_coLabelText[randint(0,len(deskU.login_coLabelText)-1)]
@@ -674,7 +683,7 @@ def startAdmin_page(page:ft.Page):
 
                     result=db_object.request_execute(f"Insert into Administrators(FSL,Login, Mac_Address,Password, TG_Username) values ('{(fslField.value)}', '{sha384(loginField.value.encode()).hexdigest()}', '{hex(uuid.getnode())}' ,'{sha384(passwordField.value.encode()).hexdigest()}', '{sha384(usernameField.value.encode()).hexdigest()}')")
                     if (result!=False):
-                        with open(".\Admin Configure" if(page.platform==ft.PagePlatform.WINDOWS) else "./Admin Configure", 'w') as bFile:
+                        with open("Admin Configure", 'w') as bFile:
                             bFile.write(f"Enter Today: 1")
 
                         for i in range(1,len(self.page.controls)):
